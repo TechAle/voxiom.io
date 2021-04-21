@@ -6051,9 +6051,8 @@ function noKillFeed(argument) {
                 var e = s()(i.a.mark((function e(t, n) {
                     var a, r = this;
                     return i.a.wrap((function (e) {
-                        for (; ;) {
+                        for (; ;)
                             // #Dopo
-                            console.log(e)
                         switch (e.prev = e.next) {
                             case 0:
                                 return this.material || (a = parseInt(this.color.substr(1), 16), this.material = new l.ab({
@@ -6066,7 +6065,7 @@ function noKillFeed(argument) {
                             case 2:
                             case"end":
                                 return e.stop()
-                        }}
+                        }
                     }), e, this)
                 })));
                 return function (t, n) {
@@ -7859,7 +7858,6 @@ function noKillFeed(argument) {
                     var n;
                     // #Spawn Item
                     return i.a.wrap((function (e) {
-                        //console.log(e.arg);
                         for (; ;) switch (e.prev = e.next) {
                             case 0:
                                 return e.next = 2, this.generateModel(t);

@@ -1,0 +1,122 @@
+<!-- Draggable DIV -->
+<div oncontextmenu="return false" id="mydiv" style="position: absolute;
+            z-index: 9;
+            background-color: #f1f1f1;
+            border: 1px solid #d3d3d3;
+            text-align: center;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            width: 180px">
+    <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+    <div id="header" style="padding: 10px;
+            cursor: move;
+            z-index: 10;
+            background-color: #2196F3;
+            color: #fff">Mod Menu</div>
+        <div id="modules" style="display: inline-block; padding: 5px 10px 5px 10px; position: relative; height: 100%; background-color: lightgray; overflow-y: scroll; overflow-x: hidden; left: 5px; width: 84%">
+            <div style="width: 100%;
+                        display: flex;
+                        display: -webkit-flex;
+                        display: -ms-flexbox;">
+                <div style="border: 1px solid #2196F3;
+                width: calc( 50%);" onclick="display('combat')">Combat</div>
+                            <div style="border: 1px solid #2196F3;
+                width: calc( 50%);" onclick="display('render')">Render</div>
+            </div>
+            <div style="width: 100%;
+                        display: flex;
+                        display: -webkit-flex;
+                        display: -ms-flexbox;">
+                <div style="border: 1px solid #2196F3;
+                width: calc( 50%);" onclick="display('move')">Move</div>
+                <div style="border: 1px solid #2196F3;
+                width: calc( 50%);" onclick="display('misc')">Misc</div>
+            </div>
+
+            <div id="combat">
+                <div style="font-size: 25px; padding-top: 5px; font-weight: bold; color: lightslategray;">Combat</div>
+                <label for="recoil">NoRecoil<input type="checkbox" id="recoil" onchange="changeRecoil(this)"></label>
+                <label for="spread">NoSpread<input type="checkbox" id="spread" onchange="changeSpread(this)"></label>
+                <label for="instaBreak">instaBreak<input type="checkbox" id="instaBreak" onchange="changeBreak(this)"></label><br>
+                <label for="noReload">noReload<input type="checkbox" id="noReload" onchange="noReloadFun(this)"></label><br>
+            </div>
+
+            <div id="render" style="display: none">
+                <div style="font-size: 25px; padding-top: 5px; font-weight: bold; color: lightslategray;">Render</div>
+                <label for="noNewChunks">noBlockUpdate<input type="checkbox" id="noNewChunks" onchange="noNewChunksTh(this)"></label><br>
+                <label for="noChat">noChat<input type="checkbox" id="noChat" onchange="noChat(this)"></label><br>
+                <label for="noKillFeed">noKillFeed<input type="checkbox" id="noKillFeed" onchange="noKillFeed(this)"></label><br>
+            </div>
+
+            <div id="move" style="display: none">
+                <div style="font-size: 25px; padding-top: 5px; font-weight: bold; color: lightslategray;">Move</div>
+                <label for="noClip">noClip<input type="checkbox" id="noClip" onchange="noClipFun(this)"></label><br>
+                <label for="dungeonSniperGlitch">jumpyGlitch<input type="checkbox" id="dungeonSniperGlitch" onchange="dungeonSniperGlitchValue(this)"></label><br>
+                <label for="waterSpeed" style="display: inline-flex">waterSpeed <input type="number" value='4' style="width: 50px; margin-left: 4px" id="waterSpeed" onchange="changeWater(this)"></label><br>
+                <label for="waterSpeedVer" style="display: inline-flex">waterSpeedVer<input type="number" value='2' style="width: 50px; margin-left: 4px" id="waterSpeedVer" onchange="changeWaterVer(this)"></label><br>
+            </div>
+
+            <div id="misc" style="display: none">
+                <div style="font-size: 25px; padding-top: 5px; font-weight: bold; color: lightslategray;">Misc</div>
+                <label style="display: inline-flex" for="ChunkSize">ChunkSize<input type="number" value='32' id="ChunkSize" onchange="changeChunk(this)" style="width: 50px; margin-left: 4px"></label><br>
+            </div>
+        </div>
+</div>
+
+<script>
+    // Make the DIV element draggable:
+    dragElement(document.getElementById("mydiv"));
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        var isActive = true;
+        document.getElementById("header").onmousedown = dragMouseDown;
+
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            if (e.button === 2) {
+                document.getElementById("modules").style.display = isActive ? "none" : "inline-block";
+                isActive = !isActive;
+            } else {
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+    const everyId = ["combat", "render", "move", "misc"];
+    function display(name) {
+        everyId.forEach(id => {
+            document.getElementById(id).style.display = "none";
+        })
+        document.getElementById(name).style.display = "initial";
+    }
+</script>
