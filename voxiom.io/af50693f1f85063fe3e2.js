@@ -99,7 +99,7 @@ function noKillFeed(argument) {
             t.push(n[2] = a);
             var i, s = document.createElement("script");
             s.charset = "utf-8", s.timeout = 120, o.nc && s.setAttribute("nonce", o.nc), s.src = function (e) {
-                return o.p + "./" + e + ".379e4d801bf64ea1545d.js"
+                return o.p + "./" + e + ".af50693f1f85063fe3e2.js"
             }(e);
             var l = new Error;
             i = function (t) {
@@ -150,12 +150,12 @@ function noKillFeed(argument) {
     s.push = t, s = s.slice();
     for (var c = 0; c < s.length; c++) t(s[c]);
     var u = l;
-    i.push([140, 1]), n()
+    i.push([141, 1]), n()
 }({
-    140: function (e, t, n) {
+    141: function (e, t, n) {
         "use strict";
         n.r(t);
-        var a, r = n(3), i = n.n(r), o = n(6), s = n.n(o), l = (n(78), n(2)), c = n(7), u = n.n(c),
+        var a, r = n(3), i = n.n(r), o = n(6), s = n.n(o), l = (n(79), n(2)), c = n(7), u = n.n(c),
             _ = function (e, t, n) {
                 return {x: e, y: t, z: n}
             }, h = function (e) {
@@ -232,7 +232,8 @@ function noKillFeed(argument) {
                 PHYSICS_TIME_STEP: .04,
                 PING_CHECK_INTERVAL: 1e3,
                 SKY_CLEAR_COLOR: 7845374,
-                SKY_STORM_COLOR: 16724037
+                SKY_STORM_COLOR: 16724037,
+                AD_REFRESH_RATE: 6e4
             }, T = function () {
                 function e(e, t) {
                     var n = this;
@@ -5600,27 +5601,26 @@ function noKillFeed(argument) {
                 return o.add(this, "patternType").options(Bo).name("Pattern").onChange(function () {
                     var e = s()(i.a.mark((function e(t) {
                         return i.a.wrap((function (e) {
-                            for (; ;) {
-                                switch (e.prev = e.next) {
-                                    case 0:
-                                        if (!r.shader) {
-                                            e.next = 7;
-                                            break
-                                        }
-                                        if (r.patternType !== Bo.CUSTOM || 0 !== r.customFileURL.length) {
-                                            e.next = 3;
-                                            break
-                                        }
-                                        return e.abrupt("return");
-                                    case 3:
-                                        return r.shader.uniforms.patternMap.value.dispose(), e.next = 6, hu.loadOnDemandTextureAsync(r.getPatternURL());
-                                    case 6:
-                                        r.shader.uniforms.patternMap.value = e.sent;
-                                    case 7:
-                                    case"end":
-                                        return e.stop()
-                                }
-                            }}), e)
+                            for (; ;) switch (e.prev = e.next) {
+                                case 0:
+                                    if (!r.shader) {
+                                        e.next = 7;
+                                        break
+                                    }
+                                    if (r.patternType !== Bo.CUSTOM || 0 !== r.customFileURL.length) {
+                                        e.next = 3;
+                                        break
+                                    }
+                                    return e.abrupt("return");
+                                case 3:
+                                    return r.shader.uniforms.patternMap.value.dispose(), e.next = 6, hu.loadOnDemandTextureAsync(r.getPatternURL());
+                                case 6:
+                                    r.shader.uniforms.patternMap.value = e.sent;
+                                case 7:
+                                case"end":
+                                    return e.stop()
+                            }
+                        }), e)
                     })));
                     return function (t) {
                         return e.apply(this, arguments)
@@ -5716,8 +5716,8 @@ function noKillFeed(argument) {
                 var e = s()(i.a.mark((function e(t, n) {
                     var a, r, o, s, c = this;
                     return i.a.wrap((function (e) {
-                        // #Aggiorna dopo
-                        for (; ;) switch (e.prev = e.DWnext) {
+                        // ?
+                        for (; ;) switch (e.prev = e.next) {
                             case 0:
                                 if (this.material) {
                                     e.next = 14;
@@ -6051,9 +6051,8 @@ function noKillFeed(argument) {
                 var e = s()(i.a.mark((function e(t, n) {
                     var a, r = this;
                     return i.a.wrap((function (e) {
-                        for (; ;)
-                            // #Dopo
-                        switch (e.prev = e.next) {
+                        // ?Dopo
+                        for (; ;) switch (e.prev = e.next) {
                             case 0:
                                 return this.material || (a = parseInt(this.color.substr(1), 16), this.material = new l.ab({
                                     roughness: this.roughness,
@@ -6142,7 +6141,7 @@ function noKillFeed(argument) {
                 var e = new this.constructor(this._itemType);
                 return e._ownerName = this._ownerName, e._skinType = this._skinType, e._skinSeed = this._skinSeed, e._itemName = this._itemName, e._itemDescription = this._itemDescription, e
             }, t.onUpdateMetadata = function (e) {
-                // #buttare/prendere
+                // ?Buttare/Prendere
                 for (var t, n = Es(e); !(t = n()).done;) {
                     var a = t.value;
                     switch (a.metadataType) {
@@ -7298,7 +7297,7 @@ function noKillFeed(argument) {
                 var a = e.inventory.countItem(this._ammoItemType);
                 return !this._isReloading && this._currClipAmmo < this._maxClipAmmo && a > 0 && (this._isReloading = !0, e.cooldownManager.requestCooldown(new Os(oo.RELOAD, this._reloadTime)), n && t.controlsRenderer.playSound(Ki.GUN_RELOAD_START), !0)
             }, n.onInput = function (t, n, a, r, i) {
-                r.reload && this.reload(t, n, i) ? i && A.emit(v.RELOAD, noReload ? 0 : this.reloadTime) : e.prototype.onInput.call(this, t, n, a, r, i)
+                r.reload && this.reload(t, n, i) ? i && A.emit(v.RELOAD, this.reloadTime) : e.prototype.onInput.call(this, t, n, a, r, i)
             }, n.setCanADS = function (e) {
                 this._canADS = e
             }, n.setUseScope = function (e) {
@@ -7429,6 +7428,7 @@ function noKillFeed(argument) {
                 }
             }, {
                 key: "reloadTime", get: function () {
+                    // #Reload
                     return noReload ? 0 : this._reloadTime
                 }
             }, {
@@ -7598,7 +7598,7 @@ function noKillFeed(argument) {
             }
         }, il = function (e, t, n, a, r, i) {
             // #NoClip
-            return noClip || i.physicsStep.controlState === lo.NOCLIP ? function (e, t, n) {
+            return window.noClip || i.physicsStep.controlState === lo.NOCLIP ? function (e, t, n) {
                 var a = _(Number(e.moveLeft) - Number(e.moveRight), 0, Number(e.moveForward) - Number(e.moveBackward));
                 I(a);
                 var r = _(-Math.sin(e.pitchYaw.y), 0, -Math.cos(e.pitchYaw.y)), i = h(r);
@@ -7817,7 +7817,7 @@ function noKillFeed(argument) {
                     return e.apply(this, arguments)
                 }
             }(), n.generateFirstPersonModel = function () {
-                // #Blocchi building
+                // ?building
                 var e = s()(i.a.mark((function e(t) {
                     var n;
                     return i.a.wrap((function (e) {
@@ -7856,13 +7856,13 @@ function noKillFeed(argument) {
             }(), n.generateEntityModel = function () {
                 var e = s()(i.a.mark((function e(t) {
                     var n;
-                    // #Spawn Item
                     return i.a.wrap((function (e) {
+                        // ?Item Spawn
                         for (; ;) switch (e.prev = e.next) {
                             case 0:
                                 return e.next = 2, this.generateModel(t);
                             case 2:
-                                return (n = e.     sent).position.set(0, 0, 0), n.rotation.set(0, Math.random() * Math.PI * 2, 0), n.scale.set(.7, .7, .7), e.abrupt("return", n);
+                                return (n = e.sent).position.set(0, 0, 0), n.rotation.set(0, Math.random() * Math.PI * 2, 0), n.scale.set(.7, .7, .7), e.abrupt("return", n);
                             case 7:
                             case"end":
                                 return e.stop()
@@ -8288,7 +8288,6 @@ function noKillFeed(argument) {
                 var e = s()(i.a.mark((function e(t) {
                     var n;
                     return i.a.wrap((function (e) {
-                        // #Pistola (?)
                         for (; ;) switch (e.prev = e.next) {
                             case 0:
                                 return e.next = 2, this.generateModel(t);
@@ -9115,7 +9114,7 @@ function noKillFeed(argument) {
                 var t;
                 return (t = e.call(this, Ve.SHOVEL_MYTHIC) || this).setMeleeDamage(22), t.setBlockBreakPower(Is(10.3)), t.setItemTier(Hn.MYTHIC), t
             }
-            // #Bedrock
+
             return ro()(t, e), t.prototype.getBlockBreakPower = function (t) {
                 return Xi[t].hardness >= 999999 ? Is(999999) : e.prototype.getBlockBreakPower.call(this, t)
             }, t
@@ -9896,16 +9895,15 @@ function noKillFeed(argument) {
                 var e = s()(i.a.mark((function e(t, n) {
                     var a;
                     return i.a.wrap((function (e) {
-                        for (; ;)
-                            switch (e.prev = e.next) {
-                                case 0:
-                                    return e.next = 2, this.generateModel(n);
-                                case 2:
-                                    return (a = e.sent).position.set(0, -.08, -1), a.rotation.set(0, 0, 0), a.scale.set(1, 1, 1), e.abrupt("return", a);
-                                case 7:
-                                case"end":
-                                    return e.stop()
-                            }
+                        for (; ;) switch (e.prev = e.next) {
+                            case 0:
+                                return e.next = 2, this.generateModel(n);
+                            case 2:
+                                return (a = e.sent).position.set(0, -.08, -1), a.rotation.set(0, 0, 0), a.scale.set(1, 1, 1), e.abrupt("return", a);
+                            case 7:
+                            case"end":
+                                return e.stop()
+                        }
                     }), e, this)
                 })));
                 return function (t, n) {
@@ -10992,7 +10990,6 @@ function noKillFeed(argument) {
                             case pu.BLOCKS_MESH:
                             default:
                                 this.getNextWorker().postMessage(e)
-                                break;
                         }
                     }
                 }
@@ -11699,7 +11696,7 @@ function noKillFeed(argument) {
                 var e = 0;
                 if (this._chunkStorageManager.numChunksNeedUpdate > 0) for (var t = void 0; void 0 !== (t = this._chunkStorageManager.getNextChunkToUpdate()) && (this._chunkRenderers.get(t.chunkKey).generateMesh(!0), t.doneUpdate(), !(++e >= 2));) ;
             }, t.setBlockAt = function (e, t, n, a, r) {
-                // #Crea un wallhack
+                // ?
                 var i = this._chunkStorageManager.getBlockAt(e, t, n);
                 if (this._chunkStorageManager.setBlockAt(e, t, n, a), r && i !== a) {
                     var o = this._chunkStorageManager.roundToBlockCenterPos(e, t, n), s = Xi[a].sound;
@@ -12271,7 +12268,7 @@ function noKillFeed(argument) {
                 }, this.getVoxel = function (e, t, n) {
                     return i._sceneRenderer.terrainRenderer.chunkStorageManager.getBlockAt(e, t, n)
                 }, this.isVoxelOpaque = function (e, t, n) {
-                    // #Dungeon
+                    // #GlitchyJump
                     return dungeonSniperGlitch ? false : Xi[i.getVoxel(e, t, n)].opaque
                 }, this.render = function (e, t) {
                     if (i._playerMode === qu.ALIVE) {
@@ -13171,15 +13168,15 @@ function noKillFeed(argument) {
                 var e = s()(i.a.mark((function e(t) {
                     var n, a, r, o;
                     return i.a.wrap((function (e) {
+                        // ?ItemSpawn
                         for (; ;) switch (e.prev = e.next) {
-                            // #ItemSpawn
                             case 0:
                                 return (n = iu(t)).setSkin(this._itemSkinType, this._itemSkinSeed), e.next = 4, n.generateEntityModel(!1);
                             case 4:
                                 a = e.sent, hu.removeFog(a), this.cleanUp(), this._item = n, this._itemModel = a, this.object.add(this._itemModel), r = new l.Y({
                                     map: hu.itemGlowTexture,
                                     color: Gn(this._item.itemTier),
-                                    transparent: 0,
+                                    transparent: !0,
                                     opacity: .9,
                                     side: l.r,
                                     depthWrite: !1,
@@ -13297,7 +13294,6 @@ function noKillFeed(argument) {
                     t.hasEntity(e) ? t.getEntity(e).onEntityAction(n) : console.error("Invalid entity action command!")
                 }, this.onEntityUpdateMetadata = function (e, n) {
                     var a = t.getEntity(e);
-                    // #Forse
                     void 0 !== a && a.onUpdateMetadata(n)
                 }, this.onEntityDamage = function (e, n, a, r, i, o) {
                     var s = t._entities[e];
@@ -13396,7 +13392,6 @@ function noKillFeed(argument) {
             return t.bindEvents = function () {
             }, t.unbindEvents = function () {
             }, t.addBullet = function (e, t, n) {
-                // #AddBullet
                 void 0 === n && (n = 0);
                 var a = new l.j(.05, .05, .3), r = new l.Y({color: 16775068}), i = new l.X(a, r);
                 I(t), i.position.set(e.x + 1 * t.x, e.y + 1 * t.y, e.z + 1 * t.z);
@@ -14092,7 +14087,7 @@ function noKillFeed(argument) {
             ph = function (e) {
                 return {type: sa, data: e}
             }, mh = n(21), Eh = n(19), Sh = n(8), fh = n(10), gh = n.p + "./449fa849207db49923236932fb429997.png",
-            Ih = n.p + "./1925abfe3193c7d85c028138974ed467.png", yh = n(73), Rh = n.n(yh), Oh = (n(101), function (e) {
+            Ih = n.p + "./1925abfe3193c7d85c028138974ed467.png", yh = n(73), Rh = n.n(yh), Oh = (n(102), function (e) {
                 return sh.a.createElement(Rh.a, hh()({className: "vox-dropdown"}, e))
             }), Th = function () {
                 var e = Object(oh.useState)(0), t = (e[0], e[1]);
@@ -14113,52 +14108,53 @@ function noKillFeed(argument) {
                 componentId: "sc-1w17feu-0"
             })(["display:flex;justify-content:center;pointer-events:auto;width:970px;margin-top:20px;"]),
             Mh = function (e) {
-                var t = e.id, n = Ah(), a = Object(uh.c)((function (e) {
+                var t = e.id, n = e.triggerAds, a = void 0 === n || n, r = Ah(), i = Object(uh.c)((function (e) {
                     return e.ui.useCrazyGamesSDK
                 }));
                 return Object(oh.useEffect)((function () {
-                    if (n) {
+                    if (r && a) {
                         var e = function () {
-                            a ? window.CrazyGames.CrazySDK.getInstance().requestBanner([{
+                            document.hidden || (i ? window.CrazyGames.CrazySDK.getInstance().requestBanner([{
                                 containerId: t,
                                 size: "728x90"
                             }]) : aiptag.cmd.display.push((function () {
                                 aipDisplayTag.display(t)
-                            }))
+                            })))
                         };
                         e();
-                        var r = window.setInterval(e, 5e4);
+                        var n = window.setInterval(e, O.AD_REFRESH_RATE);
                         return function () {
-                            window.clearInterval(r)
+                            window.clearInterval(n)
                         }
                     }
-                }), []), n ? sh.a.createElement(Ch, {id: t}) : null
+                }), []), r ? sh.a.createElement(Ch, {id: t}) : null
             }, vh = dh.a.div.attrs((function (e) {
                 return e.background ? {style: {backgroundColor: "rgba(0, 0, 0, 0.8)", marginBottom: 20}} : {}
             })).withConfig({
                 displayName: "AdSquareBanner__Wrapper",
                 componentId: "sc-1djlqpc-0"
             })(["width:300px;height:250px;display:flex;justify-content:center;pointer-events:auto;"]), Nh = function (e) {
-                var t = e.id, n = e.background, a = void 0 === n || n, r = Ah(), i = Object(uh.c)((function (e) {
-                    return e.ui.useCrazyGamesSDK
-                }));
+                var t = e.id, n = e.background, a = void 0 === n || n, r = e.triggerAds, i = void 0 === r || r, o = Ah(),
+                    s = Object(uh.c)((function (e) {
+                        return e.ui.useCrazyGamesSDK
+                    }));
                 return Object(oh.useEffect)((function () {
-                    if (r) {
+                    if (o && i) {
                         var e = function () {
-                            i ? window.CrazyGames.CrazySDK.getInstance().requestBanner([{
+                            document.hidden || (s ? window.CrazyGames.CrazySDK.getInstance().requestBanner([{
                                 containerId: t,
                                 size: "300x250"
                             }]) : aiptag.cmd.display.push((function () {
                                 aipDisplayTag.display(t)
-                            }))
+                            })))
                         };
                         e();
-                        var n = window.setInterval(e, 5e4);
+                        var n = window.setInterval(e, O.AD_REFRESH_RATE);
                         return function () {
                             window.clearInterval(n)
                         }
                     }
-                }), []), r ? sh.a.createElement(vh, {id: t, background: a}) : null
+                }), []), o ? sh.a.createElement(vh, {id: t, background: a}) : null
             }, Lh = dh.a.div.withConfig({
                 displayName: "PlayScreen__ConnectionDetails",
                 componentId: "sc-1kooxl6-0"
@@ -14434,58 +14430,81 @@ function noKillFeed(argument) {
                         })))()
                     }
                 }), [o]);
-                var g = Object(uh.c)((function (e) {
+                var g = Ah();
+                Object(oh.useEffect)((function () {
+                    if (g) {
+                        var e = function () {
+                            document.hidden || (p ? window.CrazyGames.CrazySDK.getInstance().requestBanner([{
+                                containerId: "voxiom-io_970X250_1",
+                                size: "728x90"
+                            }, {
+                                containerId: "voxiom-io_300X250_1",
+                                size: "300x250"
+                            }]) : (aiptag.cmd.display.push((function () {
+                                aipDisplayTag.display("voxiom-io_970X250_1")
+                            })), aiptag.cmd.display.push((function () {
+                                aipDisplayTag.display("voxiom-io_300X250_1")
+                            }))))
+                        };
+                        e();
+                        var t = window.setInterval(e, O.AD_REFRESH_RATE);
+                        return function () {
+                            window.clearInterval(t)
+                        }
+                    }
+                }), []);
+                var I = Object(uh.c)((function (e) {
                     return e.account.authenticated
-                })), I = Object(uh.c)((function (e) {
+                })), y = Object(uh.c)((function (e) {
                     return e.account.profile
-                })), y = Object(oh.useState)(Wn.CAPTURE_THE_GEMS), R = y[0], T = y[1], C = null;
-                if (R === Wn.CAPTURE_THE_GEMS) C = sh.a.createElement(rd, null, sh.a.createElement(id, null, sh.a.createElement(od, null, "Games Played"), sh.a.createElement(sd, null, I.ctg.total_games_played)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Games Won"), sh.a.createElement(sd, null, I.ctg.total_games_won)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Win %"), sh.a.createElement(sd, null, (0 === I.ctg.total_games_played ? 0 : I.ctg.total_games_won / I.ctg.total_games_played * 100).toFixed(2) + "%")), sh.a.createElement(id, null, sh.a.createElement(od, null, "Kills"), sh.a.createElement(sd, null, I.ctg.total_kills)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Deaths"), sh.a.createElement(sd, null, I.ctg.total_deaths)), sh.a.createElement(id, null, sh.a.createElement(od, null, "KDR"), sh.a.createElement(sd, null, 0 === I.ctg.total_deaths ? 0 === I.ctg.total_kills ? 0 : "Infinity" : (I.ctg.total_kills / I.ctg.total_deaths).toFixed(2))), sh.a.createElement(id, null, sh.a.createElement(od, null, "Captures"), sh.a.createElement(sd, null, I.ctg.total_captures)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Score"), sh.a.createElement(sd, null, I.ctg.total_score))); else if (R === Wn.BATTLE_ROYALE) {
-                    var M = I.br.total_survival_time, N = ys(M);
-                    C = sh.a.createElement(rd, null, sh.a.createElement(id, null, sh.a.createElement(od, null, "Games Played"), sh.a.createElement(sd, null, I.br.total_games_played)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Games Won"), sh.a.createElement(sd, null, I.br.total_games_won)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Win %"), sh.a.createElement(sd, null, (0 === I.br.total_games_played ? 0 : I.br.total_games_won / I.br.total_games_played * 100).toFixed(2) + "%")), sh.a.createElement(id, null, sh.a.createElement(od, null, "Kills"), sh.a.createElement(sd, null, I.br.total_kills)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Deaths"), sh.a.createElement(sd, null, I.br.total_deaths)), sh.a.createElement(id, null, sh.a.createElement(od, null, "KDR"), sh.a.createElement(sd, null, 0 === I.br.total_deaths ? 0 === I.br.total_kills ? 0 : "Infinity" : (I.br.total_kills / I.br.total_deaths).toFixed(2))), sh.a.createElement(id, null, sh.a.createElement(od, null, "Time Survived"), sh.a.createElement(sd, null, N)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Score"), sh.a.createElement(sd, null, I.br.total_score)))
+                })), R = Object(oh.useState)(Wn.CAPTURE_THE_GEMS), T = R[0], C = R[1], M = null;
+                if (T === Wn.CAPTURE_THE_GEMS) M = sh.a.createElement(rd, null, sh.a.createElement(id, null, sh.a.createElement(od, null, "Games Played"), sh.a.createElement(sd, null, y.ctg.total_games_played)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Games Won"), sh.a.createElement(sd, null, y.ctg.total_games_won)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Win %"), sh.a.createElement(sd, null, (0 === y.ctg.total_games_played ? 0 : y.ctg.total_games_won / y.ctg.total_games_played * 100).toFixed(2) + "%")), sh.a.createElement(id, null, sh.a.createElement(od, null, "Kills"), sh.a.createElement(sd, null, y.ctg.total_kills)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Deaths"), sh.a.createElement(sd, null, y.ctg.total_deaths)), sh.a.createElement(id, null, sh.a.createElement(od, null, "KDR"), sh.a.createElement(sd, null, 0 === y.ctg.total_deaths ? 0 === y.ctg.total_kills ? 0 : "Infinity" : (y.ctg.total_kills / y.ctg.total_deaths).toFixed(2))), sh.a.createElement(id, null, sh.a.createElement(od, null, "Captures"), sh.a.createElement(sd, null, y.ctg.total_captures)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Score"), sh.a.createElement(sd, null, y.ctg.total_score))); else if (T === Wn.BATTLE_ROYALE) {
+                    var N = y.br.total_survival_time, L = ys(N);
+                    M = sh.a.createElement(rd, null, sh.a.createElement(id, null, sh.a.createElement(od, null, "Games Played"), sh.a.createElement(sd, null, y.br.total_games_played)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Games Won"), sh.a.createElement(sd, null, y.br.total_games_won)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Win %"), sh.a.createElement(sd, null, (0 === y.br.total_games_played ? 0 : y.br.total_games_won / y.br.total_games_played * 100).toFixed(2) + "%")), sh.a.createElement(id, null, sh.a.createElement(od, null, "Kills"), sh.a.createElement(sd, null, y.br.total_kills)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Deaths"), sh.a.createElement(sd, null, y.br.total_deaths)), sh.a.createElement(id, null, sh.a.createElement(od, null, "KDR"), sh.a.createElement(sd, null, 0 === y.br.total_deaths ? 0 === y.br.total_kills ? 0 : "Infinity" : (y.br.total_kills / y.br.total_deaths).toFixed(2))), sh.a.createElement(id, null, sh.a.createElement(od, null, "Time Survived"), sh.a.createElement(sd, null, L)), sh.a.createElement(id, null, sh.a.createElement(od, null, "Score"), sh.a.createElement(sd, null, y.br.total_score)))
                 }
-                var L = r === He.CONNECTING && h === Wn.CAPTURE_THE_GEMS ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(Fh, null, sh.a.createElement(Sh.a, {
+                var b = r === He.CONNECTING && h === Wn.CAPTURE_THE_GEMS ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(Fh, null, sh.a.createElement(Sh.a, {
                         icon: Eh.c,
                         spin: !0
                     }))) : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(hd, {src: Ih}), sh.a.createElement("div", null, "Capture The Gems")),
-                    b = r === He.CONNECTING && h === Wn.BATTLE_ROYALE ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(Fh, null, sh.a.createElement(Sh.a, {
+                    x = r === He.CONNECTING && h === Wn.BATTLE_ROYALE ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(Fh, null, sh.a.createElement(Sh.a, {
                         icon: Eh.c,
                         spin: !0
                     }))) : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(_d, {src: gh}), sh.a.createElement("div", null, "Battle Royale")),
-                    x = r === He.CONNECTING && h === Wn.SURVIVAL ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(Fh, null, sh.a.createElement(Sh.a, {
+                    k = r === He.CONNECTING && h === Wn.SURVIVAL ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(Fh, null, sh.a.createElement(Sh.a, {
                         icon: Eh.c,
                         spin: !0
                     }))) : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(dd, {src: hu.getItemIcon(Ve.BLOCK + Wi.GRASS)}), sh.a.createElement(pd, null, "Survival")),
-                    k = g && I.level >= 5 ? sh.a.createElement(Uh, {
+                    P = I && y.level >= 5 ? sh.a.createElement(Uh, {
                         style: {marginTop: 10, width: "100%", height: 50},
                         onClick: function (e) {
                             r === He.DISCONNECTED && (window.location.hash.length > 0 || (E(Aa(He.CONNECTING)), gtag("event", "play_svv", {event_category: "game_view"}), f(Wn.SURVIVAL, a, O.CLIENT_VERSION)))
                         }
-                    }, x) : sh.a.createElement(wh, {
+                    }, k) : sh.a.createElement(wh, {
                         style: {
                             marginTop: 10,
                             width: "100%"
                         }
-                    }, sh.a.createElement(Dh, null, "Unlock at Level 5"), x),
-                    P = [{value: Ye.US_WEST, label: "US West (San Francisco)"}, {
+                    }, sh.a.createElement(Dh, null, "Unlock at Level 5"), k),
+                    U = [{value: Ye.US_WEST, label: "US West (San Francisco)"}, {
                         value: Ye.US_EAST,
                         label: "US East (New York City)"
                     }, {value: Ye.EU, label: "Europe (Amsterdam)"}, {value: Ye.ASIA, label: "Asia (Singapore)"}];
-                return sh.a.createElement(Bh, null, sh.a.createElement(Hh, null, sh.a.createElement(Bh, null, sh.a.createElement(qh, null, g ? null : sh.a.createElement(ld, {to: "/account"}, sh.a.createElement(cd, null, sh.a.createElement(Sh.a, {icon: Eh.b})), sh.a.createElement(ud, null, "Login to unlock!")), sh.a.createElement(ad, null, sh.a.createElement(Xh, null, I.level), sh.a.createElement(Jh, null, sh.a.createElement($h, {nameLen: I.nickname.length}, I.nickname), sh.a.createElement(td, null, sh.a.createElement(ed, null, I.xp, " / ", 127 * I.level), sh.a.createElement(nd, {
-                    value: I.xp,
-                    maxValue: 127 * I.level,
+                return sh.a.createElement(Bh, null, sh.a.createElement(Hh, null, sh.a.createElement(Bh, null, sh.a.createElement(qh, null, I ? null : sh.a.createElement(ld, {to: "/account"}, sh.a.createElement(cd, null, sh.a.createElement(Sh.a, {icon: Eh.b})), sh.a.createElement(ud, null, "Login to unlock!")), sh.a.createElement(ad, null, sh.a.createElement(Xh, null, y.level), sh.a.createElement(Jh, null, sh.a.createElement($h, {nameLen: y.nickname.length}, y.nickname), sh.a.createElement(td, null, sh.a.createElement(ed, null, y.xp, " / ", 127 * y.level), sh.a.createElement(nd, {
+                    value: y.xp,
+                    maxValue: 127 * y.level,
                     color: "#3498db"
                 })))), sh.a.createElement(md, null, sh.a.createElement(Ed, {
-                    active: R === Wn.CAPTURE_THE_GEMS,
+                    active: T === Wn.CAPTURE_THE_GEMS,
                     onClick: function (e) {
-                        T(Wn.CAPTURE_THE_GEMS)
+                        C(Wn.CAPTURE_THE_GEMS)
                     }
                 }, "Capture The Gems"), sh.a.createElement(Ed, {
-                    active: R === Wn.BATTLE_ROYALE, onClick: function (e) {
-                        T(Wn.BATTLE_ROYALE)
+                    active: T === Wn.BATTLE_ROYALE, onClick: function (e) {
+                        C(Wn.BATTLE_ROYALE)
                     }
-                }, "Battle Royale")), C)), sh.a.createElement(Bh, null, sh.a.createElement(Lh, null, sh.a.createElement(bh, null, sh.a.createElement(kh, null, "Region"), sh.a.createElement(Oh, {
-                    options: P,
-                    value: P[a],
+                }, "Battle Royale")), M)), sh.a.createElement(Bh, null, sh.a.createElement(Lh, null, sh.a.createElement(bh, null, sh.a.createElement(kh, null, "Region"), sh.a.createElement(Oh, {
+                    options: U,
+                    value: U[a],
                     onChange: function (e) {
                         E(Ta(e.value))
                     }
@@ -14496,11 +14515,14 @@ function noKillFeed(argument) {
                     }, onClick: function (e) {
                         r === He.DISCONNECTED && (window.location.hash.length > 0 || (E(Aa(He.CONNECTING)), gtag("event", "play_ctg", {event_category: "game_view"}), f(Wn.CAPTURE_THE_GEMS, a, O.CLIENT_VERSION)))
                     }
-                }, L), sh.a.createElement(Ph, {
+                }, b), sh.a.createElement(Ph, {
                     style: {width: 128}, onClick: function (e) {
                         r === He.DISCONNECTED && (window.location.hash.length > 0 || (E(Aa(He.CONNECTING)), gtag("event", "play_br", {event_category: "game_view"}), f(Wn.BATTLE_ROYALE, a, O.CLIENT_VERSION)))
                     }
-                }, b)), sh.a.createElement(xh, null, k)), c.length > 0 ? sh.a.createElement(Gh, null, c) : null)), sh.a.createElement(Bh, null, sh.a.createElement(Nh, {id: "voxiom-io_300X250_1"}), sh.a.createElement(Yh, null, sh.a.createElement(Kh, null, "Join our community"), sh.a.createElement(zh, null, sh.a.createElement(Wh, {
+                }, x)), sh.a.createElement(xh, null, P)), c.length > 0 ? sh.a.createElement(Gh, null, c) : null)), sh.a.createElement(Bh, null, sh.a.createElement(Nh, {
+                    id: "voxiom-io_300X250_1",
+                    triggerAds: !1
+                }), sh.a.createElement(Yh, null, sh.a.createElement(Kh, null, "Join our community"), sh.a.createElement(zh, null, sh.a.createElement(Wh, {
                     href: "https://discord.gg/GBFtRcY",
                     target: "_blank"
                 }, sh.a.createElement(Sh.a, {icon: mh.a})), sh.a.createElement(Zh, {
@@ -14512,7 +14534,10 @@ function noKillFeed(argument) {
                 }, sh.a.createElement(Sh.a, {icon: mh.e})), sh.a.createElement(jh, {
                     href: "https://twitter.com/thriver0",
                     target: "_blank"
-                }, sh.a.createElement(Sh.a, {icon: mh.f})))))), sh.a.createElement(Hh, null, sh.a.createElement(Mh, {id: "voxiom-io_970X250_1"})))
+                }, sh.a.createElement(Sh.a, {icon: mh.f})))))), sh.a.createElement(Hh, null, sh.a.createElement(Mh, {
+                    id: "voxiom-io_970X250_1",
+                    triggerAds: !1
+                })))
             }), fd = dh.a.table.withConfig({
                 displayName: "BattleRoyaleLeaderboard__Table",
                 componentId: "sc-11a1pkw-0"
@@ -16755,7 +16780,7 @@ function noKillFeed(argument) {
                                     case 6:
                                         return o = t.sent, t.next = 9, o.json();
                                     case 9:
-                                        (s = t.sent).success && n.e(3).then(n.t.bind(null, 405, 7)).then((function (e) {
+                                        (s = t.sent).success && n.e(3).then(n.t.bind(null, 406, 7)).then((function (e) {
                                             var t = e.default;
                                             t.init({access_token: s.result.token, sandbox: !1}), t.open()
                                         }));
@@ -16846,7 +16871,7 @@ function noKillFeed(argument) {
                 displayName: "AdminScreen__DataTableCell",
                 componentId: "x998h3-9"
             })(["border:1px solid white;padding:5px 10px;"]), Mf = sh.a.lazy((function () {
-                return Promise.all([n.e(2), n.e(4)]).then(n.t.bind(null, 406, 7)).then((function (e) {
+                return Promise.all([n.e(2), n.e(4)]).then(n.t.bind(null, 407, 7)).then((function (e) {
                     return {default: e.Line}
                 }))
             })), vf = function (e) {
@@ -17161,9 +17186,9 @@ function noKillFeed(argument) {
                 })), R.map((function (e) {
                     return {y: e.total_svv_asia, x: new Date(e.time)}
                 }))), C("US WEST Servers", g.regions[Ye.US_WEST].servers), C("US EAST Servers", g.regions[Ye.US_EAST].servers), C("EU Servers", g.regions[Ye.EU].servers), C("ASIA Servers", g.regions[Ye.ASIA].servers)) : "Failed to load admin panel")
-            };
+            }, Nf = n(77);
 
-        function Nf(e, t) {
+        function Lf(e, t) {
             var n = Object.keys(e);
             if (Object.getOwnPropertySymbols) {
                 var a = Object.getOwnPropertySymbols(e);
@@ -17174,50 +17199,53 @@ function noKillFeed(argument) {
             return n
         }
 
-        function Lf(e) {
+        function bf(e) {
             for (var t = 1; t < arguments.length; t++) {
                 var n = null != arguments[t] ? arguments[t] : {};
-                t % 2 ? Nf(Object(n), !0).forEach((function (t) {
+                t % 2 ? Lf(Object(n), !0).forEach((function (t) {
                     te()(e, t, n[t])
-                })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Nf(Object(n)).forEach((function (t) {
+                })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Lf(Object(n)).forEach((function (t) {
                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                 }))
             }
             return e
         }
 
-        var bf, xf = dh.a.div.withConfig({
+        var xf, kf = dh.a.div.withConfig({
                 displayName: "RewardedAdPopup__Title",
                 componentId: "sc-8t53fu-0"
-            })(["margin-bottom:10px;font-size:20px;display:flex;align-items:center;"]), kf = dh.a.div.withConfig({
+            })(["margin-bottom:10px;font-size:20px;display:flex;align-items:center;"]), Pf = dh.a.div.withConfig({
                 displayName: "RewardedAdPopup__SubTitle",
                 componentId: "sc-8t53fu-1"
-            })(["margin-bottom:20px;display:flex;align-items:center;"]), Pf = dh.a.div.withConfig({
+            })(["margin-bottom:20px;display:flex;align-items:center;"]), Uf = dh.a.div.withConfig({
                 displayName: "RewardedAdPopup__ButtonGroup",
                 componentId: "sc-8t53fu-2"
-            })(["display:flex;"]), Uf = dh.a.div.withConfig({
+            })(["display:flex;"]), wf = dh.a.div.withConfig({
                 displayName: "RewardedAdPopup__SubmitButton",
                 componentId: "sc-8t53fu-3"
             })(["margin-right:10px;padding:10px;background-color:#27ae60;text-align:center;color:white;:hover{background-color:#2ecc71;cursor:pointer;}"]),
-            wf = dh.a.div.withConfig({
+            Df = dh.a.div.withConfig({
                 displayName: "RewardedAdPopup__LaterButton",
                 componentId: "sc-8t53fu-4"
             })(["padding:10px;background-color:#7f8c8d;text-align:center;color:white;:hover{background-color:#95a5a6;cursor:pointer;}"]),
-            Df = dh.a.div.withConfig({
+            Gf = dh.a.div.withConfig({
                 displayName: "RewardedAdPopup__DismissButton",
                 componentId: "sc-8t53fu-5"
             })(["padding:10px;background-color:#27ae60;text-align:center;color:white;:hover{background-color:#2ecc71;cursor:pointer;}"]),
-            Gf = dh.a.img.withConfig({
+            Ff = dh.a.img.withConfig({
                 displayName: "RewardedAdPopup__MoneyIcon",
                 componentId: "sc-8t53fu-6"
-            })(["width:24px;margin:0 10px;"]), Ff = dh.a.div.withConfig({
+            })(["width:24px;margin:0 10px;"]), Hf = dh.a.div.withConfig({
                 displayName: "RewardedAdPopup__PopupContent",
                 componentId: "sc-8t53fu-7"
-            })(["display:flex;flex-direction:column;align-items:center;"]);
+            })(["display:flex;flex-direction:column;align-items:center;"]), Bf = dh.a.span.withConfig({
+                displayName: "RewardedAdPopup__PlayIcon",
+                componentId: "sc-8t53fu-8"
+            })(["margin-right:5px;"]);
         !function (e) {
             e[e.PROMO = 0] = "PROMO", e[e.SUCCESS = 1] = "SUCCESS", e[e.ERROR = 2] = "ERROR", e[e.NONE = 3] = "NONE"
-        }(bf || (bf = {}));
-        var Hf = function (e) {
+        }(xf || (xf = {}));
+        var Yf = function (e) {
                 var t = Object(uh.b)(), n = Ah(), a = Object(uh.c)((function (e) {
                         return e.account.authenticated
                     })), r = Object(uh.c)((function (e) {
@@ -17227,7 +17255,7 @@ function noKillFeed(argument) {
                     })), l = Object(uh.c)((function (e) {
                         return e.settings.disableRewardedAdsPopup
                     })), c = Object(oh.useState)(0), u = c[0], _ = c[1],
-                    h = Object(oh.useState)(a && r.rewarded_ad_eligible && !l ? bf.PROMO : bf.NONE), d = h[0], p = h[1],
+                    h = Object(oh.useState)(a && r.rewarded_ad_eligible && !l ? xf.PROMO : xf.NONE), d = h[0], p = h[1],
                     m = Object(oh.useState)(!1), E = m[0], S = m[1], f = function () {
                         var e = s()(i.a.mark((function e() {
                             var a, s, l, c;
@@ -17249,7 +17277,7 @@ function noKillFeed(argument) {
                                             e.next = 13;
                                             break
                                         }
-                                        _(s.result.amount), p(bf.SUCCESS), t(ph(Lf(Lf({}, r), {}, {gems: r.gems + s.result.amount}))), e.next = 14;
+                                        _(s.result.amount), p(xf.SUCCESS), t(ph(bf(bf({}, r), {}, {gems: r.gems + s.result.amount}))), e.next = 14;
                                         break;
                                     case 13:
                                         throw new Error("Failed to redeem");
@@ -17257,7 +17285,7 @@ function noKillFeed(argument) {
                                         e.next = 20;
                                         break;
                                     case 16:
-                                        e.prev = 16, e.t0 = e.catch(0), console.error("Failed to redeem ad reward"), p(bf.ERROR);
+                                        e.prev = 16, e.t0 = e.catch(0), console.error("Failed to redeem ad reward"), p(xf.ERROR);
                                     case 20:
                                         return e.prev = 20, S(!1), n && o && (l = window.CrazyGames.CrazySDK, (c = l.getInstance()).removeEventListener("adFinished", f), c.removeEventListener("adError", f)), e.finish(20);
                                     case 24:
@@ -17270,7 +17298,7 @@ function noKillFeed(argument) {
                             return e.apply(this, arguments)
                         }
                     }(), g = null;
-                return d === bf.PROMO ? g = sh.a.createElement(iS, null, sh.a.createElement(Ff, null, sh.a.createElement(xf, null, sh.a.createElement(Gf, {src: nS}), "Claim your free Vox Gems!", sh.a.createElement(Gf, {src: nS})), sh.a.createElement(kf, null, "You can do this after you complete a match every hour."), sh.a.createElement(Pf, null, sh.a.createElement(Uf, {
+                return d === xf.PROMO ? g = sh.a.createElement(iS, null, sh.a.createElement(Hf, null, sh.a.createElement(kf, null, sh.a.createElement(Ff, {src: nS}), "Claim your free Vox Gems!", sh.a.createElement(Ff, {src: nS})), sh.a.createElement(Pf, null, "You can do this after you complete a match every hour."), sh.a.createElement(Uf, null, sh.a.createElement(wf, {
                     onClick: function () {
                         var e = s()(i.a.mark((function e(t) {
                             var a, r;
@@ -17310,47 +17338,47 @@ function noKillFeed(argument) {
                             return e.apply(this, arguments)
                         }
                     }()
-                }, "Claim Now"), sh.a.createElement(wf, {
+                }, sh.a.createElement(Bf, null, sh.a.createElement(Sh.a, {icon: Nf.a})), "Claim Now"), sh.a.createElement(Df, {
                     onClick: function (e) {
-                        p(bf.NONE)
+                        p(xf.NONE)
                     }
-                }, "Later")))) : d === bf.SUCCESS ? g = sh.a.createElement(iS, null, sh.a.createElement(Ff, null, sh.a.createElement(xf, null, "Thank you for supporting the game!"), sh.a.createElement(kf, null, "You received", sh.a.createElement(Gf, {src: nS}), u, " Vox Gems!"), sh.a.createElement(Df, {
+                }, "Later")))) : d === xf.SUCCESS ? g = sh.a.createElement(iS, null, sh.a.createElement(Hf, null, sh.a.createElement(kf, null, "Thank you for supporting the game!"), sh.a.createElement(Pf, null, "You received", sh.a.createElement(Ff, {src: nS}), u, " Vox Gems!"), sh.a.createElement(Gf, {
                     onClick: function () {
-                        p(bf.NONE)
+                        p(xf.NONE)
                     }
-                }, "Great!"))) : d === bf.ERROR && (g = sh.a.createElement(iS, null, sh.a.createElement(Ff, null, sh.a.createElement(xf, null, "Sorry, an error has occurred"), sh.a.createElement(kf, null, "Please try this again later :("), sh.a.createElement(Df, {
+                }, "Great!"))) : d === xf.ERROR && (g = sh.a.createElement(iS, null, sh.a.createElement(Hf, null, sh.a.createElement(kf, null, "Sorry, an error has occurred"), sh.a.createElement(Pf, null, "Please try this again later :("), sh.a.createElement(Gf, {
                     onClick: function () {
-                        p(bf.NONE)
+                        p(xf.NONE)
                     }
                 }, "Okay")))), g
-            }, Bf = dh.a.div.withConfig({
+            }, Kf = dh.a.div.withConfig({
                 displayName: "GemPurchaseSuccessScreen__Wrapper",
                 componentId: "p4u5hf-0"
             })(["background-color:rgba(0,0,0,0.8);padding:20px;color:white;display:flex;flex-direction:column;width:100%;box-sizing:border-box;position:relative;text-align:center;"]),
-            Yf = dh.a.div.withConfig({
+            zf = dh.a.div.withConfig({
                 displayName: "GemPurchaseSuccessScreen__WrapperTitle",
                 componentId: "p4u5hf-1"
-            })(["font-size:30px;"]), Kf = dh.a.div.withConfig({
+            })(["font-size:30px;"]), Wf = dh.a.div.withConfig({
                 displayName: "GemPurchaseSuccessScreen__GemBanner",
                 componentId: "p4u5hf-2"
             })(["font-size:50px;display:flex;align-items:center;justify-content:center;margin:60px 0;"]),
-            zf = dh.a.img.withConfig({
+            Vf = dh.a.img.withConfig({
                 displayName: "GemPurchaseSuccessScreen__MoneyIcon",
                 componentId: "p4u5hf-3"
-            })(["width:60px;margin:0 20px;"]), Wf = dh.a.div.withConfig({
+            })(["width:60px;margin:0 20px;"]), jf = dh.a.div.withConfig({
                 displayName: "GemPurchaseSuccessScreen__Content",
                 componentId: "p4u5hf-4"
-            })(["font-size:20px;"]), Vf = dh.a.a.withConfig({
+            })(["font-size:20px;"]), Zf = dh.a.a.withConfig({
                 displayName: "GemPurchaseSuccessScreen__NativeLink",
                 componentId: "p4u5hf-5"
-            })(["color:#74b9ff;"]), jf = function (e) {
+            })(["color:#74b9ff;"]), qf = function (e) {
                 Object(uh.b)();
                 var t = Object(oh.useState)(0), n = t[0], a = t[1];
                 return Object(oh.useEffect)((function () {
                     var e = new URLSearchParams(window.location.search), t = n;
                     e.has("product_id") && (t = parseInt(e.get("product_id")), isNaN(t) || a(t))
-                }), [window.location.search]), sh.a.createElement(Bf, null, sh.a.createElement(Yf, null, "Thank you for your support!"), sh.a.createElement(Kf, null, sh.a.createElement(zf, {src: nS}), QS[n].quantity, " Vox Gems ", sh.a.createElement(zf, {src: nS})), sh.a.createElement(Wf, null, "will be credited to your account soon. If you believe that there's an error, please contact ", sh.a.createElement(Vf, {href: "mailto:voxiomgame@gmail.com"}, "voxiomgame@gmail.com"), " for assistance!"))
-            }, Zf = function (e) {
+                }), [window.location.search]), sh.a.createElement(Kf, null, sh.a.createElement(zf, null, "Thank you for your support!"), sh.a.createElement(Wf, null, sh.a.createElement(Vf, {src: nS}), QS[n].quantity, " Vox Gems ", sh.a.createElement(Vf, {src: nS})), sh.a.createElement(jf, null, "will be credited to your account soon. If you believe that there's an error, please contact ", sh.a.createElement(Zf, {href: "mailto:voxiomgame@gmail.com"}, "voxiomgame@gmail.com"), " for assistance!"))
+            }, Xf = function (e) {
                 Object(uh.b)();
                 var t = Object(oh.useState)([]), n = t[0], a = t[1], r = Object(oh.useState)(!0), i = r[0], o = r[1],
                     s = Object(oh.useState)(!0), l = s[0], c = s[1], u = Object(oh.useState)(je.A), _ = u[0], h = u[1];
@@ -17388,35 +17416,36 @@ function noKillFeed(argument) {
                     canUnequip: !1,
                     canSell: !1
                 })
-            }, qf = dh.a.div.attrs((function (e) {
+            }, Jf = dh.a.div.attrs((function (e) {
                 return e.background ? {style: {backgroundColor: "rgba(0, 0, 0, 0.8)", width: 970, marginBottom: 20}} : {}
             })).withConfig({
                 displayName: "AdLeaderboardBanner__Wrapper",
                 componentId: "sc-1o26bju-0"
-            })(["height:90px;display:flex;justify-content:center;pointer-events:auto;"]), Xf = function (e) {
-                var t = e.id, n = e.background, a = void 0 === n || n, r = Ah(), i = Object(uh.c)((function (e) {
-                    return e.ui.useCrazyGamesSDK
-                }));
+            })(["height:90px;display:flex;justify-content:center;pointer-events:auto;"]), Qf = function (e) {
+                var t = e.id, n = e.background, a = void 0 === n || n, r = e.triggerAds, i = void 0 === r || r, o = Ah(),
+                    s = Object(uh.c)((function (e) {
+                        return e.ui.useCrazyGamesSDK
+                    }));
                 return Object(oh.useEffect)((function () {
-                    if (r) {
+                    if (o && i) {
                         var e = function () {
-                            i ? window.CrazyGames.CrazySDK.getInstance().requestBanner([{
+                            document.hidden || (s ? window.CrazyGames.CrazySDK.getInstance().requestBanner([{
                                 containerId: t,
                                 size: "728x90"
                             }]) : aiptag.cmd.display.push((function () {
                                 aipDisplayTag.display(t)
-                            }))
+                            })))
                         };
                         e();
-                        var n = window.setInterval(e, 5e4);
+                        var n = window.setInterval(e, O.AD_REFRESH_RATE);
                         return function () {
                             window.clearInterval(n)
                         }
                     }
-                }), []), r ? sh.a.createElement(qf, {id: t, background: a}) : null
+                }), []), o ? sh.a.createElement(Jf, {id: t, background: a}) : null
             };
 
-        function Jf(e, t) {
+        function $f(e, t) {
             var n = Object.keys(e);
             if (Object.getOwnPropertySymbols) {
                 var a = Object.getOwnPropertySymbols(e);
@@ -17427,92 +17456,92 @@ function noKillFeed(argument) {
             return n
         }
 
-        function Qf(e) {
+        function eg(e) {
             for (var t = 1; t < arguments.length; t++) {
                 var n = null != arguments[t] ? arguments[t] : {};
-                t % 2 ? Jf(Object(n), !0).forEach((function (t) {
+                t % 2 ? $f(Object(n), !0).forEach((function (t) {
                     te()(e, t, n[t])
-                })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Jf(Object(n)).forEach((function (t) {
+                })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : $f(Object(n)).forEach((function (t) {
                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                 }))
             }
             return e
         }
 
-        var $f, eg = dh.a.div.withConfig({
+        var tg, ng = dh.a.div.withConfig({
                 displayName: "JoinPanel__WrapperCenter",
                 componentId: "sc-145bfr8-0"
             })(["width:100%;height:100%;top:0;left:0;position:absolute;display:flex;align-items:center;justify-content:center;flex-direction:column;"]),
-            tg = dh.a.div.withConfig({
+            ag = dh.a.div.withConfig({
                 displayName: "JoinPanel__WrapperLong",
                 componentId: "sc-145bfr8-1"
-            })(["margin:50px 0;display:flex;align-items:center;flex-direction:column;"]), ng = dh.a.div.withConfig({
+            })(["margin:50px 0;display:flex;align-items:center;flex-direction:column;"]), rg = dh.a.div.withConfig({
                 displayName: "JoinPanel__WrapperContent",
                 componentId: "sc-145bfr8-2"
             })(["display:flex;flex-direction:column;align-items:center;width:970px;pointer-events:auto;"]),
-            ag = dh.a.img.withConfig({
+            ig = dh.a.img.withConfig({
                 displayName: "JoinPanel__Logo",
                 componentId: "sc-145bfr8-3"
-            })(["display:block;width:500px;"]), rg = dh.a.div.withConfig({
+            })(["display:block;width:500px;"]), og = dh.a.div.withConfig({
                 displayName: "JoinPanel__LogoSubTitle",
                 componentId: "sc-145bfr8-4"
-            })(["margin-bottom:20px;font-size:20px;"]), ig = dh.a.div.withConfig({
+            })(["margin-bottom:20px;font-size:20px;"]), sg = dh.a.div.withConfig({
                 displayName: "JoinPanel__NameChangePanelWrapper",
                 componentId: "sc-145bfr8-5"
             })(["position:absolute;width:100%;height:100%;top:0;left:0;display:flex;justify-content:center;align-items:center;z-index:999999999;pointer-events:auto;background-color:rgba(0,0,0,0.5);"]),
-            og = dh.a.div.withConfig({
+            lg = dh.a.div.withConfig({
                 displayName: "JoinPanel__NameChangePanel",
                 componentId: "sc-145bfr8-6"
             })(["width:500px;background-color:rgb(50,50,50);display:flex;flex-direction:column;align-items:center;padding:20px;"]),
-            sg = dh.a.div.withConfig({
+            cg = dh.a.div.withConfig({
                 displayName: "JoinPanel__NameChangeTitle",
                 componentId: "sc-145bfr8-7"
-            })(["margin-bottom:10px;font-size:20px;"]), lg = dh.a.div.withConfig({
+            })(["margin-bottom:10px;font-size:20px;"]), ug = dh.a.div.withConfig({
                 displayName: "JoinPanel__NameChangeSubTitle",
                 componentId: "sc-145bfr8-8"
-            })(["margin-bottom:20px;"]), cg = dh.a.input.withConfig({
+            })(["margin-bottom:20px;"]), _g = dh.a.input.withConfig({
                 displayName: "JoinPanel__NameChangeInput",
                 componentId: "sc-145bfr8-9"
             })(["padding:10px;background-color:rgba(150,150,150,0.5);outline:none;border:none;color:white;width:100%;box-sizing:border-box;::placeholder{color:grey;}"]),
-            ug = dh.a.div.withConfig({
+            hg = dh.a.div.withConfig({
                 displayName: "JoinPanel__NameChangeButtonGroup",
                 componentId: "sc-145bfr8-10"
-            })(["display:flex;margin-top:20px;"]), _g = dh.a.div.withConfig({
+            })(["display:flex;margin-top:20px;"]), dg = dh.a.div.withConfig({
                 displayName: "JoinPanel__NameChangeSubmit",
                 componentId: "sc-145bfr8-11"
             })(["margin-right:10px;padding:10px;background-color:#27ae60;text-align:center;color:white;:hover{background-color:#2ecc71;cursor:pointer;}"]),
-            hg = dh.a.div.withConfig({
+            pg = dh.a.div.withConfig({
                 displayName: "JoinPanel__NameChangeLater",
                 componentId: "sc-145bfr8-12"
             })(["padding:10px;background-color:#7f8c8d;text-align:center;color:white;:hover{background-color:#95a5a6;cursor:pointer;}"]),
-            dg = dh.a.div.withConfig({
+            mg = dh.a.div.withConfig({
                 displayName: "JoinPanel__NameChangeError",
                 componentId: "sc-145bfr8-13"
-            })(["margin-top:10px;color:#e74c3c;"]), pg = dh.a.div.withConfig({
+            })(["margin-top:10px;color:#e74c3c;"]), Eg = dh.a.div.withConfig({
                 displayName: "JoinPanel__Menu",
                 componentId: "sc-145bfr8-14"
             })(["display:flex;width:970px;margin-bottom:20px;background-color:black;pointer-events:auto;justify-content:space-between;"]),
-            mg = dh.a.div.withConfig({
+            Sg = dh.a.div.withConfig({
                 displayName: "JoinPanel__LeftSideMenu",
                 componentId: "sc-145bfr8-15"
-            })(["display:flex;"]), Eg = dh.a.div.withConfig({
+            })(["display:flex;"]), fg = dh.a.div.withConfig({
                 displayName: "JoinPanel__RightSideMenu",
                 componentId: "sc-145bfr8-16"
-            })(["display:flex;justify-content:flex-end;"]), Sg = Object(dh.a)(fh.c).withConfig({
+            })(["display:flex;justify-content:flex-end;"]), gg = Object(dh.a)(fh.c).withConfig({
                 displayName: "JoinPanel__MenuItem",
                 componentId: "sc-145bfr8-17"
             })(["color:white;text-decoration:none;padding:20px 30px;background-color:black;:hover{cursor:pointer;background-color:rgb(30,30,30);}&.active{background-color:rgb(50,50,50);}"]),
-            fg = dh.a.a.withConfig({
+            Ig = dh.a.a.withConfig({
                 displayName: "JoinPanel__MenuItemLink",
                 componentId: "sc-145bfr8-18"
             })(["display:block;padding:20px 30px;background-color:black;color:white;text-decoration:none;:hover{cursor:pointer;background-color:rgb(30,30,30);}"]);
         !function (e) {
             e[e.PLAY = 0] = "PLAY", e[e.ACCOUNT = 1] = "ACCOUNT", e[e.LEADERBOARD = 2] = "LEADERBOARD", e[e.NEWS = 3] = "NEWS", e[e.UPDATES = 4] = "UPDATES"
-        }($f || ($f = {}));
-        var gg = function (e) {
+        }(tg || (tg = {}));
+        var yg = function (e) {
                 return sh.a.createElement(Tm.Scrollbars, {
                     renderView: function (e) {
-                        return sh.a.createElement("div", hh()({}, e, {style: Qf(Qf({}, e.style), {}, {overflowX: "hidden"})}))
+                        return sh.a.createElement("div", hh()({}, e, {style: eg(eg({}, e.style), {}, {overflowX: "hidden"})}))
                     },
                     style: {
                         width: "100%",
@@ -17526,7 +17555,7 @@ function noKillFeed(argument) {
                         pointerEvents: "auto"
                     }
                 }, e.children)
-            }, Ig = function (e) {
+            }, Rg = function (e) {
                 var t = Object(uh.c)((function (e) {
                         return e.ui.connectionStatus
                     })), n = Object(uh.c)((function (e) {
@@ -17539,27 +17568,27 @@ function noKillFeed(argument) {
                 Object(oh.useEffect)((function () {
                     l(n && !a.has_nickname)
                 }), [n, a.has_nickname]);
-                var g = n ? tg : eg,
-                    I = sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(ag, {src: qi}), sh.a.createElement(rg, null, "Open Alpha Testing - Pre-Season"), sh.a.createElement(pg, null, sh.a.createElement(mg, null, sh.a.createElement(Sg, {
+                var g = n ? ag : ng,
+                    I = sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(ig, {src: qi}), sh.a.createElement(og, null, "Open Alpha Testing - Pre-Season"), sh.a.createElement(Eg, null, sh.a.createElement(Sg, null, sh.a.createElement(gg, {
                         exact: !0,
                         to: "/"
-                    }, "Game"), sh.a.createElement(Sg, {to: "/account"}, "Account"), sh.a.createElement(Sg, {
+                    }, "Game"), sh.a.createElement(gg, {to: "/account"}, "Account"), sh.a.createElement(gg, {
                         to: "/leaderboard/ctg",
                         isActive: function (e, t) {
                             return t.pathname.startsWith("/leaderboard")
                         }
-                    }, "Leaderboard"), sh.a.createElement(Sg, {to: "/loadouts"}, "Loadouts"), sh.a.createElement(Sg, {
+                    }, "Leaderboard"), sh.a.createElement(gg, {to: "/loadouts"}, "Loadouts"), sh.a.createElement(gg, {
                         to: "/shop/crates",
                         isActive: function (e, t) {
                             return t.pathname.startsWith("/shop")
                         }
-                    }, "Shop"), sh.a.createElement(Sg, {to: "/changelog"}, "Updates")), sh.a.createElement(Eg, null, sh.a.createElement(Sg, {
+                    }, "Shop"), sh.a.createElement(gg, {to: "/changelog"}, "Updates")), sh.a.createElement(fg, null, sh.a.createElement(gg, {
                         to: "/settings",
                         onClick: function (e) {
                             f(Ca(C.SETTINGS))
                         }
-                    }, sh.a.createElement(Sh.a, {icon: zE.b})), n ? sh.a.createElement(fg, {href: "/auth/logout"}, "Logout") : null)));
-                return t === He.DISCONNECTED || t === He.CONNECTING ? sh.a.createElement(sh.a.Fragment, null, o ? sh.a.createElement(ig, null, sh.a.createElement(og, null, sh.a.createElement(sg, null, "Welcome soldier! Please choose your username!"), sh.a.createElement(lg, null, "Choose carefully! You will not be able to change it"), sh.a.createElement(cg, {
+                    }, sh.a.createElement(Sh.a, {icon: zE.b})), n ? sh.a.createElement(Ig, {href: "/auth/logout"}, "Logout") : null)));
+                return t === He.DISCONNECTED || t === He.CONNECTING ? sh.a.createElement(sh.a.Fragment, null, o ? sh.a.createElement(sg, null, sh.a.createElement(lg, null, sh.a.createElement(cg, null, "Welcome soldier! Please choose your username!"), sh.a.createElement(ug, null, "Choose carefully! You will not be able to change it"), sh.a.createElement(_g, {
                     type: "text",
                     minLength: 3,
                     maxLength: 18,
@@ -17568,7 +17597,7 @@ function noKillFeed(argument) {
                     onChange: function (e) {
                         d && _(e.target.value)
                     }
-                }), E.length > 0 ? sh.a.createElement(dg, null, E) : null, sh.a.createElement(ug, null, sh.a.createElement(_g, {
+                }), E.length > 0 ? sh.a.createElement(mg, null, E) : null, sh.a.createElement(hg, null, sh.a.createElement(dg, {
                     onClick: function () {
                         var e = s()(i.a.mark((function e(t) {
                             var n, r;
@@ -17605,56 +17634,56 @@ function noKillFeed(argument) {
                             return e.apply(this, arguments)
                         }
                     }()
-                }, "Save"), sh.a.createElement(hg, {
+                }, "Save"), sh.a.createElement(pg, {
                     onClick: function (e) {
                         l(!1)
                     }
-                }, "Later")))) : null, sh.a.createElement(Hf, null), sh.a.createElement(jd.d, null, sh.a.createElement(jd.b, {
+                }, "Later")))) : null, sh.a.createElement(Yf, null), sh.a.createElement(jd.d, null, sh.a.createElement(jd.b, {
                     exact: !0,
                     path: "/"
-                }, sh.a.createElement(eg, null, I, sh.a.createElement(ng, null, sh.a.createElement(Sd, null)))), sh.a.createElement(jd.b, {path: "/account"}, sh.a.createElement(gg, null, sh.a.createElement(g, null, I, sh.a.createElement(ng, null, sh.a.createElement(Xf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(Xp, null))))), sh.a.createElement(jd.b, {path: "/leaderboard"}, sh.a.createElement(gg, null, sh.a.createElement(tg, null, I, sh.a.createElement(ng, null, sh.a.createElement(Xf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(Jd, null))))), sh.a.createElement(jd.b, {path: "/player/:nickname"}, sh.a.createElement(gg, null, sh.a.createElement(tg, null, I, sh.a.createElement(ng, null, sh.a.createElement(Xf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(Qp, null))))), sh.a.createElement(jd.b, {path: "/match/br/:id"}, sh.a.createElement(gg, null, sh.a.createElement(tg, null, I, sh.a.createElement(ng, null, sh.a.createElement(Xf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(AE, null))))), sh.a.createElement(jd.b, {path: "/match/ctg/:id"}, sh.a.createElement(gg, null, sh.a.createElement(tg, null, I, sh.a.createElement(ng, null, sh.a.createElement(Xf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(KE, null))))), sh.a.createElement(jd.b, {path: "/settings"}, sh.a.createElement(eg, null, I, sh.a.createElement(ng, null, sh.a.createElement(Xf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(pE, null)))), sh.a.createElement(jd.b, {path: "/loadouts"}, sh.a.createElement(gg, null, sh.a.createElement(tg, null, I, sh.a.createElement(ng, null, sh.a.createElement(Xf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(US, null))))), sh.a.createElement(jd.b, {path: "/shop"}, sh.a.createElement(gg, null, sh.a.createElement(tg, null, I, sh.a.createElement(ng, null, sh.a.createElement(Xf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(Ef, null))))), sh.a.createElement(jd.b, {path: "/admin"}, sh.a.createElement(gg, null, sh.a.createElement(tg, null, I, sh.a.createElement(ng, null, sh.a.createElement(vf, null))))), sh.a.createElement(jd.b, {path: "/changelog"}, sh.a.createElement(gg, null, sh.a.createElement(tg, null, I, sh.a.createElement(ng, null, sh.a.createElement(Xf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(um, null))))), sh.a.createElement(jd.b, {path: "/payment_success"}, sh.a.createElement(eg, null, I, sh.a.createElement(ng, null, sh.a.createElement(jf, null)))), sh.a.createElement(jd.b, {path: "/crate_content"}, sh.a.createElement(gg, null, sh.a.createElement(tg, null, I, sh.a.createElement(ng, null, sh.a.createElement(Xf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(Zf, null))))), sh.a.createElement(jd.b, null, sh.a.createElement(eg, null, I, sh.a.createElement(ng, null, sh.a.createElement(Xf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(dm, null)))))) : null
-            }, yg = dh.a.div.withConfig({
+                }, sh.a.createElement(ng, null, I, sh.a.createElement(rg, null, sh.a.createElement(Sd, null)))), sh.a.createElement(jd.b, {path: "/account"}, sh.a.createElement(yg, null, sh.a.createElement(g, null, I, sh.a.createElement(rg, null, sh.a.createElement(Qf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(Xp, null))))), sh.a.createElement(jd.b, {path: "/leaderboard"}, sh.a.createElement(yg, null, sh.a.createElement(ag, null, I, sh.a.createElement(rg, null, sh.a.createElement(Qf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(Jd, null))))), sh.a.createElement(jd.b, {path: "/player/:nickname"}, sh.a.createElement(yg, null, sh.a.createElement(ag, null, I, sh.a.createElement(rg, null, sh.a.createElement(Qf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(Qp, null))))), sh.a.createElement(jd.b, {path: "/match/br/:id"}, sh.a.createElement(yg, null, sh.a.createElement(ag, null, I, sh.a.createElement(rg, null, sh.a.createElement(Qf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(AE, null))))), sh.a.createElement(jd.b, {path: "/match/ctg/:id"}, sh.a.createElement(yg, null, sh.a.createElement(ag, null, I, sh.a.createElement(rg, null, sh.a.createElement(Qf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(KE, null))))), sh.a.createElement(jd.b, {path: "/settings"}, sh.a.createElement(ng, null, I, sh.a.createElement(rg, null, sh.a.createElement(Qf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(pE, null)))), sh.a.createElement(jd.b, {path: "/loadouts"}, sh.a.createElement(yg, null, sh.a.createElement(ag, null, I, sh.a.createElement(rg, null, sh.a.createElement(Qf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(US, null))))), sh.a.createElement(jd.b, {path: "/shop"}, sh.a.createElement(yg, null, sh.a.createElement(ag, null, I, sh.a.createElement(rg, null, sh.a.createElement(Qf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(Ef, null))))), sh.a.createElement(jd.b, {path: "/admin"}, sh.a.createElement(yg, null, sh.a.createElement(ag, null, I, sh.a.createElement(rg, null, sh.a.createElement(vf, null))))), sh.a.createElement(jd.b, {path: "/changelog"}, sh.a.createElement(yg, null, sh.a.createElement(ag, null, I, sh.a.createElement(rg, null, sh.a.createElement(Qf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(um, null))))), sh.a.createElement(jd.b, {path: "/payment_success"}, sh.a.createElement(ng, null, I, sh.a.createElement(rg, null, sh.a.createElement(qf, null)))), sh.a.createElement(jd.b, {path: "/crate_content"}, sh.a.createElement(yg, null, sh.a.createElement(ag, null, I, sh.a.createElement(rg, null, sh.a.createElement(Qf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(Xf, null))))), sh.a.createElement(jd.b, null, sh.a.createElement(ng, null, I, sh.a.createElement(rg, null, sh.a.createElement(Qf, {id: "voxiom-io_728x90_1"}), sh.a.createElement(dm, null)))))) : null
+            }, Og = dh.a.div.withConfig({
                 displayName: "ResourceLoadingPanel__Wrapper",
                 componentId: "sc-10kc3my-0"
             })(["width:100%;height:100%;top:0;left:0;position:absolute;display:flex;align-items:center;justify-content:center;"]),
-            Rg = dh.a.div.withConfig({
+            Tg = dh.a.div.withConfig({
                 displayName: "ResourceLoadingPanel__WrapperContent",
                 componentId: "sc-10kc3my-1"
-            })(["background-color:rgba(0,0,0,0.7);padding:30px;color:white;"]), Og = dh.a.div.withConfig({
+            })(["background-color:rgba(0,0,0,0.7);padding:30px;color:white;"]), Ag = dh.a.div.withConfig({
                 displayName: "ResourceLoadingPanel__Title",
                 componentId: "sc-10kc3my-2"
-            })(["text-align:center;margin-bottom:20px;font-size:20px;"]), Tg = dh.a.div.withConfig({
+            })(["text-align:center;margin-bottom:20px;font-size:20px;"]), Cg = dh.a.div.withConfig({
                 displayName: "ResourceLoadingPanel__LoadingBarOuter",
                 componentId: "sc-10kc3my-3"
-            })(["width:300px;height:30px;position:relative;background-color:white;"]), Ag = dh.a.div.attrs((function (e) {
+            })(["width:300px;height:30px;position:relative;background-color:white;"]), Mg = dh.a.div.attrs((function (e) {
                 return {style: {width: e.percent + "%", transition: "width " + e.speed + "s"}}
             })).withConfig({
                 displayName: "ResourceLoadingPanel__LoadingBarInner",
                 componentId: "sc-10kc3my-4"
             })(["background-color:#2ecc71;position:absolute;height:100%;display:flex;align-items:center;"]),
-            Cg = function (e) {
+            vg = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.ui.resourceLoadingProgress
                 })), n = Object(uh.c)((function (e) {
                     return e.ui.connectionStatus
                 }));
                 Object(uh.b)();
-                return n === He.LOADING ? sh.a.createElement(yg, null, sh.a.createElement(Rg, null, sh.a.createElement(Og, null, "Loading... Please hold on"), sh.a.createElement(Tg, null, sh.a.createElement(Ag, {
+                return n === He.LOADING ? sh.a.createElement(Og, null, sh.a.createElement(Tg, null, sh.a.createElement(Ag, null, "Loading... Please hold on"), sh.a.createElement(Cg, null, sh.a.createElement(Mg, {
                     percent: 100 * t,
                     speed: .2
                 })))) : null
             };
 
-        function Mg(e, t) {
+        function Ng(e, t) {
             var n;
             if ("undefined" == typeof Symbol || null == e[Symbol.iterator]) {
                 if (Array.isArray(e) || (n = function (e, t) {
                     if (!e) return;
-                    if ("string" == typeof e) return vg(e, t);
+                    if ("string" == typeof e) return Lg(e, t);
                     var n = Object.prototype.toString.call(e).slice(8, -1);
                     "Object" === n && e.constructor && (n = e.constructor.name);
                     if ("Map" === n || "Set" === n) return Array.from(e);
-                    if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return vg(e, t)
+                    if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Lg(e, t)
                 }(e)) || t && e && "number" == typeof e.length) {
                     n && (e = n);
                     var a = 0;
@@ -17667,14 +17696,14 @@ function noKillFeed(argument) {
             return (n = e[Symbol.iterator]()).next.bind(n)
         }
 
-        function vg(e, t) {
+        function Lg(e, t) {
             (null == t || t > e.length) && (t = e.length);
             for (var n = 0, a = new Array(t); n < t; n++) a[n] = e[n];
             return a
         }
 
-        var Ng, Lg = function (e) {
-                for (var t, n = [], a = "", r = _(255, 255, 255), i = [], o = Mg(e); !(t = o()).done;) {
+        var bg, xg = function (e) {
+                for (var t, n = [], a = "", r = _(255, 255, 255), i = [], o = Ng(e); !(t = o()).done;) {
                     var s = t.value;
                     i.push(s)
                 }
@@ -17696,25 +17725,25 @@ function noKillFeed(argument) {
                     key: l++,
                     style: {color: "rgb(" + r.x + ", " + r.y + ", " + r.z + ")"}
                 }, a)), a = ""), n
-            }, bg = (n(54), dh.a.div.withConfig({
+            }, kg = (n(54), dh.a.div.withConfig({
                 displayName: "Chat__Wrapper",
                 componentId: "sc-16u2dec-0"
             })(["position:absolute;bottom:120px;left:20px;width:350px;color:white;z-index:100000;font-size:13px;pointer-events:auto;"])),
-            xg = dh.a.div.withConfig({
+            Pg = dh.a.div.withConfig({
                 displayName: "Chat__ChatMessage",
                 componentId: "sc-16u2dec-1"
             })(["margin:10px;padding-left:20px;text-indent:-20px;text-shadow:1px 1px 0 #3b3b3b;font-size:14px;"]),
-            kg = dh.a.input.withConfig({
+            Ug = dh.a.input.withConfig({
                 displayName: "Chat__ChatInput",
                 componentId: "sc-16u2dec-2"
             })(["background-color:rgba(0,0,0,0.4);border:none;outline:none;width:100%;color:white;padding:10px;margin:0;font-size:13px;::placeholder{color:#bbbbbb;opacity:1;}"]),
-            Pg = function (e) {
+            wg = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.settings.chatVisible
                 })), n = Object(uh.c)((function (e) {
                     return e.ui.gameChatMessages
                 })).map((function (e, t) {
-                    return sh.a.createElement(xg, {key: "msg" + t}, Lg(e))
+                    return sh.a.createElement(Pg, {key: "msg" + t}, xg(e))
                 })), a = Object(uh.c)((function (e) {
                     return e.ui.gameChatPendingMessage
                 })), r = Object(uh.c)((function (e) {
@@ -17734,12 +17763,12 @@ function noKillFeed(argument) {
                         var e = l.current;
                         e.getScrollHeight() - e.getScrollTop() <= 1.5 * e.getClientHeight() && e.scrollToBottom()
                     }
-                })), t ? sh.a.createElement(bg, null, 0 === n.length ? null : sh.a.createElement(Tm.Scrollbars, {
+                })), t ? sh.a.createElement(kg, null, 0 === n.length ? null : sh.a.createElement(Tm.Scrollbars, {
                     autoHeight: !0,
                     autoHeightMax: 150,
                     ref: l,
                     style: {width: 370, backgroundColor: "rgba(0, 0, 0, 0.3)"}
-                }, n), o ? sh.a.createElement(kg, {
+                }, n), o ? sh.a.createElement(Ug, {
                     maxLength: 100,
                     type: "text",
                     value: a,
@@ -17755,22 +17784,22 @@ function noKillFeed(argument) {
                         s(Ma(!1))
                     }
                 }) : null) : null
-            }, Ug = dh.a.div.withConfig({
+            }, Dg = dh.a.div.withConfig({
                 displayName: "PlayerCondition__Wrapper",
                 componentId: "sc-1q9si6a-0"
-            })(["position:absolute;bottom:20px;left:20px;pointer-events:none;"]), wg = dh.a.div.withConfig({
+            })(["position:absolute;bottom:20px;left:20px;pointer-events:none;"]), Gg = dh.a.div.withConfig({
                 displayName: "PlayerCondition__HealthBarGroup",
                 componentId: "sc-1q9si6a-1"
-            })(["display:flex;"]), Dg = dh.a.div.attrs((function (e) {
+            })(["display:flex;"]), Fg = dh.a.div.attrs((function (e) {
                 return {style: {marginRight: e.marginRight, left: e.left, position: "relative"}}
             })).withConfig({
                 displayName: "PlayerCondition__HealthBarIcon",
                 componentId: "sc-1q9si6a-2"
-            })(["display:flex;align-items:center;justify-content:center;font-size:20px;"]), Gg = dh.a.div.withConfig({
+            })(["display:flex;align-items:center;justify-content:center;font-size:20px;"]), Hg = dh.a.div.withConfig({
                 displayName: "PlayerCondition__HealthBarOuter",
                 componentId: "sc-1q9si6a-3"
             })(["width:300px;height:25px;border:1px solid white;position:relative;background-color:rgba(0,0,0,0.4);"]),
-            Fg = dh.a.div.attrs((function (e) {
+            Bg = dh.a.div.attrs((function (e) {
                 var t = e.value, n = e.maxValue;
                 return {
                     style: {
@@ -17782,22 +17811,22 @@ function noKillFeed(argument) {
             })).withConfig({
                 displayName: "PlayerCondition__HealthBarInner",
                 componentId: "sc-1q9si6a-4"
-            })(["position:absolute;height:100%;display:flex;align-items:center;"]), Hg = dh.a.div.withConfig({
+            })(["position:absolute;height:100%;display:flex;align-items:center;"]), Yg = dh.a.div.withConfig({
                 displayName: "PlayerCondition__HealthText",
                 componentId: "sc-1q9si6a-5"
-            })(["padding:5px;white-space:nowrap;"]), Bg = dh.a.div.withConfig({
+            })(["padding:5px;white-space:nowrap;"]), Kg = dh.a.div.withConfig({
                 displayName: "PlayerCondition__Space",
                 componentId: "sc-1q9si6a-6"
-            })(["height:5px;"]), Yg = dh.a.div.withConfig({
+            })(["height:5px;"]), zg = dh.a.div.withConfig({
                 displayName: "PlayerCondition__HelpTexts",
                 componentId: "sc-1q9si6a-7"
-            })(["display:flex;"]), Kg = dh.a.div.withConfig({
+            })(["display:flex;"]), Wg = dh.a.div.withConfig({
                 displayName: "PlayerCondition__HelpText",
                 componentId: "sc-1q9si6a-8"
-            })(["margin-right:20px;margin-bottom:10px;"]), zg = dh.a.span.withConfig({
+            })(["margin-right:20px;margin-bottom:10px;"]), Vg = dh.a.span.withConfig({
                 displayName: "PlayerCondition__KeyIcon",
                 componentId: "sc-1q9si6a-9"
-            })(["border:1px solid white;padding:1px 5px;"]), Wg = function (e) {
+            })(["border:1px solid white;padding:1px 5px;"]), jg = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.maxHealth
                 })), n = Object(uh.c)((function (e) {
@@ -17812,191 +17841,191 @@ function noKillFeed(argument) {
                     return e.settings.keys[Je.CROUCH].keyName
                 })));
                 Object(uh.b)();
-                return sh.a.createElement(Ug, null, sh.a.createElement(Yg, null, sh.a.createElement(Kg, null, sh.a.createElement(zg, null, i), " to sprint"), sh.a.createElement(Kg, null, sh.a.createElement(zg, null, o), " to crouch")), sh.a.createElement(wg, null, sh.a.createElement(Dg, {
+                return sh.a.createElement(Dg, null, sh.a.createElement(zg, null, sh.a.createElement(Wg, null, sh.a.createElement(Vg, null, i), " to sprint"), sh.a.createElement(Wg, null, sh.a.createElement(Vg, null, o), " to crouch")), sh.a.createElement(Gg, null, sh.a.createElement(Fg, {
                     marginRight: 9,
                     left: 0
-                }, sh.a.createElement(Sh.a, {icon: zE.d})), sh.a.createElement(Gg, null, sh.a.createElement(Fg, {
+                }, sh.a.createElement(Sh.a, {icon: zE.d})), sh.a.createElement(Hg, null, sh.a.createElement(Bg, {
                     value: r,
                     maxValue: a,
                     color: "#ffffff",
                     speed: 1
-                }), sh.a.createElement(Fg, {
+                }), sh.a.createElement(Bg, {
                     value: r,
                     maxValue: a,
                     color: "#ffb900",
                     speed: .5
-                }, sh.a.createElement(Hg, null, r, " / ", a)))), sh.a.createElement(Bg, null), sh.a.createElement(wg, null, sh.a.createElement(Dg, {
+                }, sh.a.createElement(Yg, null, r, " / ", a)))), sh.a.createElement(Kg, null), sh.a.createElement(Gg, null, sh.a.createElement(Fg, {
                     marginRight: 11,
                     left: 1
-                }, sh.a.createElement(Sh.a, {icon: zE.c})), sh.a.createElement(Gg, null, sh.a.createElement(Fg, {
+                }, sh.a.createElement(Sh.a, {icon: zE.c})), sh.a.createElement(Hg, null, sh.a.createElement(Bg, {
                     value: n,
                     maxValue: t,
                     color: "#ffffff",
                     speed: 1
-                }), sh.a.createElement(Fg, {
+                }), sh.a.createElement(Bg, {
                     value: n,
                     maxValue: t,
                     color: "#2ecc71",
                     speed: .5
-                }, sh.a.createElement(Hg, null, n, " / ", t)))))
-            }, Vg = dh.a.div.withConfig({
+                }, sh.a.createElement(Yg, null, n, " / ", t)))))
+            }, Zg = dh.a.div.withConfig({
                 displayName: "KillFeed__Wrapper",
                 componentId: "sc-1xasb9r-0"
             })(["position:absolute;top:20px;right:20px;pointer-events:none;display:flex;flex-direction:column;align-items:flex-end;"]),
-            jg = dh.a.div.withConfig({
+            qg = dh.a.div.withConfig({
                 displayName: "KillFeed__KillFeedMessageWrapper",
                 componentId: "sc-1xasb9r-1"
-            })(["padding:5px;margin:2px;background-color:rgba(0,0,0,0.5);"]), Zg = dh.a.div.withConfig({
+            })(["padding:5px;margin:2px;background-color:rgba(0,0,0,0.5);"]), Xg = dh.a.div.withConfig({
                 displayName: "KillFeed__TextWrapper",
                 componentId: "sc-1xasb9r-2"
             })(["display:inline-block;color:", ""], (function (e) {
                 return e.color
-            })), qg = function (e) {
+            })), Jg = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.ui.killFeedMessages
                 })), n = (Object(uh.b)(), t.map((function (e) {
                     var t = e.template.split(/\{\{|}\}/g).map((function (t, n) {
-                        return "killer" === t ? sh.a.createElement(Zg, {
+                        return "killer" === t ? sh.a.createElement(Xg, {
                             key: n,
                             color: e.killerColor
-                        }, e.killerName) : "victim" === t ? sh.a.createElement(Zg, {
+                        }, e.killerName) : "victim" === t ? sh.a.createElement(Xg, {
                             key: n,
                             color: e.victimColor
-                        }, e.victimName) : "item" === t ? sh.a.createElement(Zg, {
+                        }, e.victimName) : "item" === t ? sh.a.createElement(Xg, {
                             key: n,
                             color: e.itemColor
                         }, e.itemName) : "" !== t ? sh.a.createElement("span", {key: n}, t) : void 0
                     }));
-                    return sh.a.createElement(jg, {key: e.id}, t)
+                    return sh.a.createElement(qg, {key: e.id}, t)
                 })));
-                return sh.a.createElement(Vg, null, n)
-            }, Xg = dh.a.img.attrs((function (e) {
+                return sh.a.createElement(Zg, null, n)
+            }, Qg = dh.a.img.attrs((function (e) {
                 return {style: {backgroundColor: e.tierColor}}
             })).withConfig({
                 displayName: "ItemIcon__ItemImage",
                 componentId: "sc-1g14mzg-0"
-            })(["display:block;width:100%;height:100%;"]), Jg = dh.a.div.withConfig({
+            })(["display:block;width:100%;height:100%;"]), $g = dh.a.div.withConfig({
                 displayName: "ItemIcon__ItemCount",
                 componentId: "sc-1g14mzg-1"
             })(["position:absolute;bottom:10%;right:10%;color:white;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;"]),
-            Qg = dh.a.div.withConfig({
+            eI = dh.a.div.withConfig({
                 displayName: "ItemIcon__ItemDurability",
                 componentId: "sc-1g14mzg-2"
             })(["height:100%;width:5px;background-color:#6f5252;position:absolute;left:0px;top:0px;display:flex;align-items:flex-end;"]),
-            $g = dh.a.div.attrs((function (e) {
+            tI = dh.a.div.attrs((function (e) {
                 return {style: {backgroundColor: "#a0ff23", height: e.value + "%"}}
             })).withConfig({
                 displayName: "ItemIcon__DurabilityValue",
                 componentId: "sc-1g14mzg-3"
-            })(["width:100%;z-index:1;"]), eI = function (e) {
+            })(["width:100%;z-index:1;"]), nI = function (e) {
                 Object(uh.b)();
                 var t = "rgba(255, 255, 255, 0.4)";
-                return e.type !== Ve.EMPTY && (t = Gn(e.tier)), e.type === Ve.EMPTY ? null : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(Xg, {
+                return e.type !== Ve.EMPTY && (t = Gn(e.tier)), e.type === Ve.EMPTY ? null : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(Qg, {
                     src: hu.getItemIcon(e.type),
                     tierColor: t
-                }), e.count > 1 ? sh.a.createElement(Jg, null, e.count) : null, e.durability > 0 ? sh.a.createElement(Qg, null, sh.a.createElement($g, {value: e.durability})) : null)
+                }), e.count > 1 ? sh.a.createElement($g, null, e.count) : null, e.durability > 0 ? sh.a.createElement(eI, null, sh.a.createElement(tI, {value: e.durability})) : null)
             };
         !function (e) {
             e[e.FULL_INVENTORY = 0] = "FULL_INVENTORY", e[e.QUICK_INVENTORY = 1] = "QUICK_INVENTORY"
-        }(Ng || (Ng = {}));
-        var tI = dh.a.div.withConfig({
+        }(bg || (bg = {}));
+        var aI = dh.a.div.withConfig({
                 displayName: "ItemSlot__Item",
                 componentId: "sc-16sn8qo-0"
             })(["position:relative;width:", "px;height:", "px;margin:3px;border:3px solid rgba(100,100,100,1);background-color:rgba(255,255,255,0.4);"], (function (e) {
                 return e.size
             }), (function (e) {
                 return e.size
-            })), nI = Object(dh.a)(tI).withConfig({
+            })), rI = Object(dh.a)(aI).withConfig({
                 displayName: "ItemSlot__SelectedItem",
                 componentId: "sc-16sn8qo-1"
             })(["position:relative;top:-10px;margin:1px;border:5px solid rgba(255,255,255,1);"]),
-            aI = Object(dh.a)(tI).withConfig({
+            iI = Object(dh.a)(aI).withConfig({
                 displayName: "ItemSlot__SelectedItemFullInventory",
                 componentId: "sc-16sn8qo-2"
-            })(["position:relative;margin:1px;border:5px solid rgba(255,255,255,1);"]), rI = dh.a.div.withConfig({
+            })(["position:relative;margin:1px;border:5px solid rgba(255,255,255,1);"]), oI = dh.a.div.withConfig({
                 displayName: "ItemSlot__GrayOut",
                 componentId: "sc-16sn8qo-3"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6);"]),
-            iI = function (e) {
+            sI = function (e) {
                 Object(uh.b)();
-                var t = e.selected ? e.selectedStyle === Ng.FULL_INVENTORY ? aI : nI : tI, n = 64;
+                var t = e.selected ? e.selectedStyle === bg.FULL_INVENTORY ? iI : rI : aI, n = 64;
                 void 0 !== e.size && (n = e.size);
                 var a = null;
-                return !1 === e.craftable && (a = sh.a.createElement(rI, null)), sh.a.createElement(t, {
+                return !1 === e.craftable && (a = sh.a.createElement(oI, null)), sh.a.createElement(t, {
                     size: n,
                     onMouseDown: e.onMouseDown,
                     onMouseEnter: e.onMouseEnter,
                     onMouseLeave: e.onMouseLeave
-                }, sh.a.createElement(eI, {type: e.type, tier: e.tier, count: e.count, durability: e.durability}), a)
-            }, oI = dh.a.div.withConfig({
+                }, sh.a.createElement(nI, {type: e.type, tier: e.tier, count: e.count, durability: e.durability}), a)
+            }, lI = dh.a.div.withConfig({
                 displayName: "ItemUsage__Wrapper",
                 componentId: "twdweh-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;"]),
-            sI = dh.a.div.withConfig({
+            cI = dh.a.div.withConfig({
                 displayName: "ItemUsage__ItemUsageView",
                 componentId: "twdweh-1"
             })(["position:relative;top:10%;display:flex;padding:10px;background-color:rgba(0,0,0,0.5);"]),
-            lI = dh.a.div.withConfig({
+            uI = dh.a.div.withConfig({
                 displayName: "ItemUsage__UsageDetails",
                 componentId: "twdweh-2"
-            })(["display:flex;flex-direction:column;margin-left:10px;"]), cI = dh.a.div.withConfig({
+            })(["display:flex;flex-direction:column;margin-left:10px;"]), _I = dh.a.div.withConfig({
                 displayName: "ItemUsage__ItemUsageTips",
                 componentId: "twdweh-3"
-            })(["padding-top:5px;"]), uI = dh.a.div.withConfig({
+            })(["padding-top:5px;"]), hI = dh.a.div.withConfig({
                 displayName: "ItemUsage__UsageProgressOuter",
                 componentId: "twdweh-4"
             })(["width:100%;min-width:150px;height:15px;border:1px solid white;margin-top:10px;"]),
-            _I = dh.a.div.attrs((function (e) {
+            dI = dh.a.div.attrs((function (e) {
                 return {style: {width: e.progress + "%"}}
             })).withConfig({
                 displayName: "ItemUsage__UsageProgressInner",
                 componentId: "twdweh-5"
-            })(["height:100%;background-color:white;transition:width:0.1s;"]), hI = function (e) {
+            })(["height:100%;background-color:white;transition:width:0.1s;"]), pI = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.itemUsage
                 }));
-                return t.type === Ve.EMPTY ? null : sh.a.createElement(oI, null, sh.a.createElement(sI, null, sh.a.createElement(iI, {
+                return t.type === Ve.EMPTY ? null : sh.a.createElement(lI, null, sh.a.createElement(cI, null, sh.a.createElement(sI, {
                     size: 48,
                     selected: !1,
                     type: t.type,
                     tier: t.tier,
                     count: 1
-                }), sh.a.createElement(lI, null, sh.a.createElement(cI, null, t.tip), sh.a.createElement(uI, null, sh.a.createElement(_I, {progress: t.progress})))))
-            }, dI = dh.a.div.withConfig({
+                }), sh.a.createElement(uI, null, sh.a.createElement(_I, null, t.tip), sh.a.createElement(hI, null, sh.a.createElement(dI, {progress: t.progress})))))
+            }, mI = dh.a.div.withConfig({
                 displayName: "ItemPickupHint__Wrapper",
                 componentId: "kf07hs-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;"]),
-            pI = dh.a.div.withConfig({
+            EI = dh.a.div.withConfig({
                 displayName: "ItemPickupHint__ItemPickupView",
                 componentId: "kf07hs-1"
             })(["position:relative;top:-10%;display:flex;padding:10px;background-color:rgba(0,0,0,0.5);"]),
-            mI = dh.a.div.withConfig({
+            SI = dh.a.div.withConfig({
                 displayName: "ItemPickupHint__ItemPickupDetails",
                 componentId: "kf07hs-2"
             })(["display:flex;flex-direction:column;justify-content:space-between;margin-left:10px;"]),
-            EI = dh.a.div.withConfig({
+            fI = dh.a.div.withConfig({
                 displayName: "ItemPickupHint__ItemPickupTips",
                 componentId: "kf07hs-3"
-            })(["padding-top:5px;"]), SI = dh.a.div.attrs((function (e) {
+            })(["padding-top:5px;"]), gI = dh.a.div.attrs((function (e) {
                 return {style: {color: e.itemColor}}
             })).withConfig({
                 displayName: "ItemPickupHint__ItemPickupName",
                 componentId: "kf07hs-4"
-            })(["padding-bottom:5px;"]), fI = function (e) {
+            })(["padding-bottom:5px;"]), II = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.itemPickupHint
                 }));
-                return t.type === Ve.EMPTY ? null : sh.a.createElement(dI, null, sh.a.createElement(pI, null, sh.a.createElement(iI, {
+                return t.type === Ve.EMPTY ? null : sh.a.createElement(mI, null, sh.a.createElement(EI, null, sh.a.createElement(sI, {
                     size: 48,
                     selected: !1,
                     type: t.type,
                     tier: t.tier,
                     count: t.count
-                }), sh.a.createElement(mI, null, sh.a.createElement(EI, null, t.tip), sh.a.createElement(SI, {itemColor: $n(t.cosmeticsTier)}, t.name))))
-            }, gI = dh.a.div.withConfig({
+                }), sh.a.createElement(SI, null, sh.a.createElement(fI, null, t.tip), sh.a.createElement(gI, {itemColor: $n(t.cosmeticsTier)}, t.name))))
+            }, yI = dh.a.div.withConfig({
                 displayName: "Ammo__Wrapper",
                 componentId: "sc-1soy96x-0"
-            })(["margin-right:10px;margin-top:50px;"]), II = function (e) {
+            })(["margin-right:10px;margin-top:50px;"]), RI = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.ammoCountVisible
                 })), n = Object(uh.c)((function (e) {
@@ -18005,122 +18034,122 @@ function noKillFeed(argument) {
                     return e.gameData.reserveAmmoCount
                 }));
                 Object(uh.b)();
-                return t ? sh.a.createElement(gI, null, "Ammo: ", n, " / ", a) : null
-            }, yI = dh.a.div.withConfig({
+                return t ? sh.a.createElement(yI, null, "Ammo: ", n, " / ", a) : null
+            }, OI = dh.a.div.withConfig({
                 displayName: "Inventory__Wrapper",
                 componentId: "sc-1mujvi6-0"
             })(["position:absolute;bottom:20px;right:20px;pointer-events:none;display:flex;flex-direction:column;align-items:flex-end;"]),
-            RI = dh.a.div.withConfig({
+            TI = dh.a.div.withConfig({
                 displayName: "Inventory__HotSlotRow",
                 componentId: "sc-1mujvi6-1"
-            })(["display:flex;"]), OI = dh.a.div.withConfig({
+            })(["display:flex;"]), AI = dh.a.div.withConfig({
                 displayName: "Inventory__ItemSlotWrapper",
                 componentId: "sc-1mujvi6-2"
-            })(["display:flex;flex-direction:column;align-items:center;"]), TI = dh.a.div.withConfig({
+            })(["display:flex;flex-direction:column;align-items:center;"]), CI = dh.a.div.withConfig({
                 displayName: "Inventory__InventoryText",
                 componentId: "sc-1mujvi6-3"
-            })(["margin-bottom:20px;margin-right:5px;"]), AI = dh.a.span.withConfig({
+            })(["margin-bottom:20px;margin-right:5px;"]), MI = dh.a.span.withConfig({
                 displayName: "Inventory__KeyIcon",
                 componentId: "sc-1mujvi6-4"
-            })(["border:1px solid white;padding:1px 5px;"]), CI = Object(dh.a)(AI).withConfig({
+            })(["border:1px solid white;padding:1px 5px;"]), vI = Object(dh.a)(MI).withConfig({
                 displayName: "Inventory__ItemSlotName",
                 componentId: "sc-1mujvi6-5"
-            })(["border:1px solid white;padding:1px 5px;margin-top:5px;"]), MI = function (e) {
+            })(["border:1px solid white;padding:1px 5px;margin-top:5px;"]), NI = function (e) {
                 for (var t = Object(uh.c)((function (e) {
                     return e.gameData.inventory
                 })), n = Object(uh.c)((function (e) {
                     return e.gameData.selectedItem
                 })), a = ur(Object(uh.c)((function (e) {
                     return e.settings.keys[Je.TOGGLE_INVENTORY].keyName
-                }))), r = (Object(uh.b)(), []), i = 0; i < O.PLAYER_INVENTORY_HOT_SLOTS_COUNT; i++) r.push(sh.a.createElement(OI, {key: i}, sh.a.createElement(iI, {
+                }))), r = (Object(uh.b)(), []), i = 0; i < O.PLAYER_INVENTORY_HOT_SLOTS_COUNT; i++) r.push(sh.a.createElement(AI, {key: i}, sh.a.createElement(sI, {
                     selected: n === i,
-                    selectedStyle: Ng.QUICK_INVENTORY,
+                    selectedStyle: bg.QUICK_INVENTORY,
                     type: t[i].type,
                     tier: t[i].tier,
                     count: t[i].count,
                     durability: t[i].durability
-                }), sh.a.createElement(CI, null, i + 1)));
-                return sh.a.createElement(yI, null, sh.a.createElement(TI, null, "Press ", sh.a.createElement(AI, null, a), " to open inventory"), sh.a.createElement(RI, null, sh.a.createElement(II, null), r))
-            }, vI = dh.a.div.withConfig({
+                }), sh.a.createElement(vI, null, i + 1)));
+                return sh.a.createElement(OI, null, sh.a.createElement(CI, null, "Press ", sh.a.createElement(MI, null, a), " to open inventory"), sh.a.createElement(TI, null, sh.a.createElement(RI, null), r))
+            }, LI = dh.a.div.withConfig({
                 displayName: "FullInventory__Wrapper",
                 componentId: "sc-12iguzh-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;pointer-events:auto;z-index:100001;"]),
-            NI = dh.a.div.withConfig({
+            bI = dh.a.div.withConfig({
                 displayName: "FullInventory__WrapperContent",
                 componentId: "sc-12iguzh-1"
             })(["background-color:rgba(0,0,0,0.5);padding:20px;display:flex;position:relative;transform:scale(0.9);"]),
-            LI = dh.a.div.withConfig({
+            xI = dh.a.div.withConfig({
                 displayName: "FullInventory__InventoryView",
                 componentId: "sc-12iguzh-2"
-            })(["display:flex;flex-direction:column;"]), bI = dh.a.div.withConfig({
+            })(["display:flex;flex-direction:column;"]), kI = dh.a.div.withConfig({
                 displayName: "FullInventory__CraftingView",
                 componentId: "sc-12iguzh-3"
-            })(["display:flex;flex-direction:column;"]), xI = dh.a.div.withConfig({
+            })(["display:flex;flex-direction:column;"]), PI = dh.a.div.withConfig({
                 displayName: "FullInventory__Recipes",
                 componentId: "sc-12iguzh-4"
-            })(["display:flex;flex-wrap:wrap;width:270px;height:100%;"]), kI = dh.a.div.withConfig({
+            })(["display:flex;flex-wrap:wrap;width:270px;height:100%;"]), UI = dh.a.div.withConfig({
                 displayName: "FullInventory__Storage",
                 componentId: "sc-12iguzh-5"
-            })(["display:flex;flex-wrap:wrap;width:304px;height:100%;"]), PI = dh.a.div.withConfig({
+            })(["display:flex;flex-wrap:wrap;width:304px;height:100%;"]), wI = dh.a.div.withConfig({
                 displayName: "FullInventory__CraftingToolTip",
                 componentId: "sc-12iguzh-6"
-            })(["position:relative;left:50px;min-width:100px;"]), UI = dh.a.div.withConfig({
+            })(["position:relative;left:50px;min-width:100px;"]), DI = dh.a.div.withConfig({
                 displayName: "FullInventory__CraftingTitle",
                 componentId: "sc-12iguzh-7"
-            })(["font-size:13px;"]), wI = dh.a.div.withConfig({
+            })(["font-size:13px;"]), GI = dh.a.div.withConfig({
                 displayName: "FullInventory__CraftingResult",
                 componentId: "sc-12iguzh-8"
-            })(["background-color:rgba(0,0,0,0.7);padding:5px;"]), DI = dh.a.div.withConfig({
+            })(["background-color:rgba(0,0,0,0.7);padding:5px;"]), FI = dh.a.div.withConfig({
                 displayName: "FullInventory__CraftingIngredients",
                 componentId: "sc-12iguzh-9"
-            })(["background-color:rgba(50,50,50,0.7);padding:5px;"]), GI = dh.a.div.withConfig({
+            })(["background-color:rgba(50,50,50,0.7);padding:5px;"]), HI = dh.a.div.withConfig({
                 displayName: "FullInventory__CraftingIngredient",
                 componentId: "sc-12iguzh-10"
-            })(["display:flex;align-items:center;"]), FI = dh.a.div.withConfig({
+            })(["display:flex;align-items:center;"]), BI = dh.a.div.withConfig({
                 displayName: "FullInventory__IngredientName",
                 componentId: "sc-12iguzh-11"
-            })(["font-size:12px;"]), HI = dh.a.div.withConfig({
+            })(["font-size:12px;"]), YI = dh.a.div.withConfig({
                 displayName: "FullInventory__CraftableText",
                 componentId: "sc-12iguzh-12"
-            })(["color:#72ff8b;font-size:12px;margin-top:5px;"]), BI = dh.a.div.withConfig({
+            })(["color:#72ff8b;font-size:12px;margin-top:5px;"]), KI = dh.a.div.withConfig({
                 displayName: "FullInventory__UncraftableText",
                 componentId: "sc-12iguzh-13"
-            })(["color:#ff4a4a;font-size:12px;margin-top:5px;"]), YI = dh.a.div.withConfig({
+            })(["color:#ff4a4a;font-size:12px;margin-top:5px;"]), zI = dh.a.div.withConfig({
                 displayName: "FullInventory__Separator",
                 componentId: "sc-12iguzh-14"
-            })(["width:1px;background-color:rgb(200,200,200);margin:20px 20px;"]), KI = dh.a.div.withConfig({
+            })(["width:1px;background-color:rgb(200,200,200);margin:20px 20px;"]), WI = dh.a.div.withConfig({
                 displayName: "FullInventory__InventoryRow",
                 componentId: "sc-12iguzh-15"
-            })(["display:flex;"]), zI = dh.a.div.withConfig({
+            })(["display:flex;"]), VI = dh.a.div.withConfig({
                 displayName: "FullInventory__InventoryTitle",
                 componentId: "sc-12iguzh-16"
-            })(["margin:3px;"]), WI = dh.a.div.withConfig({
+            })(["margin:3px;"]), jI = dh.a.div.withConfig({
                 displayName: "FullInventory__ItemToolTip",
                 componentId: "sc-12iguzh-17"
             })(["position:relative;left:50px;min-width:100px;max-width:200px;background-color:rgba(0,0,0,0.7);padding:5px;"]),
-            VI = dh.a.div.attrs((function (e) {
+            ZI = dh.a.div.attrs((function (e) {
                 return {style: {color: e.itemColor}}
             })).withConfig({
                 displayName: "FullInventory__ItemName",
                 componentId: "sc-12iguzh-18"
-            })(["font-size:15px;margin-bottom:5px;"]), jI = dh.a.div.attrs((function (e) {
+            })(["font-size:15px;margin-bottom:5px;"]), qI = dh.a.div.attrs((function (e) {
                 return {style: {color: e.tierColor}}
             })).withConfig({
                 displayName: "FullInventory__ItemTierName",
                 componentId: "sc-12iguzh-19"
-            })(["margin-bottom:10px;font-size:15px;"]), ZI = dh.a.div.withConfig({
+            })(["margin-bottom:10px;font-size:15px;"]), XI = dh.a.div.withConfig({
                 displayName: "FullInventory__ItemDescription",
                 componentId: "sc-12iguzh-20"
-            })(["font-size:11px;color:rgb(200,200,200);"]), qI = dh.a.div.withConfig({
+            })(["font-size:11px;color:rgb(200,200,200);"]), JI = dh.a.div.withConfig({
                 displayName: "FullInventory__HelpText",
                 componentId: "sc-12iguzh-21"
-            })(["position:absolute;top:-30px;left:0;"]), XI = dh.a.span.withConfig({
+            })(["position:absolute;top:-30px;left:0;"]), QI = dh.a.span.withConfig({
                 displayName: "FullInventory__KeyIcon",
                 componentId: "sc-12iguzh-22"
-            })(["border:1px solid white;padding:1px 5px;"]), JI = dh.a.div.withConfig({
+            })(["border:1px solid white;padding:1px 5px;"]), $I = dh.a.div.withConfig({
                 displayName: "FullInventory__RecipeButtons",
                 componentId: "sc-12iguzh-23"
-            })(["display:flex;flex-wrap:wrap;align-content:flex-start;"]), QI = dh.a.div.attrs((function (e) {
+            })(["display:flex;flex-wrap:wrap;align-content:flex-start;"]), ey = dh.a.div.attrs((function (e) {
                 var t = e.selected;
                 return {
                     style: {
@@ -18132,11 +18161,11 @@ function noKillFeed(argument) {
                 displayName: "FullInventory__NoLoadoutSlot",
                 componentId: "sc-12iguzh-24"
             })(["position:relative;width:48px;height:48px;background-color:#95a5a6;display:flex;justify-content:center;align-items:center;font-size:30px;color:#4e4e4e;"]),
-            $I = function (e, t, n, a) {
-                return sh.a.createElement(iI, {
+            ty = function (e, t, n, a) {
+                return sh.a.createElement(sI, {
                     key: e,
                     selected: n,
-                    selectedStyle: Ng.FULL_INVENTORY,
+                    selectedStyle: bg.FULL_INVENTORY,
                     type: t.type,
                     count: t.count,
                     tier: t.tier,
@@ -18157,8 +18186,8 @@ function noKillFeed(argument) {
                         a({visible: !1, name: "", tier: Hn.COMMON, cosmeticsTier: ea.COMMON, description: ""})
                     }
                 })
-            }, ey = function (e, t, n) {
-                return sh.a.createElement(iI, {
+            }, ny = function (e, t, n) {
+                return sh.a.createElement(sI, {
                     craftable: t.craftable,
                     key: e,
                     size: 48,
@@ -18183,8 +18212,8 @@ function noKillFeed(argument) {
                         n({visible: !1, craftable: !0, name: "", tier: Hn.COMMON, description: "", ingredients: []})
                     }
                 })
-            }, ty = function (e, t, n, a, r) {
-                return sh.a.createElement(QI, {
+            }, ay = function (e, t, n, a, r) {
+                return sh.a.createElement(ey, {
                     key: e, selected: e === r, onMouseDown: function () {
                         var n = s()(i.a.mark((function n(r) {
                             return i.a.wrap((function (n) {
@@ -18218,7 +18247,7 @@ function noKillFeed(argument) {
                         n({visible: !1, name: "", tier: Hn.COMMON, cosmeticsTier: ea.COMMON, description: ""})
                     }
                 }, sh.a.createElement(Sh.a, {icon: tS.e}))
-            }, ny = function (e) {
+            }, ry = function (e) {
                 var t = Object(uh.c)((function (e) {
                         return e.gameData.inventory
                     })), n = Object(uh.c)((function (e) {
@@ -18254,9 +18283,9 @@ function noKillFeed(argument) {
                         window.removeEventListener("mousemove", e)
                     }
                 }), []);
-                for (var f = Object(uh.b)(), g = [], I = O.PLAYER_INVENTORY_HOT_SLOTS_COUNT + O.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT; I < O.PLAYER_INVENTORY_HOT_SLOTS_COUNT + O.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT + O.PLAYER_INVENTORY_AMMO_SLOTS_COUNT; I++) g.push($I(I, t[I], a === I, c));
-                for (var y = [], R = O.PLAYER_INVENTORY_HOT_SLOTS_COUNT; R < O.PLAYER_INVENTORY_HOT_SLOTS_COUNT + O.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT; R++) y.push($I(R, t[R], a === R, c));
-                for (var T = [], C = 0; C < O.PLAYER_INVENTORY_HOT_SLOTS_COUNT; C++) T.push($I(C, t[C], a === C, c));
+                for (var f = Object(uh.b)(), g = [], I = O.PLAYER_INVENTORY_HOT_SLOTS_COUNT + O.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT; I < O.PLAYER_INVENTORY_HOT_SLOTS_COUNT + O.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT + O.PLAYER_INVENTORY_AMMO_SLOTS_COUNT; I++) g.push(ty(I, t[I], a === I, c));
+                for (var y = [], R = O.PLAYER_INVENTORY_HOT_SLOTS_COUNT; R < O.PLAYER_INVENTORY_HOT_SLOTS_COUNT + O.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT; R++) y.push(ty(R, t[R], a === R, c));
+                for (var T = [], C = 0; C < O.PLAYER_INVENTORY_HOT_SLOTS_COUNT; C++) T.push(ty(C, t[C], a === C, c));
                 for (var M = Object(uh.c)((function (e) {
                     return e.gameData.inventoryStatus
                 })), N = Object(uh.c)((function (e) {
@@ -18268,7 +18297,7 @@ function noKillFeed(argument) {
                             var t = iu(e.type);
                             return {type: t.getModelID(), name: t.itemName, count: e.count, tier: t.itemTier}
                         }));
-                        L.push(ey(b, {
+                        L.push(ny(b, {
                             craftable: N[b],
                             type: k.getModelID(),
                             count: x.result.count,
@@ -18282,10 +18311,10 @@ function noKillFeed(argument) {
                 var U = function (e, t) {
                     return function (n, a) {
                         return function (e, t, n, a, r, o) {
-                            return sh.a.createElement(iI, {
+                            return sh.a.createElement(sI, {
                                 key: e,
                                 selected: e === o,
-                                selectedStyle: Ng.FULL_INVENTORY,
+                                selectedStyle: bg.FULL_INVENTORY,
                                 size: 48,
                                 type: t.type,
                                 count: t.count,
@@ -18335,18 +18364,18 @@ function noKillFeed(argument) {
                         }, f, c, e, t)
                     }
                 }, w = [new dl, new Il, new Nl, new Xl, new ac, new uc, new Sc, new Tc].map(U(Qe.PRIMARY, E));
-                w.unshift(ty(0, f, c, Qe.PRIMARY, E));
+                w.unshift(ay(0, f, c, Qe.PRIMARY, E));
                 var D = [new wl, new Kl].map(U(Qe.SECONDARY, S));
-                D.unshift(ty(0, f, c, Qe.SECONDARY, S));
+                D.unshift(ay(0, f, c, Qe.SECONDARY, S));
                 var G = Object(oh.useRef)(null), F = ur(Object(uh.c)((function (e) {
                         return e.settings.keys[Je.TOGGLE_INVENTORY].keyName
                     }))),
-                    H = sh.a.createElement(xI, null, sh.a.createElement(Tm.Scrollbars, null, sh.a.createElement(JI, null, L))),
-                    B = sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(xI, null, sh.a.createElement(JI, null, w)), sh.a.createElement(zI, null, "Change Secondary"), sh.a.createElement(xI, null, sh.a.createElement(JI, null, D))),
+                    H = sh.a.createElement(PI, null, sh.a.createElement(Tm.Scrollbars, null, sh.a.createElement($I, null, L))),
+                    B = sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(PI, null, sh.a.createElement($I, null, w)), sh.a.createElement(VI, null, "Change Secondary"), sh.a.createElement(PI, null, sh.a.createElement($I, null, D))),
                     Y = 0;
                 M === jn.WOODEN_CHEST ? Y = 4 : M === jn.IRON_CHEST ? Y = 8 : M === jn.GOLD_CHEST && (Y = 12);
-                for (var K = [], z = O.PLAYER_INVENTORY_HOT_SLOTS_COUNT + O.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT + O.PLAYER_INVENTORY_AMMO_SLOTS_COUNT; z < O.PLAYER_INVENTORY_HOT_SLOTS_COUNT + O.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT + O.PLAYER_INVENTORY_AMMO_SLOTS_COUNT + Y; z++) K.push($I(z, t[z], a === z, c));
-                var W = sh.a.createElement(kI, null, sh.a.createElement(JI, null, K)), V = "Crafting - Portable", j = H;
+                for (var K = [], z = O.PLAYER_INVENTORY_HOT_SLOTS_COUNT + O.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT + O.PLAYER_INVENTORY_AMMO_SLOTS_COUNT; z < O.PLAYER_INVENTORY_HOT_SLOTS_COUNT + O.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT + O.PLAYER_INVENTORY_AMMO_SLOTS_COUNT + Y; z++) K.push(ty(z, t[z], a === z, c));
+                var W = sh.a.createElement(UI, null, sh.a.createElement($I, null, K)), V = "Crafting - Portable", j = H;
                 return M === jn.WORK_STATION ? V = "Crafting - Work Station" : M === jn.LOADOUT_STATION ? (V = "Change Primary", j = B) : M === jn.WOODEN_CHEST ? (V = "Wooden Chest", j = W) : M === jn.IRON_CHEST ? (V = "Iron Chest", j = W) : M === jn.GOLD_CHEST && (V = "Golden Chest", j = W), sh.a.createElement(sh.a.Fragment, null, sh.a.createElement("div", {
                     style: {
                         position: "absolute",
@@ -18355,33 +18384,33 @@ function noKillFeed(argument) {
                         zIndex: 100002,
                         pointerEvents: "none"
                     }
-                }, sh.a.createElement("div", {style: {width: 64, height: 64}}, sh.a.createElement(eI, {
+                }, sh.a.createElement("div", {style: {width: 64, height: 64}}, sh.a.createElement(nI, {
                     type: n.type,
                     count: n.count,
                     tier: n.tier,
                     durability: n.durability
-                })), l.visible && n.type === Ve.EMPTY ? sh.a.createElement(WI, null, sh.a.createElement(VI, {itemColor: $n(l.cosmeticsTier)}, l.name), sh.a.createElement(jI, {tierColor: Gn(l.tier)}, Fn(l.tier)), sh.a.createElement(ZI, null, l.description)) : null, _.visible && n.type === Ve.EMPTY ? sh.a.createElement(PI, null, sh.a.createElement(wI, null, sh.a.createElement(VI, null, _.name), sh.a.createElement(jI, {tierColor: Gn(_.tier)}, Fn(_.tier)), sh.a.createElement(ZI, null, _.description)), sh.a.createElement(DI, null, sh.a.createElement(UI, null, "Needs:"), _.ingredients.map((function (e, t) {
-                    return sh.a.createElement(GI, {key: t}, sh.a.createElement(iI, {
+                })), l.visible && n.type === Ve.EMPTY ? sh.a.createElement(jI, null, sh.a.createElement(ZI, {itemColor: $n(l.cosmeticsTier)}, l.name), sh.a.createElement(qI, {tierColor: Gn(l.tier)}, Fn(l.tier)), sh.a.createElement(XI, null, l.description)) : null, _.visible && n.type === Ve.EMPTY ? sh.a.createElement(wI, null, sh.a.createElement(GI, null, sh.a.createElement(ZI, null, _.name), sh.a.createElement(qI, {tierColor: Gn(_.tier)}, Fn(_.tier)), sh.a.createElement(XI, null, _.description)), sh.a.createElement(FI, null, sh.a.createElement(DI, null, "Needs:"), _.ingredients.map((function (e, t) {
+                    return sh.a.createElement(HI, {key: t}, sh.a.createElement(sI, {
                         size: 18,
                         type: e.type,
                         count: 1,
                         tier: e.tier,
                         durability: 0
-                    }), sh.a.createElement(FI, null, e.count, " ", e.name, " (", Fn(e.tier), ")"))
-                })), _.craftable ? sh.a.createElement(HI, null, "Click to craft!") : sh.a.createElement(BI, null, "Not enough material!"))) : null), sh.a.createElement(vI, {
+                    }), sh.a.createElement(BI, null, e.count, " ", e.name, " (", Fn(e.tier), ")"))
+                })), _.craftable ? sh.a.createElement(YI, null, "Click to craft!") : sh.a.createElement(KI, null, "Not enough material!"))) : null), sh.a.createElement(LI, {
                     ref: G,
                     onMouseUp: function (e) {
                         e.target === G.current && (e.preventDefault(), e.stopPropagation(), n.type === Ve.EMPTY ? A.emit(v.REQUEST_INVENTORY_STATUS_UPDATE, jn.CLOSED) : A.emit(v.INVENTORY_SLOT_CLICK, -1, e.button))
                     }
-                }, sh.a.createElement(NI, null, sh.a.createElement(qI, null, "Press ", sh.a.createElement(XI, null, F), " to close"), sh.a.createElement(LI, null, sh.a.createElement(zI, null, "Ammo"), sh.a.createElement(KI, null, g), sh.a.createElement(zI, null, "Backpack"), sh.a.createElement(KI, null, y), "Hotbar", sh.a.createElement(KI, null, T)), sh.a.createElement(YI, null), sh.a.createElement(bI, null, sh.a.createElement(zI, null, V), j))))
-            }, ay = dh.a.div.attrs((function (e) {
+                }, sh.a.createElement(bI, null, sh.a.createElement(JI, null, "Press ", sh.a.createElement(QI, null, F), " to close"), sh.a.createElement(xI, null, sh.a.createElement(VI, null, "Ammo"), sh.a.createElement(WI, null, g), sh.a.createElement(VI, null, "Backpack"), sh.a.createElement(WI, null, y), "Hotbar", sh.a.createElement(WI, null, T)), sh.a.createElement(zI, null), sh.a.createElement(kI, null, sh.a.createElement(VI, null, V), j))))
+            }, iy = dh.a.div.attrs((function (e) {
                 return {style: {top: e.top + "%", left: e.left + "%", transform: "rotate(" + e.dir + "deg)"}}
             })).withConfig({displayName: "MapUI__PlayerCursor", componentId: "ntri4h-0"})(["position:absolute;z-index:1;"]),
-            ry = dh.a.img.withConfig({
+            oy = dh.a.img.withConfig({
                 displayName: "MapUI__PlayerCursorImg",
                 componentId: "ntri4h-1"
             })(["display:block;position:absolute;top:-16px;left:-16px;width:32px;"]),
-            iy = (dh.a.div.attrs((function (e) {
+            sy = (dh.a.div.attrs((function (e) {
                 var t = e.radius, n = e.x;
                 return {style: {width: 2 * t + "%", height: 2 * t + "%", top: e.y + "%", left: n + "%"}}
             })).withConfig({
@@ -18391,37 +18420,37 @@ function noKillFeed(argument) {
                 displayName: "MapUI__Circle",
                 componentId: "ntri4h-3"
             })(["border:1px solid white;position:absolute;border-radius:100%;width:100%;height:100%;top:-50%;left:-50%;"])),
-            oy = (Object(dh.a)(iy).withConfig({
+            ly = (Object(dh.a)(sy).withConfig({
                 displayName: "MapUI__ClippingCircle",
                 componentId: "ntri4h-4"
             })(["border:1px solid white;position:absolute;box-shadow:0px 0px 0px 10000px rgba(255,0,0,0.4)"]), dh.a.div.withConfig({
                 displayName: "MiniMap__Wrapper",
                 componentId: "yjgwkn-0"
             })(["position:absolute;top:20px;left:20px;pointer-events:none;"])),
-            sy = dh.a.div.withConfig({displayName: "MiniMap__Row", componentId: "yjgwkn-1"})(["display:flex;"]),
-            ly = dh.a.div.withConfig({displayName: "MiniMap__MapWrapper", componentId: "yjgwkn-2"})([""]),
-            cy = dh.a.div.withConfig({
+            cy = dh.a.div.withConfig({displayName: "MiniMap__Row", componentId: "yjgwkn-1"})(["display:flex;"]),
+            uy = dh.a.div.withConfig({displayName: "MiniMap__MapWrapper", componentId: "yjgwkn-2"})([""]),
+            _y = dh.a.div.withConfig({
                 displayName: "MiniMap__Map",
                 componentId: "yjgwkn-3"
             })(["width:200px;height:200px;border:1px solid white;position:relative;overflow:hidden;"]),
-            uy = dh.a.div.withConfig({
+            hy = dh.a.div.withConfig({
                 displayName: "MiniMap__GameInfo",
                 componentId: "yjgwkn-4"
-            })(["margin-left:10px;"]), _y = dh.a.div.withConfig({
+            })(["margin-left:10px;"]), dy = dh.a.div.withConfig({
                 displayName: "MiniMap__IconValuePair",
                 componentId: "yjgwkn-5"
-            })(["display:flex;font-size:16px;margin:0 0 5px 0;"]), hy = dh.a.div.withConfig({
+            })(["display:flex;font-size:16px;margin:0 0 5px 0;"]), py = dh.a.div.withConfig({
                 displayName: "MiniMap__Icon",
                 componentId: "yjgwkn-6"
-            })(["background-color:rgba(50,50,50,0.7);padding:5px;"]), dy = dh.a.div.withConfig({
+            })(["background-color:rgba(50,50,50,0.7);padding:5px;"]), my = dh.a.div.withConfig({
                 displayName: "MiniMap__Value",
                 componentId: "yjgwkn-7"
             })(["background-color:rgba(0,0,0,0.7);padding:5px 10px;"]),
-            py = dh.a.div.withConfig({displayName: "MiniMap__HelpText", componentId: "yjgwkn-8"})(["margin-top:10px;"]),
-            my = dh.a.span.withConfig({
+            Ey = dh.a.div.withConfig({displayName: "MiniMap__HelpText", componentId: "yjgwkn-8"})(["margin-top:10px;"]),
+            Sy = dh.a.span.withConfig({
                 displayName: "MiniMap__KeyIcon",
                 componentId: "yjgwkn-9"
-            })(["border:1px solid white;padding:1px 5px;"]), Ey = function (e) {
+            })(["border:1px solid white;padding:1px 5px;"]), fy = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.numPlayersAlive
                 })), n = Object(uh.c)((function (e) {
@@ -18442,37 +18471,37 @@ function noKillFeed(argument) {
                 }))), _ = Object(uh.c)((function (e) {
                     return e.ui.showMiniMapStatsPanel
                 }));
-                return r ? null : sh.a.createElement(oy, null, sh.a.createElement(sy, null, sh.a.createElement(ly, null, sh.a.createElement(cy, null, sh.a.createElement(ay, {
+                return r ? null : sh.a.createElement(ly, null, sh.a.createElement(cy, null, sh.a.createElement(uy, null, sh.a.createElement(_y, null, sh.a.createElement(iy, {
                     top: 50,
                     left: 50,
                     dir: 0
-                }, sh.a.createElement(ry, {src: ni}))), sh.a.createElement(py, null, "Press ", sh.a.createElement(my, null, u), " for full map")), _ ? sh.a.createElement(uy, null, sh.a.createElement(_y, null, sh.a.createElement(hy, null, sh.a.createElement(Sh.a, {icon: tS.f})), sh.a.createElement(dy, null, t)), sh.a.createElement(_y, null, sh.a.createElement(hy, null, sh.a.createElement(Sh.a, {icon: tS.d})), sh.a.createElement(dy, null, n)), sh.a.createElement(_y, null, sh.a.createElement(hy, null, sh.a.createElement(Sh.a, {icon: tS.c})), sh.a.createElement(dy, null, o))) : null))
-            }, Sy = dh.a.div.withConfig({
+                }, sh.a.createElement(oy, {src: ni}))), sh.a.createElement(Ey, null, "Press ", sh.a.createElement(Sy, null, u), " for full map")), _ ? sh.a.createElement(hy, null, sh.a.createElement(dy, null, sh.a.createElement(py, null, sh.a.createElement(Sh.a, {icon: tS.f})), sh.a.createElement(my, null, t)), sh.a.createElement(dy, null, sh.a.createElement(py, null, sh.a.createElement(Sh.a, {icon: tS.d})), sh.a.createElement(my, null, n)), sh.a.createElement(dy, null, sh.a.createElement(py, null, sh.a.createElement(Sh.a, {icon: tS.c})), sh.a.createElement(my, null, o))) : null))
+            }, gy = dh.a.div.withConfig({
                 displayName: "TeamScore__Wrapper",
                 componentId: "sc-1pxeoqj-0"
             })(["position:absolute;left:0;width:100%;height:100%;pointer-events:none;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;padding:20px;"]),
-            fy = dh.a.div.withConfig({
+            Iy = dh.a.div.withConfig({
                 displayName: "TeamScore__WrapperContent",
                 componentId: "sc-1pxeoqj-1"
-            })(["display:flex;"]), gy = dh.a.div.attrs((function (e) {
+            })(["display:flex;"]), yy = dh.a.div.attrs((function (e) {
                 return {style: {backgroundColor: e.color}}
             })).withConfig({
                 displayName: "TeamScore__TeamScorePanel",
                 componentId: "sc-1pxeoqj-2"
-            })(["padding:10px 20px;font-size:20px;width:40px;"]), Iy = Object(dh.a)(gy).withConfig({
+            })(["padding:10px 20px;font-size:20px;width:40px;"]), Ry = Object(dh.a)(yy).withConfig({
                 displayName: "TeamScore__TeamScorePanelLeft",
                 componentId: "sc-1pxeoqj-3"
-            })(["border:1px solid white;border-right:none;text-align:right;"]), yy = Object(dh.a)(gy).withConfig({
+            })(["border:1px solid white;border-right:none;text-align:right;"]), Oy = Object(dh.a)(yy).withConfig({
                 displayName: "TeamScore__TeamScorePanelRight",
                 componentId: "sc-1pxeoqj-4"
-            })(["border:1px solid white;border-left:none;text-align:left;"]), Ry = dh.a.div.withConfig({
+            })(["border:1px solid white;border-left:none;text-align:left;"]), Ty = dh.a.div.withConfig({
                 displayName: "TeamScore__MatchTime",
                 componentId: "sc-1pxeoqj-5"
             })(["border:1px solid white;background-color:rgba(0,0,0,0.6);padding:10px 20px;font-size:20px;"]),
-            Oy = dh.a.div.withConfig({
+            Ay = dh.a.div.withConfig({
                 displayName: "TeamScore__WrapperExplanation",
                 componentId: "sc-1pxeoqj-6"
-            })(["margin-top:10px;text-align:center;"]), Ty = function (e) {
+            })(["margin-top:10px;text-align:center;"]), Cy = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.ui.showTeamScorePanel
                 })), n = Object(uh.c)((function (e) {
@@ -18487,33 +18516,33 @@ function noKillFeed(argument) {
                     i = (s < 10 ? "0" + s : s) + ":" + (l < 10 ? "0" + l : l)
                 }
                 Object(uh.b)();
-                return t ? sh.a.createElement(Sy, null, sh.a.createElement(fy, null, sh.a.createElement(Iy, {color: "#3498db"}, n), sh.a.createElement(Ry, null, i), sh.a.createElement(yy, {color: "#e74c3c"}, a)), sh.a.createElement(Oy, null, "1 kill = 1 point | 1 ruby/sapphire gem = 30 points!", sh.a.createElement("br", null), "First to 100 points wins!")) : null
-            }, Ay = dh.a.div.withConfig({
+                return t ? sh.a.createElement(gy, null, sh.a.createElement(Iy, null, sh.a.createElement(Ry, {color: "#3498db"}, n), sh.a.createElement(Ty, null, i), sh.a.createElement(Oy, {color: "#e74c3c"}, a)), sh.a.createElement(Ay, null, "1 kill = 1 point | 1 ruby/sapphire gem = 30 points!", sh.a.createElement("br", null), "First to 100 points wins!")) : null
+            }, My = dh.a.div.withConfig({
                 displayName: "FFAScore__Wrapper",
                 componentId: "vcvnfh-0"
             })(["position:absolute;left:0;width:100%;height:100%;pointer-events:none;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;padding:20px;"]),
-            Cy = dh.a.div.withConfig({
+            vy = dh.a.div.withConfig({
                 displayName: "FFAScore__WrapperContent",
                 componentId: "vcvnfh-1"
-            })(["display:flex;"]), My = dh.a.div.withConfig({
+            })(["display:flex;"]), Ny = dh.a.div.withConfig({
                 displayName: "FFAScore__MatchTime",
                 componentId: "vcvnfh-2"
             })(["border:1px solid white;background-color:rgba(0,0,0,0.6);padding:10px 20px;font-size:20px;"]),
-            vy = (dh.a.div.withConfig({
+            Ly = (dh.a.div.withConfig({
                 displayName: "FFAScore__WrapperExplanation",
                 componentId: "vcvnfh-3"
             })(["margin-top:5px;text-align:center;"]), dh.a.table.withConfig({
                 displayName: "FFAScore__ScoreTable",
                 componentId: "vcvnfh-4"
             })(["margin-top:10px;text-align:center;width:200px;"])),
-            Ny = dh.a.td.withConfig({displayName: "FFAScore__ScoreCell", componentId: "vcvnfh-5"})(["padding:5px;"]),
-            Ly = dh.a.tr.withConfig({
+            by = dh.a.td.withConfig({displayName: "FFAScore__ScoreCell", componentId: "vcvnfh-5"})(["padding:5px;"]),
+            xy = dh.a.tr.withConfig({
                 displayName: "FFAScore__EnemyRow",
                 componentId: "vcvnfh-6"
-            })(["background-color:#e74c3c;"]), by = dh.a.tr.withConfig({
+            })(["background-color:#e74c3c;"]), ky = dh.a.tr.withConfig({
                 displayName: "FFAScore__SelfRow",
                 componentId: "vcvnfh-7"
-            })(["background-color:#3498db;color:yellow;"]), xy = function (e) {
+            })(["background-color:#3498db;color:yellow;"]), Py = function (e) {
                 if (!Object(uh.c)((function (e) {
                     return e.ui.showFFAScorePanel
                 }))) return null;
@@ -18536,39 +18565,39 @@ function noKillFeed(argument) {
                     })), c = Object(uh.c)((function (e) {
                         return e.gameData.FFAMyScore
                     })),
-                    u = sh.a.createElement(vy, null, sh.a.createElement("tbody", null, 1 !== l ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(Ly, null, sh.a.createElement(Ny, null, "#1"), sh.a.createElement(Ny, null, r), sh.a.createElement(Ny, null, a)), sh.a.createElement(by, null, sh.a.createElement(Ny, null, "#", l), sh.a.createElement(Ny, null, n), sh.a.createElement(Ny, null, c))) : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(by, null, sh.a.createElement(Ny, null, "#1"), sh.a.createElement(Ny, null, n), sh.a.createElement(Ny, null, c)), i ? sh.a.createElement(Ly, null, sh.a.createElement(Ny, null, "#2"), sh.a.createElement(Ny, null, s), sh.a.createElement(Ny, null, o)) : null))),
+                    u = sh.a.createElement(Ly, null, sh.a.createElement("tbody", null, 1 !== l ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(xy, null, sh.a.createElement(by, null, "#1"), sh.a.createElement(by, null, r), sh.a.createElement(by, null, a)), sh.a.createElement(ky, null, sh.a.createElement(by, null, "#", l), sh.a.createElement(by, null, n), sh.a.createElement(by, null, c))) : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(ky, null, sh.a.createElement(by, null, "#1"), sh.a.createElement(by, null, n), sh.a.createElement(by, null, c)), i ? sh.a.createElement(xy, null, sh.a.createElement(by, null, "#2"), sh.a.createElement(by, null, s), sh.a.createElement(by, null, o)) : null))),
                     _ = "00:00";
                 if (t > 0) {
                     var h = Math.round(t), d = Math.floor(h / 60), p = Math.floor(h % 60);
                     _ = (d < 10 ? "0" + d : d) + ":" + (p < 10 ? "0" + p : p)
                 }
                 Object(uh.b)();
-                return sh.a.createElement(Ay, null, sh.a.createElement(Cy, null, sh.a.createElement(My, null, _)), u)
-            }, ky = dh.a.div.attrs((function (e) {
+                return sh.a.createElement(My, null, sh.a.createElement(vy, null, sh.a.createElement(Ny, null, _)), u)
+            }, Uy = dh.a.div.attrs((function (e) {
                 return {style: {opacity: e.opacity}}
             })).withConfig({
                 displayName: "HudCenterMessage__Wrapper",
                 componentId: "erpjju-0"
             })(["position:absolute;left:0;width:100%;height:100%;pointer-events:none;display:flex;justify-content:center;align-items:center;transition:opacity 0.5s;"]),
-            Py = dh.a.div.withConfig({
+            wy = dh.a.div.withConfig({
                 displayName: "HudCenterMessage__MessageWrapper",
                 componentId: "erpjju-1"
-            })(["position:relative;top:-20%;font-size:40px;text-shadow:2px 2px 0 #3b3b3b;"]), Uy = function (e) {
+            })(["position:relative;top:-20%;font-size:40px;text-shadow:2px 2px 0 #3b3b3b;"]), Dy = function (e) {
                 Object(uh.b)();
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.hudCenterMsgVisible
                 })), n = Object(uh.c)((function (e) {
                     return e.gameData.hudCenterMsg
                 }));
-                return sh.a.createElement(ky, {opacity: t ? 1 : 0}, sh.a.createElement(Py, null, Lg(n)))
-            }, wy = dh.a.div.withConfig({
+                return sh.a.createElement(Uy, {opacity: t ? 1 : 0}, sh.a.createElement(wy, null, xg(n)))
+            }, Gy = dh.a.div.withConfig({
                 displayName: "ItemHelpMessage__Wrapper",
                 componentId: "sc-1wo1iws-0"
             })(["position:absolute;left:0;width:100%;height:100%;pointer-events:none;display:flex;justify-content:center;align-items:center;z-index:-1;"]),
-            Dy = dh.a.div.withConfig({
+            Fy = dh.a.div.withConfig({
                 displayName: "ItemHelpMessage__MessageWrapper",
                 componentId: "sc-1wo1iws-1"
-            })(["margin-top:100px;font-size:20px;"]), Gy = function (e) {
+            })(["margin-top:100px;font-size:20px;"]), Hy = function (e) {
                 Object(uh.b)();
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.health
@@ -18583,56 +18612,56 @@ function noKillFeed(argument) {
                 })), o = Object(uh.c)((function (e) {
                     return e.ui.itemHelpMessage
                 }));
-                return t > 0 && !n && !a && r === jn.CLOSED && i ? sh.a.createElement(wy, null, sh.a.createElement(Dy, null, o)) : null
-            }, Fy = dh.a.div.attrs((function (e) {
+                return t > 0 && !n && !a && r === jn.CLOSED && i ? sh.a.createElement(Gy, null, sh.a.createElement(Fy, null, o)) : null
+            }, By = dh.a.div.attrs((function (e) {
                 return {style: {opacity: e.opacity}}
             })).withConfig({
                 displayName: "TerrainLoading__Wrapper",
                 componentId: "sc-1kx8fp9-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:rgba(0,0,0,0.8);font-size:30px;transition:opacity 0.5s;"]),
-            Hy = dh.a.div.withConfig({
+            Yy = dh.a.div.withConfig({
                 displayName: "TerrainLoading__LoadingBarOuter",
                 componentId: "sc-1kx8fp9-1"
             })(["width:300px;height:30px;position:relative;background-color:white;margin-top:20px;"]),
-            By = dh.a.div.attrs((function (e) {
+            Ky = dh.a.div.attrs((function (e) {
                 return {style: {width: e.percent + "%", transition: "width " + e.speed + "s"}}
             })).withConfig({
                 displayName: "TerrainLoading__LoadingBarInner",
                 componentId: "sc-1kx8fp9-2"
             })(["background-color:#2ecc71;position:absolute;height:100%;display:flex;align-items:center;"]),
-            Yy = function (e) {
+            zy = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.mapLoadingStage
                 })), n = Object(uh.c)((function (e) {
                     return e.gameData.mapLoadingProgress
                 }));
                 Object(uh.b)();
-                return sh.a.createElement(Fy, {opacity: n < 1 ? 1 : 0}, t === Gt.DOWNLOADING ? "Downloading Terrain" : "Loading Terrain", " (", (100 * n).toFixed(2), "%)...", sh.a.createElement(Hy, null, sh.a.createElement(By, {
+                return sh.a.createElement(By, {opacity: n < 1 ? 1 : 0}, t === Gt.DOWNLOADING ? "Downloading Terrain" : "Loading Terrain", " (", (100 * n).toFixed(2), "%)...", sh.a.createElement(Yy, null, sh.a.createElement(Ky, {
                     percent: 100 * n,
                     speed: .2
                 })))
-            }, Ky = dh.a.div.attrs((function (e) {
+            }, Wy = dh.a.div.attrs((function (e) {
                 var t = e.visible;
                 return {style: {opacity: t ? 1 : 0, pointerEvents: t ? "auto" : "none"}}
             })).withConfig({
                 displayName: "RespawnScreen__Wrapper",
                 componentId: "k2prmw-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;font-size:50px;text-shadow:2px 2px 0 #3b3b3b;transition:opacity 0.5s;z-index:99999999;"]),
-            zy = dh.a.div.withConfig({
+            Vy = dh.a.div.withConfig({
                 displayName: "RespawnScreen__WrapperInner",
                 componentId: "k2prmw-1"
             })(["display:flex;flex-direction:column;align-items:center;top:40%;position:absolute;width:100%;"]),
-            Wy = Object(dh.b)(["0%{opacity:1;}50%{opacity:0;}100%{opacity:1;}"]), Vy = dh.a.div.withConfig({
+            jy = Object(dh.b)(["0%{opacity:1;}50%{opacity:0;}100%{opacity:1;}"]), Zy = dh.a.div.withConfig({
                 displayName: "RespawnScreen__EliminatedByBanner",
                 componentId: "k2prmw-2"
             })(["margin-top:100px;margin-bottom:100px;border:1px solid white;background-color:rgba(0,0,0,0.8);padding:20px;font-size:15px;"]),
-            jy = dh.a.div.withConfig({
+            qy = dh.a.div.withConfig({
                 displayName: "RespawnScreen__KillerText",
                 componentId: "k2prmw-3"
-            })(["display:inline-block;color:yellow;"]), Zy = dh.a.div.withConfig({
+            })(["display:inline-block;color:yellow;"]), Xy = dh.a.div.withConfig({
                 displayName: "RespawnScreen__RespawnText",
                 componentId: "k2prmw-4"
-            })(["color:#ffe100;animation:", " 1.5s ease-in infinite;"], Wy), qy = function (e) {
+            })(["color:#ffe100;animation:", " 1.5s ease-in infinite;"], jy), Jy = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.ui.respawnScreenVisible
                 })), n = Object(uh.c)((function (e) {
@@ -18649,26 +18678,26 @@ function noKillFeed(argument) {
                             --c, l(c), c > 0 && setTimeout(e, 1e3)
                         }), 1e3)
                     }
-                }), [t]), r === He.ENDED ? null : sh.a.createElement(Ky, {
+                }), [t]), r === He.ENDED ? null : sh.a.createElement(Wy, {
                     visible: t, onClick: function () {
                         s <= 0 && t && (A.emit(v.REQUEST_RESPAWN), i(Da(!1)))
                     }
-                }, sh.a.createElement(zy, null, sh.a.createElement(Zy, null, s > 0 ? "Respawning in " + s + "..." : "Click anywhere to respawn!"), sh.a.createElement(Vy, null, "Killed by ", sh.a.createElement(jy, null, a)), t ? sh.a.createElement(Xf, {
+                }, sh.a.createElement(Vy, null, sh.a.createElement(Xy, null, s > 0 ? "Respawning in " + s + "..." : "Click anywhere to respawn!"), sh.a.createElement(Zy, null, "Killed by ", sh.a.createElement(qy, null, a)), t ? sh.a.createElement(Qf, {
                     id: "voxiom-io_728x90_2",
                     background: !1
                 }) : null))
             };
 
-        function Xy(e, t) {
+        function Qy(e, t) {
             var n;
             if ("undefined" == typeof Symbol || null == e[Symbol.iterator]) {
                 if (Array.isArray(e) || (n = function (e, t) {
                     if (!e) return;
-                    if ("string" == typeof e) return Jy(e, t);
+                    if ("string" == typeof e) return $y(e, t);
                     var n = Object.prototype.toString.call(e).slice(8, -1);
                     "Object" === n && e.constructor && (n = e.constructor.name);
                     if ("Map" === n || "Set" === n) return Array.from(e);
-                    if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Jy(e, t)
+                    if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return $y(e, t)
                 }(e)) || t && e && "number" == typeof e.length) {
                     n && (e = n);
                     var a = 0;
@@ -18681,13 +18710,13 @@ function noKillFeed(argument) {
             return (n = e[Symbol.iterator]()).next.bind(n)
         }
 
-        function Jy(e, t) {
+        function $y(e, t) {
             (null == t || t > e.length) && (t = e.length);
             for (var n = 0, a = new Array(t); n < t; n++) a[n] = e[n];
             return a
         }
 
-        function Qy(e, t) {
+        function eR(e, t) {
             var n = Object.keys(e);
             if (Object.getOwnPropertySymbols) {
                 var a = Object.getOwnPropertySymbols(e);
@@ -18698,53 +18727,53 @@ function noKillFeed(argument) {
             return n
         }
 
-        function $y(e) {
+        function tR(e) {
             for (var t = 1; t < arguments.length; t++) {
                 var n = null != arguments[t] ? arguments[t] : {};
-                t % 2 ? Qy(Object(n), !0).forEach((function (t) {
+                t % 2 ? eR(Object(n), !0).forEach((function (t) {
                     te()(e, t, n[t])
-                })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : Qy(Object(n)).forEach((function (t) {
+                })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : eR(Object(n)).forEach((function (t) {
                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                 }))
             }
             return e
         }
 
-        var eR, tR = dh.a.div.withConfig({
+        var nR, aR = dh.a.div.withConfig({
                 displayName: "PlayerScoresPanel__Board",
                 componentId: "sc-1of1dbn-0"
             })(["width:700px;background-color:rgba(0,0,0,0.6);display:flex;justify-content:space-between;"]),
-            nR = dh.a.div.withConfig({
+            rR = dh.a.div.withConfig({
                 displayName: "PlayerScoresPanel__TeamInfo",
                 componentId: "sc-1of1dbn-1"
-            })(["display:flex;flex-direction:column;flex:1;margin:20px;"]), aR = dh.a.div.attrs((function (e) {
+            })(["display:flex;flex-direction:column;flex:1;margin:20px;"]), iR = dh.a.div.attrs((function (e) {
                 return {style: {backgroundColor: e.color}}
             })).withConfig({
                 displayName: "PlayerScoresPanel__TeamHeader",
                 componentId: "sc-1of1dbn-2"
             })(["text-align:center;font-size:16px;font-weight:800;padding-top:10px;padding-bottom:10px;margin-bottom:10px;"]),
-            rR = dh.a.table.withConfig({
+            oR = dh.a.table.withConfig({
                 displayName: "PlayerScoresPanel__TeamRoster",
                 componentId: "sc-1of1dbn-3"
-            })(["padding-bottom:10px;font-size:12px;"]), iR = dh.a.tr.withConfig({
+            })(["padding-bottom:10px;font-size:12px;"]), sR = dh.a.tr.withConfig({
                 displayName: "PlayerScoresPanel__RosterHeader",
                 componentId: "sc-1of1dbn-4"
-            })(["font-weight:500;"]), oR = dh.a.tr.attrs((function (e) {
+            })(["font-weight:500;"]), lR = dh.a.tr.attrs((function (e) {
                 return {style: {color: e.highlight ? "yellow" : "white"}}
             })).withConfig({displayName: "PlayerScoresPanel__PlayerRow", componentId: "sc-1of1dbn-5"})([""]),
-            sR = dh.a.th.withConfig({
+            cR = dh.a.th.withConfig({
                 displayName: "PlayerScoresPanel__PlayerHeaderCellLeft",
                 componentId: "sc-1of1dbn-6"
-            })(["text-align:Left;"]), lR = dh.a.th.withConfig({
+            })(["text-align:Left;"]), uR = dh.a.th.withConfig({
                 displayName: "PlayerScoresPanel__PlayerHeaderCellRight",
                 componentId: "sc-1of1dbn-7"
-            })(["text-align:right;"]), cR = dh.a.td.withConfig({
+            })(["text-align:right;"]), _R = dh.a.td.withConfig({
                 displayName: "PlayerScoresPanel__PlayerDataCellLeft",
                 componentId: "sc-1of1dbn-8"
-            })(["text-align:left;"]), uR = dh.a.td.withConfig({
+            })(["text-align:left;"]), hR = dh.a.td.withConfig({
                 displayName: "PlayerScoresPanel__PlayerDataCellRight",
                 componentId: "sc-1of1dbn-9"
-            })(["text-align:right;"]), _R = function (e) {
+            })(["text-align:right;"]), dR = function (e) {
                 for (var t = Object(uh.c)((function (e) {
                     return e.gameData.teams
                 })), n = Object(uh.c)((function (e) {
@@ -18752,104 +18781,104 @@ function noKillFeed(argument) {
                 })), a = Object(uh.c)((function (e) {
                     return e.gameData.clientPlayerID
                 })), r = t.map((function (e) {
-                    return $y($y({}, e), {}, {players: [], components: []})
-                })), i = 0, o = Object.values(n); i < o.length; i++) for (var s, l = o[i], c = Xy(r); !(s = c()).done;) {
+                    return tR(tR({}, e), {}, {players: [], components: []})
+                })), i = 0, o = Object.values(n); i < o.length; i++) for (var s, l = o[i], c = Qy(r); !(s = c()).done;) {
                     var u = s.value;
                     l.team === u.type && u.players.push(l)
                 }
-                for (var _, h = Xy(r); !(_ = h()).done;) {
+                for (var _, h = Qy(r); !(_ = h()).done;) {
                     var d = _.value;
                     d.players.sort((function (e, t) {
                         return t.score - e.score
                     }));
-                    for (var p, m = Xy(d.players); !(p = m()).done;) {
+                    for (var p, m = Qy(d.players); !(p = m()).done;) {
                         var E = p.value;
-                        d.components.push(sh.a.createElement(oR, {
+                        d.components.push(sh.a.createElement(lR, {
                             key: E.id,
                             highlight: E.id === a
-                        }, sh.a.createElement(cR, null, E.name), sh.a.createElement(uR, null, E.kills), sh.a.createElement(uR, null, E.deaths), sh.a.createElement(uR, null, E.assists), sh.a.createElement(uR, null, E.score)))
+                        }, sh.a.createElement(_R, null, E.name), sh.a.createElement(hR, null, E.kills), sh.a.createElement(hR, null, E.deaths), sh.a.createElement(hR, null, E.assists), sh.a.createElement(hR, null, E.score)))
                     }
                 }
                 var S = r.map((function (e, t) {
-                    return sh.a.createElement(nR, {key: t}, sh.a.createElement(aR, {color: jo(e.color)}, e.name), sh.a.createElement(rR, null, sh.a.createElement("thead", null, sh.a.createElement(iR, null, sh.a.createElement(sR, null, "Player"), sh.a.createElement(lR, null, "Kills"), sh.a.createElement(lR, null, "Deaths"), sh.a.createElement(lR, null, "Assists"), sh.a.createElement(lR, null, "Score"))), sh.a.createElement("tbody", null, e.components)))
+                    return sh.a.createElement(rR, {key: t}, sh.a.createElement(iR, {color: jo(e.color)}, e.name), sh.a.createElement(oR, null, sh.a.createElement("thead", null, sh.a.createElement(sR, null, sh.a.createElement(cR, null, "Player"), sh.a.createElement(uR, null, "Kills"), sh.a.createElement(uR, null, "Deaths"), sh.a.createElement(uR, null, "Assists"), sh.a.createElement(uR, null, "Score"))), sh.a.createElement("tbody", null, e.components)))
                 }));
-                return sh.a.createElement(tR, null, S)
-            }, hR = dh.a.div.withConfig({
+                return sh.a.createElement(aR, null, S)
+            }, pR = dh.a.div.withConfig({
                 displayName: "Scoreboard__Wrapper",
                 componentId: "sc-149lqm8-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;display:flex;justify-content:center;align-items:center;"]),
-            dR = function (e) {
+            mR = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.ui.scoreboardVisible
                 })), n = Object(uh.c)((function (e) {
                     return e.gameData.gameOver
                 }));
                 Object(uh.b)();
-                return t && !n ? sh.a.createElement(hR, null, sh.a.createElement(_R, null)) : null
-            }, pR = dh.a.div.withConfig({
+                return t && !n ? sh.a.createElement(pR, null, sh.a.createElement(dR, null)) : null
+            }, ER = dh.a.div.withConfig({
                 displayName: "Notifications__Wrapper",
                 componentId: "sc-1n7xwq3-0"
             })(["position:absolute;left:0;width:100%;height:100%;pointer-events:none;display:flex;justify-content:center;align-items:center;text-align:center;"]),
-            mR = dh.a.div.withConfig({
+            SR = dh.a.div.withConfig({
                 displayName: "Notifications__MessageWrapper",
                 componentId: "sc-1n7xwq3-1"
-            })(["position:relative;font-size:20px;top:30%;text-shadow:1px 1px 0 #3b3b3b;"]), ER = dh.a.div.withConfig({
+            })(["position:relative;font-size:20px;top:30%;text-shadow:1px 1px 0 #3b3b3b;"]), fR = dh.a.div.withConfig({
                 displayName: "Notifications__NotificationMessage",
                 componentId: "sc-1n7xwq3-2"
-            })([""]), SR = function (e) {
+            })([""]), gR = function (e) {
                 Object(uh.b)();
                 var t = Object(uh.c)((function (e) {
                     return e.ui.notificationMessages
                 })).map((function (e, t) {
-                    return sh.a.createElement(ER, {key: e + t}, Lg(e))
+                    return sh.a.createElement(fR, {key: e + t}, xg(e))
                 }));
-                return sh.a.createElement(pR, null, sh.a.createElement(mR, null, t))
+                return sh.a.createElement(ER, null, sh.a.createElement(SR, null, t))
             };
         !function (e) {
             e[e.BRAWLER = 0] = "BRAWLER", e[e.REVENGE = 1] = "REVENGE", e[e.HEADSHOT = 2] = "HEADSHOT", e[e.FIRST_BLOOD = 3] = "FIRST_BLOOD", e[e.SURVIVOR = 4] = "SURVIVOR", e[e.JUGGERNAUT = 5] = "JUGGERNAUT", e[e.ASSIST = 6] = "ASSIST", e[e.ATTACKER = 7] = "ATTACKER", e[e.DEFENDER = 8] = "DEFENDER", e[e.DIVER = 9] = "DIVER"
-        }(eR || (eR = {}));
-        var fR = ["Brawler", "Revenge", "Headshot", "First Blood", "Survivor", "Juggernaut", "Assist", "Attacker", "Defender", "Diver", "Capture"],
-            gR = ["Melee kill", "Killed someone who just killed you", "Killed someone with a headshot", "First kill of the match", "Killed someone while being low on health", "Killed someone while being high on health and shield", "Participated in killing an enemy", "Killed someone while having the gem", "Killed someone who has the gem", "Killed someone while in water", "Captured the gem!"],
-            IR = dh.a.div.attrs((function (e) {
+        }(nR || (nR = {}));
+        var IR = ["Brawler", "Revenge", "Headshot", "First Blood", "Survivor", "Juggernaut", "Assist", "Attacker", "Defender", "Diver", "Capture"],
+            yR = ["Melee kill", "Killed someone who just killed you", "Killed someone with a headshot", "First kill of the match", "Killed someone while being low on health", "Killed someone while being high on health and shield", "Participated in killing an enemy", "Killed someone while having the gem", "Killed someone who has the gem", "Killed someone while in water", "Captured the gem!"],
+            RR = dh.a.div.attrs((function (e) {
                 return {style: {opacity: e.opacity}}
             })).withConfig({
                 displayName: "KillMedal__Wrapper",
                 componentId: "sc-70atqt-0"
             })(["position:absolute;left:0;width:100%;height:100%;pointer-events:none;display:flex;justify-content:center;transition:opacity 0.5s;"]),
-            yR = Object(dh.b)(["0%{opacity:1;}100%{opacity:0;}"]), RR = dh.a.div.withConfig({
+            OR = Object(dh.b)(["0%{opacity:1;}100%{opacity:0;}"]), TR = dh.a.div.withConfig({
                 displayName: "KillMedal__MedalWrapper",
                 componentId: "sc-70atqt-1"
-            })(["position:relative;top:18%;text-align:center;display:flex;flex-direction:column;align-items:center;animation:", " 0.5s ease-in 1;animation-fill-mode:forwards;animation-delay:2.5s;"], yR),
-            OR = Object(dh.b)(["0%{opacity:0;}100%{opacity:1;}"]),
-            TR = Object(dh.b)(["0%{font-size:120px;}100%{font-size:30px;}"]),
-            AR = Object(dh.b)(["0%{opacity:1;font-size:30px;}100%{opacity:1;font-size:15px;}"]),
-            CR = dh.a.div.withConfig({
+            })(["position:relative;top:18%;text-align:center;display:flex;flex-direction:column;align-items:center;animation:", " 0.5s ease-in 1;animation-fill-mode:forwards;animation-delay:2.5s;"], OR),
+            AR = Object(dh.b)(["0%{opacity:0;}100%{opacity:1;}"]),
+            CR = Object(dh.b)(["0%{font-size:120px;}100%{font-size:30px;}"]),
+            MR = Object(dh.b)(["0%{opacity:1;font-size:30px;}100%{opacity:1;font-size:15px;}"]),
+            vR = dh.a.div.withConfig({
                 displayName: "KillMedal__Background",
                 componentId: "sc-70atqt-2"
-            })(["opacity:0;background:linear-gradient(90deg,rgba(241,196,15,0) 0%,rgba(241,196,15,1) 50%,rgba(241,196,15,0) 100%);animation:", " 0.5s ease-in 1;animation-fill-mode:forwards;animation-delay:0.4s;position:absolute;top:0;left:-80px;right:-80px;bottom:0;z-index:-1;"], OR),
-            MR = dh.a.div.withConfig({
+            })(["opacity:0;background:linear-gradient(90deg,rgba(241,196,15,0) 0%,rgba(241,196,15,1) 50%,rgba(241,196,15,0) 100%);animation:", " 0.5s ease-in 1;animation-fill-mode:forwards;animation-delay:0.4s;position:absolute;top:0;left:-80px;right:-80px;bottom:0;z-index:-1;"], AR),
+            NR = dh.a.div.withConfig({
                 displayName: "KillMedal__Title",
                 componentId: "sc-70atqt-3"
-            })(["font-size:30px;text-transform:uppercase;text-shadow:2px 2px 0 #3b3b3b;animation:", " 0.4s ease-in 1;animation-fill-mode:forwards;white-space:nowrap;position:relative;"], TR),
-            vR = dh.a.div.withConfig({
+            })(["font-size:30px;text-transform:uppercase;text-shadow:2px 2px 0 #3b3b3b;animation:", " 0.4s ease-in 1;animation-fill-mode:forwards;white-space:nowrap;position:relative;"], CR),
+            LR = dh.a.div.withConfig({
                 displayName: "KillMedal__Description",
                 componentId: "sc-70atqt-4"
-            })(["opacity:0;font-size:15px;margin-top:5px;text-shadow:1px 1px 0 #ff7500;animation:", " 0.5s ease-in 1;animation-fill-mode:forwards;animation-delay:0.8s;white-space:nowrap;"], AR),
-            NR = function (e) {
+            })(["opacity:0;font-size:15px;margin-top:5px;text-shadow:1px 1px 0 #ff7500;animation:", " 0.5s ease-in 1;animation-fill-mode:forwards;animation-delay:0.8s;white-space:nowrap;"], MR),
+            bR = function (e) {
                 Object(uh.b)();
                 var t, n = Object(uh.c)((function (e) {
                     return e.ui.killMedals
                 }));
-                return 0 === n.length ? null : sh.a.createElement(IR, {key: Math.random()}, sh.a.createElement(RR, null, sh.a.createElement(MR, null, sh.a.createElement(CR, null), (t = n[0].type, fR[t])), sh.a.createElement(vR, null, function (e, t) {
-                    return gR[e] + " (+" + t + ")"
+                return 0 === n.length ? null : sh.a.createElement(RR, {key: Math.random()}, sh.a.createElement(TR, null, sh.a.createElement(NR, null, sh.a.createElement(vR, null), (t = n[0].type, IR[t])), sh.a.createElement(LR, null, function (e, t) {
+                    return yR[e] + " (+" + t + ")"
                 }(n[0].type, n[0].score))))
-            }, LR = n.p + "./e26bb15cb11fa84a79fc0e0143ae85de.png", bR = dh.a.div.attrs((function (e) {
+            }, xR = n.p + "./e26bb15cb11fa84a79fc0e0143ae85de.png", kR = dh.a.div.attrs((function (e) {
                 return {style: {opacity: e.showScope ? 1 : 0}}
             })).withConfig({
                 displayName: "SniperScope__Wrapper",
                 componentId: "sc-1xsnv7m-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;pointer-events:none;"]),
-            xR = dh.a.img.attrs((function (e) {
+            PR = dh.a.img.attrs((function (e) {
                 var t = e.opacity, n = e.scaleX, a = e.scaleY, r = e.backgroundColor, i = e.backgroundOpacity;
                 return {
                     style: {
@@ -18861,7 +18890,7 @@ function noKillFeed(argument) {
             })).withConfig({
                 displayName: "SniperScope__ScopeImage",
                 componentId: "sc-1xsnv7m-1"
-            })(["box-shadow:0 0 0 100vmax black;"]), kR = function (e) {
+            })(["box-shadow:0 0 0 100vmax black;"]), UR = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.showScope
                 })), n = Object(uh.c)((function (e) {
@@ -18878,15 +18907,15 @@ function noKillFeed(argument) {
                     return e.settings.sniperScopeBackgroundOpacity
                 }));
                 Object(uh.b)();
-                return sh.a.createElement(bR, {showScope: t}, sh.a.createElement(xR, {
+                return sh.a.createElement(kR, {showScope: t}, sh.a.createElement(PR, {
                     opacity: a,
                     scaleX: r,
                     scaleY: i,
-                    src: n.length > 0 ? n : LR,
+                    src: n.length > 0 ? n : xR,
                     backgroundColor: o,
                     backgroundOpacity: s
                 }))
-            }, PR = function (e) {
+            }, wR = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.ui.connectionStatus
                 })), n = Object(uh.c)((function (e) {
@@ -18894,39 +18923,39 @@ function noKillFeed(argument) {
                 })), a = (Object(uh.b)(), Object(uh.c)((function (e) {
                     return e.ui.hudVisible
                 })));
-                return t !== He.CONNECTED && t !== He.ENDED || !a ? null : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(Ey, null), sh.a.createElement(Pg, null), sh.a.createElement(Wg, null), sh.a.createElement(qg, null), n === jn.CLOSED ? sh.a.createElement(MI, null) : null, sh.a.createElement(dR, null), sh.a.createElement(Ty, null), sh.a.createElement(xy, null), t !== He.ENDED ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(NR, null), sh.a.createElement(qy, null), sh.a.createElement(hI, null), sh.a.createElement(fI, null), sh.a.createElement(Uy, null), sh.a.createElement(Gy, null), sh.a.createElement(SR, null), sh.a.createElement(kR, null)) : null, sh.a.createElement(Yy, null), n !== jn.CLOSED ? sh.a.createElement(ny, null) : null)
-            }, UR = dh.a.div.withConfig({
+                return t !== He.CONNECTED && t !== He.ENDED || !a ? null : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(fy, null), sh.a.createElement(wg, null), sh.a.createElement(jg, null), sh.a.createElement(Jg, null), n === jn.CLOSED ? sh.a.createElement(NI, null) : null, sh.a.createElement(mR, null), sh.a.createElement(Cy, null), sh.a.createElement(Py, null), t !== He.ENDED ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(bR, null), sh.a.createElement(Jy, null), sh.a.createElement(pI, null), sh.a.createElement(II, null), sh.a.createElement(Dy, null), sh.a.createElement(Hy, null), sh.a.createElement(gR, null), sh.a.createElement(UR, null)) : null, sh.a.createElement(zy, null), n !== jn.CLOSED ? sh.a.createElement(ry, null) : null)
+            }, DR = dh.a.div.withConfig({
                 displayName: "MainMenu__WrapperContent",
                 componentId: "hvrkpe-0"
             })(["background-color:rgba(0,0,0,0.6);padding:20px 60px;color:black;pointer-events:auto;display:flex;flex-direction:column;width:200px;text-align:center;"]),
-            wR = dh.a.div.withConfig({displayName: "MainMenu__Space", componentId: "hvrkpe-1"})(["height:10px;"]),
-            DR = dh.a.div.withConfig({
+            GR = dh.a.div.withConfig({displayName: "MainMenu__Space", componentId: "hvrkpe-1"})(["height:10px;"]),
+            FR = dh.a.div.withConfig({
                 displayName: "MainMenu__MenuTitle",
                 componentId: "hvrkpe-2"
-            })(["color:white;margin-bottom:20px;"]), GR = function (e) {
+            })(["color:white;margin-bottom:20px;"]), HR = function (e) {
                 var t = Object(uh.b)();
-                return sh.a.createElement(UR, null, sh.a.createElement(DR, null, "Menu"), sh.a.createElement(pm, {
+                return sh.a.createElement(DR, null, sh.a.createElement(FR, null, "Menu"), sh.a.createElement(pm, {
                     onClick: function (e) {
                         A.emit(v.REQUEST_FOCUS)
                     }
-                }, "Resume"), sh.a.createElement(wR, null), sh.a.createElement(pm, {
+                }, "Resume"), sh.a.createElement(GR, null), sh.a.createElement(pm, {
                     onClick: function (e) {
                         t(Ca(C.SETTINGS))
                     }
-                }, "Settings"), sh.a.createElement(wR, null), sh.a.createElement(pm, {
+                }, "Settings"), sh.a.createElement(GR, null), sh.a.createElement(pm, {
                     onClick: function (e) {
                         window.onbeforeunload = function () {
                         }, window.location.hash = "", window.location.href = "/"
                     }
                 }, "Leave"))
-            }, FR = dh.a.div.withConfig({
+            }, BR = dh.a.div.withConfig({
                 displayName: "GameMenu__Wrapper",
                 componentId: "tclg3e-0"
             })(["width:100%;height:100%;top:0;left:0;position:absolute;display:flex;align-items:center;justify-content:center;background-color:rgba(0,0,0,0.3);z-index:99999;pointer-events:none;"]),
-            HR = dh.a.div.withConfig({
+            YR = dh.a.div.withConfig({
                 displayName: "GameMenu__InnerWrapper",
                 componentId: "tclg3e-1"
-            })(["max-width:700px;"]), BR = function (e) {
+            })(["max-width:700px;"]), KR = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.ui.connectionStatus
                 })), n = Object(uh.c)((function (e) {
@@ -18951,72 +18980,72 @@ function noKillFeed(argument) {
                         });
                         break;
                     case C.MAIN_MENU:
-                        s = sh.a.createElement(GR, null);
+                        s = sh.a.createElement(HR, null);
                         break;
                     default:
                         return null
                 }
-                return sh.a.createElement(FR, null, sh.a.createElement(HR, null, s))
-            }, YR = n.p + "./91aacee3a7e695bb50f6661997f60db3.png", KR = n.p + "./34441d4df70b2fcf53584f688f06daad.jpg",
-            zR = dh.a.div.withConfig({
+                return sh.a.createElement(BR, null, sh.a.createElement(YR, null, s))
+            }, zR = n.p + "./91aacee3a7e695bb50f6661997f60db3.png", WR = n.p + "./34441d4df70b2fcf53584f688f06daad.jpg",
+            VR = dh.a.div.withConfig({
                 displayName: "Background__BackgroundWrapper",
                 componentId: "y0azya-0"
-            })(["width:100%;height:100%;top:0;left:0;position:absolute;background-image:url(", ");background-size:cover;"], KR),
-            WR = dh.a.a.withConfig({
+            })(["width:100%;height:100%;top:0;left:0;position:absolute;background-image:url(", ");background-size:cover;"], WR),
+            jR = dh.a.a.withConfig({
                 displayName: "Background__DiscordLink",
                 componentId: "y0azya-1"
             })(["display:block;position:absolute;top:10px;left:10px;z-index:99999;pointer-events:auto;"]),
-            VR = dh.a.img.withConfig({
+            ZR = dh.a.img.withConfig({
                 displayName: "Background__DiscordLinkImage",
                 componentId: "y0azya-2"
-            })(["display:block;width:200px;"]), jR = dh.a.a.withConfig({
+            })(["display:block;width:200px;"]), qR = dh.a.a.withConfig({
                 displayName: "Background__NativeLink",
                 componentId: "y0azya-3"
             })(["color:white;text-decoration:none;:hover{text-decoration:underline;}"]),
-            ZR = (Object(dh.a)(fh.c).withConfig({
+            XR = (Object(dh.a)(fh.c).withConfig({
                 displayName: "Background__AppLink",
                 componentId: "y0azya-4"
             })(["color:white;text-decoration:none;:hover{text-decoration:underline;}"]), dh.a.div.withConfig({
                 displayName: "Background__TextButton",
                 componentId: "y0azya-5"
-            })(["color:white;:hover{cursor:pointer;text-decoration:underline;}"])), qR = dh.a.div.withConfig({
+            })(["color:white;:hover{cursor:pointer;text-decoration:underline;}"])), JR = dh.a.div.withConfig({
                 displayName: "Background__TextDivider",
                 componentId: "y0azya-6"
-            })(["width:1px;height:16px;background-color:white;margin:0 8px;"]), XR = dh.a.div.withConfig({
+            })(["width:1px;height:16px;background-color:white;margin:0 8px;"]), QR = dh.a.div.withConfig({
                 displayName: "Background__TwitchStreams",
                 componentId: "y0azya-7"
-            })(["position:absolute;top:10px;right:20px;z-index:99999;pointer-events:auto;"]), JR = dh.a.a.withConfig({
+            })(["position:absolute;top:10px;right:20px;z-index:99999;pointer-events:auto;"]), $R = dh.a.a.withConfig({
                 displayName: "Background__TwitchStream",
                 componentId: "y0azya-8"
-            })(["display:flex;text-decoration:none;color:white;padding:5px 0;"]), QR = dh.a.img.withConfig({
+            })(["display:flex;text-decoration:none;color:white;padding:5px 0;"]), eO = dh.a.img.withConfig({
                 displayName: "Background__TwitchAvatar",
                 componentId: "y0azya-9"
             })(["display:block;width:32px;height:32px;margin-right:10px;border-radius:5px;"]),
-            $R = dh.a.div.withConfig({displayName: "Background__TwitchChannel", componentId: "y0azya-10"})([""]),
-            eO = dh.a.div.withConfig({
+            tO = dh.a.div.withConfig({displayName: "Background__TwitchChannel", componentId: "y0azya-10"})([""]),
+            nO = dh.a.div.withConfig({
                 displayName: "Background__TwitchUserName",
                 componentId: "y0azya-11"
             })(["font-weight:400;text-shadow:1px 1px 0 #3b3b3b;"]),
-            tO = dh.a.div.withConfig({displayName: "Background__TwitchViewCount", componentId: "y0azya-12"})([""]),
-            nO = dh.a.a.withConfig({
+            aO = dh.a.div.withConfig({displayName: "Background__TwitchViewCount", componentId: "y0azya-12"})([""]),
+            rO = dh.a.a.withConfig({
                 displayName: "Background__TwitchStreamTitle",
                 componentId: "y0azya-13"
             })(["display:flex;align-items:center;background-color:#9146ff;padding:5px 10px;border-radius:5px;margin-bottom:5px;text-decoration:none;color:white;"]),
-            aO = dh.a.div.withConfig({
+            iO = dh.a.div.withConfig({
                 displayName: "Background__TwitchIcon",
                 componentId: "y0azya-14"
-            })(["margin-right:10px;"]), rO = dh.a.a.withConfig({
+            })(["margin-right:10px;"]), oO = dh.a.a.withConfig({
                 displayName: "Background__TwitchLink",
                 componentId: "y0azya-15"
-            })(["display:block;text-decoration:none;color:white;"]), iO = dh.a.div.withConfig({
+            })(["display:block;text-decoration:none;color:white;"]), sO = dh.a.div.withConfig({
                 displayName: "Background__BottomLeft",
                 componentId: "y0azya-16"
             })(["position:absolute;z-index:99999;pointer-events:auto;display:flex;bottom:0;left:0;background-color:rgba(0,0,0,0.5);padding:8px;font-size:14px;"]),
-            oO = dh.a.div.withConfig({
+            lO = dh.a.div.withConfig({
                 displayName: "Background__BottomRight",
                 componentId: "y0azya-17"
             })(["position:absolute;z-index:99999;pointer-events:auto;display:flex;bottom:0;right:0;background-color:rgba(0,0,0,0.5);padding:8px;font-size:14px;"]),
-            sO = function (e) {
+            cO = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.ui.connectionStatus
                 })), n = Object(uh.c)((function (e) {
@@ -19024,13 +19053,13 @@ function noKillFeed(argument) {
                 })), a = Object(uh.c)((function (e) {
                     return e.ui.aipConsentToolLoaded
                 })), r = Object(uh.b)(), o = Object(oh.useState)([]), l = o[0], c = o[1], u = l.map((function (e, t) {
-                    return sh.a.createElement(JR, {
+                    return sh.a.createElement($R, {
                         key: t,
                         href: "https://twitch.tv/" + e.user_name,
                         target: "_blank"
-                    }, sh.a.createElement(QR, {src: e.avatar}), sh.a.createElement($R, null, sh.a.createElement(eO, null, e.display_name), sh.a.createElement(tO, null, e.viewer_count, " Viewers")))
+                    }, sh.a.createElement(eO, {src: e.avatar}), sh.a.createElement(tO, null, sh.a.createElement(nO, null, e.display_name), sh.a.createElement(aO, null, e.viewer_count, " Viewers")))
                 }));
-                return 0 === u.length && (u = sh.a.createElement(rO, {
+                return 0 === u.length && (u = sh.a.createElement(oO, {
                     href: "https://www.twitch.tv/directory/game/Voxiom.io",
                     target: "_blank"
                 }, "Stream to get featured here!")), Object(oh.useEffect)((function () {
@@ -19075,45 +19104,45 @@ function noKillFeed(argument) {
                             }
                         }), e, null, [[0, 10]])
                     })))()
-                }), []), t === He.LOADING || t === He.DISCONNECTED || t === He.CONNECTING ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(zR, null), sh.a.createElement(WR, {
+                }), []), t === He.LOADING || t === He.DISCONNECTED || t === He.CONNECTING ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(VR, null), sh.a.createElement(jR, {
                     href: "https://discord.gg/GBFtRcY",
                     target: "_blank"
-                }, sh.a.createElement(VR, {src: YR})), sh.a.createElement(XR, null, sh.a.createElement(nO, {
+                }, sh.a.createElement(ZR, {src: zR})), sh.a.createElement(QR, null, sh.a.createElement(rO, {
                     href: "https://www.twitch.tv/directory/game/Voxiom.io",
                     target: "_blank"
-                }, sh.a.createElement(aO, null, sh.a.createElement(Sh.a, {icon: mh.e})), "Featured Streams"), u), sh.a.createElement(iO, null, sh.a.createElement(jR, {href: "/assets/pages/terms.html"}, "Terms of Use"), sh.a.createElement(qR, null), sh.a.createElement(jR, {href: "/assets/pages/privacy.html"}, "Privacy Policy"), !n && a ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(qR, null), sh.a.createElement(ZR, {
+                }, sh.a.createElement(iO, null, sh.a.createElement(Sh.a, {icon: mh.e})), "Featured Streams"), u), sh.a.createElement(sO, null, sh.a.createElement(qR, {href: "/assets/pages/terms.html"}, "Terms of Use"), sh.a.createElement(JR, null), sh.a.createElement(qR, {href: "/assets/pages/privacy.html"}, "Privacy Policy"), !n && a ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(JR, null), sh.a.createElement(XR, {
                     onClick: function () {
                         aipAPItag.showCMPScreen()
                     }
-                }, "Cookies")) : null), sh.a.createElement(oO, null, n ? null : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(jR, {
+                }, "Cookies")) : null), sh.a.createElement(lO, null, n ? null : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(qR, {
                     href: "/assets/pages/partners.html",
                     target: "_blank"
-                }, "Partners"), sh.a.createElement(qR, null), sh.a.createElement(jR, {
+                }, "Partners"), sh.a.createElement(JR, null), sh.a.createElement(qR, {
                     href: "https://iogames.space",
                     target: "_blank"
                 }, "More .io Games!")))) : null
-            }, lO = dh.a.div.withConfig({
+            }, uO = dh.a.div.withConfig({
                 displayName: "VGemsDisplay__MoneyCard",
                 componentId: "sc-1bmp3nw-0"
             })(["font-size:14px;background-color:rgba(0,0,0,0.5);padding:15px;margin:20px;width:150px;"]),
-            cO = dh.a.div.withConfig({
+            _O = dh.a.div.withConfig({
                 displayName: "VGemsDisplay__MoneyCardTitle",
                 componentId: "sc-1bmp3nw-1"
             })(["margin-bottom:5px;display:flex;align-items:center;justify-content:center;"]),
-            uO = dh.a.div.withConfig({
+            hO = dh.a.div.withConfig({
                 displayName: "VGemsDisplay__MoneyCardValue",
                 componentId: "sc-1bmp3nw-2"
-            })(["color:yellow;"]), _O = dh.a.img.withConfig({
+            })(["color:yellow;"]), dO = dh.a.img.withConfig({
                 displayName: "VGemsDisplay__MoneyIcon",
                 componentId: "sc-1bmp3nw-3"
-            })(["width:24px;margin-right:10px;"]), hO = function (e) {
+            })(["width:24px;margin-right:10px;"]), pO = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.vgemsGained
                 }));
-                return sh.a.createElement(lO, null, sh.a.createElement(cO, null, sh.a.createElement(_O, {src: nS}), " Earned"), sh.a.createElement(uO, null, t))
+                return sh.a.createElement(uO, null, sh.a.createElement(_O, null, sh.a.createElement(dO, {src: nS}), " Earned"), sh.a.createElement(hO, null, t))
             };
 
-        function dO(e, t) {
+        function mO(e, t) {
             var n = Object.keys(e);
             if (Object.getOwnPropertySymbols) {
                 var a = Object.getOwnPropertySymbols(e);
@@ -19124,39 +19153,39 @@ function noKillFeed(argument) {
             return n
         }
 
-        var pO = dh.a.div.withConfig({displayName: "XpBar__Xp", componentId: "sc-1hox4ib-0"})(["width:100%;"]),
-            mO = dh.a.div.withConfig({
+        var EO = dh.a.div.withConfig({displayName: "XpBar__Xp", componentId: "sc-1hox4ib-0"})(["width:100%;"]),
+            SO = dh.a.div.withConfig({
                 displayName: "XpBar__Level",
                 componentId: "sc-1hox4ib-1"
-            })(["margin-bottom:10px;text-align:start;"]), EO = dh.a.div.withConfig({
+            })(["margin-bottom:10px;text-align:start;"]), fO = dh.a.div.withConfig({
                 displayName: "XpBar__XpTip",
                 componentId: "sc-1hox4ib-2"
-            })(["display:inline-block;color:yellow;"]), SO = dh.a.div.withConfig({
+            })(["display:inline-block;color:yellow;"]), gO = dh.a.div.withConfig({
                 displayName: "XpBar__XpBarOuter",
                 componentId: "sc-1hox4ib-3"
             })(["border:1px solid white;display:flex;justify-content:center;align-items:center;position:relative;font-size:15px;padding:8px;"]),
-            fO = dh.a.div.withConfig({displayName: "XpBar__XpBarValue", componentId: "sc-1hox4ib-4"})(["z-index:999;"]),
-            gO = dh.a.div.attrs((function (e) {
+            IO = dh.a.div.withConfig({displayName: "XpBar__XpBarValue", componentId: "sc-1hox4ib-4"})(["z-index:999;"]),
+            yO = dh.a.div.attrs((function (e) {
                 var t = e.value, n = e.maxValue;
                 return {style: {backgroundColor: e.color, width: t / n * 100 + "%"}}
             })).withConfig({
                 displayName: "XpBar__XpBarInner",
                 componentId: "sc-1hox4ib-5"
-            })(["position:absolute;top:0;left:0;height:100%;"]), IO = function e(t, n) {
+            })(["position:absolute;top:0;left:0;height:100%;"]), RO = function e(t, n) {
                 t.xp += 1, t.xpToBeAdded -= 1, t.xp >= 127 * t.level && (t.xp = 0, t.level += 1), n(t), t.xpToBeAdded > 0 && setTimeout((function () {
                     e(function (e) {
                         for (var t = 1; t < arguments.length; t++) {
                             var n = null != arguments[t] ? arguments[t] : {};
-                            t % 2 ? dO(Object(n), !0).forEach((function (t) {
+                            t % 2 ? mO(Object(n), !0).forEach((function (t) {
                                 te()(e, t, n[t])
-                            })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : dO(Object(n)).forEach((function (t) {
+                            })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : mO(Object(n)).forEach((function (t) {
                                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                             }))
                         }
                         return e
                     }({}, t), n)
                 }), 10)
-            }, yO = function (e) {
+            }, OO = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.account.authenticated
                 })), n = Object(uh.c)((function (e) {
@@ -19169,58 +19198,58 @@ function noKillFeed(argument) {
                 return Object(oh.useEffect)((function () {
                     setTimeout((function () {
                         setTimeout((function () {
-                            IO(o, s)
+                            RO(o, s)
                         }), 2e3)
                     }), 1e3)
-                }), []), sh.a.createElement(pO, null, sh.a.createElement(mO, null, "Level ", o.level, " ", sh.a.createElement(EO, null, r)), sh.a.createElement(SO, null, sh.a.createElement(fO, null, o.xp, " / ", 127 * o.level, " ", sh.a.createElement(EO, null, "(+", o.xpGained, ")")), sh.a.createElement(gO, {
+                }), []), sh.a.createElement(EO, null, sh.a.createElement(SO, null, "Level ", o.level, " ", sh.a.createElement(fO, null, r)), sh.a.createElement(gO, null, sh.a.createElement(IO, null, o.xp, " / ", 127 * o.level, " ", sh.a.createElement(fO, null, "(+", o.xpGained, ")")), sh.a.createElement(yO, {
                     value: o.xp,
                     maxValue: 127 * o.level,
                     color: "#3498db"
                 })))
-            }, RO = dh.a.div.attrs((function (e) {
+            }, TO = dh.a.div.attrs((function (e) {
                 return {style: {opacity: e.opacity}}
             })).withConfig({
                 displayName: "BattleRoyaleGameOver__Wrapper",
                 componentId: "sc-11rww64-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;display:flex;align-items:center;justify-content:center;background-color:rgba(0,0,0,0.6);transition:opacity 2.0s;z-index:100001;"]),
-            OO = dh.a.div.withConfig({
+            AO = dh.a.div.withConfig({
                 displayName: "BattleRoyaleGameOver__Content",
                 componentId: "sc-11rww64-1"
-            })(["text-align:center;display:flex;flex-direction:column;align-items:center;"]), TO = dh.a.div.withConfig({
+            })(["text-align:center;display:flex;flex-direction:column;align-items:center;"]), CO = dh.a.div.withConfig({
                 displayName: "BattleRoyaleGameOver__LoseTitle",
                 componentId: "sc-11rww64-2"
-            })(["font-size:40px;margin-bottom:10px;"]), AO = dh.a.div.withConfig({
+            })(["font-size:40px;margin-bottom:10px;"]), MO = dh.a.div.withConfig({
                 displayName: "BattleRoyaleGameOver__WinTitle",
                 componentId: "sc-11rww64-3"
-            })(["color:yellow;font-size:50px;margin-bottom:10px;"]), CO = dh.a.div.withConfig({
+            })(["color:yellow;font-size:50px;margin-bottom:10px;"]), vO = dh.a.div.withConfig({
                 displayName: "BattleRoyaleGameOver__SubTitle",
                 componentId: "sc-11rww64-4"
-            })(["font-size:30px;margin-bottom:30px;"]), MO = dh.a.span.withConfig({
+            })(["font-size:30px;margin-bottom:30px;"]), NO = dh.a.span.withConfig({
                 displayName: "BattleRoyaleGameOver__RankNumber",
                 componentId: "sc-11rww64-5"
-            })(["color:yellow;"]), vO = dh.a.div.withConfig({
+            })(["color:yellow;"]), LO = dh.a.div.withConfig({
                 displayName: "BattleRoyaleGameOver__KillerName",
                 componentId: "sc-11rww64-6"
-            })(["display:inline-block;color:red;"]), NO = dh.a.div.withConfig({
+            })(["display:inline-block;color:red;"]), bO = dh.a.div.withConfig({
                 displayName: "BattleRoyaleGameOver__Stats",
                 componentId: "sc-11rww64-7"
-            })(["display:flex;"]), LO = dh.a.div.withConfig({
+            })(["display:flex;"]), xO = dh.a.div.withConfig({
                 displayName: "BattleRoyaleGameOver__StatsCard",
                 componentId: "sc-11rww64-8"
-            })(["background-color:rgba(0,0,0,0.5);padding:20px;margin:20px;width:100px;"]), bO = dh.a.div.withConfig({
+            })(["background-color:rgba(0,0,0,0.5);padding:20px;margin:20px;width:100px;"]), kO = dh.a.div.withConfig({
                 displayName: "BattleRoyaleGameOver__StatsCardTitle",
                 componentId: "sc-11rww64-9"
-            })(["margin-bottom:10px;display:flex;align-items:center;justify-content:center;"]), xO = dh.a.div.withConfig({
+            })(["margin-bottom:10px;display:flex;align-items:center;justify-content:center;"]), PO = dh.a.div.withConfig({
                 displayName: "BattleRoyaleGameOver__StatsCardValue",
                 componentId: "sc-11rww64-10"
-            })(["color:yellow;"]), kO = dh.a.div.withConfig({
+            })(["color:yellow;"]), UO = dh.a.div.withConfig({
                 displayName: "BattleRoyaleGameOver__XpBarWrapper",
                 componentId: "sc-11rww64-11"
-            })(["width:80%;display:flex;align-items:center;"]), PO = dh.a.div.withConfig({
+            })(["width:80%;display:flex;align-items:center;"]), wO = dh.a.div.withConfig({
                 displayName: "BattleRoyaleGameOver__PlayAgainButton",
                 componentId: "sc-11rww64-12"
             })(["width:70%;margin:30px;pointer-events:auto;padding:10px;background-color:#27ae60;text-align:center;color:white;:hover{background-color:#2ecc71;cursor:pointer;}"]),
-            UO = function (e) {
+            DO = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.numPlayersAlive
                 })), n = Object(uh.c)((function (e) {
@@ -19233,91 +19262,97 @@ function noKillFeed(argument) {
                     return e.gameData.totalNumPlayers
                 })), o = Object(uh.c)((function (e) {
                     return e.gameData.eliminatedBy
-                })), s = "00:00";
+                })), s = Object(uh.c)((function (e) {
+                    return e.ui.useCrazyGamesSDK
+                })), l = "00:00";
                 if (r > 0) {
-                    var l = Math.round(r), c = Math.floor(l / 60), u = Math.floor(l % 60);
-                    s = (c < 10 ? "0" + c : c) + ":" + (u < 10 ? "0" + u : u)
+                    var c = Math.round(r), u = Math.floor(c / 60), _ = Math.floor(c % 60);
+                    l = (u < 10 ? "0" + u : u) + ":" + (_ < 10 ? "0" + _ : _)
                 }
-                var _ = Object(oh.useState)(!1), h = _[0], d = _[1];
+                var h = Object(oh.useState)(!1), d = h[0], p = h[1];
                 return Object(oh.useEffect)((function () {
                     setTimeout((function () {
-                        d(!0)
+                        p(!0)
                     }), 1e3), window.onbeforeunload = function () {
                     }
-                }), []), sh.a.createElement(RO, {opacity: h ? 1 : 0}, sh.a.createElement(OO, null, a ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(AO, null, "Victory!"), sh.a.createElement(CO, null, "Congratulations, You are the champion!")) : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(TO, null, "Eliminated by ", sh.a.createElement(vO, null, o)), sh.a.createElement(CO, null, "You placed ", sh.a.createElement(MO, null, "#", t))), sh.a.createElement(NO, null, sh.a.createElement(LO, null, sh.a.createElement(bO, null, "Kills"), sh.a.createElement(xO, null, n)), sh.a.createElement(LO, null, sh.a.createElement(bO, null, "Time Alive"), sh.a.createElement(xO, null, s)), sh.a.createElement(LO, null, sh.a.createElement(bO, null, "Total Players"), sh.a.createElement(xO, null, i))), sh.a.createElement(kO, null, sh.a.createElement(yO, null), sh.a.createElement(hO, null)), sh.a.createElement(PO, {
+                }), []), sh.a.createElement(TO, {opacity: d ? 1 : 0}, sh.a.createElement(AO, null, a ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(MO, null, "Victory!"), sh.a.createElement(vO, null, "Congratulations, You are the champion!")) : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(CO, null, "Eliminated by ", sh.a.createElement(LO, null, o)), sh.a.createElement(vO, null, "You placed ", sh.a.createElement(NO, null, "#", t))), sh.a.createElement(bO, null, sh.a.createElement(xO, null, sh.a.createElement(kO, null, "Kills"), sh.a.createElement(PO, null, n)), sh.a.createElement(xO, null, sh.a.createElement(kO, null, "Time Alive"), sh.a.createElement(PO, null, l)), sh.a.createElement(xO, null, sh.a.createElement(kO, null, "Total Players"), sh.a.createElement(PO, null, i))), sh.a.createElement(UO, null, sh.a.createElement(OO, null), sh.a.createElement(pO, null)), sh.a.createElement(wO, {
                     onClick: function () {
-                        window.location.hash = "", window.location.href = "/"
+                        window.location.hash = "", window.location.href = s ? "/?crazygames" : "/"
                     }
-                }, "Play Again"), h ? sh.a.createElement(Xf, {id: "voxiom-io_728x90_2", background: !1}) : null))
-            }, wO = dh.a.div.attrs((function (e) {
+                }, "Play Again"), d ? sh.a.createElement(Qf, {id: "voxiom-io_728x90_2", background: !1}) : null))
+            }, GO = dh.a.div.attrs((function (e) {
                 return {style: {opacity: e.opacity}}
             })).withConfig({
                 displayName: "CaptureTheGemsGameOver__Wrapper",
                 componentId: "sc-10iskfd-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;display:flex;align-items:center;justify-content:center;background-color:rgba(0,0,0,0.6);transition:opacity 2.0s;z-index:100001;"]),
-            DO = dh.a.div.withConfig({
+            FO = dh.a.div.withConfig({
                 displayName: "CaptureTheGemsGameOver__WinTitle",
                 componentId: "sc-10iskfd-1"
-            })(["color:yellow;font-size:50px;margin-bottom:20px;"]), GO = dh.a.div.withConfig({
+            })(["color:yellow;font-size:50px;margin-bottom:20px;"]), HO = dh.a.div.withConfig({
                 displayName: "CaptureTheGemsGameOver__LoseTitle",
                 componentId: "sc-10iskfd-2"
-            })(["color:red;font-size:50px;margin-bottom:20px;"]), FO = dh.a.div.withConfig({
+            })(["color:red;font-size:50px;margin-bottom:20px;"]), BO = dh.a.div.withConfig({
                 displayName: "CaptureTheGemsGameOver__Content",
                 componentId: "sc-10iskfd-3"
-            })(["text-align:center;display:flex;flex-direction:column;align-items:center;"]), HO = dh.a.div.withConfig({
+            })(["text-align:center;display:flex;flex-direction:column;align-items:center;"]), YO = dh.a.div.withConfig({
                 displayName: "CaptureTheGemsGameOver__PlayAgainButton",
                 componentId: "sc-10iskfd-4"
             })(["width:70%;margin:30px;pointer-events:auto;padding:10px;background-color:#27ae60;text-align:center;color:white;:hover{background-color:#2ecc71;cursor:pointer;}"]),
-            BO = dh.a.div.withConfig({
+            KO = dh.a.div.withConfig({
                 displayName: "CaptureTheGemsGameOver__XpBarWrapper",
                 componentId: "sc-10iskfd-5"
-            })(["width:90%;display:flex;align-items:center;"]), YO = dh.a.div.withConfig({
+            })(["width:90%;display:flex;align-items:center;"]), zO = dh.a.div.withConfig({
                 displayName: "CaptureTheGemsGameOver__Space",
                 componentId: "sc-10iskfd-6"
-            })(["height:20px;"]), KO = function (e) {
+            })(["height:20px;"]), WO = function (e) {
                 Object(uh.b)();
                 var t = Object(uh.c)((function (e) {
                     return e.gameData.gameWon
-                })), n = Object(oh.useState)(!1), a = n[0], r = n[1];
+                })), n = Object(uh.c)((function (e) {
+                    return e.ui.useCrazyGamesSDK
+                })), a = Object(oh.useState)(!1), r = a[0], i = a[1];
                 return Object(oh.useEffect)((function () {
                     setTimeout((function () {
-                        r(!0)
+                        i(!0)
                     }), 1e3), window.onbeforeunload = function () {
                     }
-                }), []), sh.a.createElement(wO, {opacity: a ? 1 : 0}, sh.a.createElement(FO, null, t ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(DO, null, "Victory!")) : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(GO, null, "Defeat!")), sh.a.createElement(_R, null), sh.a.createElement(YO, null), sh.a.createElement(BO, null, sh.a.createElement(yO, null), sh.a.createElement(hO, null)), sh.a.createElement(HO, {
+                }), []), sh.a.createElement(GO, {opacity: r ? 1 : 0}, sh.a.createElement(BO, null, t ? sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(FO, null, "Victory!")) : sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(HO, null, "Defeat!")), sh.a.createElement(dR, null), sh.a.createElement(zO, null), sh.a.createElement(KO, null, sh.a.createElement(OO, null), sh.a.createElement(pO, null)), sh.a.createElement(YO, {
                     onClick: function () {
-                        window.location.hash = "", window.location.href = "/"
+                        window.location.hash = "", window.location.href = n ? "/?crazygames" : "/"
                     }
-                }, "Play Again"), a ? sh.a.createElement(Xf, {id: "voxiom-io_728x90_2", background: !1}) : null))
-            }, zO = dh.a.div.attrs((function (e) {
+                }, "Play Again"), r ? sh.a.createElement(Qf, {id: "voxiom-io_728x90_2", background: !1}) : null))
+            }, VO = dh.a.div.attrs((function (e) {
                 return {style: {opacity: e.opacity}}
             })).withConfig({
                 displayName: "DisconnectionMessage__Wrapper",
                 componentId: "sc-8d4ctu-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;display:flex;align-items:center;justify-content:center;background-color:rgba(0,0,0,0.8);transition:opacity 0.2s;z-index:100001;"]),
-            WO = dh.a.div.withConfig({
+            jO = dh.a.div.withConfig({
                 displayName: "DisconnectionMessage__Content",
                 componentId: "sc-8d4ctu-1"
-            })(["text-align:center;display:flex;flex-direction:column;align-items:center;"]), VO = dh.a.div.withConfig({
+            })(["text-align:center;display:flex;flex-direction:column;align-items:center;"]), ZO = dh.a.div.withConfig({
                 displayName: "DisconnectionMessage__PlayAgainButton",
                 componentId: "sc-8d4ctu-2"
             })(["margin:30px;pointer-events:auto;padding:10px;background-color:#27ae60;text-align:center;color:white;width:60%;:hover{background-color:#2ecc71;cursor:pointer;}"]),
-            jO = dh.a.div.withConfig({
+            qO = dh.a.div.withConfig({
                 displayName: "DisconnectionMessage__Message",
                 componentId: "sc-8d4ctu-3"
-            })(["font-size:30px;margin-bottom:30px;"]), ZO = function (e) {
+            })(["font-size:30px;margin-bottom:30px;"]), XO = function (e) {
                 var t = Object(uh.c)((function (e) {
                     return e.ui.disconnectionMessage
-                })), n = (Object(uh.b)(), Object(oh.useState)(!1)), a = n[0], r = n[1];
+                })), n = (Object(uh.b)(), Object(uh.c)((function (e) {
+                    return e.ui.useCrazyGamesSDK
+                }))), a = Object(oh.useState)(!1), r = a[0], i = a[1];
                 return Object(oh.useEffect)((function () {
-                    r(!0), window.onbeforeunload = function () {
+                    i(!0), window.onbeforeunload = function () {
                     }
-                }), []), sh.a.createElement(zO, {opacity: a ? 1 : 0}, sh.a.createElement(WO, null, sh.a.createElement(jO, null, Lg(t)), sh.a.createElement(VO, {
+                }), []), sh.a.createElement(VO, {opacity: r ? 1 : 0}, sh.a.createElement(jO, null, sh.a.createElement(qO, null, xg(t)), sh.a.createElement(ZO, {
                     onClick: function () {
-                        window.location.hash = "", window.location.href = "/"
+                        window.location.hash = "", window.location.href = n ? "/?crazygames" : "/"
                     }
-                }, "Find a new game"), a ? sh.a.createElement(Xf, {id: "voxiom-io_728x90_2", background: !1}) : null))
-            }, qO = function () {
+                }, "Find a new game"), r ? sh.a.createElement(Qf, {id: "voxiom-io_728x90_2", background: !1}) : null))
+            }, JO = function () {
                 var e = Object(uh.c)((function (e) {
                     return e.gameData.gameOver
                 })), t = Object(uh.c)((function (e) {
@@ -19326,8 +19361,8 @@ function noKillFeed(argument) {
                 if (Object(uh.c)((function (e) {
                     return e.ui.connectionStatus
                 })) !== He.ENDED) return null;
-                return e ? t === zn(Wn.BATTLE_ROYALE) ? sh.a.createElement(UO, null) : sh.a.createElement(KO, null) : sh.a.createElement(ZO, null)
-            }, XO = n(40), JO = function () {
+                return e ? t === zn(Wn.BATTLE_ROYALE) ? sh.a.createElement(DO, null) : sh.a.createElement(WO, null) : sh.a.createElement(XO, null)
+            }, QO = n(40), $O = function () {
                 function e() {
                     var e = this;
                     this._scene = void 0, this._camera = void 0, this._renderer = void 0, this._controls = void 0, this._model = void 0, this._animationId = void 0, this.render = function (t) {
@@ -19353,7 +19388,7 @@ function noKillFeed(argument) {
                                         antialias: !0,
                                         alpha: !0,
                                         powerPreference: "high-performance"
-                                    }), this._renderer.setPixelRatio(window.devicePixelRatio), this._renderer.setSize(n, a), this._renderer.gammaFactor = 2.2, this._renderer.outputEncoding = l.Rb, this._camera = new l.jb(60, n / a, .01, 1e3), this._camera.position.set(1, 0, 0), this._controls = new XO.a(this._camera, this._renderer.domElement), this._controls.maxDistance = 5, this._controls.minDistance = .1, this._scene = new l.vb, c = new l.a(16777215, .4), this._scene.add(c), (u = new l.q(16777215, .7)).position.set(1, 1, 1), this._scene.add(u), (_ = iu(r)).setSkin(o, s), e.next = 22, _.generateModel(!0);
+                                    }), this._renderer.setPixelRatio(window.devicePixelRatio), this._renderer.setSize(n, a), this._renderer.gammaFactor = 2.2, this._renderer.outputEncoding = l.Rb, this._camera = new l.jb(60, n / a, .01, 1e3), this._camera.position.set(1, 0, 0), this._controls = new QO.a(this._camera, this._renderer.domElement), this._controls.maxDistance = 5, this._controls.minDistance = .1, this._scene = new l.vb, c = new l.a(16777215, .4), this._scene.add(c), (u = new l.q(16777215, .7)).position.set(1, 1, 1), this._scene.add(u), (_ = iu(r)).setSkin(o, s), e.next = 22, _.generateModel(!0);
                                 case 22:
                                     this._model = e.sent, this._scene.add(this._model), this._animationId = requestAnimationFrame(this.render);
                                 case 25:
@@ -19368,46 +19403,46 @@ function noKillFeed(argument) {
                 }(), t.stop = function () {
                     this._renderer && (this._renderer.dispose(), this._renderer = void 0), this._model && (hu.cleanUpModel(this._model), this._model = void 0), this._scene && (this._scene.dispose(), this._scene = void 0), this._animationId && (cancelAnimationFrame(this._animationId), this._animationId = void 0)
                 }, e
-            }(), QO = dh.a.div.withConfig({
+            }(), eT = dh.a.div.withConfig({
                 displayName: "ItemInspectionWindow__Wrapper",
                 componentId: "lm7zza-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;z-index:9999;display:flex;align-items:center;justify-content:center;background-color:rgba(0,0,0,0.5);z-index:100000;pointer-events:auto;"]),
-            $O = dh.a.div.withConfig({
+            tT = dh.a.div.withConfig({
                 displayName: "ItemInspectionWindow__Dialog",
                 componentId: "lm7zza-1"
             })(["width:800px;height:600px;display:flex;flex-direction:column;background-color:rgba(0,0,0,0.8);border:1px solid white;position:relative;padding:10px;"]),
-            eT = dh.a.div.attrs((function (e) {
+            nT = dh.a.div.attrs((function (e) {
                 return {style: {color: e.tierColor}}
             })).withConfig({
                 displayName: "ItemInspectionWindow__Title",
                 componentId: "lm7zza-2"
-            })(["font-size:20px;text-align:center;"]), tT = dh.a.div.withConfig({
+            })(["font-size:20px;text-align:center;"]), aT = dh.a.div.withConfig({
                 displayName: "ItemInspectionWindow__CloseButton",
                 componentId: "lm7zza-3"
             })(["position:absolute;top:0;right:0;padding:5px 10px;font-size:30px;:hover{cursor:pointer;}"]),
-            nT = dh.a.canvas.withConfig({
+            rT = dh.a.canvas.withConfig({
                 displayName: "ItemInspectionWindow__Canvas",
                 componentId: "lm7zza-4"
-            })(["flex:1;width:100%;margin-top:10px;outline:none;"]), aT = function () {
+            })(["flex:1;width:100%;margin-top:10px;outline:none;"]), iT = function () {
                 var e = Object(uh.b)(), t = Object(uh.c)((function (e) {
                     return e.ui.inspectionWindow
-                })), n = Object(oh.useRef)(null), a = Object(oh.useRef)(null), r = Object(oh.useRef)(new JO);
+                })), n = Object(oh.useRef)(null), a = Object(oh.useRef)(null), r = Object(oh.useRef)(new $O);
                 if (Object(oh.useEffect)((function () {
                     return t.visible ? r.current.start("inspection-canvas", a.current.clientWidth, a.current.clientHeight, t.itemType, t.skinType, t.skinSeed) : r.current.stop(), function () {
                         r.current.stop()
                     }
                 }), [t.visible]), !t.visible) return null;
                 var i = Do(t.skinType).tier;
-                return sh.a.createElement(QO, {
+                return sh.a.createElement(eT, {
                     onMouseDown: function (t) {
                         n.current && n.current.contains(t.target) || e(Ha())
                     }
-                }, sh.a.createElement($O, {ref: n}, sh.a.createElement(eT, {tierColor: $n(i)}, t.title), sh.a.createElement(tT, {
+                }, sh.a.createElement(tT, {ref: n}, sh.a.createElement(nT, {tierColor: $n(i)}, t.title), sh.a.createElement(aT, {
                     onClick: function () {
                         e(Ha())
                     }
-                }, sh.a.createElement(Sh.a, {icon: tS.e})), sh.a.createElement(nT, {ref: a, id: "inspection-canvas"})))
-            }, rT = function () {
+                }, sh.a.createElement(Sh.a, {icon: tS.e})), sh.a.createElement(rT, {ref: a, id: "inspection-canvas"})))
+            }, oT = function () {
                 function e() {
                     var e = this;
                     this._crateScene = void 0, this._itemScene = void 0, this._itemControls = void 0, this._itemCamera = void 0, this._camera = void 0, this._renderer = void 0, this._model = void 0, this._crateModel = void 0, this._animationId = void 0, this._crateMixer = void 0, this._openAction = void 0, this._prevFrameTime = void 0, this._audioListener = void 0, this._showItemCallbackId = void 0, this.render = function (t) {
@@ -19464,7 +19499,7 @@ function noKillFeed(argument) {
                                         powerPreference: "high-performance"
                                     }), this._renderer.setPixelRatio(window.devicePixelRatio), this._renderer.setSize(n, a), this._renderer.gammaFactor = 2.2, this._renderer.outputEncoding = l.Rb, this._renderer.autoClear = !1, this._crateScene = new l.vb, this._crateModel = hu.crateModel, this._crateScene.add(this._crateModel), o = zS[r].color, this._crateModel.traverse((function (e) {
                                         e.material && "Crate" === e.material.name && e.material.color.set(o)
-                                    })), this._camera = new l.jb(60, n / a, .01, 1e3), this._camera.position.set(-19.929473876953125, 12.812478065490723, 14.63255500793457), this._camera.lookAt(0, 1.5, 0), this._camera.zoom = 5, this._camera.updateProjectionMatrix(), s = new l.a(16777215, .4), this._crateScene.add(s), (c = new l.q(16777215, .7)).position.set(-1, 1, 1), this._crateScene.add(c), this._crateMixer = new l.c(this._crateModel), this._openAction = this._crateMixer.clipAction(hu.crateOpenAnimation), this._openAction.setLoop(l.R, 1), this._openAction.setDuration(1.5), this._openAction.clampWhenFinished = !0, this._animationId = requestAnimationFrame(this.render), this._itemScene = new l.vb, this._itemCamera = new l.jb(60, n / a, .01, 1e3), this._itemCamera.position.set(1, 0, 0), this._itemControls = new XO.a(this._itemCamera, this._renderer.domElement), this._itemControls.maxDistance = 5, this._itemControls.minDistance = .1, this._itemControls.autoRotate = !0, this._itemControls.autoRotateSpeed = 4, u = new l.a(16777215, .4), this._itemScene.add(u), (_ = new l.q(16777215, .7)).position.set(1, 1, 1), this._itemScene.add(_), this._audioListener = new l.f, this._camera.add(this._audioListener);
+                                    })), this._camera = new l.jb(60, n / a, .01, 1e3), this._camera.position.set(-19.929473876953125, 12.812478065490723, 14.63255500793457), this._camera.lookAt(0, 1.5, 0), this._camera.zoom = 5, this._camera.updateProjectionMatrix(), s = new l.a(16777215, .4), this._crateScene.add(s), (c = new l.q(16777215, .7)).position.set(-1, 1, 1), this._crateScene.add(c), this._crateMixer = new l.c(this._crateModel), this._openAction = this._crateMixer.clipAction(hu.crateOpenAnimation), this._openAction.setLoop(l.R, 1), this._openAction.setDuration(1.5), this._openAction.clampWhenFinished = !0, this._animationId = requestAnimationFrame(this.render), this._itemScene = new l.vb, this._itemCamera = new l.jb(60, n / a, .01, 1e3), this._itemCamera.position.set(1, 0, 0), this._itemControls = new QO.a(this._itemCamera, this._renderer.domElement), this._itemControls.maxDistance = 5, this._itemControls.minDistance = .1, this._itemControls.autoRotate = !0, this._itemControls.autoRotateSpeed = 4, u = new l.a(16777215, .4), this._itemScene.add(u), (_ = new l.q(16777215, .7)).position.set(1, 1, 1), this._itemScene.add(_), this._audioListener = new l.f, this._camera.add(this._audioListener);
                                 case 44:
                                 case"end":
                                     return e.stop()
@@ -19485,7 +19520,7 @@ function noKillFeed(argument) {
                 }, e
             }();
 
-        function iT(e, t) {
+        function sT(e, t) {
             var n = Object.keys(e);
             if (Object.getOwnPropertySymbols) {
                 var a = Object.getOwnPropertySymbols(e);
@@ -19496,88 +19531,88 @@ function noKillFeed(argument) {
             return n
         }
 
-        function oT(e) {
+        function lT(e) {
             for (var t = 1; t < arguments.length; t++) {
                 var n = null != arguments[t] ? arguments[t] : {};
-                t % 2 ? iT(Object(n), !0).forEach((function (t) {
+                t % 2 ? sT(Object(n), !0).forEach((function (t) {
                     te()(e, t, n[t])
-                })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : iT(Object(n)).forEach((function (t) {
+                })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : sT(Object(n)).forEach((function (t) {
                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
                 }))
             }
             return e
         }
 
-        var sT, lT = dh.a.div.withConfig({
+        var cT, uT = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__Wrapper",
                 componentId: "sc-1t1chhq-0"
             })(["position:absolute;top:0;left:0;width:100%;height:100%;z-index:9999;display:flex;align-items:center;justify-content:center;background-color:rgba(0,0,0,0.5);z-index:100000;pointer-events:auto;"]),
-            cT = dh.a.div.withConfig({
+            _T = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__Dialog",
                 componentId: "sc-1t1chhq-1"
             })(["width:800px;height:600px;display:flex;flex-direction:column;background-color:rgba(0,0,0,0.8);border:1px solid white;position:relative;padding:10px;overflow:hidden;"]),
-            uT = dh.a.div.attrs((function (e) {
+            hT = dh.a.div.attrs((function (e) {
                 return {style: {color: e.textColor}}
             })).withConfig({
                 displayName: "CrateOpeningWindow__Title",
                 componentId: "sc-1t1chhq-2"
-            })(["font-size:20px;text-align:center;margin-bottom:10px;"]), _T = dh.a.canvas.withConfig({
+            })(["font-size:20px;text-align:center;margin-bottom:10px;"]), dT = dh.a.canvas.withConfig({
                 displayName: "CrateOpeningWindow__Canvas",
                 componentId: "sc-1t1chhq-3"
-            })(["flex:1;width:100%;margin-top:10px;outline:none;"]), hT = dh.a.div.withConfig({
+            })(["flex:1;width:100%;margin-top:10px;outline:none;"]), pT = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__ButtonGroup",
                 componentId: "sc-1t1chhq-4"
-            })(["display:flex;justify-content:center;"]), dT = dh.a.div.withConfig({
+            })(["display:flex;justify-content:center;"]), mT = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__UnlockButton",
                 componentId: "sc-1t1chhq-5"
             })(["display:flex;align-items:center;margin-right:10px;padding:0 10px;background-color:#3498db;text-align:center;color:white;:hover{background-color:#40b2ff;cursor:pointer;}"]),
-            pT = dh.a.div.withConfig({
+            ET = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__LaterButton",
                 componentId: "sc-1t1chhq-6"
             })(["padding:10px;background-color:#7f8c8d;text-align:center;color:white;:hover{background-color:#95a5a6;cursor:pointer;}"]),
-            mT = dh.a.img.withConfig({
+            ST = dh.a.img.withConfig({
                 displayName: "CrateOpeningWindow__MoneyIcon",
                 componentId: "sc-1t1chhq-7"
-            })(["width:24px;margin:0 5px;"]), ET = dh.a.div.withConfig({
+            })(["width:24px;margin:0 5px;"]), fT = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__DropRates",
                 componentId: "sc-1t1chhq-8"
-            })(["position:absolute;left:20px;top:40px;"]), ST = dh.a.div.withConfig({
+            })(["position:absolute;left:20px;top:40px;"]), gT = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__DropRate",
                 componentId: "sc-1t1chhq-9"
-            })(["display:flex;align-items:center;margin-bottom:5px;"]), fT = dh.a.div.attrs((function (e) {
+            })(["display:flex;align-items:center;margin-bottom:5px;"]), IT = dh.a.div.attrs((function (e) {
                 return {style: {backgroundColor: e.tierColor}}
             })).withConfig({
                 displayName: "CrateOpeningWindow__DropRateIcon",
                 componentId: "sc-1t1chhq-10"
-            })(["width:16px;height:16px;border:1px solid #3f3f3f;margin-right:5px;"]), gT = dh.a.div.withConfig({
+            })(["width:16px;height:16px;border:1px solid #3f3f3f;margin-right:5px;"]), yT = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__PopupContent",
                 componentId: "sc-1t1chhq-11"
-            })(["display:flex;flex-direction:column;align-items:center;"]), IT = dh.a.div.withConfig({
+            })(["display:flex;flex-direction:column;align-items:center;"]), RT = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__PopupTitle",
                 componentId: "sc-1t1chhq-12"
-            })(["margin-bottom:10px;font-size:20px;"]), yT = dh.a.div.withConfig({
+            })(["margin-bottom:10px;font-size:20px;"]), OT = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__PopupMessage",
                 componentId: "sc-1t1chhq-13"
-            })(["margin-bottom:10px;"]), RT = dh.a.div.withConfig({
+            })(["margin-bottom:10px;"]), TT = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__DismissPopupButton",
                 componentId: "sc-1t1chhq-14"
             })(["display:flex;align-items:center;margin-right:10px;padding:5px 10px;background-color:#27ae60;text-align:center;color:white;:hover{background-color:#2ecc71;cursor:pointer;}"]),
-            OT = dh.a.div.withConfig({
+            AT = dh.a.div.withConfig({
                 displayName: "CrateOpeningWindow__ViewContentLink",
                 componentId: "sc-1t1chhq-15"
             })(["color:#ffa14d;margin-top:10px;:hover{text-decoration:underline;cursor:pointer;}"]);
         !function (e) {
             e[e.NONE = 0] = "NONE", e[e.OUT_OF_GEMS = 1] = "OUT_OF_GEMS", e[e.ERROR = 2] = "ERROR"
-        }(sT || (sT = {}));
-        var TT, AT = function () {
+        }(cT || (cT = {}));
+        var CT, MT = function () {
             var e = Object(uh.b)(), t = Object(oh.useRef)(null), n = Object(oh.useRef)(null),
                 a = Object(uh.c)((function (e) {
                     return e.account.profile
-                })), r = Object(oh.useState)(sT.NONE), o = r[0], l = r[1], c = Object(oh.useState)(!1), u = c[0],
+                })), r = Object(oh.useState)(cT.NONE), o = r[0], l = r[1], c = Object(oh.useState)(!1), u = c[0],
                 _ = c[1], h = Object(oh.useState)({text: "", color: "#ffffff"}), d = h[0], p = h[1],
                 m = Object(uh.c)((function (e) {
                     return e.ui.crateOpeningWindow
-                })), E = Object(oh.useRef)(new rT), S = Object(jd.g)();
+                })), E = Object(oh.useRef)(new oT), S = Object(jd.g)();
             Object(oh.useEffect)((function () {
                 return m.visible ? E.current.start("crate-opening-canvas", n.current.clientWidth, n.current.clientHeight, m.crateType) : E.current.stop(), function () {
                     E.current.stop()
@@ -19591,25 +19626,25 @@ function noKillFeed(argument) {
                     };
                     return e(), e
                 }
-            }), [m.crateType]), m.visible ? sh.a.createElement(sh.a.Fragment, null, o === sT.OUT_OF_GEMS ? sh.a.createElement(iS, null, sh.a.createElement(gT, null, sh.a.createElement(IT, null, "Not enough Vox Gems!"), sh.a.createElement(yT, null, "Play the game to earn more!"), sh.a.createElement(RT, {
+            }), [m.crateType]), m.visible ? sh.a.createElement(sh.a.Fragment, null, o === cT.OUT_OF_GEMS ? sh.a.createElement(iS, null, sh.a.createElement(yT, null, sh.a.createElement(RT, null, "Not enough Vox Gems!"), sh.a.createElement(OT, null, "Play the game to earn more!"), sh.a.createElement(TT, {
                 onClick: function (e) {
-                    l(sT.NONE)
+                    l(cT.NONE)
                 }
-            }, "Dismiss"))) : o === sT.ERROR ? sh.a.createElement(iS, null, sh.a.createElement(gT, null, sh.a.createElement(IT, null, "Sorry, an error has occurred"), sh.a.createElement(yT, null, "You were not charged, please try again!"), sh.a.createElement(RT, {
+            }, "Dismiss"))) : o === cT.ERROR ? sh.a.createElement(iS, null, sh.a.createElement(yT, null, sh.a.createElement(RT, null, "Sorry, an error has occurred"), sh.a.createElement(OT, null, "You were not charged, please try again!"), sh.a.createElement(TT, {
                 onClick: function (e) {
-                    l(sT.NONE)
+                    l(cT.NONE)
                 }
-            }, "Dismiss"))) : null, sh.a.createElement(lT, null, sh.a.createElement(cT, {ref: t}, sh.a.createElement(uT, {textColor: d.color}, d.text), sh.a.createElement(ET, null, f.drop_rates.map((function (e, t) {
-                return sh.a.createElement(ST, {key: t}, sh.a.createElement(fT, {tierColor: (n = e.tier, Zn[n])}), Qn(e.tier) + " - " + e.rate + "%");
+            }, "Dismiss"))) : null, sh.a.createElement(uT, null, sh.a.createElement(_T, {ref: t}, sh.a.createElement(hT, {textColor: d.color}, d.text), sh.a.createElement(fT, null, f.drop_rates.map((function (e, t) {
+                return sh.a.createElement(gT, {key: t}, sh.a.createElement(IT, {tierColor: (n = e.tier, Zn[n])}), Qn(e.tier) + " - " + e.rate + "%");
                 var n
-            })), sh.a.createElement(OT, {
+            })), sh.a.createElement(AT, {
                 onClick: function () {
                     e(Ba()), S.push("/crate_content?crate_type=" + m.crateType)
                 }
-            }, "View Content")), sh.a.createElement(_T, {
+            }, "View Content")), sh.a.createElement(dT, {
                 ref: n,
                 id: "crate-opening-canvas"
-            }), sh.a.createElement(hT, null, sh.a.createElement(dT, {
+            }), sh.a.createElement(pT, null, sh.a.createElement(mT, {
                 onClick: function () {
                     var t = s()(i.a.mark((function t(n) {
                         var r, o, s, c, h;
@@ -19626,7 +19661,7 @@ function noKillFeed(argument) {
                                         t.next = 5;
                                         break
                                     }
-                                    return l(sT.OUT_OF_GEMS), t.abrupt("return");
+                                    return l(cT.OUT_OF_GEMS), t.abrupt("return");
                                 case 5:
                                     return _(!0), p({
                                         text: "Opening Crate...",
@@ -19646,7 +19681,7 @@ function noKillFeed(argument) {
                                         t.next = 22;
                                         break
                                     }
-                                    e(ph(oT(oT({}, a), {}, {gems: a.gems - f.price}))), s = o.result, c = Do(s.type), h = 0 === s.item_id ? So(s.slot) : c.itemType, E.current && E.current.playOpenAnimation(h, s.type, s.seed, (function () {
+                                    e(ph(lT(lT({}, a), {}, {gems: a.gems - f.price}))), s = o.result, c = Do(s.type), h = 0 === s.item_id ? So(s.slot) : c.itemType, E.current && E.current.playOpenAnimation(h, s.type, s.seed, (function () {
                                         _(!1), p({text: iu(h).itemName + " | " + c.name, color: $n(c.tier)})
                                     })), t.next = 23;
                                     break;
@@ -19659,7 +19694,7 @@ function noKillFeed(argument) {
                                     t.prev = 25, t.t0 = t.catch(7), console.error("Failed to open crate"), _(!1), p({
                                         text: "Open " + f.name + "?",
                                         color: "#ffffff"
-                                    }), l(sT.ERROR);
+                                    }), l(cT.ERROR);
                                 case 31:
                                 case"end":
                                     return t.stop()
@@ -19670,18 +19705,18 @@ function noKillFeed(argument) {
                         return t.apply(this, arguments)
                     }
                 }()
-            }, u ? "Unlocking..." : sh.a.createElement(sh.a.Fragment, null, "Unlock for", sh.a.createElement(mT, {src: nS}), f.price)), sh.a.createElement(pT, {
+            }, u ? "Unlocking..." : sh.a.createElement(sh.a.Fragment, null, "Unlock for", sh.a.createElement(ST, {src: nS}), f.price)), sh.a.createElement(ET, {
                 onClick: function (t) {
                     e(Ba()), _(!1)
                 }
             }, "Later"))))) : null
-        }, CT = dh.a.div.attrs((function (e) {
+        }, vT = dh.a.div.attrs((function (e) {
             var t = e.uiScale;
             return {style: {width: e.uiWidth / t + "px", height: e.uiHeight / t + "px", transform: "scale(" + t + ")"}}
         })).withConfig({
             displayName: "App__Wrapper",
             componentId: "v7gq94-0"
-        })(["transform-origin:0 0;position:absolute;top:0;left:0;pointer-events:none;"]), MT = function () {
+        })(["transform-origin:0 0;position:absolute;top:0;left:0;pointer-events:none;"]), NT = function () {
             var e = Object(uh.b)(), t = Object(uh.c)((function (e) {
                 return e.ui.uiScale
             })), n = Object(uh.c)((function (e) {
@@ -19721,24 +19756,24 @@ function noKillFeed(argument) {
                 return window.addEventListener("resize", t), t(), function () {
                     window.removeEventListener("resize", t)
                 }
-            }), [r]), sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(CT, {
+            }), [r]), sh.a.createElement(sh.a.Fragment, null, sh.a.createElement(vT, {
                 uiScale: t,
                 uiWidth: n,
                 uiHeight: a
-            }, sh.a.createElement(AT, null), sh.a.createElement(aT, null), sh.a.createElement(sO, null), sh.a.createElement(BR, null), sh.a.createElement(Ig, null), sh.a.createElement(Cg, null), sh.a.createElement(PR, null), sh.a.createElement(qO, null)))
-        }, vT = function () {
+            }, sh.a.createElement(MT, null), sh.a.createElement(iT, null), sh.a.createElement(cO, null), sh.a.createElement(KR, null), sh.a.createElement(Rg, null), sh.a.createElement(vg, null), sh.a.createElement(wR, null), sh.a.createElement(JO, null)))
+        }, LT = function () {
             function e(e) {
                 this._domTarget = e, this.initialize()
             }
 
             return e.prototype.initialize = function () {
-                ch.a.render(sh.a.createElement(uh.a, {store: ya}, sh.a.createElement(fh.a, null, sh.a.createElement(MT, null))), document.querySelector(this._domTarget))
+                ch.a.render(sh.a.createElement(uh.a, {store: ya}, sh.a.createElement(fh.a, null, sh.a.createElement(NT, null))), document.querySelector(this._domTarget))
             }, e
         }();
         !function (e) {
             e[e.LOAD_CHUNK_IN = 0] = "LOAD_CHUNK_IN", e[e.UNLOAD_CHUNK_IN = 1] = "UNLOAD_CHUNK_IN", e[e.CLIENT_INPUT_OUT = 2] = "CLIENT_INPUT_OUT", e[e.SERVER_INPUT_RESPONSE_IN = 3] = "SERVER_INPUT_RESPONSE_IN", e[e.WORLD_UPDATE_IN = 4] = "WORLD_UPDATE_IN", e[e.REQUEST_JOIN_OUT = 5] = "REQUEST_JOIN_OUT", e[e.REQUEST_JOIN_RESPONSE_IN = 6] = "REQUEST_JOIN_RESPONSE_IN", e[e.SET_BLOCK_IN = 7] = "SET_BLOCK_IN", e[e.FLOATING_BLOCKS_BREAK_IN = 8] = "FLOATING_BLOCKS_BREAK_IN", e[e.RESPAWN_IN = 9] = "RESPAWN_IN", e[e.CHAT_MESSAGE_IN = 10] = "CHAT_MESSAGE_IN", e[e.SEND_CHAT_MESSAGE_OUT = 11] = "SEND_CHAT_MESSAGE_OUT", e[e.ENTITY_CREATE_IN = 12] = "ENTITY_CREATE_IN", e[e.ENTITY_DESTROY_IN = 13] = "ENTITY_DESTROY_IN", e[e.PLAYER_KILL_IN = 14] = "PLAYER_KILL_IN", e[e.ENTITY_METADATA_IN = 15] = "ENTITY_METADATA_IN", e[e.SET_BLOCK_BREAK_PROGRESS_IN = 16] = "SET_BLOCK_BREAK_PROGRESS_IN", e[e.ENTITY_ACTION_IN = 17] = "ENTITY_ACTION_IN", e[e.HEARTBEAT_OUT = 18] = "HEARTBEAT_OUT", e[e.HEARTBEAT_IN = 19] = "HEARTBEAT_IN", e[e.DAMAGE_RECEIVED_IN = 20] = "DAMAGE_RECEIVED_IN", e[e.ENTITY_DAMAGE_IN = 21] = "ENTITY_DAMAGE_IN", e[e.MINIMAP_DATA_IN = 22] = "MINIMAP_DATA_IN", e[e.HUD_CENTER_MESSAGE_IN = 23] = "HUD_CENTER_MESSAGE_IN", e[e.TOXIC_CIRCLE_INFO_IN = 24] = "TOXIC_CIRCLE_INFO_IN", e[e.GAME_METADATA_IN = 25] = "GAME_METADATA_IN", e[e.PLAYER_KICK_IN = 26] = "PLAYER_KICK_IN", e[e.GAME_OVER_IN = 27] = "GAME_OVER_IN", e[e.REQUEST_JOIN_DENY_IN = 28] = "REQUEST_JOIN_DENY_IN", e[e.ITEM_PICK_UP_REQUEST_OUT = 29] = "ITEM_PICK_UP_REQUEST_OUT", e[e.GLOBAL_PLAYER_METADATA_IN = 30] = "GLOBAL_PLAYER_METADATA_IN", e[e.REQUEST_LOADOUT_OUT = 31] = "REQUEST_LOADOUT_OUT", e[e.NOTIFICATION_MESSAGE_IN = 32] = "NOTIFICATION_MESSAGE_IN", e[e.PLAY_DIRECT_SOUND_IN = 33] = "PLAY_DIRECT_SOUND_IN", e[e.PLAY_POSITIONAL_SOUND_IN = 34] = "PLAY_POSITIONAL_SOUND_IN", e[e.KILL_MEDAL_IN = 35] = "KILL_MEDAL_IN", e[e.REQUEST_RESPAWN_OUT = 36] = "REQUEST_RESPAWN_OUT", e[e.SCOREBOARD_TEAM_INFO_IN = 37] = "SCOREBOARD_TEAM_INFO_IN"
-        }(TT || (TT = {}));
-        var NT = TT, LT = function () {
+        }(CT || (CT = {}));
+        var bT = CT, xT = function () {
             function e(e) {
                 this._id = e
             }
@@ -19748,16 +19783,16 @@ function noKillFeed(argument) {
                     return this._id
                 }
             }]), e
-        }(), bT = function (e) {
+        }(), kT = function (e) {
             function t(t) {
                 return e.call(this, t) || this
             }
 
             return ro()(t, e), t
-        }(LT), xT = function (e) {
+        }(xT), PT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.LOAD_CHUNK_IN) || this)._x = void 0, t._y = void 0, t._z = void 0, t._blocks = void 0, t._numSolidBlocks = void 0, t._size = void 0, t._size = 0, t
+                return (t = e.call(this, bT.LOAD_CHUNK_IN) || this)._x = void 0, t._y = void 0, t._z = void 0, t._blocks = void 0, t._numSolidBlocks = void 0, t._size = void 0, t._size = 0, t
             }
 
             ro()(t, e);
@@ -19803,10 +19838,10 @@ function noKillFeed(argument) {
                     return this._numSolidBlocks
                 }
             }]), t
-        }(bT), kT = function (e) {
+        }(kT), UT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.UNLOAD_CHUNK_IN) || this)._x = void 0, t._y = void 0, t._z = void 0, t
+                return (t = e.call(this, bT.UNLOAD_CHUNK_IN) || this)._x = void 0, t._y = void 0, t._z = void 0, t
             }
 
             ro()(t, e);
@@ -19829,16 +19864,16 @@ function noKillFeed(argument) {
                     return this._z
                 }
             }]), t
-        }(bT), PT = function (e) {
+        }(kT), wT = function (e) {
             function t(t) {
                 return e.call(this, t) || this
             }
 
             return ro()(t, e), t
-        }(LT), UT = function (e) {
+        }(xT), DT = function (e) {
             function t(t) {
                 var n;
-                return (n = e.call(this, NT.CLIENT_INPUT_OUT) || this)._inputState = t, n._offset = void 0, n._offset = 0, n
+                return (n = e.call(this, bT.CLIENT_INPUT_OUT) || this)._inputState = t, n._offset = void 0, n._offset = 0, n
             }
 
             ro()(t, e);
@@ -19852,10 +19887,10 @@ function noKillFeed(argument) {
                 var e = 0;
                 return this._inputState.selectedIndexChanged && (e += 1), this._inputState.didClickSlot && (e += 2), this._inputState.inventoryStatusChanged && (e += 1), this._inputState.didTryToCraft && (e += 2), 19 + e
             }, t
-        }(PT), wT = function (e) {
+        }(wT), GT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.SERVER_INPUT_RESPONSE_IN) || this)._positionChanged = void 0, t._velocityChanged = void 0, t._eyeHeightChanged = void 0, t._aimSpreadChanged = void 0, t._selectedIndexChanged = void 0, t._healthOrShieldChanged = void 0, t._buildModeChanged = void 0, t._inventoryStatusChanged = void 0, t._physicsStep = void 0, t._selectedIndex = void 0, t._size = void 0, t._inventoryStatus = void 0, t._items = void 0, t._cooldowns = void 0, t._maxHealth = void 0, t._health = void 0, t._maxShield = void 0, t._shield = void 0, t._buildMode = void 0, t._selectedIndex = -1, t._size = 0, t._items = new Map, t._cooldowns = new Map, t
+                return (t = e.call(this, bT.SERVER_INPUT_RESPONSE_IN) || this)._positionChanged = void 0, t._velocityChanged = void 0, t._eyeHeightChanged = void 0, t._aimSpreadChanged = void 0, t._selectedIndexChanged = void 0, t._healthOrShieldChanged = void 0, t._buildModeChanged = void 0, t._inventoryStatusChanged = void 0, t._physicsStep = void 0, t._selectedIndex = void 0, t._size = void 0, t._inventoryStatus = void 0, t._items = void 0, t._cooldowns = void 0, t._maxHealth = void 0, t._health = void 0, t._maxShield = void 0, t._shield = void 0, t._buildMode = void 0, t._selectedIndex = -1, t._size = 0, t._items = new Map, t._cooldowns = new Map, t
             }
 
             ro()(t, e);
@@ -20043,10 +20078,10 @@ function noKillFeed(argument) {
                     return this._buildMode
                 }
             }]), t
-        }(bT), DT = function (e) {
+        }(kT), FT = function (e) {
             function t(t, n) {
                 var a;
-                return (a = e.call(this, NT.REQUEST_JOIN_OUT) || this)._primaryLoadout = t, a._secondaryLoadout = n, a
+                return (a = e.call(this, bT.REQUEST_JOIN_OUT) || this)._primaryLoadout = t, a._secondaryLoadout = n, a
             }
 
             ro()(t, e);
@@ -20057,10 +20092,10 @@ function noKillFeed(argument) {
             }, n.size = function () {
                 return 4
             }, t
-        }(PT), GT = function (e) {
+        }(wT), HT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.REQUEST_JOIN_RESPONSE_IN) || this)._playerId = void 0, t._playerName = void 0, t._spawnLocation = void 0, t._spawnPitchYaw = void 0, t._team = void 0, t._minChunkPos = void 0, t._maxChunkPos = void 0, t
+                return (t = e.call(this, bT.REQUEST_JOIN_RESPONSE_IN) || this)._playerId = void 0, t._playerName = void 0, t._spawnLocation = void 0, t._spawnPitchYaw = void 0, t._team = void 0, t._minChunkPos = void 0, t._maxChunkPos = void 0, t
             }
 
             ro()(t, e);
@@ -20110,7 +20145,7 @@ function noKillFeed(argument) {
                     return this._maxChunkPos
                 }
             }]), t
-        }(bT), FT = function () {
+        }(kT), BT = function () {
             function e(e, t) {
                 this._id = e, this._ghostFlags = t, this.pos = void 0, this.pitchYaw = void 0, this.pos = _(0, 0, 0), this.pitchYaw = js(0, 0)
             }
@@ -20132,10 +20167,10 @@ function noKillFeed(argument) {
                     return (2 & this._ghostFlags) > 0
                 }
             }]), e
-        }(), HT = function (e) {
+        }(), YT = function (e) {
             function t(t) {
                 var n;
-                return (n = e.call(this, NT.WORLD_UPDATE_IN) || this)._prevPacketWorldUpdate = t, n._serverTimestamp = void 0, n._tick = void 0, n._entitySnapshots = void 0, n._size = void 0, n._clientTimestamp = void 0, n._clientTimestamp = Date.now(), n
+                return (n = e.call(this, bT.WORLD_UPDATE_IN) || this)._prevPacketWorldUpdate = t, n._serverTimestamp = void 0, n._tick = void 0, n._entitySnapshots = void 0, n._size = void 0, n._clientTimestamp = void 0, n._clientTimestamp = Date.now(), n
             }
 
             ro()(t, e);
@@ -20148,7 +20183,7 @@ function noKillFeed(argument) {
                     if (this._size += 4, 0 === n) break;
                     var a = t.getUint8(this._size);
                     this._size += 1;
-                    var r = new FT(n, a);
+                    var r = new BT(n, a);
                     r.positionChanged && (r.pos.x = t.getFloat32(this._size), r.pos.y = t.getFloat32(this._size + 4), r.pos.z = t.getFloat32(this._size + 8), this._size += 12), r.directionChanged && (r.pitchYaw.y = t.getFloat32(this._size), r.pitchYaw.x = t.getFloat32(this._size + 4), this._size += 8), this._entitySnapshots.set(n, r)
                 }
                 if (void 0 !== this._prevPacketWorldUpdate) {
@@ -20175,10 +20210,10 @@ function noKillFeed(argument) {
                     return this._tick
                 }
             }]), t
-        }(bT), BT = function (e) {
+        }(kT), KT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.SET_BLOCK_IN) || this)._x = void 0, t._y = void 0, t._z = void 0, t._blockId = void 0, t
+                return (t = e.call(this, bT.SET_BLOCK_IN) || this)._x = void 0, t._y = void 0, t._z = void 0, t._blockId = void 0, t
             }
 
             ro()(t, e);
@@ -20205,10 +20240,10 @@ function noKillFeed(argument) {
                     return this._blockId
                 }
             }]), t
-        }(bT), YT = function (e) {
+        }(kT), zT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.RESPAWN_IN) || this)._playerId = void 0, t._pos = void 0, t._dir = void 0, t
+                return (t = e.call(this, bT.RESPAWN_IN) || this)._playerId = void 0, t._pos = void 0, t._dir = void 0, t
             }
 
             ro()(t, e);
@@ -20235,10 +20270,10 @@ function noKillFeed(argument) {
                     return this._dir
                 }
             }]), t
-        }(bT), KT = function (e) {
+        }(kT), WT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.ENTITY_METADATA_IN) || this)._entityId = void 0, t._size = void 0, t._metadatas = void 0, t._size = 0, t._metadatas = [], t
+                return (t = e.call(this, bT.ENTITY_METADATA_IN) || this)._entityId = void 0, t._size = void 0, t._metadatas = void 0, t._size = 0, t._metadatas = [], t
             }
 
             ro()(t, e);
@@ -20301,10 +20336,10 @@ function noKillFeed(argument) {
                     return this._metadatas
                 }
             }]), t
-        }(bT), zT = function (e) {
+        }(kT), VT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.GAME_METADATA_IN) || this)._size = void 0, t._metadatas = void 0, t._size = 0, t._metadatas = [], t
+                return (t = e.call(this, bT.GAME_METADATA_IN) || this)._size = void 0, t._metadatas = void 0, t._size = 0, t._metadatas = [], t
             }
 
             ro()(t, e);
@@ -20363,10 +20398,10 @@ function noKillFeed(argument) {
                     return this._metadatas
                 }
             }]), t
-        }(bT), WT = function (e) {
+        }(kT), jT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.ENTITY_ACTION_IN) || this)._entityId = void 0, t._entityActionType = void 0, t
+                return (t = e.call(this, bT.ENTITY_ACTION_IN) || this)._entityId = void 0, t._entityActionType = void 0, t
             }
 
             ro()(t, e);
@@ -20385,10 +20420,10 @@ function noKillFeed(argument) {
                     return this._entityActionType
                 }
             }]), t
-        }(bT), VT = function (e) {
+        }(kT), ZT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.FLOATING_BLOCKS_BREAK_IN) || this)._origin = void 0, t._marked = void 0, t
+                return (t = e.call(this, bT.FLOATING_BLOCKS_BREAK_IN) || this)._origin = void 0, t._marked = void 0, t
             }
 
             ro()(t, e);
@@ -20413,10 +20448,10 @@ function noKillFeed(argument) {
                     return this._marked
                 }
             }]), t
-        }(bT), jT = function (e) {
+        }(kT), qT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.DAMAGE_RECEIVED_IN) || this)._sourcePos = void 0, t._killed = void 0, t
+                return (t = e.call(this, bT.DAMAGE_RECEIVED_IN) || this)._sourcePos = void 0, t._killed = void 0, t
             }
 
             ro()(t, e);
@@ -20437,10 +20472,10 @@ function noKillFeed(argument) {
                     return this._killed
                 }
             }]), t
-        }(bT), ZT = n(24), qT = n.n(ZT), XT = function (e) {
+        }(kT), XT = n(24), JT = n.n(XT), QT = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.CHAT_MESSAGE_IN) || this)._message = void 0, t
+                return (t = e.call(this, bT.CHAT_MESSAGE_IN) || this)._message = void 0, t
             }
 
             ro()(t, e);
@@ -20448,7 +20483,7 @@ function noKillFeed(argument) {
             return n.unpack = function (e) {
                 var t = new DataView(e), n = t.getUint8(1);
                 this._message = "";
-                for (var a = 0; a < n; a++) this._message += qT()(t.getUint32(2 + 4 * a))
+                for (var a = 0; a < n; a++) this._message += JT()(t.getUint32(2 + 4 * a))
             }, n.size = function () {
                 return 2 + 4 * this._message.length
             }, u()(t, [{
@@ -20456,18 +20491,18 @@ function noKillFeed(argument) {
                     return this._message
                 }
             }]), t
-        }(bT);
+        }(kT);
 
-        function JT(e, t) {
+        function $T(e, t) {
             var n;
             if ("undefined" == typeof Symbol || null == e[Symbol.iterator]) {
                 if (Array.isArray(e) || (n = function (e, t) {
                     if (!e) return;
-                    if ("string" == typeof e) return QT(e, t);
+                    if ("string" == typeof e) return eA(e, t);
                     var n = Object.prototype.toString.call(e).slice(8, -1);
                     "Object" === n && e.constructor && (n = e.constructor.name);
                     if ("Map" === n || "Set" === n) return Array.from(e);
-                    if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return QT(e, t)
+                    if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return eA(e, t)
                 }(e)) || t && e && "number" == typeof e.length) {
                     n && (e = n);
                     var a = 0;
@@ -20480,16 +20515,16 @@ function noKillFeed(argument) {
             return (n = e[Symbol.iterator]()).next.bind(n)
         }
 
-        function QT(e, t) {
+        function eA(e, t) {
             (null == t || t > e.length) && (t = e.length);
             for (var n = 0, a = new Array(t); n < t; n++) a[n] = e[n];
             return a
         }
 
-        var $T, eA = function (e) {
+        var tA, nA = function (e) {
             function t(t) {
                 var n;
-                return (n = e.call(this, NT.SEND_CHAT_MESSAGE_OUT) || this)._message = t, n._message = n._message.substr(0, 100), n
+                return (n = e.call(this, bT.SEND_CHAT_MESSAGE_OUT) || this)._message = t, n._message = n._message.substr(0, 100), n
             }
 
             ro()(t, e);
@@ -20497,7 +20532,7 @@ function noKillFeed(argument) {
             return n.pack = function () {
                 var e = new ArrayBuffer(this.size()), t = new DataView(e);
                 t.setUint8(0, this.id);
-                for (var n, a = [], r = JT(this._message); !(n = r()).done;) {
+                for (var n, a = [], r = $T(this._message); !(n = r()).done;) {
                     var i = n.value;
                     a.push(i)
                 }
@@ -20510,10 +20545,10 @@ function noKillFeed(argument) {
             }, n.size = function () {
                 return 2 + 4 * this._message.length
             }, t
-        }(PT), tA = function (e) {
+        }(wT), aA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.ENTITY_CREATE_IN) || this)._entityId = void 0, t._entityType = void 0, t
+                return (t = e.call(this, bT.ENTITY_CREATE_IN) || this)._entityId = void 0, t._entityType = void 0, t
             }
 
             ro()(t, e);
@@ -20532,10 +20567,10 @@ function noKillFeed(argument) {
                     return this._entityType
                 }
             }]), t
-        }(bT), nA = function (e) {
+        }(kT), rA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.ENTITY_DESTROY_IN) || this)._entityId = void 0, t
+                return (t = e.call(this, bT.ENTITY_DESTROY_IN) || this)._entityId = void 0, t
             }
 
             ro()(t, e);
@@ -20550,10 +20585,10 @@ function noKillFeed(argument) {
                     return this._entityId
                 }
             }]), t
-        }(bT), aA = function (e) {
+        }(kT), iA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.PLAYER_KILL_IN) || this)._killerName = void 0, t._killerTeam = void 0, t._victimName = void 0, t._victimTeam = void 0, t._deathCause = void 0, t._deathCauseItemType = void 0, t._size = void 0, t._size = 0, t._killerName = "", t._killerTeam = Pn.RED, t._victimName = "", t._victimTeam = Pn.RED, t._deathCauseItemType = Ve.EMPTY, t
+                return (t = e.call(this, bT.PLAYER_KILL_IN) || this)._killerName = void 0, t._killerTeam = void 0, t._victimName = void 0, t._victimTeam = void 0, t._deathCause = void 0, t._deathCauseItemType = void 0, t._size = void 0, t._size = 0, t._killerName = "", t._killerTeam = Pn.RED, t._victimName = "", t._victimTeam = Pn.RED, t._deathCauseItemType = Ve.EMPTY, t
             }
 
             ro()(t, e);
@@ -20595,10 +20630,10 @@ function noKillFeed(argument) {
                     return this._deathCauseItemType
                 }
             }]), t
-        }(bT), rA = function (e) {
+        }(kT), oA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.SET_BLOCK_BREAK_PROGRESS_IN) || this)._x = void 0, t._y = void 0, t._z = void 0, t._progress = void 0, t
+                return (t = e.call(this, bT.SET_BLOCK_BREAK_PROGRESS_IN) || this)._x = void 0, t._y = void 0, t._z = void 0, t._progress = void 0, t
             }
 
             ro()(t, e);
@@ -20625,9 +20660,9 @@ function noKillFeed(argument) {
                     return this._progress
                 }
             }]), t
-        }(bT), iA = function (e) {
+        }(kT), sA = function (e) {
             function t() {
-                return e.call(this, NT.HEARTBEAT_OUT) || this
+                return e.call(this, bT.HEARTBEAT_OUT) || this
             }
 
             ro()(t, e);
@@ -20638,10 +20673,10 @@ function noKillFeed(argument) {
             }, n.size = function () {
                 return 1
             }, t
-        }(PT), oA = function (e) {
+        }(wT), lA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.MINIMAP_DATA_IN) || this)._data = void 0, t._size = void 0, t._data = "", t._size = 0, t
+                return (t = e.call(this, bT.MINIMAP_DATA_IN) || this)._data = void 0, t._size = void 0, t._data = "", t._size = 0, t
             }
 
             ro()(t, e);
@@ -20658,10 +20693,10 @@ function noKillFeed(argument) {
                     return this._data
                 }
             }]), t
-        }(bT), sA = function (e) {
+        }(kT), cA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.PLAYER_KICK_IN) || this)._message = void 0, t
+                return (t = e.call(this, bT.PLAYER_KICK_IN) || this)._message = void 0, t
             }
 
             ro()(t, e);
@@ -20669,7 +20704,7 @@ function noKillFeed(argument) {
             return n.unpack = function (e) {
                 var t = new DataView(e), n = t.getUint8(1);
                 this._message = "";
-                for (var a = 0; a < n; a++) this._message += qT()(t.getUint32(2 + 4 * a))
+                for (var a = 0; a < n; a++) this._message += JT()(t.getUint32(2 + 4 * a))
             }, n.size = function () {
                 return 2 + this._message.length
             }, u()(t, [{
@@ -20677,10 +20712,10 @@ function noKillFeed(argument) {
                     return this._message
                 }
             }]), t
-        }(bT), lA = function (e) {
+        }(kT), uA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.GAME_OVER_IN) || this)._won = void 0, t._won = !1, t
+                return (t = e.call(this, bT.GAME_OVER_IN) || this)._won = void 0, t._won = !1, t
             }
 
             ro()(t, e);
@@ -20695,9 +20730,9 @@ function noKillFeed(argument) {
                     return this._won
                 }
             }]), t
-        }(bT), cA = function (e) {
+        }(kT), _A = function (e) {
             function t() {
-                return e.call(this, NT.HEARTBEAT_IN) || this
+                return e.call(this, bT.HEARTBEAT_IN) || this
             }
 
             ro()(t, e);
@@ -20707,10 +20742,10 @@ function noKillFeed(argument) {
             }, n.size = function () {
                 return 1
             }, t
-        }(bT), uA = function (e) {
+        }(kT), hA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.HUD_CENTER_MESSAGE_IN) || this)._duration = void 0, t._message = void 0, t
+                return (t = e.call(this, bT.HUD_CENTER_MESSAGE_IN) || this)._duration = void 0, t._message = void 0, t
             }
 
             ro()(t, e);
@@ -20720,7 +20755,7 @@ function noKillFeed(argument) {
                 this._duration = t.getUint8(1);
                 var n = t.getUint8(2);
                 this._message = "";
-                for (var a = 0; a < n; a++) this._message += qT()(t.getUint32(3 + 4 * a))
+                for (var a = 0; a < n; a++) this._message += JT()(t.getUint32(3 + 4 * a))
             }, n.size = function () {
                 return 3 + 4 * this._message.length
             }, u()(t, [{
@@ -20732,10 +20767,10 @@ function noKillFeed(argument) {
                     return this._message
                 }
             }]), t
-        }(bT), _A = function (e) {
+        }(kT), dA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.TOXIC_CIRCLE_INFO_IN) || this)._currPosition = void 0, t._currRadius = void 0, t._nextPosition = void 0, t._nextRadius = void 0, t._prepTime = void 0, t._shrinkTime = void 0, t
+                return (t = e.call(this, bT.TOXIC_CIRCLE_INFO_IN) || this)._currPosition = void 0, t._currRadius = void 0, t._nextPosition = void 0, t._nextRadius = void 0, t._prepTime = void 0, t._shrinkTime = void 0, t
             }
 
             ro()(t, e);
@@ -20772,10 +20807,10 @@ function noKillFeed(argument) {
                     return this._shrinkTime
                 }
             }]), t
-        }(bT), hA = function (e) {
+        }(kT), pA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.ENTITY_DAMAGE_IN) || this)._entityId = void 0, t._shieldDamage = void 0, t._healthDamage = void 0, t._showHitMark = void 0, t._isHeadshot = void 0, t._killed = void 0, t
+                return (t = e.call(this, bT.ENTITY_DAMAGE_IN) || this)._entityId = void 0, t._shieldDamage = void 0, t._healthDamage = void 0, t._showHitMark = void 0, t._isHeadshot = void 0, t._killed = void 0, t
             }
 
             ro()(t, e);
@@ -20812,10 +20847,10 @@ function noKillFeed(argument) {
                     return this._killed
                 }
             }]), t
-        }(bT), dA = function (e) {
+        }(kT), mA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.REQUEST_JOIN_DENY_IN) || this)._message = void 0, t
+                return (t = e.call(this, bT.REQUEST_JOIN_DENY_IN) || this)._message = void 0, t
             }
 
             ro()(t, e);
@@ -20823,7 +20858,7 @@ function noKillFeed(argument) {
             return n.unpack = function (e) {
                 var t = new DataView(e), n = t.getUint8(1);
                 this._message = "";
-                for (var a = 0; a < n; a++) this._message += qT()(t.getUint32(2 + 4 * a))
+                for (var a = 0; a < n; a++) this._message += JT()(t.getUint32(2 + 4 * a))
             }, n.size = function () {
                 return 2 + this._message.length
             }, u()(t, [{
@@ -20831,10 +20866,10 @@ function noKillFeed(argument) {
                     return this._message
                 }
             }]), t
-        }(bT), pA = function (e) {
+        }(kT), EA = function (e) {
             function t(t) {
                 var n;
-                return (n = e.call(this, NT.ITEM_PICK_UP_REQUEST_OUT) || this)._itemEntityId = t, n
+                return (n = e.call(this, bT.ITEM_PICK_UP_REQUEST_OUT) || this)._itemEntityId = t, n
             }
 
             ro()(t, e);
@@ -20845,9 +20880,9 @@ function noKillFeed(argument) {
             }, n.size = function () {
                 return 5
             }, t
-        }(PT), mA = function (e) {
+        }(wT), SA = function (e) {
             function t() {
-                return e.call(this, NT.REQUEST_RESPAWN_OUT) || this
+                return e.call(this, bT.REQUEST_RESPAWN_OUT) || this
             }
 
             ro()(t, e);
@@ -20858,10 +20893,10 @@ function noKillFeed(argument) {
             }, n.size = function () {
                 return 1
             }, t
-        }(PT), EA = function (e) {
+        }(wT), fA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.GLOBAL_PLAYER_METADATA_IN) || this)._entityId = void 0, t._commandType = void 0, t._size = void 0, t._metadatas = void 0, t._size = 0, t._metadatas = [], t
+                return (t = e.call(this, bT.GLOBAL_PLAYER_METADATA_IN) || this)._entityId = void 0, t._commandType = void 0, t._size = void 0, t._metadatas = void 0, t._size = 0, t._metadatas = [], t
             }
 
             ro()(t, e);
@@ -20928,10 +20963,10 @@ function noKillFeed(argument) {
                     return this._metadatas
                 }
             }]), t
-        }(bT), SA = function (e) {
+        }(kT), gA = function (e) {
             function t(t, n) {
                 var a;
-                return (a = e.call(this, NT.REQUEST_LOADOUT_OUT) || this)._loadoutType = t, a._weaponType = n, a
+                return (a = e.call(this, bT.REQUEST_LOADOUT_OUT) || this)._loadoutType = t, a._weaponType = n, a
             }
 
             ro()(t, e);
@@ -20942,10 +20977,10 @@ function noKillFeed(argument) {
             }, n.size = function () {
                 return 3
             }, t
-        }(PT), fA = function (e) {
+        }(wT), IA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.NOTIFICATION_MESSAGE_IN) || this)._message = void 0, t
+                return (t = e.call(this, bT.NOTIFICATION_MESSAGE_IN) || this)._message = void 0, t
             }
 
             ro()(t, e);
@@ -20953,7 +20988,7 @@ function noKillFeed(argument) {
             return n.unpack = function (e) {
                 var t = new DataView(e), n = t.getUint8(1);
                 this._message = "";
-                for (var a = 0; a < n; a++) this._message += qT()(t.getUint32(2 + 4 * a))
+                for (var a = 0; a < n; a++) this._message += JT()(t.getUint32(2 + 4 * a))
             }, n.size = function () {
                 return 2 + 4 * this._message.length
             }, u()(t, [{
@@ -20961,10 +20996,10 @@ function noKillFeed(argument) {
                     return this._message
                 }
             }]), t
-        }(bT), gA = function (e) {
+        }(kT), yA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.PLAY_DIRECT_SOUND_IN) || this)._soundType = void 0, t._detune = void 0, t._volume = void 0, t
+                return (t = e.call(this, bT.PLAY_DIRECT_SOUND_IN) || this)._soundType = void 0, t._detune = void 0, t._volume = void 0, t
             }
 
             ro()(t, e);
@@ -20987,10 +21022,10 @@ function noKillFeed(argument) {
                     return this._volume
                 }
             }]), t
-        }(bT), IA = function (e) {
+        }(kT), RA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.PLAY_POSITIONAL_SOUND_IN) || this)._position = void 0, t._soundType = void 0, t._detune = void 0, t._volume = void 0, t
+                return (t = e.call(this, bT.PLAY_POSITIONAL_SOUND_IN) || this)._position = void 0, t._soundType = void 0, t._detune = void 0, t._volume = void 0, t
             }
 
             ro()(t, e);
@@ -21017,10 +21052,10 @@ function noKillFeed(argument) {
                     return this._volume
                 }
             }]), t
-        }(bT), yA = function (e) {
+        }(kT), OA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.KILL_MEDAL_IN) || this)._killMedalType = void 0, t._score = void 0, t
+                return (t = e.call(this, bT.KILL_MEDAL_IN) || this)._killMedalType = void 0, t._score = void 0, t
             }
 
             ro()(t, e);
@@ -21039,10 +21074,10 @@ function noKillFeed(argument) {
                     return this._score
                 }
             }]), t
-        }(bT), RA = function (e) {
+        }(kT), TA = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, NT.RESPAWN_IN) || this)._teams = void 0, t._size = void 0, t._teams = [], t._size = 0, t
+                return (t = e.call(this, bT.RESPAWN_IN) || this)._teams = void 0, t._size = void 0, t._teams = [], t._size = 0, t
             }
 
             ro()(t, e);
@@ -21065,32 +21100,32 @@ function noKillFeed(argument) {
                     return this._teams
                 }
             }]), t
-        }(bT), OA = function () {
+        }(kT), AA = function () {
             function e(e) {
                 var t = this;
                 this._statsRenderer = e, this._primaryLoadout = void 0, this._secondaryLoadout = void 0, this._socket = void 0, this._ip = void 0, this._port = void 0, this._lastHeartbeatSendTime = void 0, this._prevPacketWorldUpdate = void 0, this.onInputReceived = function (e) {
-                    var n = new UT(e);
+                    var n = new DT(e);
                     t.sendPacket(n)
                 }, this.onChatMessageSend = function (e) {
-                    var n = new eA(e);
+                    var n = new nA(e);
                     t.sendPacket(n)
                 }, this.onItemPickupRequest = function (e) {
-                    var n = new pA(e);
+                    var n = new EA(e);
                     t.sendPacket(n)
                 }, this.onRequestLoadout = function (e, n) {
-                    var a = new SA(e, n);
+                    var a = new gA(e, n);
                     t.sendPacket(a)
                 }, this.onRequestRespawn = function () {
-                    var e = new mA;
+                    var e = new SA;
                     t.sendPacket(e)
                 }, this.onSocketOpen = function () {
                     Di.log("Connected to " + t.address + ":" + t.port);
-                    var e = new DT(t._primaryLoadout, t._secondaryLoadout);
+                    var e = new FT(t._primaryLoadout, t._secondaryLoadout);
                     t.sendPacket(e)
                 }, this.heartBeat = function () {
                     if (t.connected) {
                         t._lastHeartbeatSendTime = Date.now();
-                        var e = new iA;
+                        var e = new sA;
                         t.sendPacket(e)
                     }
                 }, this.onHeartBeat = function () {
@@ -21098,130 +21133,129 @@ function noKillFeed(argument) {
                     t._statsRenderer.ping = e, setTimeout(t.heartBeat, O.PING_CHECK_INTERVAL)
                 }, this.onSocketMessage = function (e) {
                     var n = e.data;
-                    // #Socket
                     switch (new DataView(n).getUint8(0)) {
-                        case NT.LOAD_CHUNK_IN:
-                            var a = new xT;
+                        case bT.LOAD_CHUNK_IN:
+                            var a = new PT;
                             a.unpack(n), A.emit(v.LOAD_CHUNK, a.x, a.y, a.z, a.numSolidBlocks, a.blocks), t._statsRenderer.recordDownload(a.size());
                             break;
-                        case NT.UNLOAD_CHUNK_IN:
-                            var r = new kT;
+                        case bT.UNLOAD_CHUNK_IN:
+                            var r = new UT;
                             r.unpack(n), A.emit(v.UNLOAD_CHUNK, r.x, r.y, r.z), t._statsRenderer.recordDownload(r.size());
                             break;
-                        case NT.SERVER_INPUT_RESPONSE_IN:
-                            var i = new wT;
+                        case bT.SERVER_INPUT_RESPONSE_IN:
+                            var i = new GT;
                             i.unpack(n), A.emit(v.INPUT_VERIFICATION_RECEIVED, i.positionChanged, i.velocityChanged, i.eyeHeightChanged, i.aimSpreadChanged, i.selectedIndexChanged, i.healthOrShieldChanged, i.buildModeChanged, i.inventoryStatusChanged, i.physicsStep, i.selectedIndex, i.items, i.cooldowns, i.maxHealth, i.health, i.maxShield, i.shield, i.buildMode, i.inventoryStatus), t._statsRenderer.recordDownload(i.size());
                             break;
-                        case NT.WORLD_UPDATE_IN:
-                            var o = new HT(t._prevPacketWorldUpdate);
+                        case bT.WORLD_UPDATE_IN:
+                            var o = new YT(t._prevPacketWorldUpdate);
                             t._prevPacketWorldUpdate = o, o.unpack(n), A.emit(v.WORLD_UPDATE_RECEIVED, o), t._statsRenderer.recordDownload(o.size());
                             break;
-                        case NT.REQUEST_JOIN_RESPONSE_IN:
-                            var s = new GT;
+                        case bT.REQUEST_JOIN_RESPONSE_IN:
+                            var s = new HT;
                             s.unpack(n), A.emit(v.GAME_JOIN, s.playerId, s.playerName, s.spawnLocation, s.spawnPitchYaw, s.playerTeam, s.minChunkPos, s.maxChunkPos), t._statsRenderer.recordDownload(s.size()), t.heartBeat();
                             break;
-                        case NT.SET_BLOCK_IN:
-                            var l = new BT;
+                        case bT.SET_BLOCK_IN:
+                            var l = new KT;
                             l.unpack(n), A.emit(v.SET_BLOCK, l.x, l.y, l.z, l.blockId), t._statsRenderer.recordDownload(l.size());
                             break;
-                        case NT.FLOATING_BLOCKS_BREAK_IN:
-                            var c = new VT;
+                        case bT.FLOATING_BLOCKS_BREAK_IN:
+                            var c = new ZT;
                             c.unpack(n), A.emit(v.FLOATING_BLOCKS_BREAK, c.origin, c.marked), t._statsRenderer.recordDownload(c.size());
                             break;
-                        case NT.RESPAWN_IN:
-                            var u = new YT;
+                        case bT.RESPAWN_IN:
+                            var u = new zT;
                             u.unpack(n), A.emit(v.RESPAWN, u.playerId, u.pos, u.dir), t._statsRenderer.recordDownload(u.size());
                             break;
-                        case NT.CHAT_MESSAGE_IN:
-                            var _ = new XT;
+                        case bT.CHAT_MESSAGE_IN:
+                            var _ = new QT;
                             _.unpack(n), A.emit(v.CHAT_MESSAGE_RECEIVE, _.message), t._statsRenderer.recordDownload(_.size());
                             break;
-                        case NT.ENTITY_CREATE_IN:
-                            var h = new tA;
+                        case bT.ENTITY_CREATE_IN:
+                            var h = new aA;
                             h.unpack(n), A.emit(v.ENTITY_CREATE, h.entityId, h.entityType), t._statsRenderer.recordDownload(h.size());
                             break;
-                        case NT.ENTITY_DESTROY_IN:
-                            var d = new nA;
+                        case bT.ENTITY_DESTROY_IN:
+                            var d = new rA;
                             d.unpack(n), A.emit(v.ENTITY_DESTROY, d.entityId), t._statsRenderer.recordDownload(d.size());
                             break;
-                        case NT.PLAYER_KILL_IN:
-                            var p = new aA;
+                        case bT.PLAYER_KILL_IN:
+                            var p = new iA;
                             p.unpack(n), A.emit(v.PLAYER_KILL, p.killerName, p.killerTeam, p.victimName, p.victimTeam, p.deathCause, p.deathCauseItemType), t._statsRenderer.recordDownload(p.size());
                             break;
-                        case NT.ENTITY_METADATA_IN:
-                            var m = new KT;
+                        case bT.ENTITY_METADATA_IN:
+                            var m = new WT;
                             m.unpack(n), A.emit(v.ENTITY_UPDATE_METADATAS, m.entityId, m.metadatas), t._statsRenderer.recordDownload(m.size());
                             break;
-                        case NT.GLOBAL_PLAYER_METADATA_IN:
-                            var E = new EA;
+                        case bT.GLOBAL_PLAYER_METADATA_IN:
+                            var E = new fA;
                             E.unpack(n), A.emit(v.GLOBAL_PLAYER_METADATA, E.entityId, E.commandType, E.metadatas), t._statsRenderer.recordDownload(E.size());
                             break;
-                        case NT.SET_BLOCK_BREAK_PROGRESS_IN:
-                            var S = new rA;
+                        case bT.SET_BLOCK_BREAK_PROGRESS_IN:
+                            var S = new oA;
                             S.unpack(n), A.emit(v.SET_BLOCK_BREAK_PROGRESS, S.x, S.y, S.z, S.progress), t._statsRenderer.recordDownload(S.size());
                             break;
-                        case NT.ENTITY_ACTION_IN:
-                            var f = new WT;
+                        case bT.ENTITY_ACTION_IN:
+                            var f = new jT;
                             f.unpack(n), A.emit(v.ENTITY_ACTION, f.entityId, f.actionType), t._statsRenderer.recordDownload(f.size());
                             break;
-                        case NT.HEARTBEAT_IN:
-                            var g = new cA;
+                        case bT.HEARTBEAT_IN:
+                            var g = new _A;
                             g.unpack(n), t._statsRenderer.recordDownload(g.size()), t.onHeartBeat();
                             break;
-                        case NT.DAMAGE_RECEIVED_IN:
-                            var I = new jT;
+                        case bT.DAMAGE_RECEIVED_IN:
+                            var I = new qT;
                             I.unpack(n), A.emit(v.CLIENT_DAMAGE_RECEIVED, I.sourcePos, I.killed), t._statsRenderer.recordDownload(I.size());
                             break;
-                        case NT.ENTITY_DAMAGE_IN:
-                            var y = new hA;
+                        case bT.ENTITY_DAMAGE_IN:
+                            var y = new pA;
                             y.unpack(n), A.emit(v.ENTITY_DAMAGE, y.entityId, y.shieldDamage, y.healthDamage, y.showHitMark, y.isHeadshot, y.killed), t._statsRenderer.recordDownload(y.size());
                             break;
-                        case NT.MINIMAP_DATA_IN:
-                            var R = new oA;
+                        case bT.MINIMAP_DATA_IN:
+                            var R = new lA;
                             R.unpack(n), A.emit(v.MINIMAP_DATA, R.data), t._statsRenderer.recordDownload(R.size());
                             break;
-                        case NT.HUD_CENTER_MESSAGE_IN:
-                            var O = new uA;
+                        case bT.HUD_CENTER_MESSAGE_IN:
+                            var O = new hA;
                             O.unpack(n), A.emit(v.HUD_CENTER_MESSAGE, O.duration, O.message), t._statsRenderer.recordDownload(O.size());
                             break;
-                        case NT.TOXIC_CIRCLE_INFO_IN:
-                            var T = new _A;
+                        case bT.TOXIC_CIRCLE_INFO_IN:
+                            var T = new dA;
                             T.unpack(n), A.emit(v.TOXIC_CIRCLE_INFO_SYNC, T.currPosition, T.currRadius, T.nextPosition, T.nextRadius, T.prepTime, T.shrinkTime), t._statsRenderer.recordDownload(T.size());
                             break;
-                        case NT.GAME_METADATA_IN:
-                            var C = new zT;
+                        case bT.GAME_METADATA_IN:
+                            var C = new VT;
                             C.unpack(n), A.emit(v.GAME_METADATA, C.metadatas), t._statsRenderer.recordDownload(C.size());
                             break;
-                        case NT.GAME_OVER_IN:
-                            var M = new lA;
+                        case bT.GAME_OVER_IN:
+                            var M = new uA;
                             M.unpack(n), A.emit(v.GAME_OVER, M.won), t._statsRenderer.recordDownload(M.size());
                             break;
-                        case NT.PLAYER_KICK_IN:
-                            var N = new sA;
+                        case bT.PLAYER_KICK_IN:
+                            var N = new cA;
                             N.unpack(n), A.emit(v.PLAYER_KICK, N.message), t._statsRenderer.recordDownload(N.size());
                             break;
-                        case NT.REQUEST_JOIN_DENY_IN:
-                            var L = new dA;
+                        case bT.REQUEST_JOIN_DENY_IN:
+                            var L = new mA;
                             L.unpack(n), A.emit(v.GAME_JOIN_DENY, L.message), t._statsRenderer.recordDownload(L.size());
                             break;
-                        case NT.NOTIFICATION_MESSAGE_IN:
-                            var b = new fA;
+                        case bT.NOTIFICATION_MESSAGE_IN:
+                            var b = new IA;
                             b.unpack(n), A.emit(v.NOTIFICATION_MESSAGE_RECEIVED, b.message), t._statsRenderer.recordDownload(b.size());
                             break;
-                        case NT.PLAY_DIRECT_SOUND_IN:
-                            var x = new gA;
+                        case bT.PLAY_DIRECT_SOUND_IN:
+                            var x = new yA;
                             x.unpack(n), A.emit(v.PLAY_DIRECT_SOUND, x.soundType, x.detune, x.volume), t._statsRenderer.recordDownload(x.size());
                             break;
-                        case NT.PLAY_POSITIONAL_SOUND_IN:
-                            var k = new IA;
+                        case bT.PLAY_POSITIONAL_SOUND_IN:
+                            var k = new RA;
                             k.unpack(n), A.emit(v.PLAY_POSITIONAL_SOUND, k.position, k.soundType, k.detune, k.volume), t._statsRenderer.recordDownload(k.size());
                             break;
-                        case NT.KILL_MEDAL_IN:
-                            var P = new yA;
+                        case bT.KILL_MEDAL_IN:
+                            var P = new OA;
                             P.unpack(n), A.emit(v.KILL_MEDAL, P.killMedalType, P.score), t._statsRenderer.recordDownload(P.size());
                             break;
-                        case NT.SCOREBOARD_TEAM_INFO_IN:
-                            var U = new RA;
+                        case bT.SCOREBOARD_TEAM_INFO_IN:
+                            var U = new TA;
                             U.unpack(n), A.emit(v.SCOREBOARD_TEAM_INFO, U.teams), t._statsRenderer.recordDownload(U.size())
                     }
                 }, this.onSocketError = function (e) {
@@ -21262,16 +21296,16 @@ function noKillFeed(argument) {
                 }
             }]), e
         }();
-        l.m.enabled = !0, $T = l.hb.prototype.updateMatrixWorld, l.hb.prototype.updateMatrixWorld = function () {
-            this.visible && $T.apply(this)
+        l.m.enabled = !0, tA = l.hb.prototype.updateMatrixWorld, l.hb.prototype.updateMatrixWorld = function () {
+            this.visible && tA.apply(this)
         }, s()(i.a.mark((function e() {
             var t, n;
             return i.a.wrap((function (e) {
                 for (; ;) switch (e.prev = e.next) {
                     case 0:
-                        return new vT("#app"), e.next = 3, ih();
+                        return new LT("#app"), e.next = 3, ih();
                     case 3:
-                        t = e.sent, n = new OA(t.statsRenderer), A.on(v.REQUEST_GAME_START, (function (e, t, a, r) {
+                        t = e.sent, n = new AA(t.statsRenderer), A.on(v.REQUEST_GAME_START, (function (e, t, a, r) {
                             n.connect(e, t, a, r), window.onbeforeunload = function () {
                                 return ""
                             }
@@ -21286,9 +21320,9 @@ function noKillFeed(argument) {
         })))()
     }, 68: function (e, t, n) {
         e.exports = function () {
-            return n(82)('!function(t){var e={};function r(o){if(e[o])return e[o].exports;var n=e[o]={i:o,l:!1,exports:{}};return t[o].call(n.exports,n,n.exports,r),n.l=!0,n.exports}r.m=t,r.c=e,r.d=function(t,e,o){r.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:o})},r.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},r.t=function(t,e){if(1&e&&(t=r(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var o=Object.create(null);if(r.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var n in t)r.d(o,n,function(e){return t[e]}.bind(null,n));return o},r.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(e,"a",e),e},r.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},r.p="/",r(r.s=0)}([function(t,e,r){"use strict";r.r(e);var o,n=function(t,e,r){return{x:t,y:e,z:r}},s=(void 0===navigator.hardwareConcurrency||navigator.hardwareConcurrency,32),a=.5;n(.35,1.3,.35),n(.3,1.3,.3);!function(t){t[t.AIR=0]="AIR",t[t.GRASS=1]="GRASS",t[t.DIRT=2]="DIRT",t[t.SAND=3]="SAND",t[t.ROCK=4]="ROCK",t[t.LOG_UP=5]="LOG_UP",t[t.LEAVES=6]="LEAVES",t[t.LEAVES_WITH_RED_BERRIES=7]="LEAVES_WITH_RED_BERRIES",t[t.LEAVES_WITH_ORANGE_BERRIES=8]="LEAVES_WITH_ORANGE_BERRIES",t[t.BEDROCK=9]="BEDROCK",t[t.TEMPLE_BRICK=10]="TEMPLE_BRICK",t[t.MOSSY_TEMPLE_BRICK=11]="MOSSY_TEMPLE_BRICK",t[t.CRACKED_TEMPLE_BRICK=12]="CRACKED_TEMPLE_BRICK",t[t.MYSTICAL_TEMPLE_BRICK=13]="MYSTICAL_TEMPLE_BRICK",t[t.WATER=14]="WATER",t[t.WOODEN_CRATE=15]="WOODEN_CRATE",t[t.REINFORCED_IRON=16]="REINFORCED_IRON",t[t.EMERALD_ORE=17]="EMERALD_ORE",t[t.RUBY_ORE=18]="RUBY_ORE",t[t.SAPPHIRE_ORE=19]="SAPPHIRE_ORE",t[t.IRON_ORE=20]="IRON_ORE",t[t.WOOD=21]="WOOD",t[t.STONE_BRICK=22]="STONE_BRICK",t[t.WOODEN_CHEST=23]="WOODEN_CHEST",t[t.IRON_CHEST=24]="IRON_CHEST",t[t.GOLDEN_CHEST=25]="GOLDEN_CHEST",t[t.CACTUS_X=26]="CACTUS_X",t[t.CACTUS_Y=27]="CACTUS_Y",t[t.CACTUS_Z=28]="CACTUS_Z",t[t.SAND_TREASURE_MARKER=29]="SAND_TREASURE_MARKER",t[t.GRASS_TREASURE_MARKER=30]="GRASS_TREASURE_MARKER",t[t.SANDSTONE_BRICK=31]="SANDSTONE_BRICK",t[t.SANDSTONE_PILLAR=32]="SANDSTONE_PILLAR",t[t.SMOOTH_SANDSTONE_BRICK=33]="SMOOTH_SANDSTONE_BRICK",t[t.WORK_STATION=34]="WORK_STATION",t[t.SNOWY_GRASS=35]="SNOWY_GRASS",t[t.SAPPHIRE_STONE_BRICK=36]="SAPPHIRE_STONE_BRICK",t[t.RUBY_STONE_BRICK=37]="RUBY_STONE_BRICK",t[t.LOADOUT_STATION=38]="LOADOUT_STATION",t[t.BEDROCK_BRICK=39]="BEDROCK_BRICK",t[t.REINFORCED_RUBY=40]="REINFORCED_RUBY",t[t.REINFORCED_SAPPHIRE=41]="REINFORCED_SAPPHIRE",t[t.SULFUR_ORE=42]="SULFUR_ORE"}(o||(o={}));var h,u=o;!function(t){t[t.FOOTSTEP_GRASS=0]="FOOTSTEP_GRASS",t[t.FOOTSTEP_SAND=1]="FOOTSTEP_SAND",t[t.FOOTSTEP_ROCKS=2]="FOOTSTEP_ROCKS",t[t.FOOTSTEP_BRICKS=3]="FOOTSTEP_BRICKS",t[t.FOOTSTEP_DIRT=4]="FOOTSTEP_DIRT",t[t.FOOTSTEP_LEAVES=5]="FOOTSTEP_LEAVES",t[t.ITEM_PICKUP=6]="ITEM_PICKUP",t[t.WATER_SPLASH=7]="WATER_SPLASH",t[t.FOOTSTEP_WATER=8]="FOOTSTEP_WATER",t[t.FOOTSTEP_WOOD=9]="FOOTSTEP_WOOD",t[t.GUN_SHOT_COMBAT_ASSAULT_RIFLE=10]="GUN_SHOT_COMBAT_ASSAULT_RIFLE",t[t.GUN_SHOT_TACTICAL_ASSAULT_RIFLE=11]="GUN_SHOT_TACTICAL_ASSAULT_RIFLE",t[t.GUN_SHOT_SURGE_ASSAULT_RIFLE=12]="GUN_SHOT_SURGE_ASSAULT_RIFLE",t[t.GUN_SHOT_STRIKE_PISTOL=13]="GUN_SHOT_STRIKE_PISTOL",t[t.GUN_SHOT_MAGNUM_PISTOL=14]="GUN_SHOT_MAGNUM_PISTOL",t[t.GUN_SHOT_BURST_SHOTGUN=15]="GUN_SHOT_BURST_SHOTGUN",t[t.GUN_SHOT_LIGHT_SUBMACHINE_GUN=16]="GUN_SHOT_LIGHT_SUBMACHINE_GUN",t[t.GUN_SHOT_COMPACT_SUBMACHINE_GUN=17]="GUN_SHOT_COMPACT_SUBMACHINE_GUN",t[t.GUN_SHOT_LIGHT_SNIPER_RIFLE=18]="GUN_SHOT_LIGHT_SNIPER_RIFLE",t[t.GUN_SHOT_HEAVY_SNIPER_RIFLE=19]="GUN_SHOT_HEAVY_SNIPER_RIFLE",t[t.GUN_RELOAD_START=20]="GUN_RELOAD_START",t[t.GUN_RELOAD_FINISH=21]="GUN_RELOAD_FINISH",t[t.HIT=22]="HIT",t[t.HIT_HEADSHOT=23]="HIT_HEADSHOT",t[t.KILL=24]="KILL",t[t.DAMAGE=25]="DAMAGE",t[t.ALERT_SHORT=26]="ALERT_SHORT",t[t.ALERT_LONG=27]="ALERT_LONG",t[t.ALERT_NEGATIVE=28]="ALERT_NEGATIVE",t[t.ALERT_AMBIENT=29]="ALERT_AMBIENT",t[t.ALERT_TICK=30]="ALERT_TICK",t[t.SPRAY=31]="SPRAY",t[t.CRATE_OPEN=32]="CRATE_OPEN"}(h||(h={}));var p,i,x=h,y=((p={})[u.AIR]={opaque:!1,name:"Air",description:"How did you get this?",hardness:1},p[u.GRASS]={opaque:!0,textures:{top:{x:2,y:0},bottom:{x:0,y:0},left:{x:1,y:0},right:{x:1,y:0},front:{x:1,y:0},back:{x:1,y:0}},name:"Grass",description:"A dirt block with grass on top",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.DIRT]={opaque:!0,textures:{top:{x:0,y:0},bottom:{x:0,y:0},left:{x:0,y:0},right:{x:0,y:0},front:{x:0,y:0},back:{x:0,y:0}},name:"Dirt",description:"Muddy and squishy",hardness:1,sound:x.FOOTSTEP_DIRT},p[u.SAND]={opaque:!0,textures:{top:{x:3,y:0},bottom:{x:3,y:0},left:{x:3,y:0},right:{x:3,y:0},front:{x:3,y:0},back:{x:3,y:0}},name:"Sand",description:"Grainy, found near water",hardness:1,sound:x.FOOTSTEP_SAND},p[u.ROCK]={opaque:!0,textures:{top:{x:1,y:1},bottom:{x:1,y:1},left:{x:1,y:1},right:{x:1,y:1},front:{x:1,y:1},back:{x:1,y:1}},name:"Rock",description:"A natural resource found underground",hardness:2,sound:x.FOOTSTEP_ROCKS},p[u.LOG_UP]={opaque:!0,textures:{top:{x:5,y:0},bottom:{x:5,y:0},left:{x:4,y:0},right:{x:4,y:0},front:{x:4,y:0},back:{x:4,y:0}},name:"Log",description:"Unprocessed raw wood",hardness:1.5,sound:x.FOOTSTEP_WOOD},p[u.LEAVES]={opaque:!0,textures:{top:{x:0,y:1},bottom:{x:0,y:1},left:{x:0,y:1},right:{x:0,y:1},front:{x:0,y:1},back:{x:0,y:1}},name:"Leaves",description:"Grow on logs",hardness:.5,sound:x.FOOTSTEP_LEAVES},p[u.LEAVES_WITH_RED_BERRIES]={opaque:!0,textures:{top:{x:3,y:6},bottom:{x:3,y:6},left:{x:3,y:6},right:{x:3,y:6},front:{x:3,y:6},back:{x:3,y:6}},name:"Leaves",description:"Nurtures healthy red berries",hardness:.5,sound:x.FOOTSTEP_LEAVES},p[u.LEAVES_WITH_ORANGE_BERRIES]={opaque:!0,textures:{top:{x:4,y:6},bottom:{x:4,y:6},left:{x:4,y:6},right:{x:4,y:6},front:{x:4,y:6},back:{x:4,y:6}},name:"Leaves",description:"Nurtures healthy orange berries",hardness:.5,sound:x.FOOTSTEP_LEAVES},p[u.BEDROCK]={opaque:!0,textures:{top:{x:2,y:1},bottom:{x:2,y:1},left:{x:2,y:1},right:{x:2,y:1},front:{x:2,y:1},back:{x:2,y:1}},name:"Bedrock",description:"Indestructable",hardness:999999,sound:x.FOOTSTEP_ROCKS},p[u.TEMPLE_BRICK]={opaque:!0,textures:{top:{x:3,y:1},bottom:{x:3,y:1},left:{x:3,y:1},right:{x:3,y:1},front:{x:3,y:1},back:{x:3,y:1}},name:"Temple Brick",description:"Myterious brick found on the temple walls",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.MOSSY_TEMPLE_BRICK]={opaque:!0,textures:{top:{x:5,y:1},bottom:{x:5,y:1},left:{x:5,y:1},right:{x:5,y:1},front:{x:5,y:1},back:{x:5,y:1}},name:"Mossy Temple Brick",description:"Temple brick with some moss grown on it",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.CRACKED_TEMPLE_BRICK]={opaque:!0,textures:{top:{x:0,y:2},bottom:{x:0,y:2},left:{x:0,y:2},right:{x:0,y:2},front:{x:0,y:2},back:{x:0,y:2}},name:"Cracked Temple Brick",description:"Temple brick with some cracks",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.MYSTICAL_TEMPLE_BRICK]={opaque:!0,textures:{top:{x:1,y:2},bottom:{x:1,y:2},left:{x:1,y:2},right:{x:1,y:2},front:{x:1,y:2},back:{x:1,y:2}},name:"Mystical Temple Brick",description:"Temple brick with a mysterious pattern. No one knows what it means",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.WATER]={opaque:!1,textures:{top:{x:4,y:1},bottom:{x:4,y:1},left:{x:4,y:1},right:{x:4,y:1},front:{x:4,y:1},back:{x:4,y:1}},name:"Water",description:"Blue fluid that flows",hardness:1},p[u.WOODEN_CRATE]={opaque:!0,textures:{top:{x:2,y:2},bottom:{x:2,y:2},left:{x:2,y:2},right:{x:2,y:2},front:{x:2,y:2},back:{x:2,y:2}},name:"Wooden Crate",description:"You might find some items inside",hardness:.5,sound:x.FOOTSTEP_WOOD},p[u.REINFORCED_IRON]={opaque:!0,textures:{top:{x:3,y:2},bottom:{x:3,y:2},left:{x:3,y:2},right:{x:3,y:2},front:{x:3,y:2},back:{x:3,y:2}},name:"Reinforced Iron",description:"Very durable material. Perfect for defense",hardness:6,sound:x.FOOTSTEP_BRICKS},p[u.EMERALD_ORE]={opaque:!0,textures:{top:{x:4,y:2},bottom:{x:4,y:2},left:{x:4,y:2},right:{x:4,y:2},front:{x:4,y:2},back:{x:4,y:2}},name:"Emerald Ore",description:"Stone filled with some emerald ore",hardness:2.1,sound:x.FOOTSTEP_ROCKS},p[u.SAPPHIRE_ORE]={opaque:!0,textures:{top:{x:5,y:2},bottom:{x:5,y:2},left:{x:5,y:2},right:{x:5,y:2},front:{x:5,y:2},back:{x:5,y:2}},name:"Sapphire Ore",description:"Stone filled with some sapphire ore",hardness:2.1,sound:x.FOOTSTEP_ROCKS},p[u.RUBY_ORE]={opaque:!0,textures:{top:{x:0,y:3},bottom:{x:0,y:3},left:{x:0,y:3},right:{x:0,y:3},front:{x:0,y:3},back:{x:0,y:3}},name:"Ruby Ore",description:"Stone filled with some ruby ore",hardness:2.1,sound:x.FOOTSTEP_ROCKS},p[u.IRON_ORE]={opaque:!0,textures:{top:{x:1,y:3},bottom:{x:1,y:3},left:{x:1,y:3},right:{x:1,y:3},front:{x:1,y:3},back:{x:1,y:3}},name:"Iron Ore",description:"Stone filled with some iron ore",hardness:2.1,sound:x.FOOTSTEP_ROCKS},p[u.WOOD]={opaque:!0,textures:{top:{x:7,y:0},bottom:{x:7,y:0},left:{x:7,y:0},right:{x:7,y:0},front:{x:7,y:0},back:{x:7,y:0}},name:"Wood",description:"Useful building material crafted from logs",hardness:1.5,sound:x.FOOTSTEP_WOOD},p[u.STONE_BRICK]={opaque:!0,textures:{top:{x:6,y:0},bottom:{x:6,y:0},left:{x:6,y:0},right:{x:6,y:0},front:{x:6,y:0},back:{x:6,y:0}},name:"Stone Brick",description:"Useful building material crafted from rocks",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.WOODEN_CHEST]={opaque:!0,textures:{top:{x:0,y:4},bottom:{x:0,y:4},left:{x:1,y:4},right:{x:1,y:4},front:{x:2,y:4},back:{x:1,y:4}},name:"Wooden Chest",description:"Low tier chest that can store some items",hardness:.5,sound:x.FOOTSTEP_WOOD},p[u.IRON_CHEST]={opaque:!0,textures:{top:{x:0,y:5},bottom:{x:0,y:5},left:{x:1,y:5},right:{x:1,y:5},front:{x:2,y:5},back:{x:1,y:5}},name:"Iron Chest",description:"Mid-tier chest that can store more items",hardness:.5,sound:x.FOOTSTEP_WOOD},p[u.GOLDEN_CHEST]={opaque:!0,textures:{top:{x:0,y:6},bottom:{x:0,y:6},left:{x:1,y:6},right:{x:1,y:6},front:{x:2,y:6},back:{x:1,y:6}},name:"Golden Chest",description:"High tier chest that can store many items",hardness:.5,sound:x.FOOTSTEP_WOOD},p[u.CACTUS_X]={opaque:!0,textures:{top:{x:4,y:3},bottom:{x:4,y:3},left:{x:3,y:3},right:{x:3,y:3},front:{x:4,y:3},back:{x:4,y:3}},name:"Cactus",description:"A plant that grows in the desert",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.CACTUS_Y]={opaque:!0,textures:{top:{x:3,y:3},bottom:{x:3,y:3},left:{x:2,y:3},right:{x:2,y:3},front:{x:2,y:3},back:{x:2,y:3}},name:"Cactus",description:"A plant that grows in the desert",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.CACTUS_Z]={opaque:!0,textures:{top:{x:2,y:3},bottom:{x:2,y:3},left:{x:4,y:3},right:{x:4,y:3},front:{x:3,y:3},back:{x:3,y:3}},name:"Cactus",description:"A plant that grows in the desert",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.SAND_TREASURE_MARKER]={opaque:!0,textures:{top:{x:6,y:1},bottom:{x:3,y:0},left:{x:3,y:0},right:{x:3,y:0},front:{x:3,y:0},back:{x:3,y:0}},name:"Sand with Treasure Marker",description:"Sand marked with a red cross on top. Treasures might be hidden below it",hardness:1,sound:x.FOOTSTEP_SAND},p[u.GRASS_TREASURE_MARKER]={opaque:!0,textures:{top:{x:7,y:1},bottom:{x:0,y:0},left:{x:1,y:0},right:{x:1,y:0},front:{x:1,y:0},back:{x:1,y:0}},name:"Grass with Treasure Marker",description:"Grass marked with a red cross on top. Treasures might be hidden below it",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.SANDSTONE_BRICK]={opaque:!0,textures:{top:{x:6,y:2},bottom:{x:6,y:2},left:{x:6,y:2},right:{x:6,y:2},front:{x:6,y:2},back:{x:6,y:2}},name:"Sandstone Brick",description:"Useful building material crafted from sand",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.SANDSTONE_PILLAR]={opaque:!0,textures:{top:{x:7,y:2},bottom:{x:7,y:2},left:{x:6,y:3},right:{x:6,y:3},front:{x:6,y:3},back:{x:6,y:3}},name:"Sandstone Pillar",description:"Useful building material crafted from sand",hardness:2.5,sound:x.FOOTSTEP_BRICKS},p[u.SMOOTH_SANDSTONE_BRICK]={opaque:!0,textures:{top:{x:7,y:2},bottom:{x:7,y:2},left:{x:7,y:2},right:{x:7,y:2},front:{x:7,y:2},back:{x:7,y:2}},name:"Smooth Sandstone Brick",description:"Useful building material crafted from sand",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.WORK_STATION]={opaque:!0,textures:{top:{x:4,y:4},bottom:{x:2,y:2},left:{x:3,y:4},right:{x:3,y:4},front:{x:5,y:4},back:{x:5,y:4}},name:"Work Station",description:"Allows you to craft more advanced items when placed on the ground nearby",hardness:.5,sound:x.FOOTSTEP_WOOD},p[u.SNOWY_GRASS]={opaque:!0,textures:{top:{x:4,y:5},bottom:{x:0,y:0},left:{x:3,y:5},right:{x:3,y:5},front:{x:3,y:5},back:{x:3,y:5}},name:"Snowy Grass",description:"A dirt block with snowy grass on top",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.SAPPHIRE_STONE_BRICK]={opaque:!0,textures:{top:{x:6,y:4},bottom:{x:6,y:4},left:{x:6,y:4},right:{x:6,y:4},front:{x:6,y:4},back:{x:6,y:4}},name:"Sapphire Stone Brick",description:"Stone brick made out of sapphire",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.RUBY_STONE_BRICK]={opaque:!0,textures:{top:{x:7,y:4},bottom:{x:7,y:4},left:{x:7,y:4},right:{x:7,y:4},front:{x:7,y:4},back:{x:7,y:4}},name:"Ruby Stone Brick",description:"Stone brick made out of ruby",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.LOADOUT_STATION]={opaque:!0,textures:{top:{x:5,y:5},bottom:{x:6,y:5},left:{x:6,y:5},right:{x:6,y:5},front:{x:6,y:5},back:{x:6,y:5}},name:"Loadout Station",description:"Supply station that allows you to choose your loadouts",hardness:2.5,sound:x.FOOTSTEP_BRICKS},p[u.BEDROCK_BRICK]={opaque:!0,textures:{top:{x:7,y:5},bottom:{x:7,y:5},left:{x:7,y:5},right:{x:7,y:5},front:{x:7,y:5},back:{x:7,y:5}},name:"Bedrock Brick",description:"Indestructible bricks made out of bedrock",hardness:999999,sound:x.FOOTSTEP_BRICKS},p[u.REINFORCED_RUBY]={opaque:!0,textures:{top:{x:5,y:6},bottom:{x:5,y:6},left:{x:5,y:6},right:{x:5,y:6},front:{x:5,y:6},back:{x:5,y:6}},name:"Reinforced Ruby",description:"Indestructable blocks made out of ruby",hardness:999999,sound:x.FOOTSTEP_BRICKS},p[u.REINFORCED_SAPPHIRE]={opaque:!0,textures:{top:{x:6,y:6},bottom:{x:6,y:6},left:{x:6,y:6},right:{x:6,y:6},front:{x:6,y:6},back:{x:6,y:6}},name:"Reinforced Sapphire",description:"Indestructable blocks made out of sapphire",hardness:999999,sound:x.FOOTSTEP_BRICKS},p[u.SULFUR_ORE]={opaque:!0,textures:{top:{x:7,y:3},bottom:{x:7,y:3},left:{x:7,y:3},right:{x:7,y:3},front:{x:7,y:3},back:{x:7,y:3}},name:"Sulfur Ore",description:"Stone filled with some sulfur ore",hardness:2.1,sound:x.FOOTSTEP_ROCKS},p),S=function(t,e,r,o){return e===s&&r===s&&o===s?t.topFrontLeft:-1===e&&r===s&&o===s?t.topFrontRight:e===s&&r===s&&-1===o?t.topBackLeft:-1===e&&r===s&&-1===o?t.topBackRight:e===s&&-1===r&&o===s?t.bottomFrontLeft:-1===e&&-1===r&&o===s?t.bottomFrontRight:e===s&&-1===r&&-1===o?t.bottomBackLeft:-1===e&&-1===r&&-1===o?t.bottomBackRight:e===s&&o===s?t.frontLeft[r]:-1===e&&o===s?t.frontRight[r]:e===s&&-1===o?t.backLeft[r]:-1===e&&-1===o?t.backRight[r]:r===s&&o===s?t.topFront[e]:r===s&&-1===o?t.topBack[e]:r===s&&e===s?t.topLeft[o]:r===s&&-1===e?t.topRight[o]:-1===r&&o===s?t.bottomFront[e]:-1===r&&-1===o?t.bottomBack[e]:-1===r&&e===s?t.bottomLeft[o]:-1===r&&-1===e?t.bottomRight[o]:-1===e?t.right[r][o]:e===s?t.left[r][o]:-1===r?t.bottom[e][o]:r===s?t.top[e][o]:-1===o?t.back[e][r]:o===s?t.front[e][r]:t.blocks[e*s*s+r*s+o]},_=function(t,e,r){return 255*[.3,.5,.7,1][t&&e?0:3-(t+e+r)]},l=function(t,e,r,o){var n=S(t,e,r,o);return n!==u.AIR&&y[n].opaque},E=function(t,e,r,o){return S(t,e,r,o)===u.AIR},O=function(t,e,r,o){var n=S(t,e,r,o);return y[n].opaque};!function(t){t.CHUNK_MESH_DATA="CHUNK_MESH_DATA",t.BLOCKS_MESH_DATA="BLOCKS_MESH_DATA"}(i||(i={}));var T,R=i;!function(t){t.CHUNK_MESH="CHUNK_MESH",t.BLOCKS_MESH="BLOCKS_MESH"}(T||(T={}));var f=T,d=function(t,e,r){return t+":"+e+":"+r},g=function(t,e,r,o){var n=t.blocks[d(e,r,o)];return void 0===n?u.AIR:n},c=function(t,e,r,o){return g(t,e,r,o)!==u.AIR},A=function(t,e,r,o){return void 0!==t.blocks[d(e,r,o)]},b=function(t){var e=[],r=[],o=[],s=[],h=[t.origin],u=new Set;for(u.add(d(t.origin.x,t.origin.y,t.origin.z));h.length>0;){var p=h.pop(),i=p.x,x=p.y,S=p.z,l=i-t.origin.x,E=x-t.origin.y,O=S-t.origin.z,T=c(t,i,x,S),R=d(i,x+1,S);if(T&&!c(t,i,x+1,S)){e.push((l+.5)*a,(E+.5)*a,(O+.5)*a),e.push((l-.5)*a,(E+.5)*a,(O+.5)*a),e.push((l-.5)*a,(E+.5)*a,(O-.5)*a),e.push((l+.5)*a,(E+.5)*a,(O-.5)*a);var f=_(c(t,i+1,x+1,S),c(t,i,x+1,S+1),c(t,i+1,x+1,S+1)),b=_(c(t,i,x+1,S+1),c(t,i-1,x+1,S),c(t,i-1,x+1,S+1)),I=_(c(t,i-1,x+1,S),c(t,i,x+1,S-1),c(t,i-1,x+1,S-1)),m=_(c(t,i,x+1,S-1),c(t,i+1,x+1,S),c(t,i+1,x+1,S-1));o.push(f),o.push(b),o.push(I),o.push(m),f+I<b+m?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var C=y[g(t,i,x,S)].textures.top;s.push(C.x,C.y,0,1),s.push(C.x,C.y,1,1),s.push(C.x,C.y,1,0),s.push(C.x,C.y,0,0)}else A(t,i,x+1,S)&&!u.has(R)&&(h.push(n(i,x+1,S)),u.add(R));var N=d(i,x-1,S);if(T&&!c(t,i,x-1,S)){e.push((l+.5)*a,(E-.5)*a,(O-.5)*a),e.push((l-.5)*a,(E-.5)*a,(O-.5)*a),e.push((l-.5)*a,(E-.5)*a,(O+.5)*a),e.push((l+.5)*a,(E-.5)*a,(O+.5)*a);var v=_(c(t,i+1,x-1,S),c(t,i,x-1,S-1),c(t,i+1,x-1,S-1)),P=_(c(t,i,x-1,S-1),c(t,i-1,x-1,S),c(t,i-1,x-1,S-1)),k=_(c(t,i-1,x-1,S),c(t,i,x-1,S+1),c(t,i-1,x-1,S+1)),L=_(c(t,i,x-1,S+1),c(t,i+1,x-1,S),c(t,i+1,x-1,S+1));o.push(v),o.push(P),o.push(k),o.push(L),v+k<P+L?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var U=y[g(t,i,x,S)].textures.bottom;s.push(U.x,U.y,0,1),s.push(U.x,U.y,1,1),s.push(U.x,U.y,1,0),s.push(U.x,U.y,0,0)}else A(t,i,x-1,S)&&!u.has(N)&&(h.push(n(i,x-1,S)),u.add(N));var B=d(i+1,x,S);if(T&&!c(t,i+1,x,S)){e.push((l+.5)*a,(E+.5)*a,(O+.5)*a),e.push((l+.5)*a,(E+.5)*a,(O-.5)*a),e.push((l+.5)*a,(E-.5)*a,(O-.5)*a),e.push((l+.5)*a,(E-.5)*a,(O+.5)*a);var K=_(c(t,i+1,x,S+1),c(t,i+1,x+1,S),c(t,i+1,x+1,S+1)),H=_(c(t,i+1,x+1,S),c(t,i+1,x,S-1),c(t,i+1,x+1,S-1)),D=_(c(t,i+1,x,S-1),c(t,i+1,x-1,S),c(t,i+1,x-1,S-1)),F=_(c(t,i+1,x-1,S),c(t,i+1,x,S+1),c(t,i+1,x-1,S+1));o.push(K),o.push(H),o.push(D),o.push(F),K+D<H+F?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var G=y[g(t,i,x,S)].textures.left;s.push(G.x,G.y,0,1),s.push(G.x,G.y,1,1),s.push(G.x,G.y,1,0),s.push(G.x,G.y,0,0)}else A(t,i+1,x,S)&&!u.has(B)&&(h.push(n(i+1,x,S)),u.add(B));var M=d(i-1,x,S);if(T&&!c(t,i-1,x,S)){e.push((l-.5)*a,(E+.5)*a,(O-.5)*a),e.push((l-.5)*a,(E+.5)*a,(O+.5)*a),e.push((l-.5)*a,(E-.5)*a,(O+.5)*a),e.push((l-.5)*a,(E-.5)*a,(O-.5)*a);var q=_(c(t,i-1,x,S-1),c(t,i-1,x+1,S),c(t,i-1,x+1,S-1)),w=_(c(t,i-1,x+1,S),c(t,i-1,x,S+1),c(t,i-1,x+1,S+1)),W=_(c(t,i-1,x,S+1),c(t,i-1,x-1,S),c(t,i-1,x-1,S+1)),Y=_(c(t,i-1,x-1,S),c(t,i-1,x,S-1),c(t,i-1,x-1,S-1));o.push(q),o.push(w),o.push(W),o.push(Y),q+W<w+Y?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var V=y[g(t,i,x,S)].textures.right;s.push(V.x,V.y,0,1),s.push(V.x,V.y,1,1),s.push(V.x,V.y,1,0),s.push(V.x,V.y,0,0)}else A(t,i-1,x,S)&&!u.has(M)&&(h.push(n(i-1,x,S)),u.add(M));var j=d(i,x,S+1);if(T&&!c(t,i,x,S+1)){e.push((l-.5)*a,(E+.5)*a,(O+.5)*a),e.push((l+.5)*a,(E+.5)*a,(O+.5)*a),e.push((l+.5)*a,(E-.5)*a,(O+.5)*a),e.push((l-.5)*a,(E-.5)*a,(O+.5)*a);var z=_(c(t,i-1,x,S+1),c(t,i,x+1,S+1),c(t,i-1,x+1,S+1)),X=_(c(t,i,x+1,S+1),c(t,i+1,x,S+1),c(t,i+1,x+1,S+1)),Z=_(c(t,i+1,x,S+1),c(t,i,x-1,S+1),c(t,i+1,x-1,S+1)),J=_(c(t,i,x-1,S+1),c(t,i-1,x,S+1),c(t,i-1,x-1,S+1));o.push(z),o.push(X),o.push(Z),o.push(J),z+Z<X+J?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var Q=y[g(t,i,x,S)].textures.front;s.push(Q.x,Q.y,0,1),s.push(Q.x,Q.y,1,1),s.push(Q.x,Q.y,1,0),s.push(Q.x,Q.y,0,0)}else A(t,i,x,S+1)&&!u.has(j)&&(h.push(n(i,x,S+1)),u.add(j));var $=d(i,x,S-1);if(T&&!c(t,i,x,S-1)){e.push((l+.5)*a,(E+.5)*a,(O-.5)*a),e.push((l-.5)*a,(E+.5)*a,(O-.5)*a),e.push((l-.5)*a,(E-.5)*a,(O-.5)*a),e.push((l+.5)*a,(E-.5)*a,(O-.5)*a);var tt=_(c(t,i+1,x,S-1),c(t,i,x+1,S-1),c(t,i+1,x+1,S-1)),et=_(c(t,i,x+1,S-1),c(t,i-1,x,S-1),c(t,i-1,x+1,S-1)),rt=_(c(t,i-1,x,S-1),c(t,i,x-1,S-1),c(t,i-1,x-1,S-1)),ot=_(c(t,i,x-1,S-1),c(t,i+1,x,S-1),c(t,i+1,x-1,S-1));o.push(tt),o.push(et),o.push(rt),o.push(ot),tt+rt<et+ot?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var nt=y[g(t,i,x,S)].textures.back;s.push(nt.x,nt.y,0,1),s.push(nt.x,nt.y,1,1),s.push(nt.x,nt.y,1,0),s.push(nt.x,nt.y,0,0)}else A(t,i,x,S-1)&&!u.has($)&&(h.push(n(i,x,S-1)),u.add($))}return{position:n((t.origin.x+.5)*a,(t.origin.y+.5)*a,(t.origin.z+.5)*a),vertices:e,indices:r,aos:o,uvs:s}};onmessage=function(t){switch(t.data.event){case f.CHUNK_MESH:const e=function(t){for(var e=[],r=[],o=[],n=[],a=[],h=[],u=[],p=[],i=new Uint8Array(s*s*s*4),x=new Uint8Array(s*s*s*4),S=new Uint8Array(s*s*s*4),T=new Uint8Array(s*s*s*4),R=new Uint8Array(s*s*s*4),f=new Uint8Array(s*s*s*4),d=0;d<s;d++)for(var g=0;g<s;g++)for(var c=0;c<s;c++)if(!E(t,d,g,c)){var A=O(t,d,g,c);if(A&&!O(t,d,g+1,c)||!A&&E(t,d,g+1,c)){var b=_(l(t,d+1,g+1,c),l(t,d,g+1,c+1),l(t,d+1,g+1,c+1)),I=_(l(t,d,g+1,c+1),l(t,d-1,g+1,c),l(t,d-1,g+1,c+1)),m=_(l(t,d-1,g+1,c),l(t,d,g+1,c-1),l(t,d-1,g+1,c-1)),C=_(l(t,d,g+1,c-1),l(t,d+1,g+1,c),l(t,d+1,g+1,c-1)),N=4*(d*s*s+g*s+c);i[N]=b,i[N+1]=I,i[N+2]=m,i[N+3]=C}if(A&&!O(t,d,g-1,c)||!A&&E(t,d,g-1,c)){var v=_(l(t,d+1,g-1,c),l(t,d,g-1,c-1),l(t,d+1,g-1,c-1)),P=_(l(t,d,g-1,c-1),l(t,d-1,g-1,c),l(t,d-1,g-1,c-1)),k=_(l(t,d-1,g-1,c),l(t,d,g-1,c+1),l(t,d-1,g-1,c+1)),L=_(l(t,d,g-1,c+1),l(t,d+1,g-1,c),l(t,d+1,g-1,c+1)),U=4*(d*s*s+g*s+c);x[U]=v,x[U+1]=P,x[U+2]=k,x[U+3]=L}if(A&&!O(t,d+1,g,c)||!A&&E(t,d+1,g,c)){var B=_(l(t,d+1,g,c+1),l(t,d+1,g+1,c),l(t,d+1,g+1,c+1)),K=_(l(t,d+1,g+1,c),l(t,d+1,g,c-1),l(t,d+1,g+1,c-1)),H=_(l(t,d+1,g,c-1),l(t,d+1,g-1,c),l(t,d+1,g-1,c-1)),D=_(l(t,d+1,g-1,c),l(t,d+1,g,c+1),l(t,d+1,g-1,c+1)),F=4*(d*s*s+g*s+c);S[F]=B,S[F+1]=K,S[F+2]=H,S[F+3]=D}if(A&&!O(t,d-1,g,c)||!A&&E(t,d-1,g,c)){var G=_(l(t,d-1,g,c-1),l(t,d-1,g+1,c),l(t,d-1,g+1,c-1)),M=_(l(t,d-1,g+1,c),l(t,d-1,g,c+1),l(t,d-1,g+1,c+1)),q=_(l(t,d-1,g,c+1),l(t,d-1,g-1,c),l(t,d-1,g-1,c+1)),w=_(l(t,d-1,g-1,c),l(t,d-1,g,c-1),l(t,d-1,g-1,c-1)),W=4*(d*s*s+g*s+c);T[W]=G,T[W+1]=M,T[W+2]=q,T[W+3]=w}if(A&&!O(t,d,g,c+1)||!A&&E(t,d,g,c+1)){var Y=_(l(t,d-1,g,c+1),l(t,d,g+1,c+1),l(t,d-1,g+1,c+1)),V=_(l(t,d,g+1,c+1),l(t,d+1,g,c+1),l(t,d+1,g+1,c+1)),j=_(l(t,d+1,g,c+1),l(t,d,g-1,c+1),l(t,d+1,g-1,c+1)),z=_(l(t,d,g-1,c+1),l(t,d-1,g,c+1),l(t,d-1,g-1,c+1)),X=4*(d*s*s+g*s+c);R[X]=Y,R[X+1]=V,R[X+2]=j,R[X+3]=z}if(A&&!O(t,d,g,c-1)||!A&&E(t,d,g,c-1)){var Z=_(l(t,d+1,g,c-1),l(t,d,g+1,c-1),l(t,d+1,g+1,c-1)),J=_(l(t,d,g+1,c-1),l(t,d-1,g,c-1),l(t,d-1,g+1,c-1)),Q=_(l(t,d-1,g,c-1),l(t,d,g-1,c-1),l(t,d-1,g-1,c-1)),$=_(l(t,d,g-1,c-1),l(t,d+1,g,c-1),l(t,d+1,g-1,c-1)),tt=4*(d*s*s+g*s+c);f[tt]=Z,f[tt+1]=J,f[tt+2]=Q,f[tt+3]=$}}for(var et=0;et<s;et++)for(var rt=0;rt<s;rt++)for(var ot=0;ot<s;ot++){var nt=rt,st=et,at=ot,ht=e,ut=r,pt=o,it=n;O(t,rt,et,ot)||(ht=a,ut=h,pt=u,it=p);var xt=4*(rt*s*s+et*s+ot),yt=t.blocks[rt*s*s+et*s+ot],St=i[xt];if(0!==St){for(var _t=i[xt+1],lt=i[xt+2],Et=i[xt+3],Ot=1,Tt=1,Rt=ot+1;Rt<s;Rt++){var ft=4*(rt*s*s+et*s+Rt),dt=t.blocks[rt*s*s+et*s+Rt];if(0!==i[ft]||yt!==dt||St!==i[ft]||_t!==i[ft+1]||lt!==i[ft+2]||Et!==i[ft+3])break;++Ot}for(var gt=!0,ct=rt+1;ct<s&&gt;ct++){gt=!0;for(var At=ot;At<ot+Ot;At++){var bt=4*(ct*s*s+et*s+At),It=t.blocks[ct*s*s+et*s+At];if(0!==i[bt]||yt!==It||St!==i[bt]||_t!==i[bt+1]||lt!==i[bt+2]||Et!==i[bt+3]){gt=!1;break}}gt&&++Tt}for(var mt=rt;mt<rt+Tt;mt++)for(var Ct=ot;Ct<ot+Ot;Ct++)i[4*(mt*s*s+et*s+Ct)]=0;ht.push(nt+1+(Tt-1),st+1,at+1+(Ot-1)),ht.push(nt,st+1,at+1+(Ot-1)),ht.push(nt,st+1,at),ht.push(nt+1+(Tt-1),st+1,at),pt.push(St,_t,lt,Et),St+lt<_t+Et?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var Nt=y[yt].textures.top;it.push(Nt.x,Nt.y,0,Ot),it.push(Nt.x,Nt.y,Tt,Ot),it.push(Nt.x,Nt.y,Tt,0),it.push(Nt.x,Nt.y,0,0)}var vt=x[xt];if(0!==vt){for(var Pt=x[xt+1],kt=x[xt+2],Lt=x[xt+3],Ut=1,Bt=1,Kt=ot+1;Kt<s;Kt++){var Ht=4*(rt*s*s+et*s+Kt),Dt=t.blocks[rt*s*s+et*s+Kt];if(0!==x[Ht]||yt!==Dt||vt!==x[Ht]||Pt!==x[Ht+1]||kt!==x[Ht+2]||Lt!==x[Ht+3])break;++Ut}for(var Ft=!0,Gt=rt+1;Gt<s&&Ft;Gt++){Ft=!0;for(var Mt=ot;Mt<ot+Ut;Mt++){var qt=4*(Gt*s*s+et*s+Mt),wt=t.blocks[Gt*s*s+et*s+Mt];if(0!==x[qt]||yt!==wt||vt!==x[qt]||Pt!==x[qt+1]||kt!==x[qt+2]||Lt!==x[qt+3]){Ft=!1;break}}Ft&&++Bt}for(var Wt=rt;Wt<rt+Bt;Wt++)for(var Yt=ot;Yt<ot+Ut;Yt++)x[4*(Wt*s*s+et*s+Yt)]=0;ht.push(nt+1+(Bt-1),st,at),ht.push(nt,st,at),ht.push(nt,st,at+1+(Ut-1)),ht.push(nt+1+(Bt-1),st,at+1+(Ut-1)),pt.push(vt,Pt,kt,Lt),vt+kt<Pt+Lt?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var Vt=y[yt].textures.bottom;it.push(Vt.x,Vt.y,0,Ut),it.push(Vt.x,Vt.y,Bt,Ut),it.push(Vt.x,Vt.y,Bt,0),it.push(Vt.x,Vt.y,0,0)}var jt=S[xt];if(0!==jt){for(var zt=S[xt+1],Xt=S[xt+2],Zt=S[xt+3],Jt=1,Qt=1,$t=ot+1;$t<s;$t++){var te=4*(rt*s*s+et*s+$t),ee=t.blocks[rt*s*s+et*s+$t];if(0!==S[te]||yt!==ee||jt!==S[te]||zt!==S[te+1]||Xt!==S[te+2]||Zt!==S[te+3])break;++Jt}for(var re=!0,oe=et+1;oe<s&&re;oe++){re=!0;for(var ne=ot;ne<ot+Jt;ne++){var se=4*(rt*s*s+oe*s+ne),ae=t.blocks[rt*s*s+oe*s+ne];if(0!==S[se]||yt!==ae||jt!==S[se]||zt!==S[se+1]||Xt!==S[se+2]||Zt!==S[se+3]){re=!1;break}}re&&++Qt}for(var he=et;he<et+Qt;he++)for(var ue=ot;ue<ot+Jt;ue++)S[4*(rt*s*s+he*s+ue)]=0;ht.push(nt+1,st+1+(Qt-1),at+1+(Jt-1)),ht.push(nt+1,st+1+(Qt-1),at),ht.push(nt+1,st,at),ht.push(nt+1,st,at+1+(Jt-1)),pt.push(jt,zt,Xt,Zt),jt+Xt<zt+Zt?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var pe=y[yt].textures.left;it.push(pe.x,pe.y,0,Qt),it.push(pe.x,pe.y,Jt,Qt),it.push(pe.x,pe.y,Jt,0),it.push(pe.x,pe.y,0,0)}var ie=T[xt];if(0!==ie){for(var xe=T[xt+1],ye=T[xt+2],Se=T[xt+3],_e=1,le=1,Ee=ot+1;Ee<s;Ee++){var Oe=4*(rt*s*s+et*s+Ee),Te=t.blocks[rt*s*s+et*s+Ee];if(0!==T[Oe]||yt!==Te||ie!==T[Oe]||xe!==T[Oe+1]||ye!==T[Oe+2]||Se!==T[Oe+3])break;++_e}for(var Re=!0,fe=et+1;fe<s&&Re;fe++){Re=!0;for(var de=ot;de<ot+_e;de++){var ge=4*(rt*s*s+fe*s+de),ce=t.blocks[rt*s*s+fe*s+de];if(0!==T[ge]||yt!==ce||ie!==T[ge]||xe!==T[ge+1]||ye!==T[ge+2]||Se!==T[ge+3]){Re=!1;break}}Re&&++le}for(var Ae=et;Ae<et+le;Ae++)for(var be=ot;be<ot+_e;be++)T[4*(rt*s*s+Ae*s+be)]=0;ht.push(nt,st+1+(le-1),at),ht.push(nt,st+1+(le-1),at+1+(_e-1)),ht.push(nt,st,at+1+(_e-1)),ht.push(nt,st,at),pt.push(ie,xe,ye,Se),ie+ye<xe+Se?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var Ie=y[yt].textures.right;it.push(Ie.x,Ie.y,0,le),it.push(Ie.x,Ie.y,_e,le),it.push(Ie.x,Ie.y,_e,0),it.push(Ie.x,Ie.y,0,0)}var me=R[xt];if(0!==me){for(var Ce=R[xt+1],Ne=R[xt+2],ve=R[xt+3],Pe=1,ke=1,Le=rt+1;Le<s;Le++){var Ue=4*(Le*s*s+et*s+ot),Be=t.blocks[Le*s*s+et*s+ot];if(0!==R[Ue]||yt!==Be||me!==R[Ue]||Ce!==R[Ue+1]||Ne!==R[Ue+2]||ve!==R[Ue+3])break;++Pe}for(var Ke=!0,He=et+1;He<s&&Ke;He++){Ke=!0;for(var De=rt;De<rt+Pe;De++){var Fe=4*(De*s*s+He*s+ot),Ge=t.blocks[De*s*s+He*s+ot];if(0!==R[Fe]||yt!==Ge||me!==R[Fe]||Ce!==R[Fe+1]||Ne!==R[Fe+2]||ve!==R[Fe+3]){Ke=!1;break}}Ke&&++ke}for(var Me=et;Me<et+ke;Me++)for(var qe=rt;qe<rt+Pe;qe++)R[4*(qe*s*s+Me*s+ot)]=0;ht.push(nt,st+1+(ke-1),at+1),ht.push(nt+1+(Pe-1),st+1+(ke-1),at+1),ht.push(nt+1+(Pe-1),st,at+1),ht.push(nt,st,at+1),pt.push(me,Ce,Ne,ve),me+Ne<Ce+ve?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var we=y[yt].textures.front;it.push(we.x,we.y,0,ke),it.push(we.x,we.y,Pe,ke),it.push(we.x,we.y,Pe,0),it.push(we.x,we.y,0,0)}var We=f[xt];if(0!==We){for(var Ye=f[xt+1],Ve=f[xt+2],je=f[xt+3],ze=1,Xe=1,Ze=rt+1;Ze<s;Ze++){var Je=4*(Ze*s*s+et*s+ot),Qe=t.blocks[Ze*s*s+et*s+ot];if(0!==f[Je]||yt!==Qe||We!==f[Je]||Ye!==f[Je+1]||Ve!==f[Je+2]||je!==f[Je+3])break;++ze}for(var $e=!0,tr=et+1;tr<s&&$e;tr++){$e=!0;for(var er=rt;er<rt+ze;er++){var rr=4*(er*s*s+tr*s+ot),or=t.blocks[er*s*s+tr*s+ot];if(0!==f[rr]||yt!==or||We!==f[rr]||Ye!==f[rr+1]||Ve!==f[rr+2]||je!==f[rr+3]){$e=!1;break}}$e&&++Xe}for(var nr=et;nr<et+Xe;nr++)for(var sr=rt;sr<rt+ze;sr++)f[4*(sr*s*s+nr*s+ot)]=0;ht.push(nt+1+(ze-1),st+1+(Xe-1),at),ht.push(nt,st+1+(Xe-1),at),ht.push(nt,st,at),ht.push(nt+1+(ze-1),st,at),pt.push(We,Ye,Ve,je),We+Ve<Ye+je?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var ar=y[yt].textures.back;it.push(ar.x,ar.y,0,Xe),it.push(ar.x,ar.y,ze,Xe),it.push(ar.x,ar.y,ze,0),it.push(ar.x,ar.y,0,0)}}return{version:t.version,opaqueVertices:new Uint8Array(e),opaqueIndices:new Uint16Array(r),opaqueAos:new Uint8Array(o),opaqueUvs:new Uint8Array(n),alphaVertices:new Uint8Array(a),alphaIndices:new Uint16Array(h),alphaAos:new Uint8Array(u),alphaUvs:new Uint8Array(p),chunkPos:t.chunkPos}}(t.data);postMessage({event:R.CHUNK_MESH_DATA,data:e},[e.opaqueVertices.buffer,e.opaqueIndices.buffer,e.opaqueAos.buffer,e.opaqueUvs.buffer,e.alphaVertices.buffer,e.alphaIndices.buffer,e.alphaAos.buffer,e.alphaUvs.buffer]);break;case f.BLOCKS_MESH:postMessage({event:R.BLOCKS_MESH_DATA,data:b(t.data)})}}}]);', null)
+            return n(83)('!function(t){var e={};function r(o){if(e[o])return e[o].exports;var n=e[o]={i:o,l:!1,exports:{}};return t[o].call(n.exports,n,n.exports,r),n.l=!0,n.exports}r.m=t,r.c=e,r.d=function(t,e,o){r.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:o})},r.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},r.t=function(t,e){if(1&e&&(t=r(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var o=Object.create(null);if(r.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var n in t)r.d(o,n,function(e){return t[e]}.bind(null,n));return o},r.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(e,"a",e),e},r.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},r.p="/",r(r.s=0)}([function(t,e,r){"use strict";r.r(e);var o,n=function(t,e,r){return{x:t,y:e,z:r}},s=(void 0===navigator.hardwareConcurrency||navigator.hardwareConcurrency,32),a=.5;n(.35,1.3,.35),n(.3,1.3,.3);!function(t){t[t.AIR=0]="AIR",t[t.GRASS=1]="GRASS",t[t.DIRT=2]="DIRT",t[t.SAND=3]="SAND",t[t.ROCK=4]="ROCK",t[t.LOG_UP=5]="LOG_UP",t[t.LEAVES=6]="LEAVES",t[t.LEAVES_WITH_RED_BERRIES=7]="LEAVES_WITH_RED_BERRIES",t[t.LEAVES_WITH_ORANGE_BERRIES=8]="LEAVES_WITH_ORANGE_BERRIES",t[t.BEDROCK=9]="BEDROCK",t[t.TEMPLE_BRICK=10]="TEMPLE_BRICK",t[t.MOSSY_TEMPLE_BRICK=11]="MOSSY_TEMPLE_BRICK",t[t.CRACKED_TEMPLE_BRICK=12]="CRACKED_TEMPLE_BRICK",t[t.MYSTICAL_TEMPLE_BRICK=13]="MYSTICAL_TEMPLE_BRICK",t[t.WATER=14]="WATER",t[t.WOODEN_CRATE=15]="WOODEN_CRATE",t[t.REINFORCED_IRON=16]="REINFORCED_IRON",t[t.EMERALD_ORE=17]="EMERALD_ORE",t[t.RUBY_ORE=18]="RUBY_ORE",t[t.SAPPHIRE_ORE=19]="SAPPHIRE_ORE",t[t.IRON_ORE=20]="IRON_ORE",t[t.WOOD=21]="WOOD",t[t.STONE_BRICK=22]="STONE_BRICK",t[t.WOODEN_CHEST=23]="WOODEN_CHEST",t[t.IRON_CHEST=24]="IRON_CHEST",t[t.GOLDEN_CHEST=25]="GOLDEN_CHEST",t[t.CACTUS_X=26]="CACTUS_X",t[t.CACTUS_Y=27]="CACTUS_Y",t[t.CACTUS_Z=28]="CACTUS_Z",t[t.SAND_TREASURE_MARKER=29]="SAND_TREASURE_MARKER",t[t.GRASS_TREASURE_MARKER=30]="GRASS_TREASURE_MARKER",t[t.SANDSTONE_BRICK=31]="SANDSTONE_BRICK",t[t.SANDSTONE_PILLAR=32]="SANDSTONE_PILLAR",t[t.SMOOTH_SANDSTONE_BRICK=33]="SMOOTH_SANDSTONE_BRICK",t[t.WORK_STATION=34]="WORK_STATION",t[t.SNOWY_GRASS=35]="SNOWY_GRASS",t[t.SAPPHIRE_STONE_BRICK=36]="SAPPHIRE_STONE_BRICK",t[t.RUBY_STONE_BRICK=37]="RUBY_STONE_BRICK",t[t.LOADOUT_STATION=38]="LOADOUT_STATION",t[t.BEDROCK_BRICK=39]="BEDROCK_BRICK",t[t.REINFORCED_RUBY=40]="REINFORCED_RUBY",t[t.REINFORCED_SAPPHIRE=41]="REINFORCED_SAPPHIRE",t[t.SULFUR_ORE=42]="SULFUR_ORE"}(o||(o={}));var h,u=o;!function(t){t[t.FOOTSTEP_GRASS=0]="FOOTSTEP_GRASS",t[t.FOOTSTEP_SAND=1]="FOOTSTEP_SAND",t[t.FOOTSTEP_ROCKS=2]="FOOTSTEP_ROCKS",t[t.FOOTSTEP_BRICKS=3]="FOOTSTEP_BRICKS",t[t.FOOTSTEP_DIRT=4]="FOOTSTEP_DIRT",t[t.FOOTSTEP_LEAVES=5]="FOOTSTEP_LEAVES",t[t.ITEM_PICKUP=6]="ITEM_PICKUP",t[t.WATER_SPLASH=7]="WATER_SPLASH",t[t.FOOTSTEP_WATER=8]="FOOTSTEP_WATER",t[t.FOOTSTEP_WOOD=9]="FOOTSTEP_WOOD",t[t.GUN_SHOT_COMBAT_ASSAULT_RIFLE=10]="GUN_SHOT_COMBAT_ASSAULT_RIFLE",t[t.GUN_SHOT_TACTICAL_ASSAULT_RIFLE=11]="GUN_SHOT_TACTICAL_ASSAULT_RIFLE",t[t.GUN_SHOT_SURGE_ASSAULT_RIFLE=12]="GUN_SHOT_SURGE_ASSAULT_RIFLE",t[t.GUN_SHOT_STRIKE_PISTOL=13]="GUN_SHOT_STRIKE_PISTOL",t[t.GUN_SHOT_MAGNUM_PISTOL=14]="GUN_SHOT_MAGNUM_PISTOL",t[t.GUN_SHOT_BURST_SHOTGUN=15]="GUN_SHOT_BURST_SHOTGUN",t[t.GUN_SHOT_LIGHT_SUBMACHINE_GUN=16]="GUN_SHOT_LIGHT_SUBMACHINE_GUN",t[t.GUN_SHOT_COMPACT_SUBMACHINE_GUN=17]="GUN_SHOT_COMPACT_SUBMACHINE_GUN",t[t.GUN_SHOT_LIGHT_SNIPER_RIFLE=18]="GUN_SHOT_LIGHT_SNIPER_RIFLE",t[t.GUN_SHOT_HEAVY_SNIPER_RIFLE=19]="GUN_SHOT_HEAVY_SNIPER_RIFLE",t[t.GUN_RELOAD_START=20]="GUN_RELOAD_START",t[t.GUN_RELOAD_FINISH=21]="GUN_RELOAD_FINISH",t[t.HIT=22]="HIT",t[t.HIT_HEADSHOT=23]="HIT_HEADSHOT",t[t.KILL=24]="KILL",t[t.DAMAGE=25]="DAMAGE",t[t.ALERT_SHORT=26]="ALERT_SHORT",t[t.ALERT_LONG=27]="ALERT_LONG",t[t.ALERT_NEGATIVE=28]="ALERT_NEGATIVE",t[t.ALERT_AMBIENT=29]="ALERT_AMBIENT",t[t.ALERT_TICK=30]="ALERT_TICK",t[t.SPRAY=31]="SPRAY",t[t.CRATE_OPEN=32]="CRATE_OPEN"}(h||(h={}));var p,i,x=h,y=((p={})[u.AIR]={opaque:!1,name:"Air",description:"How did you get this?",hardness:1},p[u.GRASS]={opaque:!0,textures:{top:{x:2,y:0},bottom:{x:0,y:0},left:{x:1,y:0},right:{x:1,y:0},front:{x:1,y:0},back:{x:1,y:0}},name:"Grass",description:"A dirt block with grass on top",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.DIRT]={opaque:!0,textures:{top:{x:0,y:0},bottom:{x:0,y:0},left:{x:0,y:0},right:{x:0,y:0},front:{x:0,y:0},back:{x:0,y:0}},name:"Dirt",description:"Muddy and squishy",hardness:1,sound:x.FOOTSTEP_DIRT},p[u.SAND]={opaque:!0,textures:{top:{x:3,y:0},bottom:{x:3,y:0},left:{x:3,y:0},right:{x:3,y:0},front:{x:3,y:0},back:{x:3,y:0}},name:"Sand",description:"Grainy, found near water",hardness:1,sound:x.FOOTSTEP_SAND},p[u.ROCK]={opaque:!0,textures:{top:{x:1,y:1},bottom:{x:1,y:1},left:{x:1,y:1},right:{x:1,y:1},front:{x:1,y:1},back:{x:1,y:1}},name:"Rock",description:"A natural resource found underground",hardness:2,sound:x.FOOTSTEP_ROCKS},p[u.LOG_UP]={opaque:!0,textures:{top:{x:5,y:0},bottom:{x:5,y:0},left:{x:4,y:0},right:{x:4,y:0},front:{x:4,y:0},back:{x:4,y:0}},name:"Log",description:"Unprocessed raw wood",hardness:1.5,sound:x.FOOTSTEP_WOOD},p[u.LEAVES]={opaque:!0,textures:{top:{x:0,y:1},bottom:{x:0,y:1},left:{x:0,y:1},right:{x:0,y:1},front:{x:0,y:1},back:{x:0,y:1}},name:"Leaves",description:"Grow on logs",hardness:.5,sound:x.FOOTSTEP_LEAVES},p[u.LEAVES_WITH_RED_BERRIES]={opaque:!0,textures:{top:{x:3,y:6},bottom:{x:3,y:6},left:{x:3,y:6},right:{x:3,y:6},front:{x:3,y:6},back:{x:3,y:6}},name:"Leaves",description:"Nurtures healthy red berries",hardness:.5,sound:x.FOOTSTEP_LEAVES},p[u.LEAVES_WITH_ORANGE_BERRIES]={opaque:!0,textures:{top:{x:4,y:6},bottom:{x:4,y:6},left:{x:4,y:6},right:{x:4,y:6},front:{x:4,y:6},back:{x:4,y:6}},name:"Leaves",description:"Nurtures healthy orange berries",hardness:.5,sound:x.FOOTSTEP_LEAVES},p[u.BEDROCK]={opaque:!0,textures:{top:{x:2,y:1},bottom:{x:2,y:1},left:{x:2,y:1},right:{x:2,y:1},front:{x:2,y:1},back:{x:2,y:1}},name:"Bedrock",description:"Indestructable",hardness:999999,sound:x.FOOTSTEP_ROCKS},p[u.TEMPLE_BRICK]={opaque:!0,textures:{top:{x:3,y:1},bottom:{x:3,y:1},left:{x:3,y:1},right:{x:3,y:1},front:{x:3,y:1},back:{x:3,y:1}},name:"Temple Brick",description:"Myterious brick found on the temple walls",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.MOSSY_TEMPLE_BRICK]={opaque:!0,textures:{top:{x:5,y:1},bottom:{x:5,y:1},left:{x:5,y:1},right:{x:5,y:1},front:{x:5,y:1},back:{x:5,y:1}},name:"Mossy Temple Brick",description:"Temple brick with some moss grown on it",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.CRACKED_TEMPLE_BRICK]={opaque:!0,textures:{top:{x:0,y:2},bottom:{x:0,y:2},left:{x:0,y:2},right:{x:0,y:2},front:{x:0,y:2},back:{x:0,y:2}},name:"Cracked Temple Brick",description:"Temple brick with some cracks",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.MYSTICAL_TEMPLE_BRICK]={opaque:!0,textures:{top:{x:1,y:2},bottom:{x:1,y:2},left:{x:1,y:2},right:{x:1,y:2},front:{x:1,y:2},back:{x:1,y:2}},name:"Mystical Temple Brick",description:"Temple brick with a mysterious pattern. No one knows what it means",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.WATER]={opaque:!1,textures:{top:{x:4,y:1},bottom:{x:4,y:1},left:{x:4,y:1},right:{x:4,y:1},front:{x:4,y:1},back:{x:4,y:1}},name:"Water",description:"Blue fluid that flows",hardness:1},p[u.WOODEN_CRATE]={opaque:!0,textures:{top:{x:2,y:2},bottom:{x:2,y:2},left:{x:2,y:2},right:{x:2,y:2},front:{x:2,y:2},back:{x:2,y:2}},name:"Wooden Crate",description:"You might find some items inside",hardness:.5,sound:x.FOOTSTEP_WOOD},p[u.REINFORCED_IRON]={opaque:!0,textures:{top:{x:3,y:2},bottom:{x:3,y:2},left:{x:3,y:2},right:{x:3,y:2},front:{x:3,y:2},back:{x:3,y:2}},name:"Reinforced Iron",description:"Very durable material. Perfect for defense",hardness:6,sound:x.FOOTSTEP_BRICKS},p[u.EMERALD_ORE]={opaque:!0,textures:{top:{x:4,y:2},bottom:{x:4,y:2},left:{x:4,y:2},right:{x:4,y:2},front:{x:4,y:2},back:{x:4,y:2}},name:"Emerald Ore",description:"Stone filled with some emerald ore",hardness:2.1,sound:x.FOOTSTEP_ROCKS},p[u.SAPPHIRE_ORE]={opaque:!0,textures:{top:{x:5,y:2},bottom:{x:5,y:2},left:{x:5,y:2},right:{x:5,y:2},front:{x:5,y:2},back:{x:5,y:2}},name:"Sapphire Ore",description:"Stone filled with some sapphire ore",hardness:2.1,sound:x.FOOTSTEP_ROCKS},p[u.RUBY_ORE]={opaque:!0,textures:{top:{x:0,y:3},bottom:{x:0,y:3},left:{x:0,y:3},right:{x:0,y:3},front:{x:0,y:3},back:{x:0,y:3}},name:"Ruby Ore",description:"Stone filled with some ruby ore",hardness:2.1,sound:x.FOOTSTEP_ROCKS},p[u.IRON_ORE]={opaque:!0,textures:{top:{x:1,y:3},bottom:{x:1,y:3},left:{x:1,y:3},right:{x:1,y:3},front:{x:1,y:3},back:{x:1,y:3}},name:"Iron Ore",description:"Stone filled with some iron ore",hardness:2.1,sound:x.FOOTSTEP_ROCKS},p[u.WOOD]={opaque:!0,textures:{top:{x:7,y:0},bottom:{x:7,y:0},left:{x:7,y:0},right:{x:7,y:0},front:{x:7,y:0},back:{x:7,y:0}},name:"Wood",description:"Useful building material crafted from logs",hardness:1.5,sound:x.FOOTSTEP_WOOD},p[u.STONE_BRICK]={opaque:!0,textures:{top:{x:6,y:0},bottom:{x:6,y:0},left:{x:6,y:0},right:{x:6,y:0},front:{x:6,y:0},back:{x:6,y:0}},name:"Stone Brick",description:"Useful building material crafted from rocks",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.WOODEN_CHEST]={opaque:!0,textures:{top:{x:0,y:4},bottom:{x:0,y:4},left:{x:1,y:4},right:{x:1,y:4},front:{x:2,y:4},back:{x:1,y:4}},name:"Wooden Chest",description:"Low tier chest that can store some items",hardness:.5,sound:x.FOOTSTEP_WOOD},p[u.IRON_CHEST]={opaque:!0,textures:{top:{x:0,y:5},bottom:{x:0,y:5},left:{x:1,y:5},right:{x:1,y:5},front:{x:2,y:5},back:{x:1,y:5}},name:"Iron Chest",description:"Mid-tier chest that can store more items",hardness:.5,sound:x.FOOTSTEP_WOOD},p[u.GOLDEN_CHEST]={opaque:!0,textures:{top:{x:0,y:6},bottom:{x:0,y:6},left:{x:1,y:6},right:{x:1,y:6},front:{x:2,y:6},back:{x:1,y:6}},name:"Golden Chest",description:"High tier chest that can store many items",hardness:.5,sound:x.FOOTSTEP_WOOD},p[u.CACTUS_X]={opaque:!0,textures:{top:{x:4,y:3},bottom:{x:4,y:3},left:{x:3,y:3},right:{x:3,y:3},front:{x:4,y:3},back:{x:4,y:3}},name:"Cactus",description:"A plant that grows in the desert",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.CACTUS_Y]={opaque:!0,textures:{top:{x:3,y:3},bottom:{x:3,y:3},left:{x:2,y:3},right:{x:2,y:3},front:{x:2,y:3},back:{x:2,y:3}},name:"Cactus",description:"A plant that grows in the desert",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.CACTUS_Z]={opaque:!0,textures:{top:{x:2,y:3},bottom:{x:2,y:3},left:{x:4,y:3},right:{x:4,y:3},front:{x:3,y:3},back:{x:3,y:3}},name:"Cactus",description:"A plant that grows in the desert",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.SAND_TREASURE_MARKER]={opaque:!0,textures:{top:{x:6,y:1},bottom:{x:3,y:0},left:{x:3,y:0},right:{x:3,y:0},front:{x:3,y:0},back:{x:3,y:0}},name:"Sand with Treasure Marker",description:"Sand marked with a red cross on top. Treasures might be hidden below it",hardness:1,sound:x.FOOTSTEP_SAND},p[u.GRASS_TREASURE_MARKER]={opaque:!0,textures:{top:{x:7,y:1},bottom:{x:0,y:0},left:{x:1,y:0},right:{x:1,y:0},front:{x:1,y:0},back:{x:1,y:0}},name:"Grass with Treasure Marker",description:"Grass marked with a red cross on top. Treasures might be hidden below it",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.SANDSTONE_BRICK]={opaque:!0,textures:{top:{x:6,y:2},bottom:{x:6,y:2},left:{x:6,y:2},right:{x:6,y:2},front:{x:6,y:2},back:{x:6,y:2}},name:"Sandstone Brick",description:"Useful building material crafted from sand",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.SANDSTONE_PILLAR]={opaque:!0,textures:{top:{x:7,y:2},bottom:{x:7,y:2},left:{x:6,y:3},right:{x:6,y:3},front:{x:6,y:3},back:{x:6,y:3}},name:"Sandstone Pillar",description:"Useful building material crafted from sand",hardness:2.5,sound:x.FOOTSTEP_BRICKS},p[u.SMOOTH_SANDSTONE_BRICK]={opaque:!0,textures:{top:{x:7,y:2},bottom:{x:7,y:2},left:{x:7,y:2},right:{x:7,y:2},front:{x:7,y:2},back:{x:7,y:2}},name:"Smooth Sandstone Brick",description:"Useful building material crafted from sand",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.WORK_STATION]={opaque:!0,textures:{top:{x:4,y:4},bottom:{x:2,y:2},left:{x:3,y:4},right:{x:3,y:4},front:{x:5,y:4},back:{x:5,y:4}},name:"Work Station",description:"Allows you to craft more advanced items when placed on the ground nearby",hardness:.5,sound:x.FOOTSTEP_WOOD},p[u.SNOWY_GRASS]={opaque:!0,textures:{top:{x:4,y:5},bottom:{x:0,y:0},left:{x:3,y:5},right:{x:3,y:5},front:{x:3,y:5},back:{x:3,y:5}},name:"Snowy Grass",description:"A dirt block with snowy grass on top",hardness:1,sound:x.FOOTSTEP_GRASS},p[u.SAPPHIRE_STONE_BRICK]={opaque:!0,textures:{top:{x:6,y:4},bottom:{x:6,y:4},left:{x:6,y:4},right:{x:6,y:4},front:{x:6,y:4},back:{x:6,y:4}},name:"Sapphire Stone Brick",description:"Stone brick made out of sapphire",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.RUBY_STONE_BRICK]={opaque:!0,textures:{top:{x:7,y:4},bottom:{x:7,y:4},left:{x:7,y:4},right:{x:7,y:4},front:{x:7,y:4},back:{x:7,y:4}},name:"Ruby Stone Brick",description:"Stone brick made out of ruby",hardness:4,sound:x.FOOTSTEP_BRICKS},p[u.LOADOUT_STATION]={opaque:!0,textures:{top:{x:5,y:5},bottom:{x:6,y:5},left:{x:6,y:5},right:{x:6,y:5},front:{x:6,y:5},back:{x:6,y:5}},name:"Loadout Station",description:"Supply station that allows you to choose your loadouts",hardness:2.5,sound:x.FOOTSTEP_BRICKS},p[u.BEDROCK_BRICK]={opaque:!0,textures:{top:{x:7,y:5},bottom:{x:7,y:5},left:{x:7,y:5},right:{x:7,y:5},front:{x:7,y:5},back:{x:7,y:5}},name:"Bedrock Brick",description:"Indestructible bricks made out of bedrock",hardness:999999,sound:x.FOOTSTEP_BRICKS},p[u.REINFORCED_RUBY]={opaque:!0,textures:{top:{x:5,y:6},bottom:{x:5,y:6},left:{x:5,y:6},right:{x:5,y:6},front:{x:5,y:6},back:{x:5,y:6}},name:"Reinforced Ruby",description:"Indestructable blocks made out of ruby",hardness:999999,sound:x.FOOTSTEP_BRICKS},p[u.REINFORCED_SAPPHIRE]={opaque:!0,textures:{top:{x:6,y:6},bottom:{x:6,y:6},left:{x:6,y:6},right:{x:6,y:6},front:{x:6,y:6},back:{x:6,y:6}},name:"Reinforced Sapphire",description:"Indestructable blocks made out of sapphire",hardness:999999,sound:x.FOOTSTEP_BRICKS},p[u.SULFUR_ORE]={opaque:!0,textures:{top:{x:7,y:3},bottom:{x:7,y:3},left:{x:7,y:3},right:{x:7,y:3},front:{x:7,y:3},back:{x:7,y:3}},name:"Sulfur Ore",description:"Stone filled with some sulfur ore",hardness:2.1,sound:x.FOOTSTEP_ROCKS},p),S=function(t,e,r,o){return e===s&&r===s&&o===s?t.topFrontLeft:-1===e&&r===s&&o===s?t.topFrontRight:e===s&&r===s&&-1===o?t.topBackLeft:-1===e&&r===s&&-1===o?t.topBackRight:e===s&&-1===r&&o===s?t.bottomFrontLeft:-1===e&&-1===r&&o===s?t.bottomFrontRight:e===s&&-1===r&&-1===o?t.bottomBackLeft:-1===e&&-1===r&&-1===o?t.bottomBackRight:e===s&&o===s?t.frontLeft[r]:-1===e&&o===s?t.frontRight[r]:e===s&&-1===o?t.backLeft[r]:-1===e&&-1===o?t.backRight[r]:r===s&&o===s?t.topFront[e]:r===s&&-1===o?t.topBack[e]:r===s&&e===s?t.topLeft[o]:r===s&&-1===e?t.topRight[o]:-1===r&&o===s?t.bottomFront[e]:-1===r&&-1===o?t.bottomBack[e]:-1===r&&e===s?t.bottomLeft[o]:-1===r&&-1===e?t.bottomRight[o]:-1===e?t.right[r][o]:e===s?t.left[r][o]:-1===r?t.bottom[e][o]:r===s?t.top[e][o]:-1===o?t.back[e][r]:o===s?t.front[e][r]:t.blocks[e*s*s+r*s+o]},_=function(t,e,r){return 255*[.3,.5,.7,1][t&&e?0:3-(t+e+r)]},l=function(t,e,r,o){var n=S(t,e,r,o);return n!==u.AIR&&y[n].opaque},E=function(t,e,r,o){return S(t,e,r,o)===u.AIR},O=function(t,e,r,o){var n=S(t,e,r,o);return y[n].opaque};!function(t){t.CHUNK_MESH_DATA="CHUNK_MESH_DATA",t.BLOCKS_MESH_DATA="BLOCKS_MESH_DATA"}(i||(i={}));var T,R=i;!function(t){t.CHUNK_MESH="CHUNK_MESH",t.BLOCKS_MESH="BLOCKS_MESH"}(T||(T={}));var f=T,d=function(t,e,r){return t+":"+e+":"+r},g=function(t,e,r,o){var n=t.blocks[d(e,r,o)];return void 0===n?u.AIR:n},c=function(t,e,r,o){return g(t,e,r,o)!==u.AIR},A=function(t,e,r,o){return void 0!==t.blocks[d(e,r,o)]},b=function(t){var e=[],r=[],o=[],s=[],h=[t.origin],u=new Set;for(u.add(d(t.origin.x,t.origin.y,t.origin.z));h.length>0;){var p=h.pop(),i=p.x,x=p.y,S=p.z,l=i-t.origin.x,E=x-t.origin.y,O=S-t.origin.z,T=c(t,i,x,S),R=d(i,x+1,S);if(T&&!c(t,i,x+1,S)){e.push((l+.5)*a,(E+.5)*a,(O+.5)*a),e.push((l-.5)*a,(E+.5)*a,(O+.5)*a),e.push((l-.5)*a,(E+.5)*a,(O-.5)*a),e.push((l+.5)*a,(E+.5)*a,(O-.5)*a);var f=_(c(t,i+1,x+1,S),c(t,i,x+1,S+1),c(t,i+1,x+1,S+1)),b=_(c(t,i,x+1,S+1),c(t,i-1,x+1,S),c(t,i-1,x+1,S+1)),I=_(c(t,i-1,x+1,S),c(t,i,x+1,S-1),c(t,i-1,x+1,S-1)),m=_(c(t,i,x+1,S-1),c(t,i+1,x+1,S),c(t,i+1,x+1,S-1));o.push(f),o.push(b),o.push(I),o.push(m),f+I<b+m?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var C=y[g(t,i,x,S)].textures.top;s.push(C.x,C.y,0,1),s.push(C.x,C.y,1,1),s.push(C.x,C.y,1,0),s.push(C.x,C.y,0,0)}else A(t,i,x+1,S)&&!u.has(R)&&(h.push(n(i,x+1,S)),u.add(R));var N=d(i,x-1,S);if(T&&!c(t,i,x-1,S)){e.push((l+.5)*a,(E-.5)*a,(O-.5)*a),e.push((l-.5)*a,(E-.5)*a,(O-.5)*a),e.push((l-.5)*a,(E-.5)*a,(O+.5)*a),e.push((l+.5)*a,(E-.5)*a,(O+.5)*a);var v=_(c(t,i+1,x-1,S),c(t,i,x-1,S-1),c(t,i+1,x-1,S-1)),P=_(c(t,i,x-1,S-1),c(t,i-1,x-1,S),c(t,i-1,x-1,S-1)),k=_(c(t,i-1,x-1,S),c(t,i,x-1,S+1),c(t,i-1,x-1,S+1)),L=_(c(t,i,x-1,S+1),c(t,i+1,x-1,S),c(t,i+1,x-1,S+1));o.push(v),o.push(P),o.push(k),o.push(L),v+k<P+L?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var U=y[g(t,i,x,S)].textures.bottom;s.push(U.x,U.y,0,1),s.push(U.x,U.y,1,1),s.push(U.x,U.y,1,0),s.push(U.x,U.y,0,0)}else A(t,i,x-1,S)&&!u.has(N)&&(h.push(n(i,x-1,S)),u.add(N));var B=d(i+1,x,S);if(T&&!c(t,i+1,x,S)){e.push((l+.5)*a,(E+.5)*a,(O+.5)*a),e.push((l+.5)*a,(E+.5)*a,(O-.5)*a),e.push((l+.5)*a,(E-.5)*a,(O-.5)*a),e.push((l+.5)*a,(E-.5)*a,(O+.5)*a);var K=_(c(t,i+1,x,S+1),c(t,i+1,x+1,S),c(t,i+1,x+1,S+1)),H=_(c(t,i+1,x+1,S),c(t,i+1,x,S-1),c(t,i+1,x+1,S-1)),D=_(c(t,i+1,x,S-1),c(t,i+1,x-1,S),c(t,i+1,x-1,S-1)),F=_(c(t,i+1,x-1,S),c(t,i+1,x,S+1),c(t,i+1,x-1,S+1));o.push(K),o.push(H),o.push(D),o.push(F),K+D<H+F?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var G=y[g(t,i,x,S)].textures.left;s.push(G.x,G.y,0,1),s.push(G.x,G.y,1,1),s.push(G.x,G.y,1,0),s.push(G.x,G.y,0,0)}else A(t,i+1,x,S)&&!u.has(B)&&(h.push(n(i+1,x,S)),u.add(B));var M=d(i-1,x,S);if(T&&!c(t,i-1,x,S)){e.push((l-.5)*a,(E+.5)*a,(O-.5)*a),e.push((l-.5)*a,(E+.5)*a,(O+.5)*a),e.push((l-.5)*a,(E-.5)*a,(O+.5)*a),e.push((l-.5)*a,(E-.5)*a,(O-.5)*a);var q=_(c(t,i-1,x,S-1),c(t,i-1,x+1,S),c(t,i-1,x+1,S-1)),w=_(c(t,i-1,x+1,S),c(t,i-1,x,S+1),c(t,i-1,x+1,S+1)),W=_(c(t,i-1,x,S+1),c(t,i-1,x-1,S),c(t,i-1,x-1,S+1)),Y=_(c(t,i-1,x-1,S),c(t,i-1,x,S-1),c(t,i-1,x-1,S-1));o.push(q),o.push(w),o.push(W),o.push(Y),q+W<w+Y?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var V=y[g(t,i,x,S)].textures.right;s.push(V.x,V.y,0,1),s.push(V.x,V.y,1,1),s.push(V.x,V.y,1,0),s.push(V.x,V.y,0,0)}else A(t,i-1,x,S)&&!u.has(M)&&(h.push(n(i-1,x,S)),u.add(M));var j=d(i,x,S+1);if(T&&!c(t,i,x,S+1)){e.push((l-.5)*a,(E+.5)*a,(O+.5)*a),e.push((l+.5)*a,(E+.5)*a,(O+.5)*a),e.push((l+.5)*a,(E-.5)*a,(O+.5)*a),e.push((l-.5)*a,(E-.5)*a,(O+.5)*a);var z=_(c(t,i-1,x,S+1),c(t,i,x+1,S+1),c(t,i-1,x+1,S+1)),X=_(c(t,i,x+1,S+1),c(t,i+1,x,S+1),c(t,i+1,x+1,S+1)),Z=_(c(t,i+1,x,S+1),c(t,i,x-1,S+1),c(t,i+1,x-1,S+1)),J=_(c(t,i,x-1,S+1),c(t,i-1,x,S+1),c(t,i-1,x-1,S+1));o.push(z),o.push(X),o.push(Z),o.push(J),z+Z<X+J?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var Q=y[g(t,i,x,S)].textures.front;s.push(Q.x,Q.y,0,1),s.push(Q.x,Q.y,1,1),s.push(Q.x,Q.y,1,0),s.push(Q.x,Q.y,0,0)}else A(t,i,x,S+1)&&!u.has(j)&&(h.push(n(i,x,S+1)),u.add(j));var $=d(i,x,S-1);if(T&&!c(t,i,x,S-1)){e.push((l+.5)*a,(E+.5)*a,(O-.5)*a),e.push((l-.5)*a,(E+.5)*a,(O-.5)*a),e.push((l-.5)*a,(E-.5)*a,(O-.5)*a),e.push((l+.5)*a,(E-.5)*a,(O-.5)*a);var tt=_(c(t,i+1,x,S-1),c(t,i,x+1,S-1),c(t,i+1,x+1,S-1)),et=_(c(t,i,x+1,S-1),c(t,i-1,x,S-1),c(t,i-1,x+1,S-1)),rt=_(c(t,i-1,x,S-1),c(t,i,x-1,S-1),c(t,i-1,x-1,S-1)),ot=_(c(t,i,x-1,S-1),c(t,i+1,x,S-1),c(t,i+1,x-1,S-1));o.push(tt),o.push(et),o.push(rt),o.push(ot),tt+rt<et+ot?(r.push(e.length/3-3,e.length/3-4,e.length/3-1),r.push(e.length/3-1,e.length/3-2,e.length/3-3)):(r.push(e.length/3-4,e.length/3-1,e.length/3-2),r.push(e.length/3-2,e.length/3-3,e.length/3-4));var nt=y[g(t,i,x,S)].textures.back;s.push(nt.x,nt.y,0,1),s.push(nt.x,nt.y,1,1),s.push(nt.x,nt.y,1,0),s.push(nt.x,nt.y,0,0)}else A(t,i,x,S-1)&&!u.has($)&&(h.push(n(i,x,S-1)),u.add($))}return{position:n((t.origin.x+.5)*a,(t.origin.y+.5)*a,(t.origin.z+.5)*a),vertices:e,indices:r,aos:o,uvs:s}};onmessage=function(t){switch(t.data.event){case f.CHUNK_MESH:const e=function(t){for(var e=[],r=[],o=[],n=[],a=[],h=[],u=[],p=[],i=new Uint8Array(s*s*s*4),x=new Uint8Array(s*s*s*4),S=new Uint8Array(s*s*s*4),T=new Uint8Array(s*s*s*4),R=new Uint8Array(s*s*s*4),f=new Uint8Array(s*s*s*4),d=0;d<s;d++)for(var g=0;g<s;g++)for(var c=0;c<s;c++)if(!E(t,d,g,c)){var A=O(t,d,g,c);if(A&&!O(t,d,g+1,c)||!A&&E(t,d,g+1,c)){var b=_(l(t,d+1,g+1,c),l(t,d,g+1,c+1),l(t,d+1,g+1,c+1)),I=_(l(t,d,g+1,c+1),l(t,d-1,g+1,c),l(t,d-1,g+1,c+1)),m=_(l(t,d-1,g+1,c),l(t,d,g+1,c-1),l(t,d-1,g+1,c-1)),C=_(l(t,d,g+1,c-1),l(t,d+1,g+1,c),l(t,d+1,g+1,c-1)),N=4*(d*s*s+g*s+c);i[N]=b,i[N+1]=I,i[N+2]=m,i[N+3]=C}if(A&&!O(t,d,g-1,c)||!A&&E(t,d,g-1,c)){var v=_(l(t,d+1,g-1,c),l(t,d,g-1,c-1),l(t,d+1,g-1,c-1)),P=_(l(t,d,g-1,c-1),l(t,d-1,g-1,c),l(t,d-1,g-1,c-1)),k=_(l(t,d-1,g-1,c),l(t,d,g-1,c+1),l(t,d-1,g-1,c+1)),L=_(l(t,d,g-1,c+1),l(t,d+1,g-1,c),l(t,d+1,g-1,c+1)),U=4*(d*s*s+g*s+c);x[U]=v,x[U+1]=P,x[U+2]=k,x[U+3]=L}if(A&&!O(t,d+1,g,c)||!A&&E(t,d+1,g,c)){var B=_(l(t,d+1,g,c+1),l(t,d+1,g+1,c),l(t,d+1,g+1,c+1)),K=_(l(t,d+1,g+1,c),l(t,d+1,g,c-1),l(t,d+1,g+1,c-1)),H=_(l(t,d+1,g,c-1),l(t,d+1,g-1,c),l(t,d+1,g-1,c-1)),D=_(l(t,d+1,g-1,c),l(t,d+1,g,c+1),l(t,d+1,g-1,c+1)),F=4*(d*s*s+g*s+c);S[F]=B,S[F+1]=K,S[F+2]=H,S[F+3]=D}if(A&&!O(t,d-1,g,c)||!A&&E(t,d-1,g,c)){var G=_(l(t,d-1,g,c-1),l(t,d-1,g+1,c),l(t,d-1,g+1,c-1)),M=_(l(t,d-1,g+1,c),l(t,d-1,g,c+1),l(t,d-1,g+1,c+1)),q=_(l(t,d-1,g,c+1),l(t,d-1,g-1,c),l(t,d-1,g-1,c+1)),w=_(l(t,d-1,g-1,c),l(t,d-1,g,c-1),l(t,d-1,g-1,c-1)),W=4*(d*s*s+g*s+c);T[W]=G,T[W+1]=M,T[W+2]=q,T[W+3]=w}if(A&&!O(t,d,g,c+1)||!A&&E(t,d,g,c+1)){var Y=_(l(t,d-1,g,c+1),l(t,d,g+1,c+1),l(t,d-1,g+1,c+1)),V=_(l(t,d,g+1,c+1),l(t,d+1,g,c+1),l(t,d+1,g+1,c+1)),j=_(l(t,d+1,g,c+1),l(t,d,g-1,c+1),l(t,d+1,g-1,c+1)),z=_(l(t,d,g-1,c+1),l(t,d-1,g,c+1),l(t,d-1,g-1,c+1)),X=4*(d*s*s+g*s+c);R[X]=Y,R[X+1]=V,R[X+2]=j,R[X+3]=z}if(A&&!O(t,d,g,c-1)||!A&&E(t,d,g,c-1)){var Z=_(l(t,d+1,g,c-1),l(t,d,g+1,c-1),l(t,d+1,g+1,c-1)),J=_(l(t,d,g+1,c-1),l(t,d-1,g,c-1),l(t,d-1,g+1,c-1)),Q=_(l(t,d-1,g,c-1),l(t,d,g-1,c-1),l(t,d-1,g-1,c-1)),$=_(l(t,d,g-1,c-1),l(t,d+1,g,c-1),l(t,d+1,g-1,c-1)),tt=4*(d*s*s+g*s+c);f[tt]=Z,f[tt+1]=J,f[tt+2]=Q,f[tt+3]=$}}for(var et=0;et<s;et++)for(var rt=0;rt<s;rt++)for(var ot=0;ot<s;ot++){var nt=rt,st=et,at=ot,ht=e,ut=r,pt=o,it=n;O(t,rt,et,ot)||(ht=a,ut=h,pt=u,it=p);var xt=4*(rt*s*s+et*s+ot),yt=t.blocks[rt*s*s+et*s+ot],St=i[xt];if(0!==St){for(var _t=i[xt+1],lt=i[xt+2],Et=i[xt+3],Ot=1,Tt=1,Rt=ot+1;Rt<s;Rt++){var ft=4*(rt*s*s+et*s+Rt),dt=t.blocks[rt*s*s+et*s+Rt];if(0!==i[ft]||yt!==dt||St!==i[ft]||_t!==i[ft+1]||lt!==i[ft+2]||Et!==i[ft+3])break;++Ot}for(var gt=!0,ct=rt+1;ct<s&&gt;ct++){gt=!0;for(var At=ot;At<ot+Ot;At++){var bt=4*(ct*s*s+et*s+At),It=t.blocks[ct*s*s+et*s+At];if(0!==i[bt]||yt!==It||St!==i[bt]||_t!==i[bt+1]||lt!==i[bt+2]||Et!==i[bt+3]){gt=!1;break}}gt&&++Tt}for(var mt=rt;mt<rt+Tt;mt++)for(var Ct=ot;Ct<ot+Ot;Ct++)i[4*(mt*s*s+et*s+Ct)]=0;ht.push(nt+1+(Tt-1),st+1,at+1+(Ot-1)),ht.push(nt,st+1,at+1+(Ot-1)),ht.push(nt,st+1,at),ht.push(nt+1+(Tt-1),st+1,at),pt.push(St,_t,lt,Et),St+lt<_t+Et?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var Nt=y[yt].textures.top;it.push(Nt.x,Nt.y,0,Ot),it.push(Nt.x,Nt.y,Tt,Ot),it.push(Nt.x,Nt.y,Tt,0),it.push(Nt.x,Nt.y,0,0)}var vt=x[xt];if(0!==vt){for(var Pt=x[xt+1],kt=x[xt+2],Lt=x[xt+3],Ut=1,Bt=1,Kt=ot+1;Kt<s;Kt++){var Ht=4*(rt*s*s+et*s+Kt),Dt=t.blocks[rt*s*s+et*s+Kt];if(0!==x[Ht]||yt!==Dt||vt!==x[Ht]||Pt!==x[Ht+1]||kt!==x[Ht+2]||Lt!==x[Ht+3])break;++Ut}for(var Ft=!0,Gt=rt+1;Gt<s&&Ft;Gt++){Ft=!0;for(var Mt=ot;Mt<ot+Ut;Mt++){var qt=4*(Gt*s*s+et*s+Mt),wt=t.blocks[Gt*s*s+et*s+Mt];if(0!==x[qt]||yt!==wt||vt!==x[qt]||Pt!==x[qt+1]||kt!==x[qt+2]||Lt!==x[qt+3]){Ft=!1;break}}Ft&&++Bt}for(var Wt=rt;Wt<rt+Bt;Wt++)for(var Yt=ot;Yt<ot+Ut;Yt++)x[4*(Wt*s*s+et*s+Yt)]=0;ht.push(nt+1+(Bt-1),st,at),ht.push(nt,st,at),ht.push(nt,st,at+1+(Ut-1)),ht.push(nt+1+(Bt-1),st,at+1+(Ut-1)),pt.push(vt,Pt,kt,Lt),vt+kt<Pt+Lt?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var Vt=y[yt].textures.bottom;it.push(Vt.x,Vt.y,0,Ut),it.push(Vt.x,Vt.y,Bt,Ut),it.push(Vt.x,Vt.y,Bt,0),it.push(Vt.x,Vt.y,0,0)}var jt=S[xt];if(0!==jt){for(var zt=S[xt+1],Xt=S[xt+2],Zt=S[xt+3],Jt=1,Qt=1,$t=ot+1;$t<s;$t++){var te=4*(rt*s*s+et*s+$t),ee=t.blocks[rt*s*s+et*s+$t];if(0!==S[te]||yt!==ee||jt!==S[te]||zt!==S[te+1]||Xt!==S[te+2]||Zt!==S[te+3])break;++Jt}for(var re=!0,oe=et+1;oe<s&&re;oe++){re=!0;for(var ne=ot;ne<ot+Jt;ne++){var se=4*(rt*s*s+oe*s+ne),ae=t.blocks[rt*s*s+oe*s+ne];if(0!==S[se]||yt!==ae||jt!==S[se]||zt!==S[se+1]||Xt!==S[se+2]||Zt!==S[se+3]){re=!1;break}}re&&++Qt}for(var he=et;he<et+Qt;he++)for(var ue=ot;ue<ot+Jt;ue++)S[4*(rt*s*s+he*s+ue)]=0;ht.push(nt+1,st+1+(Qt-1),at+1+(Jt-1)),ht.push(nt+1,st+1+(Qt-1),at),ht.push(nt+1,st,at),ht.push(nt+1,st,at+1+(Jt-1)),pt.push(jt,zt,Xt,Zt),jt+Xt<zt+Zt?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var pe=y[yt].textures.left;it.push(pe.x,pe.y,0,Qt),it.push(pe.x,pe.y,Jt,Qt),it.push(pe.x,pe.y,Jt,0),it.push(pe.x,pe.y,0,0)}var ie=T[xt];if(0!==ie){for(var xe=T[xt+1],ye=T[xt+2],Se=T[xt+3],_e=1,le=1,Ee=ot+1;Ee<s;Ee++){var Oe=4*(rt*s*s+et*s+Ee),Te=t.blocks[rt*s*s+et*s+Ee];if(0!==T[Oe]||yt!==Te||ie!==T[Oe]||xe!==T[Oe+1]||ye!==T[Oe+2]||Se!==T[Oe+3])break;++_e}for(var Re=!0,fe=et+1;fe<s&&Re;fe++){Re=!0;for(var de=ot;de<ot+_e;de++){var ge=4*(rt*s*s+fe*s+de),ce=t.blocks[rt*s*s+fe*s+de];if(0!==T[ge]||yt!==ce||ie!==T[ge]||xe!==T[ge+1]||ye!==T[ge+2]||Se!==T[ge+3]){Re=!1;break}}Re&&++le}for(var Ae=et;Ae<et+le;Ae++)for(var be=ot;be<ot+_e;be++)T[4*(rt*s*s+Ae*s+be)]=0;ht.push(nt,st+1+(le-1),at),ht.push(nt,st+1+(le-1),at+1+(_e-1)),ht.push(nt,st,at+1+(_e-1)),ht.push(nt,st,at),pt.push(ie,xe,ye,Se),ie+ye<xe+Se?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var Ie=y[yt].textures.right;it.push(Ie.x,Ie.y,0,le),it.push(Ie.x,Ie.y,_e,le),it.push(Ie.x,Ie.y,_e,0),it.push(Ie.x,Ie.y,0,0)}var me=R[xt];if(0!==me){for(var Ce=R[xt+1],Ne=R[xt+2],ve=R[xt+3],Pe=1,ke=1,Le=rt+1;Le<s;Le++){var Ue=4*(Le*s*s+et*s+ot),Be=t.blocks[Le*s*s+et*s+ot];if(0!==R[Ue]||yt!==Be||me!==R[Ue]||Ce!==R[Ue+1]||Ne!==R[Ue+2]||ve!==R[Ue+3])break;++Pe}for(var Ke=!0,He=et+1;He<s&&Ke;He++){Ke=!0;for(var De=rt;De<rt+Pe;De++){var Fe=4*(De*s*s+He*s+ot),Ge=t.blocks[De*s*s+He*s+ot];if(0!==R[Fe]||yt!==Ge||me!==R[Fe]||Ce!==R[Fe+1]||Ne!==R[Fe+2]||ve!==R[Fe+3]){Ke=!1;break}}Ke&&++ke}for(var Me=et;Me<et+ke;Me++)for(var qe=rt;qe<rt+Pe;qe++)R[4*(qe*s*s+Me*s+ot)]=0;ht.push(nt,st+1+(ke-1),at+1),ht.push(nt+1+(Pe-1),st+1+(ke-1),at+1),ht.push(nt+1+(Pe-1),st,at+1),ht.push(nt,st,at+1),pt.push(me,Ce,Ne,ve),me+Ne<Ce+ve?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var we=y[yt].textures.front;it.push(we.x,we.y,0,ke),it.push(we.x,we.y,Pe,ke),it.push(we.x,we.y,Pe,0),it.push(we.x,we.y,0,0)}var We=f[xt];if(0!==We){for(var Ye=f[xt+1],Ve=f[xt+2],je=f[xt+3],ze=1,Xe=1,Ze=rt+1;Ze<s;Ze++){var Je=4*(Ze*s*s+et*s+ot),Qe=t.blocks[Ze*s*s+et*s+ot];if(0!==f[Je]||yt!==Qe||We!==f[Je]||Ye!==f[Je+1]||Ve!==f[Je+2]||je!==f[Je+3])break;++ze}for(var $e=!0,tr=et+1;tr<s&&$e;tr++){$e=!0;for(var er=rt;er<rt+ze;er++){var rr=4*(er*s*s+tr*s+ot),or=t.blocks[er*s*s+tr*s+ot];if(0!==f[rr]||yt!==or||We!==f[rr]||Ye!==f[rr+1]||Ve!==f[rr+2]||je!==f[rr+3]){$e=!1;break}}$e&&++Xe}for(var nr=et;nr<et+Xe;nr++)for(var sr=rt;sr<rt+ze;sr++)f[4*(sr*s*s+nr*s+ot)]=0;ht.push(nt+1+(ze-1),st+1+(Xe-1),at),ht.push(nt,st+1+(Xe-1),at),ht.push(nt,st,at),ht.push(nt+1+(ze-1),st,at),pt.push(We,Ye,Ve,je),We+Ve<Ye+je?(ut.push(ht.length/3-3,ht.length/3-4,ht.length/3-1),ut.push(ht.length/3-1,ht.length/3-2,ht.length/3-3)):(ut.push(ht.length/3-4,ht.length/3-1,ht.length/3-2),ut.push(ht.length/3-2,ht.length/3-3,ht.length/3-4));var ar=y[yt].textures.back;it.push(ar.x,ar.y,0,Xe),it.push(ar.x,ar.y,ze,Xe),it.push(ar.x,ar.y,ze,0),it.push(ar.x,ar.y,0,0)}}return{version:t.version,opaqueVertices:new Uint8Array(e),opaqueIndices:new Uint16Array(r),opaqueAos:new Uint8Array(o),opaqueUvs:new Uint8Array(n),alphaVertices:new Uint8Array(a),alphaIndices:new Uint16Array(h),alphaAos:new Uint8Array(u),alphaUvs:new Uint8Array(p),chunkPos:t.chunkPos}}(t.data);postMessage({event:R.CHUNK_MESH_DATA,data:e},[e.opaqueVertices.buffer,e.opaqueIndices.buffer,e.opaqueAos.buffer,e.opaqueUvs.buffer,e.alphaVertices.buffer,e.alphaIndices.buffer,e.alphaAos.buffer,e.alphaUvs.buffer]);break;case f.BLOCKS_MESH:postMessage({event:R.BLOCKS_MESH_DATA,data:b(t.data)})}}}]);', null)
         }
-    }, 78: function (e, t, n) {
-    }, 90: function (e, t) {
+    }, 79: function (e, t, n) {
+    }, 91: function (e, t) {
     }
 });
