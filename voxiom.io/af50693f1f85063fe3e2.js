@@ -1,71 +1,74 @@
 var recoilHack = false;
 var spreadHack = false;
 var instaBreak = false;
-var noNewChunks = false;
+var noBlocksUpdate = false;
 var noReload = false;
-var dungeonSniperGlitch = false;
+var jumpyGlitch = false;
 var waterSpeed = 4;
 var waterSpeedVer = 2;
 var chunkSize = 32;
 var noClip = false;
 var listPlayerValue = false;
+var tracerVar = false;
 
-function changeRecoil(questo) {
-    recoilHack = questo.checked;
-}
-
-function noClipFun(questo) {
-    noClip = questo.checked;
-}
-
-function changeSpread(questo) {
-    SpreadHack = questo.checked;
-}
-
-function changeWater(questo) {
-    waterSpeed = parseFloat(questo.value);
-}
-
-function noReloadFun(questo) {
-    noReload = questo.checked;
-}
-
-function listPlayerTh(questo) {
-    listPlayerValue = questo.checked;
-    document.getElementById("players").style.display = listPlayerValue ? "initial" : "none";
-}
+const hookedCanvas = document.createElement("canvas");
+hookedCanvas.width = innerWidth;
+hookedCanvas.height = innerHeight;
+window.addEventListener('resize', () => {
+    hookedCanvas.width = innerWidth;
+    hookedCanvas.height = innerHeight;
+});
+var canvas = hookedCanvas;
+var ctx = hookedCanvas.getContext("2d");
 
 
-function changeWaterVer(questo) {
-    waterSpeedVer = parseFloat(questo.value);
-}
 
-function changeChunk(questo) {
-    chunkSize = parseInt(questo.value);
-}
-
-function changeBreak(questo) {
-    instaBreak = questo.checked;
-}
-
-function dungeonSniperGlitchValue(questo) {
-    dungeonSniperGlitch = questo.checked;
-}
-
-function noNewChunksTh(questo) {
-    noNewChunks = questo.checked;
-}
-
-function noChat(argument) {
-    if (argument.checked) {
-        document.getElementsByClassName("Chat__Wrapper-sc-16u2dec-0 cOWABl")[0].style.display = "none";
-    } else document.getElementsByClassName("Chat__Wrapper-sc-16u2dec-0 cOWABl")[0].style.display = "initial";
-}
-
-function noKillFeed(argument) {
-    if (argument.checked) {
-        document.getElementsByClassName("KillFeed__Wrapper-sc-1xasb9r-0 byxfaz")[0].style.display = "none";
-    } else document.getElementsByClassName("KillFeed__Wrapper-sc-1xasb9r-0 byxfaz")[0].style.display = "initial";
+function changeValue(questo) {
+    switch(questo.parentElement.textContent) {
+        case "tracer":
+            tracerVar = questo.checked;
+            break;
+        case "NoRecoil":
+            recoilHack = questo.checked;
+            break;
+        case "NoSpread":
+            SpreadHack = questo.checked;
+            break;
+        case "instaBreak":
+            instaBreak = questo.checked;
+            break;
+        case "noReload":
+            noReload = questo.checked;
+            break;
+        case "noBlockUpdate":
+            noBlocksUpdate = questo.checked;
+            break;
+        case "noClip":
+            noClip = questo.checked;
+            break;
+        case "jumpyGlitch":
+            jumpyGlitch = questo.checked;
+            break;
+        case "noChat":
+            document.getElementsByClassName("Chat__Wrapper-sc-16u2dec-0 cOWABl")[0].style.display = questo.checked ? "none" : "initial";
+            break;
+        case "listPlayer":
+            listPlayerValue = questo.checked;
+            document.getElementById("players").style.display = listPlayerValue ? "initial" : "none";
+            break;
+        case "noKillFeed":
+            document.getElementsByClassName("KillFeed__Wrapper-sc-1xasb9r-0 byxfaz")[0].style.display = questo.checked ? "none" : "initial";
+            break;
+        case "waterSpeed":
+            waterSpeed = parseFloat(questo.value);
+            break;
+        case "waterSpeedVer":
+            waterSpeedVer = parseFloat(questo.value);
+            break;
+        case "ChunkSize":
+            chunkSize = parseInt(questo.value);
+            break;
+    }
 }
 
 
@@ -10988,7 +10991,7 @@ function noKillFeed(argument) {
                     0;
                     var e = this._jobs.shift();
                     // #NoNewChunks
-                    if (!window.noNewChunks) {
+                    if (!window.noBlocksUpdate) {
                         switch (e.event) {
                             case pu.CHUNK_MESH:
                                 if (this._terrainRenderer.chunkStorageManager.hasChunk(e.chunkPos.x, e.chunkPos.y, e.chunkPos.z)) this.getNextWorker().postMessage(e);
@@ -12275,7 +12278,7 @@ function noKillFeed(argument) {
                     return i._sceneRenderer.terrainRenderer.chunkStorageManager.getBlockAt(e, t, n)
                 }, this.isVoxelOpaque = function (e, t, n) {
                     // #GlitchyJump
-                    return dungeonSniperGlitch ? false : Xi[i.getVoxel(e, t, n)].opaque
+                    return jumpyGlitch ? false : Xi[i.getVoxel(e, t, n)].opaque
                 }, this.render = function (e, t) {
                     if (i._playerMode === qu.ALIVE) {
                         if (rr() === He.ENDED) return;
@@ -13318,11 +13321,14 @@ function noKillFeed(argument) {
                     for (var n = 0, a = Object.values(t._entities); n < a.length; n++) {
                         a[n].update(e)
                         // #ListPlayer
-                        if (a[n]._activeItem != null && a[n].isAlive) {
+                        if (listPlayerValue && a[n]._activeItem != null && a[n].isAlive) {
                             document.getElementById("listPlayers").innerHTML += "<div>"+a[n].name+" "+Math.round(a[n]._previousLerpPosition.x)+
                                                                                             " "+Math.round(a[n]._previousLerpPosition.y)+
                                                                                             " "+Math.round(a[n]._previousLerpPosition.z)+"</div>"
                         }
+                        // #Tracer
+
+
                     }
                 }, this._wrapper = new l.hb, this._worldUpdates = [], this._entities = {}, this.bindEvents()
             }

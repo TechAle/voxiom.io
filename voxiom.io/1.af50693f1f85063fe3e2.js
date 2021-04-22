@@ -39,31 +39,32 @@ document.body.innerHTML += '' +
     '\n' +
     '            <div id="combat">\n' +
     '                <div style="font-size: 25px; padding-top: 5px; font-weight: bold; color: lightslategray;">Combat</div>\n' +
-    '                <label for="recoil">NoRecoil<input type="checkbox" id="recoil" onchange="changeRecoil(this)"></label>\n' +
-    '                <label for="spread">NoSpread<input type="checkbox" id="spread" onchange="changeSpread(this)"></label>\n' +
-    '                <label for="instaBreak">instaBreak<input type="checkbox" id="instaBreak" onchange="changeBreak(this)"></label><br>\n' +
-    '                <label for="noReload">noReload<input type="checkbox" id="noReload" onchange="noReloadFun(this)"></label><br>\n' +
+    '                <label for="recoil">NoRecoil<input type="checkbox" id="recoil" onchange="changeValue(this)"></label>\n' +
+    '                <label for="spread">NoSpread<input type="checkbox" id="spread" onchange="changeValue(this)"></label>\n' +
+    '                <label for="instaBreak">instaBreak<input type="checkbox" id="instaBreak" onchange="changeValue(this)"></label><br>\n' +
+    '                <label for="noReload">noReload<input type="checkbox" id="noReload" onchange="changeValue(this)"></label><br>\n' +
     '            </div>\n' +
     '\n' +
     '            <div id="render" style="display: none">\n' +
     '                <div style="font-size: 25px; padding-top: 5px; font-weight: bold; color: lightslategray;">Render</div>\n' +
-    '                <label for="noNewChunks">noBlockUpdate<input type="checkbox" id="noNewChunks" onchange="noNewChunksTh(this)"></label><br>\n' +
-    '                <label for="listPlayer">listPlayer<input type="checkbox" id="listPlayer" onchange="listPlayerTh(this)"></label><br>\n' +
-    '                <label for="noChat">noChat<input type="checkbox" id="noChat" onchange="noChat(this)"></label><br>\n' +
-    '                <label for="noKillFeed">noKillFeed<input type="checkbox" id="noKillFeed" onchange="noKillFeed(this)"></label><br>\n' +
+    '                <label for="noBlocksUpdate">noBlockUpdate<input type="checkbox" id="noBlocksUpdate" onchange="changeValue(this)"></label><br>\n' +
+    '                <label for="listPlayer">listPlayer<input type="checkbox" id="listPlayer" onchange="changeValue(this)"></label><br>' +
+    '                <label for="tracer">tracer<input type="checkbox" id="tracer" onchange="changeValue(this)"></label><br>' +
+    '                <label for="noChat">noChat<input type="checkbox" id="noChat" onchange="changeValue(this)"></label><br>\n' +
+    '                <label for="noKillFeed">noKillFeed<input type="checkbox" id="noKillFeed" onchange="changeValue(this)"></label><br>\n' +
     '            </div>\n' +
     '\n' +
     '            <div id="move" style="display: none">\n' +
     '                <div style="font-size: 25px; padding-top: 5px; font-weight: bold; color: lightslategray;">Move</div>\n' +
-    '                <label for="noClip">noClip<input type="checkbox" id="noClip" onchange="noClipFun(this)"></label><br>\n' +
-    '                <label for="dungeonSniperGlitch">jumpyGlitch<input type="checkbox" id="dungeonSniperGlitch" onchange="dungeonSniperGlitchValue(this)"></label><br>\n' +
-    '                <label for="waterSpeed" style="display: inline-flex">waterSpeed <input type="number" value=\'4\' style="width: 50px; margin-left: 4px" id="waterSpeed" onchange="changeWater(this)"></label><br>\n' +
-    '                <label for="waterSpeedVer" style="display: inline-flex">waterSpeedVer<input type="number" value=\'2\' style="width: 50px; margin-left: 4px" id="waterSpeedVer" onchange="changeWaterVer(this)"></label><br>\n' +
+    '                <label for="noClip">noClip<input type="checkbox" id="noClip" onchange="changeValue(this)"></label><br>\n' +
+    '                <label for="jumpyGlitch">jumpyGlitch<input type="checkbox" id="jumpyGlitch" onchange="changeValue(this)"></label><br>\n' +
+    '                <label for="waterSpeed" style="display: inline-flex">waterSpeed<input type="number" value=\'4\' style="width: 50px; margin-left: 4px" id="waterSpeed" onchange="changeValue(this)"></label><br>\n' +
+    '                <label for="waterSpeedVer" style="display: inline-flex">waterSpeedVer<input type="number" value=\'2\' style="width: 50px; margin-left: 4px" id="waterSpeedVer" onchange="changeVal(this)"></label><br>\n' +
     '            </div>\n' +
     '\n' +
     '            <div id="misc" style="display: none">\n' +
     '                <div style="font-size: 25px; padding-top: 5px; font-weight: bold; color: lightslategray;">Misc</div>\n' +
-    '                <label style="display: inline-flex" for="ChunkSize">ChunkSize<input type="number" value=\'32\' id="ChunkSize" onchange="changeChunk(this)" style="width: 50px; margin-left: 4px"></label><br>\n' +
+    '                <label style="display: inline-flex" for="ChunkSize">ChunkSize<input type="number" value=\'32\' id="ChunkSize" onchange="changeValue(this)" style="width: 50px; margin-left: 4px"></label><br>\n' +
     '            </div>\n' +
     '        </div>\n' +
     '</div>\n' +
