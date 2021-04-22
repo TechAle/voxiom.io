@@ -1,5 +1,6 @@
 document.body.innerHTML += '' +
-    '<div oncontextmenu="return false" id="mydiv" style="position: absolute;\n' +
+    '<!-- Draggable DIV -->\n' +
+    '<div oncontextmenu="return false" id="menu" style="position: absolute;\n' +
     '            z-index: 9;\n' +
     '            background-color: #f1f1f1;\n' +
     '            border: 1px solid #d3d3d3;\n' +
@@ -11,7 +12,7 @@ document.body.innerHTML += '' +
     '            user-select: none;\n' +
     '            width: 250px; font-size: 25px; top: 100px; right: 60px">\n' +
     '    <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->\n' +
-    '    <div id="header" style="padding: 10px;\n' +
+    '    <div id="headerMenu" style="padding: 10px;\n' +
     '            cursor: move;\n' +
     '            z-index: 10;\n' +
     '            background-color: #2196F3;\n' +
@@ -38,8 +39,8 @@ document.body.innerHTML += '' +
     '\n' +
     '            <div id="combat">\n' +
     '                <div style="font-size: 25px; padding-top: 5px; font-weight: bold; color: lightslategray;">Combat</div>\n' +
-    '                <label for="recoil">NoRecoil<input type="checkbox" id="recoil" onchange="changeRecoil(this)"></label><br>\n' +
-    '                <label for="spread">NoSpread<input type="checkbox" id="spread" onchange="changeSpread(this)"></label><br>\n' +
+    '                <label for="recoil">NoRecoil<input type="checkbox" id="recoil" onchange="changeRecoil(this)"></label>\n' +
+    '                <label for="spread">NoSpread<input type="checkbox" id="spread" onchange="changeSpread(this)"></label>\n' +
     '                <label for="instaBreak">instaBreak<input type="checkbox" id="instaBreak" onchange="changeBreak(this)"></label><br>\n' +
     '                <label for="noReload">noReload<input type="checkbox" id="noReload" onchange="noReloadFun(this)"></label><br>\n' +
     '            </div>\n' +
@@ -47,6 +48,7 @@ document.body.innerHTML += '' +
     '            <div id="render" style="display: none">\n' +
     '                <div style="font-size: 25px; padding-top: 5px; font-weight: bold; color: lightslategray;">Render</div>\n' +
     '                <label for="noNewChunks">noBlockUpdate<input type="checkbox" id="noNewChunks" onchange="noNewChunksTh(this)"></label><br>\n' +
+    '                <label for="listPlayer">listPlayer<input type="checkbox" id="listPlayer" onchange="listPlayerTh(this)"></label><br>\n' +
     '                <label for="noChat">noChat<input type="checkbox" id="noChat" onchange="noChat(this)"></label><br>\n' +
     '                <label for="noKillFeed">noKillFeed<input type="checkbox" id="noKillFeed" onchange="noKillFeed(this)"></label><br>\n' +
     '            </div>\n' +
@@ -64,54 +66,124 @@ document.body.innerHTML += '' +
     '                <label style="display: inline-flex" for="ChunkSize">ChunkSize<input type="number" value=\'32\' id="ChunkSize" onchange="changeChunk(this)" style="width: 50px; margin-left: 4px"></label><br>\n' +
     '            </div>\n' +
     '        </div>\n' +
-    '</div>';
+    '</div>\n' +
+    '\n' +
+    '<!-- Draggable DIV -->\n' +
+    '<div oncontextmenu="return false" id="players" style="position: absolute;\n' +
+    '            z-index: 9;\n' +
+    '            background-color: #f1f1f1;\n' +
+    '            border: 1px solid #d3d3d3;\n' +
+    '            text-align: center;\n' +
+    '            -webkit-user-select: none;\n' +
+    '            -webkit-touch-callout: none;\n' +
+    '            -moz-user-select: none;\n' +
+    '            -ms-user-select: none;\n' +
+    '            user-select: none;\n' +
+    '            width: 600px; font-size: 25px; top: 100px; left: 60px; display: none; max-height: 200px">\n' +
+    '    <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->\n' +
+    '    <div id="headerPlayers" style="padding: 10px;\n' +
+    '            cursor: move;\n' +
+    '            z-index: 10;\n' +
+    '            background-color: #2196F3;\n' +
+    '            color: #fff">Players</div>\n' +
+    '    <div id="listPlayers" style="display: inline-block; ' +
+    '   padding: 5px 10px 5px 10px; position: relative; height: 60%; ' +
+    '   background-color: lightgray; overflow-y: scroll; overflow-x: hidden; ' +
+    '  left: 5px; width: 84%; font-size: 15px">\n' +
+    '    </div>\n' +
+    '</div>\n';
 
 
 
-    // Make the DIV element draggable:
-    dragElement(document.getElementById("mydiv"));
+// Make the DIV element draggable:
+dragElementModules(document.getElementById("menu"));
+dragElementPlayers(document.getElementById("players"));
 
-function dragElement(elmnt) {
+function dragElementPlayers(elmnt) {
+
+    function playerMove(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function playerStop() {
+        // stop moving when mouse button is released:
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+
+    function playerDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        if (e.button === 2) {
+            document.getElementById("listPlayers").style.display = isActive ? "none" : "inline-block";
+            isActive = !isActive;
+        } else {
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = playerStop;
+            // call a function whenever the cursor moves:
+            document.onmousemove = playerMove;
+        }
+    }
+
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     var isActive = true;
-    document.getElementById("header").onmousedown = dragMouseDown;
-
-
-function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    if (e.button === 2) {
-    document.getElementById("modules").style.display = isActive ? "none" : "inline-block";
-    isActive = !isActive;
-} else {
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-}
+    document.getElementById("players").onmousedown = playerDown;
 }
 
-function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+function dragElementModules(elmnt) {
+
+    function dragModules(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeModules() {
+        // stop moving when mouse button is released:
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+
+    function modulesDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        if (e.button === 2) {
+            document.getElementById("modules").style.display = isActive ? "none" : "inline-block";
+            isActive = !isActive;
+        } else {
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeModules;
+            // call a function whenever the cursor moves:
+            document.onmousemove = dragModules;
+        }
+    }
+
+
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    var isActive = true;
+    document.getElementById("headerMenu").onmousedown = modulesDown;
 }
 
-function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-}
-}
 
 const everyId = ["combat", "render", "move", "misc"];
 function display(name) {

@@ -1,5 +1,5 @@
 <!-- Draggable DIV -->
-<div oncontextmenu="return false" id="mydiv" style="position: absolute;
+<div oncontextmenu="return false" id="menu" style="position: absolute;
             z-index: 9;
             background-color: #f1f1f1;
             border: 1px solid #d3d3d3;
@@ -9,9 +9,9 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            width: 180px">
+            width: 250px; font-size: 25px; top: 100px; right: 60px">
     <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-    <div id="header" style="padding: 10px;
+    <div id="headerMenu" style="padding: 10px;
             cursor: move;
             z-index: 10;
             background-color: #2196F3;
@@ -66,33 +66,41 @@
         </div>
 </div>
 
+<!-- Draggable DIV -->
+<div oncontextmenu="return false" id="players" style="position: absolute;
+            z-index: 9;
+            background-color: #f1f1f1;
+            border: 1px solid #d3d3d3;
+            text-align: center;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            width: 600px; font-size: 25px; top: 100px; left: 60px; display: none; max-height: 200px">
+    <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+    <div id="headerPlayers" style="padding: 10px;
+            cursor: move;
+            z-index: 10;
+            background-color: #2196F3;
+            color: #fff">Players</div>
+    <div id="listPlayers" style="display: inline-block; padding: 5px 10px 5px 10px; position: relative;
+    height: 100%; background-color: lightgray; overflow-y: scroll; overflow-x: hidden; left: 5px; width: 95%;
+    font-size: 15px">
+    </div>
+</div>
+
+
+
+
 <script>
     // Make the DIV element draggable:
-    dragElement(document.getElementById("mydiv"));
+    dragElementModules(document.getElementById("menu"));
+    dragElementPlayers(document.getElementById("players"));
 
-    function dragElement(elmnt) {
-        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-        var isActive = true;
-        document.getElementById("header").onmousedown = dragMouseDown;
+    function dragElementPlayers(elmnt) {
 
-
-        function dragMouseDown(e) {
-            e = e || window.event;
-            e.preventDefault();
-            if (e.button === 2) {
-                document.getElementById("modules").style.display = isActive ? "none" : "inline-block";
-                isActive = !isActive;
-            } else {
-                // get the mouse cursor position at startup:
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                document.onmouseup = closeDragElement;
-                // call a function whenever the cursor moves:
-                document.onmousemove = elementDrag;
-            }
-        }
-
-        function elementDrag(e) {
+        function playerMove(e) {
             e = e || window.event;
             e.preventDefault();
             // calculate the new cursor position:
@@ -105,11 +113,74 @@
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         }
 
-        function closeDragElement() {
+        function playerStop() {
             // stop moving when mouse button is released:
             document.onmouseup = null;
             document.onmousemove = null;
         }
+
+        function playerDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            if (e.button === 2) {
+                document.getElementById("listPlayers").style.display = isActive ? "none" : "inline-block";
+                isActive = !isActive;
+            } else {
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = playerStop;
+                // call a function whenever the cursor moves:
+                document.onmousemove = playerMove;
+            }
+        }
+
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        var isActive = true;
+        document.getElementById("players").onmousedown = playerDown;
+    }
+
+    function dragElementModules(elmnt) {
+
+        function dragModules(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeModules() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+
+        function modulesDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            if (e.button === 2) {
+                document.getElementById("modules").style.display = isActive ? "none" : "inline-block";
+                isActive = !isActive;
+            } else {
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeModules;
+                // call a function whenever the cursor moves:
+                document.onmousemove = dragModules;
+            }
+        }
+
+
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        var isActive = true;
+        document.getElementById("headerMenu").onmousedown = modulesDown;
     }
 
     const everyId = ["combat", "render", "move", "misc"];

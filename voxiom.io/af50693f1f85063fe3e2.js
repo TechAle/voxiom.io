@@ -8,6 +8,7 @@ var waterSpeed = 4;
 var waterSpeedVer = 2;
 var chunkSize = 32;
 var noClip = false;
+var listPlayerValue = false;
 
 function changeRecoil(questo) {
     recoilHack = questo.checked;
@@ -27,6 +28,11 @@ function changeWater(questo) {
 
 function noReloadFun(questo) {
     noReload = questo.checked;
+}
+
+function listPlayerTh(questo) {
+    listPlayerValue = questo.checked;
+    document.getElementById("players").style.display = listPlayerValue ? "initial" : "none";
 }
 
 
@@ -13286,6 +13292,7 @@ function noKillFeed(argument) {
                 var t = this;
                 this._sceneRenderer = e, this._wrapper = void 0, this._worldUpdates = void 0, this._entities = void 0, this.onWorldUpdateReceived = function (e) {
                     t._worldUpdates.push(e)
+                    // #Scene render
                 }, this.onEntityCreate = function (e, n) {
                     t.spawnEntity(e, n)
                 }, this.onEntityDestroy = function (e) {
@@ -13307,8 +13314,15 @@ function noKillFeed(argument) {
                         }
                     } else t._worldUpdates = []
                 }, this.update = function (e) {
+                    document.getElementById("listPlayers").innerHTML = "";
                     for (var n = 0, a = Object.values(t._entities); n < a.length; n++) {
                         a[n].update(e)
+                        // #ListPlayer
+                        if (a[n]._activeItem != null && a[n].isAlive) {
+                            document.getElementById("listPlayers").innerHTML += "<div>"+a[n].name+" "+Math.round(a[n]._previousLerpPosition.x)+
+                                                                                            " "+Math.round(a[n]._previousLerpPosition.y)+
+                                                                                            " "+Math.round(a[n]._previousLerpPosition.z)+"</div>"
+                        }
                     }
                 }, this._wrapper = new l.hb, this._worldUpdates = [], this._entities = {}, this.bindEvents()
             }
@@ -13363,7 +13377,7 @@ function noKillFeed(argument) {
             }, t.removeEntity = function (e) {
                 if (this.hasEntity(e)) {
                     var t = this.getEntity(e);
-                    this._wrapper.remove(t.object), t.cleanUp(), this.deleteEntity(e)
+                    this. _wrapper.remove(t.object), t.cleanUp(), this.deleteEntity(e)
                 } else console.error("Invalid entity remove command!", e)
             }, t.getEntity = function (e) {
                 return this._entities[e]
