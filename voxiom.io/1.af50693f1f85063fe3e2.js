@@ -87,7 +87,7 @@ document.body.innerHTML += '' +
     '            z-index: 10;\n' +
     '            background-color: #2196F3;\n' +
     '            color: #fff">Players</div>\n' +
-    '    <div id="listPlayers" style="display: inline-block; ' +
+    '    <div id="listPlayersV" style="display: inline-block; ' +
     '   padding: 5px 10px 5px 10px; position: relative; height: 60%; ' +
     '   background-color: lightgray; overflow-y: scroll; overflow-x: hidden; ' +
     '  left: 5px; width: 84%; font-size: 15px">\n' +

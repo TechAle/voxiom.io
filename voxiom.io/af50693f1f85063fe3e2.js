@@ -11,6 +11,13 @@ var noClip = false;
 var listPlayerValue = false;
 var tracerVar = false;
 
+function getDistance3D(x1, y1, z1, x2, y2, z2) {
+    const dx = x1 - x2;
+    const dy = y1 - y2;
+    const dz = z1 - z2;
+    return Math.sqrt(dx * dx + dy * dy + dz * dz)
+}
+
 const hookedCanvas = document.createElement("canvas");
 hookedCanvas.width = innerWidth;
 hookedCanvas.height = innerHeight;
@@ -21,6 +28,29 @@ window.addEventListener('resize', () => {
 var canvas = hookedCanvas;
 var ctx = hookedCanvas.getContext("2d");
 
+
+function line(x1, y1, x2, y2, lW, sS) {
+    this.ctx.save();
+    this.ctx.lineWidth = lW + 2;
+    this.ctx.beginPath();
+    this.ctx.moveTo(x1, y1);
+    this.ctx.lineTo(x2, y2);
+    this.ctx.strokeStyle = "rgba(0, 0, 0, 0.25)";
+    this.ctx.stroke();
+    this.ctx.lineWidth = lW;
+    this.ctx.strokeStyle = sS;
+    this.ctx.stroke();
+    this.ctx.restore();
+}
+
+function world2Screen(pos, camera, aY = 0) {
+    var vector = new THREE.Vector3(pos.x, pos.y, pos.z);
+    vector.project( camera );
+    vector.x = Math.round( (   vector.x + 1 ) * canvas.width  / 2 );
+    vector.y = Math.round( ( - vector.y + 1 ) * canvas.height / 2 );
+    vector.z = 0;
+    return pos;
+}
 
 
 function changeValue(questo) {
@@ -259,6 +289,7 @@ function changeValue(questo) {
                         powerPreference: "high-performance"
                     }), this._renderer.setClearColor(this._clearColor), this._renderer.debug.checkShaderErrors = !1, this._renderer.setPixelRatio(window.devicePixelRatio * this._settings.renderScale), this._renderer.setSize(window.innerWidth, window.innerHeight), this._renderer.autoClear = !1, this._renderer.gammaFactor = 2.2, this._renderer.outputEncoding = l.Rb, this._renderer.info.autoReset = !1
                 }, t.render = function (e, t) {
+
                     this._renderer.info.reset(), this._renderer.clear(), this._renderer.render(this._scene, this._camera), this._renderer.clearDepth(), this._renderer.render(this._frontScene, this._camera), this._renderer.clearDepth(), this._renderer.render(this._crosshairScene, this._crosshairCamera), this._renderer.render(this._uiScene, this._uiCamera)
                 }, t.resizeCanvas = function () {
                     var e = window.innerWidth, t = window.innerHeight;
@@ -7042,7 +7073,7 @@ function changeValue(questo) {
             return ws[e]
         }, Gs = Ms, Fs = function () {
             function e(e, t, n, a, r, i, o) {
-                if (void 0 === o && (o = !1), this._playerState = e, this._controls = t, this._numHotSlots = n, this._numStorageSlots = a, this._numAmmoSlots = r, this._additionalSlots = i, this._selectedIdx = void 0, this._items = void 0, this._cursorItem = void 0, this._capacity = void 0, this.__itemCountCache = void 0, this._selectedIdx = 0, this._items = [], this._capacity = this._numHotSlots + this._numStorageSlots + this._numAmmoSlots + this._additionalSlots, !o) {
+                if (void 0 === o && (o = !1), this._playerState = e, window.playerPos = this._playerState, this._controls = t, this._numHotSlots = n, this._numStorageSlots = a, this._numAmmoSlots = r, this._additionalSlots = i, this._selectedIdx = void 0, this._items = void 0, this._cursorItem = void 0, this._capacity = void 0, this.__itemCountCache = void 0, this._selectedIdx = 0, this._items = [], this._capacity = this._numHotSlots + this._numStorageSlots + this._numAmmoSlots + this._additionalSlots, !o) {
                     for (var s = 0; s < this._capacity; s++) this._items.push(new bs(new Ns, 1));
                     this._cursorItem = new bs(new Ns, 1)
                 }
@@ -11646,7 +11677,7 @@ function changeValue(questo) {
         var Lu, bu = function () {
             function e(e, t, n, a) {
                 var r = this;
-                this._config = e, this._camera = t, this._sceneRenderer = n, this._statsRenderer = a, this._wrapper = void 0, this._chunkStorageManager = void 0, this._chunkGenWorkerPool = void 0, this._chunkRenderers = void 0, this._fallingBlocksRenderer = void 0, this._cracksRenderer = void 0, this._blockBreakProgress = void 0, this._initialChunksToLoad = void 0, this.onSetBlock = function (e, t, n, a) {
+                this._config = e, this._camera = t, window.camera = this._camera, this._sceneRenderer = n, this._statsRenderer = a, this._wrapper = void 0, this._chunkStorageManager = void 0, this._chunkGenWorkerPool = void 0, this._chunkRenderers = void 0, this._fallingBlocksRenderer = void 0, this._cracksRenderer = void 0, this._blockBreakProgress = void 0, this._initialChunksToLoad = void 0, this.onSetBlock = function (e, t, n, a) {
                     r._cracksRenderer.removeBlockBreakProgress(e, t, n)
                 }, this.onSetBlockBreakProgress = function (e, t, n, a) {
                     r._cracksRenderer.setBlockBreakProgress(e, t, n, a, !0)
@@ -13317,16 +13348,23 @@ function changeValue(questo) {
                         }
                     } else t._worldUpdates = []
                 }, this.update = function (e) {
-                    document.getElementById("listPlayers").innerHTML = "";
+                    document.getElementById("listPlayersV").innerHTML = "";
                     for (var n = 0, a = Object.values(t._entities); n < a.length; n++) {
                         a[n].update(e)
                         // #ListPlayer
                         if (listPlayerValue && a[n]._activeItem != null && a[n].isAlive) {
-                            document.getElementById("listPlayers").innerHTML += "<div>"+a[n].name+" "+Math.round(a[n]._previousLerpPosition.x)+
-                                                                                            " "+Math.round(a[n]._previousLerpPosition.y)+
-                                                                                            " "+Math.round(a[n]._previousLerpPosition.z)+"</div>"
+                            // this.playerPos
+                            document.getElementById("listPlayersV").innerHTML += "" +
+                                "<div>" +
+                                "[" + Math.round(getDistance3D(window.playerPos.physicsStep.pos.x, window.playerPos.physicsStep.pos.y, window.playerPos.physicsStep.pos.z, a[n]._previousLerpPosition.x, a[n]._previousLerpPosition.y, a[n]._previousLerpPosition.z)) + "] " +
+                                a[n].name +
+                                " " + Math.round(a[n]._previousLerpPosition.x) +
+                                " " + Math.round(a[n]._previousLerpPosition.y) +
+                                " " + Math.round(a[n]._previousLerpPosition.z) +
+                                "</div>";
                         }
                         // #Tracer
+
 
 
                     }
