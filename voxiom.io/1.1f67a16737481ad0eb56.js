@@ -5143,7 +5143,7 @@
                 return ve.prototype.copy.call(this, e, t), this.matrixWorldInverse.copy(e.matrixWorldInverse), this.projectionMatrix.copy(e.projectionMatrix), this.projectionMatrixInverse.copy(e.projectionMatrixInverse), this
             },
             getWorldDirection: function (e) {
-                void 0 === e && (console.warn("THREE.Camera: .getWorldDirection() target is now required"), e = new V), this.updateMatrixWorld(!0);
+                void 0 === e && (e = new V), this.updateMatrixWorld(!0);
                 var t = this.matrixWorld.elements;
                 return e.set(-t[8], -t[9], -t[10]).normalize()
             },
@@ -11153,8 +11153,7 @@
         }
 
         function ac(e) {
-            // #Window.camera
-            this.camera = e, window.camera = e, this.bias = 0, this.radius = 1, this.mapSize = new I(512, 512), this.map = null, this.mapPass = null, this.matrix = new Q, this._frustum = new bn, this._frameExtents = new I(1, 1), this._viewportCount = 1, this._viewports = [new F(0, 0, 1, 1)]
+            this.camera = e, this.bias = 0, this.radius = 1, this.mapSize = new I(512, 512), this.map = null, this.mapPass = null, this.matrix = new Q, this._frustum = new bn, this._frameExtents = new I(1, 1), this._viewportCount = 1, this._viewports = [new F(0, 0, 1, 1)]
         }
 
         function oc() {

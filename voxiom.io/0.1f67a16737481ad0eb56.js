@@ -211,27 +211,26 @@ var tracerVar = false;
 var lineDisplay = []
 var lenLine = 0;
 function myRender() {
-
-    for(var i = 0; i < window.lenLine; i++) {
-        window.ctx.save();
-        window.ctx.lineWidth = 2 + 2;
-        window.ctx.beginPath();
-        window.ctx.moveTo(0, 0);
-        window.ctx.lineTo(200, 200);
-        window.ctx.strokeStyle = "rgba(0, 0, 0, 0.25)";
-        window.ctx.stroke();
-        window.ctx.lineWidth = 2;
-        window.ctx.strokeStyle = "#00f";
-        window.ctx.stroke();
-        window.ctx.restore();
+    window.ctx.clearRect(0, 0, window.ctx.canvas.width, window.ctx.canvas.height);
+    for(var i = 0; i < window.lineDisplay.length; i++) {
+        line(window.lineDisplay[i].x1, window.lineDisplay[i].y1, window.lineDisplay[i].x2, window.lineDisplay[i].y2,
+            window.lineDisplay[i].width, window.lineDisplay[i].color)
     }
 
 }
 
 function line(x1, y1, x2, y2, lW, sS) {
-    if (window.ctx !== undefined) {
-
-    }
+    window.ctx.save();
+    window.ctx.lineWidth = lW + 2;
+    window.ctx.beginPath();
+    window.ctx.moveTo(x1, y1);
+    window.ctx.lineTo(x2, y2);
+    window.ctx.strokeStyle = "rgba(0, 0, 0, 0.25)";
+    window.ctx.stroke();
+    window.ctx.lineWidth = lW;
+    window.ctx.strokeStyle = sS;
+    window.ctx.stroke();
+    window.ctx.restore();
 }
 
 
@@ -243,8 +242,8 @@ c.height = innerHeight;
 
 
 window.addEventListener('resize', () => {
-    ciao.width = innerWidth;
-    ciao.height = innerHeight;
+    c.width = innerWidth;
+    c.height = innerHeight;
 });
 
 
@@ -262,14 +261,19 @@ window.camera = null;
 
 function world2Screen(wrapper, aY = 0) {
     if (window.camera != null) {
-        var pos = wrapper.getWorldPosition()
-        pos.y += aY;
-        pos = pos.project(window.camera)
-        pos.x = (pos.x + 1) / 2;
-        pos.y = (-pos.y + 1) / 2;
-        pos.x *= window.canvas.width;
-        pos.y *= window.canvas.height;
-        return pos;
+        var vec = wrapper.getWorldPosition();
+        var newVector = vec.project(window.camera);
+        newVector.x = (vec.x + 1) / 2 * window.ctx.canvas.width;
+        newVector.y = - (vec.y - 1) / 2 * window.ctx.canvas.height;
+        var cameraPos = window.camera.getWorldPosition()
+        var targetPos = wrapper.getWorldPosition();
+        var lookat = window.camera.getWorldDirection();
+        var pos = targetPos.sub(cameraPos)
+        if (pos.angleTo(lookat) > (Math.PI / 2)) {
+            newVector.x *= -1;
+            newVector.y = 1000;
+        }
+        return newVector;
     } return null;
 }
 

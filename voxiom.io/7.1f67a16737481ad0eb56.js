@@ -13,7 +13,7 @@
             u = function () {
                 function t(t, e) {
                     var i = this;
-                    this._settings = t, this._canvasId = e, this._canvas = void 0, this._scale = void 0, this._appWidth = void 0, this._appHeight = void 0, this._scene = void 0, this._uiScene = void 0, this._crosshairScene = void 0, this._frontScene = void 0, this._camera = void 0, this._crosshairCamera = void 0, this._uiCamera = void 0, this._renderer = void 0, this._clearColor = void 0, this._canvas = document.getElementById(this._canvasId), this._scale = 1, this._appWidth = l.a.CLIENT_WIDTH, this._appHeight = l.a.CLIENT_HEIGHT, this._camera = new h.jb(60, window.innerWidth / window.innerHeight, .01, 1e3), this._crosshairCamera = new h.jb(60, window.innerWidth / window.innerHeight, .01, 1e3), this._uiCamera = new h.ib(-window.innerWidth / 2, window.innerWidth / 2, window.innerHeight / 2, -window.innerHeight / 2, .01, 1e3), this._clearColor = l.a.SKY_CLEAR_COLOR, this.rebuildScene(), this.resizeCanvas(), window.addEventListener("resize", (function (t) {
+                    this._settings = t, this._canvasId = e, this._canvas = void 0, this._scale = void 0, this._appWidth = void 0, this._appHeight = void 0, this._scene = void 0, this._uiScene = void 0, this._crosshairScene = void 0, this._frontScene = void 0, this._camera = void 0, this._crosshairCamera = void 0, this._uiCamera = void 0, this._renderer = void 0, this._clearColor = void 0, this._canvas = document.getElementById(this._canvasId), this._scale = 1, this._appWidth = l.a.CLIENT_WIDTH, this._appHeight = l.a.CLIENT_HEIGHT, this._camera = new h.jb(60, window.innerWidth / window.innerHeight, .01, 1e3), window.camera = this._camera, this._crosshairCamera = new h.jb(60, window.innerWidth / window.innerHeight, .01, 1e3), this._uiCamera = new h.ib(-window.innerWidth / 2, window.innerWidth / 2, window.innerHeight / 2, -window.innerHeight / 2, .01, 1e3), this._clearColor = l.a.SKY_CLEAR_COLOR, this.rebuildScene(), this.resizeCanvas(), window.addEventListener("resize", (function (t) {
                         i.resizeCanvas()
                     }))
                 }
@@ -28,6 +28,7 @@
                 }, e.render = function (t, e) {
                     this._renderer.info.reset(), this._renderer.clear(), this._renderer.render(this._scene, this._camera), this._renderer.clearDepth(), this._renderer.render(this._frontScene, this._camera), this._renderer.clearDepth(), this._renderer.render(this._crosshairScene, this._crosshairCamera), this._renderer.render(this._uiScene, this._uiCamera)
                     // #Finish render
+                    myRender()
                 }, e.resizeCanvas = function () {
                     var t = window.innerWidth, e = window.innerHeight;
                     this._scale = Math.max(t / this._appWidth, e / this._appHeight), this._renderer.setSize(t, e), this._camera.aspect = t / e, this._camera.updateProjectionMatrix(), this._crosshairCamera.aspect = t / e, this._crosshairCamera.updateProjectionMatrix(), this._uiCamera.top = e / 2, this._uiCamera.bottom = -e / 2, this._uiCamera.left = -t / 2, this._uiCamera.right = t / 2, this._uiCamera.updateProjectionMatrix()
@@ -2264,7 +2265,7 @@
                             if (value != null) {
                                 lineDisplay.push({
                                     "x1": innerWidth / 2,
-                                    "y1": innerHeight - 1,
+                                    "y1": innerHeight / 2 + innerHeight / 3,
                                     "x2": value.x,
                                     "y2": value.y,
                                     "width": 2,
