@@ -25,7 +25,7 @@
                     }), this._renderer.setClearColor(this._clearColor), this._renderer.debug.checkShaderErrors = !1, this._renderer.setPixelRatio(window.devicePixelRatio * this._settings.renderScale), this._renderer.setSize(window.innerWidth, window.innerHeight), this._renderer.autoClear = !1, this._renderer.gammaFactor = 2.2, this._renderer.outputEncoding = h.Rb, this._renderer.info.autoReset = !1
                 }, e.render = function (t, e) {
                     this._renderer.info.reset(), this._renderer.clear(), this._renderer.render(this._scene, this._camera), this._renderer.clearDepth(), this._renderer.render(this._frontScene, this._camera), this._renderer.clearDepth(), this._renderer.render(this._crosshairScene, this._crosshairCamera), this._renderer.render(this._uiScene, this._uiCamera)
-                    // #MyRender
+                    // #MyRender, i put this here so that it will override the default render
                     myRender()
                 }, e.resizeCanvas = function () {
                     var t = window.innerWidth, e = window.innerHeight;
@@ -151,7 +151,7 @@
                 for (; this._jobs.length > 0;) {
                     0;
                     var t = this._jobs.shift();
-                    // #NoNewChunks
+                    // #NoNewChunks, basically i just discard every new updates
                     if (!window.noBlocksUpdate) {
                         switch (t.event) {
                             case O.CHUNK_MESH:
@@ -1205,7 +1205,7 @@
                 }, this.getVoxel = function (t, e, i) {
                     return r._sceneRenderer.terrainRenderer.chunkStorageManager.getBlockAt(t, e, i)
                 }, this.isVoxelOpaque = function (t, e, i) {
-                    // #GlitchyJump
+                    // #GlitchyJump, just disable opaque lol
                     return window.jumpyGlitch ? false : F.a[r.getVoxel(t, e, i)].opaque
                 }, this.render = function (t, e) {
                     if (r._playerMode === Rt.ALIVE) {
@@ -2237,17 +2237,21 @@
                         }
                     } else e._worldUpdates = []
                 }, this.update = function (t) {
+                    // Reset
                     window.lineDisplay = [];
                     window.enemyHead = [];
                     document.getElementById("listPlayersV").innerHTML = "";
                     for (var i = 0, n = Object.values(e._entities); i < n.length; i++) {
                         n[i].update(t)
                         if (n[i]._activeItem != null && n[i].isAlive && (n[i]._team === 0 || n[i]._team !== window.team)) {
+                            // I used this for my testing
                             window.prova1 = n[i];
                             // #ListPlayer
                             if (window.listPlayerValue) {
+                                // Get positions
                                 var playerPosNow = window.playerPos.physicsStep.pos;
                                 var enemyPosNow = n[i]._previousLerpPosition;
+                                // Add to div
                                 document.getElementById("listPlayersV").innerHTML += "" +
                                     "<div>" +
                                     "[" + Math.round(getDistance3D( playerPosNow.x, playerPosNow.y, playerPosNow.z,
@@ -2260,8 +2264,10 @@
                             }
                             // #Tracer
                             if (window.tracerVar) {
+                                // Get 2d coordinates (this was hard to make it works)
                                 var value = world2Screen(n[i]._wrapper);
                                 if (value != null) {
+                                    // Add
                                     lineDisplay.push({
                                         "x1": innerWidth / 2,
                                         "y1": innerHeight / 2 + innerHeight / 3,
@@ -2270,6 +2276,7 @@
                                         "width": 2,
                                         "color": "#FF4444"
                                     });
+                                    // Get the position of the head
                                     var head = world2Screen(n[i]._wrapper, 0, getHead(n[i]), 0);
                                     lineDisplay.push({
                                         "x1": value.x,
@@ -2281,9 +2288,11 @@
                                     });
                                 }
                             }
-                            // #Aimbot
-                            if (window.aimbotHack) {
+                            // #Aimbot, this is not finished because well, i have no time to work on this
+                            if (window.aimbotHack && window.enemyHead.length === 0) {
+                                // If we are aiming
                                 if (window.myKeyboard.isGameKeyDown(-2)) {
+                                    // Add the head
                                     var head = getHead(n[i], 0.1);
                                     window.enemyHead.push({
                                         "x" : head.x,
@@ -2293,6 +2302,7 @@
                             }
                             // #HitBox
                             if (window.hitboxhack) {
+                                // Take every possibles coordinates
                                 var bottomOne = world2Screen(n[i]._wrapper, -0.2, 0, -0.2);
                                 var bottomTwo = world2Screen(n[i]._wrapper, -0.2, 0, 0.2);
                                 var bottomThree = world2Screen(n[i]._wrapper, 0.2, 0, 0.2);
@@ -4404,7 +4414,7 @@
                         case we.REQUEST_JOIN_RESPONSE_IN:
                             var o = new He;
                             o.unpack(i), d.a.emit(p.a.GAME_JOIN, o.playerId, o.playerName, o.spawnLocation, o.spawnPitchYaw, o.playerTeam, o.minChunkPos, o.maxChunkPos), e._statsRenderer.recordDownload(o.size()), e.heartBeat();
-                            // #Team
+                            // #Team, the team we are in
                             window.team = o.playerTeam;
                             break;
                         case we.SET_BLOCK_IN:

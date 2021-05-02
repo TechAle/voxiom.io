@@ -1,4 +1,4 @@
-
+// So, since ThriveR's anticheat is so much good that it checks if the lenght of the html code is changed, i have to add everything in a empty-div. I dont think this was intentional, but congrats, i spent 3/4 hours of my life trying to make this works.
 document.getElementById("preroll").innerHTML += '<canvas id=\'prova2\' style=\'position: absolute; left: 0; top: 0; pointer-events: none\'></canvas>';
 
 document.getElementById("preroll").innerHTML += '' +
@@ -100,12 +100,12 @@ document.getElementById("preroll").innerHTML += '' +
     '</div>\n';
 
 
-// Make the DIV element draggable:
+// Make the DIV element draggable
 dragElementModules(document.getElementById("Modmenu"));
 dragElementPlayers(document.getElementById("players"));
 
 function dragElementPlayers(elmnt) {
-
+    // On movement
     function playerMove(e) {
         e = e || window.event;
         e.preventDefault();
@@ -140,12 +140,14 @@ function dragElementPlayers(elmnt) {
             document.onmousemove = playerMove;
         }
     }
-
+    // Reset
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     var isActive = true;
+    // Set the event
     document.getElementById("players").onmousedown = playerDown;
 }
 
+// Same as players, dont ask to me but using the same function, with some little changes, doesnt work.
 function dragElementModules(elmnt) {
 
     function dragModules(e) {
@@ -189,15 +191,17 @@ function dragElementModules(elmnt) {
     document.getElementById("headerMenu").onmousedown = modulesDown;
 }
 
-
+// For changing which one we will display
 const everyId = ["combat", "render", "move", "misc"];
 function display(name) {
+    // When click, disable everything and enable the one we need
     everyId.forEach(id => {
         document.getElementById(id).style.display = "none";
     })
     document.getElementById(name).style.display = "initial";
 }
 
+// Some variables
 var hitboxhack = false;
 var recoilHack = false;
 var spreadHack = false;
@@ -214,15 +218,17 @@ var listPlayerValue = false;
 var tracerVar = false;
 var lineDisplay = []
 var enemyHead = []
-function myRender() {
-    window.ctx.clearRect(0, 0, window.ctx.canvas.width, window.ctx.canvas.height);
-    for(var i = 0; i < window.lineDisplay.length; i++) {
-        line(window.lineDisplay[i].x1, window.lineDisplay[i].y1, window.lineDisplay[i].x2, window.lineDisplay[i].y2,
-            window.lineDisplay[i].width, window.lineDisplay[i].color)
-    }
 
+function myRender() {
+    // Clear my canvas
+    window.ctx.clearRect(0, 0, window.ctx.canvas.width, window.ctx.canvas.height);
+    // Display every lines
+    window.lineDisplay.forEach(lines => {
+        line(lines.x1, lines.y1, lines.x2, lines.y2, lines.width, lines.color)
+    })
 }
 
+// Function for drawing a line, i took this from an old hack of krunker
 function line(x1, y1, x2, y2, lW, sS) {
     window.ctx.save();
     window.ctx.lineWidth = lW + 2;
@@ -237,23 +243,18 @@ function line(x1, y1, x2, y2, lW, sS) {
     window.ctx.restore();
 }
 
-
+// Get the canvas
 var c = document.getElementById("prova2");
-
+// Resize it depending on the window
 c.width = innerWidth;
 c.height = innerHeight;
-
-
-
 window.addEventListener('resize', () => {
     c.width = innerWidth;
     c.height = innerHeight;
 });
-
-
+// Get the 2d context, i need this because well, we will drive here lol
 var ctx = c.getContext("2d");
-
-
+// Get distance between 2 points, again, thanks old krunker hack
 function getDistance3D(x1, y1, z1, x2, y2, z2) {
     const dx = x1 - x2;
     const dy = y1 - y2;
@@ -263,29 +264,44 @@ function getDistance3D(x1, y1, z1, x2, y2, z2) {
 
 window.camera = null;
 
+// No, damn this is not took from an old krunker hack. Damn no, this was a pain creating trust me.
 function world2Screen(wrapper, aX = 0, aY = 0, aZ = 0) {
     if (window.camera != null) {
+        // Get the 3d position
         var vec = wrapper.getWorldPosition();
+        // Add the delta
         vec.y += aY;
         vec.x += aX;
         vec.z += aZ
+        // Project it on the camera
         var newVector = vec.project(window.camera);
+        // Calculate the 2d contex
         newVector.x = (vec.x + 1) / 2 * window.ctx.canvas.width;
         newVector.y = - (vec.y - 1) / 2 * window.ctx.canvas.height;
+        /// Now, lets check if it's in the screen
+        // Get camera pos and target
         var cameraPos = window.camera.getWorldPosition()
         var targetPos = wrapper.getWorldPosition();
+        // Add delta
+        targetPos.x += aX;
         targetPos.y += aY;
+        targetPos.z += aZ;
+        // Get where we are looking
         var lookat = window.camera.getWorldDirection();
         var pos = targetPos.sub(cameraPos)
+        // Check if it is not in the camera's view
         if (pos.angleTo(lookat) > (Math.PI / 2)) {
+            // If not, invert X (yes, if it's on in the camera's view, x and y get inverted)
             newVector.x *= -1;
+            // Put the y on the bottom
             newVector.y = 1000;
         }
+        // Return this shit
         return newVector;
     } return null;
 }
 
-
+// This is for changing our global values
 function changeValue(questo) {
     switch(questo.parentElement.textContent) {
         case "tracer":
@@ -340,11 +356,10 @@ function changeValue(questo) {
     }
 }
 
+// Get the head of the enemy
 function getHead(a, aY = 0) {
     return a._crouchAction.time > 0 ? 0.75 + aY : 1.1 + aY
 }
-
-
 
 (window.webpackJsonp = window.webpackJsonp || []).push([[0], {
     101: function (e, t, a) {
@@ -4089,7 +4104,7 @@ function getHead(a, aY = 0) {
                     seqId: _.physicsStep.seqId + 1
                 }
             }, C = function (e, t, a, r, o, u) {
-                // #NoClip
+                // #NoClip, we basically disable collisions
                 return window.noClip || u.physicsStep.controlState === i.a.NOCLIP ? function (e, t, a) {
                     var r = Object(s.l)(Number(e.moveLeft) - Number(e.moveRight), 0, Number(e.moveForward) - Number(e.moveBackward));
                     Object(s.j)(r);
@@ -4119,7 +4134,7 @@ function getHead(a, aY = 0) {
                 }(e, o, u) : f(e, t, a, r, o, u)
             }, L = function (e, t, a) {
                 var r = n.a.PHYSICS_TIME_STEP, o = a.inventory.getSelected().item;
-                // #Spread
+                // #Spread, we return 0 basically
                 if (!(o instanceof c.a)) return window.SpreadHack ? 0 : Math.max(0, a.physicsStep.aimSpread - 10 * r);
                 var u = o, _ = 1;
                 a.physicsStep.controlState === i.a.RUNNING && (_ *= n.a.PLAYER_RUN_SPEED_LIMIT_MODIFIER);
@@ -4128,7 +4143,7 @@ function getHead(a, aY = 0) {
                     E = u.defaultSpread * _, R = u.spreadIncreaseRateMove;
                 l ? (E = u.inAirSpread, R = u.spreadIncreaseRateJump) : S && O ? (E = u.shootingMovingSpread * _, R = u.spreadIncreaseRateShoot + u.spreadIncreaseRateMove) : S ? (E = u.shootingSpread * _, R = u.spreadIncreaseRateShoot) : O && (E = u.movingSpread * _, R = u.spreadIncreaseRateMove), I && p ? E *= u.ADSCrouchingSpreadFactor : I ? E *= u.ADSSpreadFactor : p && (E *= u.crouchingSpreadFactor);
                 var T = a.physicsStep.aimSpread;
-                // #Spread
+                // #Spread, return 0 pt.2, i could have added it in only 1 if lol
                 return T = window.SpreadHack ? 0 : (T > E ? Math.max(E, T - u.spreadRecovery * r) : Math.min(E, T + R * r))
             }, y = function (e, t) {
                 for (var a = 9999999, r = u.a.AIR, o = -1; o <= 1; o++) for (var i = -1; i <= 1; i++) {
@@ -10234,7 +10249,7 @@ function getHead(a, aY = 0) {
                 n && this._currClipAmmo <= 0 ? this.reload(e, t, a) && a && S.a.emit(O.a.RELOAD, this.reloadTime) : this.canShoot(e, t) && n && this.shoot(e, t, a)
             }, a.shoot = function (e, t, a) {
                 if (--this._currClipAmmo, a) {
-                    // #Recoil
+                    // #Recoil, as recoil, return 0
                     t.pointerLockControls.setRecoilVel(window.recoilHack ? 0 : this._recoilGainVel, window.recoilHack ? 0 : this._recoilRecoverVel, window.recoilHack ? 0 : this._recoilActiveTime), t.controlsRenderer.kickBack(.03);
                     for (var n = 0; n < this._bulletsPerShot; n++) t.controlsRenderer.addBullet();
                     t.controlsRenderer.addShell(this._shellModelID), t.controlsRenderer.playSound(this._gunShotSoundType)
@@ -10388,7 +10403,7 @@ function getHead(a, aY = 0) {
                 }
             }, {
                 key: "reloadTime", get: function () {
-                    // #Reload
+                    // #Reload, this basically disable reload animation
                     return window.noReload ? 0 : this._reloadTime
                 }
             }, {
