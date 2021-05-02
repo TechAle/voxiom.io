@@ -1,3 +1,4 @@
+
 document.getElementById("preroll").innerHTML += '<canvas id=\'prova2\' style=\'position: absolute; left: 0; top: 0; pointer-events: none\'></canvas>';
 
 document.getElementById("preroll").innerHTML += '' +
@@ -212,7 +213,7 @@ var noClip = false;
 var listPlayerValue = false;
 var tracerVar = false;
 var lineDisplay = []
-var lenLine = 0;
+var enemyHead = []
 function myRender() {
     window.ctx.clearRect(0, 0, window.ctx.canvas.width, window.ctx.canvas.height);
     for(var i = 0; i < window.lineDisplay.length; i++) {
@@ -491,7 +492,7 @@ function getHead(a, aY = 0) {
                 color3: "#ffb3b3",
                 color4: "#eff596"
             }, {type: "UNIFORM_COLOR", roughness: .9, metalness: 0, color: "#75a759"}]
-        }, M = function (e) {
+        }, h = function (e) {
             return void 0 === e && (e = 1.7), [{
                 type: "RANDOM_PATTERN",
                 seed: 0,
@@ -504,7 +505,7 @@ function getHead(a, aY = 0) {
                 color3: "#eda865",
                 color4: "#fec637"
             }, {type: "UNIFORM_COLOR", roughness: .9, metalness: 0, color: "#b14835"}]
-        }, h = function (e) {
+        }, M = function (e) {
             return void 0 === e && (e = 1.7), [{
                 type: "RANDOM_PATTERN",
                 seed: 0,
@@ -981,7 +982,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.STRIKE_PISTOL,
             getData: function (e) {
-                return {materials: M(), groupMaterialIndices: [0, 1, 0, 0]}
+                return {materials: h(), groupMaterialIndices: [0, 1, 0, 0]}
             }
         }, n[s.a.SP_WINTER] = {
             name: "Winter",
@@ -989,7 +990,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.STRIKE_PISTOL,
             getData: function (e) {
-                return {materials: h(), groupMaterialIndices: [0, 1, 0, 0]}
+                return {materials: M(), groupMaterialIndices: [0, 1, 0, 0]}
             }
         }, n[s.a.SP_PEARL_MARBLE] = {
             name: "Pearl Marble",
@@ -1181,7 +1182,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.MAGNUM_PISTOL,
             getData: function (e) {
-                return {materials: M(), groupMaterialIndices: [0, 0, 1, 1]}
+                return {materials: h(), groupMaterialIndices: [0, 0, 1, 1]}
             }
         }, n[s.a.MP_WINTER] = {
             name: "Winter",
@@ -1189,7 +1190,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.MAGNUM_PISTOL,
             getData: function (e) {
-                return {materials: h(), groupMaterialIndices: [0, 0, 1, 1]}
+                return {materials: M(), groupMaterialIndices: [0, 0, 1, 1]}
             }
         }, n[s.a.MP_PEARL_MARBLE] = {
             name: "Pearl Marble",
@@ -1459,7 +1460,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.TACTICAL_ASSAULT_RIFLE,
             getData: function (e) {
-                return {materials: M(), groupMaterialIndices: [0, 1, 0, 1]}
+                return {materials: h(), groupMaterialIndices: [0, 1, 0, 1]}
             }
         }, n[s.a.TAR_WINTER] = {
             name: "Winter",
@@ -1467,7 +1468,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.TACTICAL_ASSAULT_RIFLE,
             getData: function (e) {
-                return {materials: h(), groupMaterialIndices: [0, 1, 0, 1]}
+                return {materials: M(), groupMaterialIndices: [0, 1, 0, 1]}
             }
         }, n[s.a.TAR_PEARL_MARBLE] = {
             name: "Pearl Marble",
@@ -1757,7 +1758,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.COMBAT_ASSAULT_RIFLE,
             getData: function (e) {
-                return {materials: M(), groupMaterialIndices: [0, 1, 0, 0]}
+                return {materials: h(), groupMaterialIndices: [0, 1, 0, 0]}
             }
         }, n[s.a.CAR_WINTER] = {
             name: "Winter",
@@ -1765,7 +1766,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.COMBAT_ASSAULT_RIFLE,
             getData: function (e) {
-                return {materials: h(), groupMaterialIndices: [0, 1, 0, 0]}
+                return {materials: M(), groupMaterialIndices: [0, 1, 0, 0]}
             }
         }, n[s.a.CAR_PEARL_MARBLE] = {
             name: "Pearl Marble",
@@ -2034,7 +2035,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.SURGE_ASSAULT_RIFLE,
             getData: function (e) {
-                return {materials: M(), groupMaterialIndices: [0, 1, 1, 1]}
+                return {materials: h(), groupMaterialIndices: [0, 1, 1, 1]}
             }
         },n[s.a.SAR_WINTER] = {
             name: "Winter",
@@ -2042,7 +2043,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.SURGE_ASSAULT_RIFLE,
             getData: function (e) {
-                return {materials: h(), groupMaterialIndices: [0, 1, 1, 1]}
+                return {materials: M(), groupMaterialIndices: [0, 1, 1, 1]}
             }
         },n[s.a.SAR_PEARL_MARBLE] = {
             name: "Pearl Marble",
@@ -2311,7 +2312,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.LIGHT_SUBMACHINE_GUN,
             getData: function (e) {
-                return {materials: M(), groupMaterialIndices: [0, 0, 1, 1]}
+                return {materials: h(), groupMaterialIndices: [0, 0, 1, 1]}
             }
         },n[s.a.LSMG_WINTER] = {
             name: "Winter",
@@ -2319,7 +2320,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.LIGHT_SUBMACHINE_GUN,
             getData: function (e) {
-                return {materials: h(), groupMaterialIndices: [0, 0, 1, 1]}
+                return {materials: M(), groupMaterialIndices: [0, 0, 1, 1]}
             }
         },n[s.a.LSMG_PEARL_MARBLE] = {
             name: "Pearl Marble",
@@ -2609,7 +2610,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.COMPACT_SUBMACHINE_GUN,
             getData: function (e) {
-                return {materials: M(), groupMaterialIndices: [0, 1, 0, 1]}
+                return {materials: h(), groupMaterialIndices: [0, 1, 0, 1]}
             }
         },n[s.a.CSMG_WINTER] = {
             name: "Winter",
@@ -2617,7 +2618,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.COMPACT_SUBMACHINE_GUN,
             getData: function (e) {
-                return {materials: h(), groupMaterialIndices: [0, 1, 0, 1]}
+                return {materials: M(), groupMaterialIndices: [0, 1, 0, 1]}
             }
         },n[s.a.CSMG_PEARL_MARBLE] = {
             name: "Pearl Marble",
@@ -2886,7 +2887,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.BURST_SHOTGUN,
             getData: function (e) {
-                return {materials: M(), groupMaterialIndices: [0, 1, 1, 0]}
+                return {materials: h(), groupMaterialIndices: [0, 1, 1, 0]}
             }
         },n[s.a.BSG_WINTER] = {
             name: "Winter",
@@ -2894,7 +2895,7 @@ function getHead(a, aY = 0) {
             tier: o.a.MAGNIFICENT,
             slot: i.a.BURST_SHOTGUN,
             getData: function (e) {
-                return {materials: h(), groupMaterialIndices: [0, 1, 1, 0]}
+                return {materials: M(), groupMaterialIndices: [0, 1, 1, 0]}
             }
         },n[s.a.BSG_PEARL_MARBLE] = {
             name: "Pearl Marble",
@@ -3265,7 +3266,7 @@ function getHead(a, aY = 0) {
             slot: i.a.LIGHT_SNIPER_RIFLE,
             getData: function (e) {
                 return {
-                    materials: [].concat(M(2.1), [{
+                    materials: [].concat(h(2.1), [{
                         type: "UNIFORM_COLOR",
                         roughness: .9,
                         metalness: 0,
@@ -3280,7 +3281,7 @@ function getHead(a, aY = 0) {
             slot: i.a.LIGHT_SNIPER_RIFLE,
             getData: function (e) {
                 return {
-                    materials: [].concat(h(2.1), [{
+                    materials: [].concat(M(2.1), [{
                         type: "UNIFORM_COLOR",
                         roughness: .9,
                         metalness: 0,
@@ -3679,7 +3680,7 @@ function getHead(a, aY = 0) {
             slot: i.a.HEAVY_SNIPER_RIFLE,
             getData: function (e) {
                 return {
-                    materials: [].concat(M(2.1), [{
+                    materials: [].concat(h(2.1), [{
                         type: "UNIFORM_COLOR",
                         roughness: .9,
                         metalness: 0,
@@ -3694,7 +3695,7 @@ function getHead(a, aY = 0) {
             slot: i.a.HEAVY_SNIPER_RIFLE,
             getData: function (e) {
                 return {
-                    materials: [].concat(h(2.1), [{
+                    materials: [].concat(M(2.1), [{
                         type: "UNIFORM_COLOR",
                         roughness: .9,
                         metalness: 0,
@@ -3955,9 +3956,9 @@ function getHead(a, aY = 0) {
         a.d(t, "b", (function () {
             return T
         })), a.d(t, "a", (function () {
-            return M
-        })), a.d(t, "e", (function () {
             return h
+        })), a.d(t, "e", (function () {
+            return M
         })), a.d(t, "d", (function () {
             return N
         })), a.d(t, "g", (function () {
@@ -3979,9 +3980,9 @@ function getHead(a, aY = 0) {
                     aimSpread: e.aimSpread,
                     seqId: e.seqId
                 }
-            }, M = function (e) {
+            }, h = function (e) {
                 return Object(_.b)(Object(s.l)(e.x - n.a.BLOCK_SIZE / 2, e.y - n.a.BLOCK_SIZE / 2, e.z - n.a.BLOCK_SIZE / 2), Object(s.l)(e.x + n.a.BLOCK_SIZE / 2, e.y + n.a.BLOCK_SIZE / 2, e.z + n.a.BLOCK_SIZE / 2))
-            }, h = function (e, t) {
+            }, M = function (e, t) {
                 return Object(_.b)(Object(s.l)(e.x - n.a.PLAYER_STANDING_SIZE.x / 2, e.y, e.z - n.a.PLAYER_STANDING_SIZE.z / 2), Object(s.l)(e.x + n.a.PLAYER_STANDING_SIZE.x / 2, e.y + t + .1, e.z + n.a.PLAYER_STANDING_SIZE.z / 2))
             }, m = function (e, t, a) {
                 return {
@@ -4013,17 +4014,17 @@ function getHead(a, aY = 0) {
                     var T = Object(s.b)(_.physicsStep.pos);
                     Object(s.f)(T, n.a.BLOCK_SIZE), r(T, Object(s.l)(0, -1, 0), 40).hit && (S = i.a.GLIDING, _.cooldownManager.setCooldown(new I.a(p.a.TOGGLE_GLIDE, Math.floor(Object(E.c)(3600)))))
                 } else if (_.physicsStep.controlState === i.a.GLIDING && _.cooldownManager.cooldownExpired(p.a.TOGGLE_GLIDE)) {
-                    var M = Object(s.b)(_.physicsStep.pos);
-                    Object(s.f)(M, n.a.BLOCK_SIZE), r(M, Object(s.l)(0, -1, 0), 40).hit ? _.cooldownManager.setCooldown(new I.a(p.a.TOGGLE_GLIDE, Math.floor(Object(E.c)(3600)))) : e.jump && _.cooldownManager.requestCooldown(O.a.TOGGLE_GLIDE) && (S = i.a.FREE_FALLING)
+                    var h = Object(s.b)(_.physicsStep.pos);
+                    Object(s.f)(h, n.a.BLOCK_SIZE), r(h, Object(s.l)(0, -1, 0), 40).hit ? _.cooldownManager.setCooldown(new I.a(p.a.TOGGLE_GLIDE, Math.floor(Object(E.c)(3600)))) : e.jump && _.cooldownManager.requestCooldown(O.a.TOGGLE_GLIDE) && (S = i.a.FREE_FALLING)
                 }
-                var h = _.physicsStep.eyeHeight;
-                if (S === i.a.CROUCHING && Math.abs(h - n.a.PLAYER_CROUCHING_EYE_POSITION) > 1e-5) h = Math.max(n.a.PLAYER_CROUCHING_EYE_POSITION, h - .1); else if (S !== i.a.CROUCHING && Math.abs(h - n.a.PLAYER_STANDING_EYE_POSITION) > 1e-5) {
+                var M = _.physicsStep.eyeHeight;
+                if (S === i.a.CROUCHING && Math.abs(M - n.a.PLAYER_CROUCHING_EYE_POSITION) > 1e-5) M = Math.max(n.a.PLAYER_CROUCHING_EYE_POSITION, M - .1); else if (S !== i.a.CROUCHING && Math.abs(M - n.a.PLAYER_STANDING_EYE_POSITION) > 1e-5) {
                     var f = d(a, _.physicsStep);
-                    f >= n.a.PLAYER_UNCROUCH_DISTANCE_CHECK - _.physicsStep.eyeHeight ? h = Math.min(n.a.PLAYER_STANDING_EYE_POSITION, h + Math.min(.1, f)) : (h = n.a.PLAYER_CROUCHING_EYE_POSITION, S = i.a.CROUCHING)
+                    f >= n.a.PLAYER_UNCROUCH_DISTANCE_CHECK - _.physicsStep.eyeHeight ? M = Math.min(n.a.PLAYER_STANDING_EYE_POSITION, M + Math.min(.1, f)) : (M = n.a.PLAYER_CROUCHING_EYE_POSITION, S = i.a.CROUCHING)
                 }
-                var C = _.inventory.getSelected().item, L = N(e, _), y = n.a.PLAYER_ACCELERATION, U = 1;
-                S === i.a.RUNNING ? U *= n.a.PLAYER_RUN_SPEED_LIMIT_MODIFIER : S === i.a.CROUCHING ? U *= n.a.PLAYER_CROUCH_SPEED_LIMIT_MODIFIER : S === i.a.WALKING && L && (U *= n.a.PLAYER_ADS_SPEED_LIMIT_MODIFIER), U *= C.movementSpeedModifier;
-                var g = Object(s.l)(-Math.sin(e.pitchYaw.y), 0, -Math.cos(e.pitchYaw.y)), P = Object(s.b)(g);
+                var C = _.inventory.getSelected().item, L = N(e, _), y = n.a.PLAYER_ACCELERATION, g = 1;
+                S === i.a.RUNNING ? g *= n.a.PLAYER_RUN_SPEED_LIMIT_MODIFIER : S === i.a.CROUCHING ? g *= n.a.PLAYER_CROUCH_SPEED_LIMIT_MODIFIER : S === i.a.WALKING && L && (g *= n.a.PLAYER_ADS_SPEED_LIMIT_MODIFIER), g *= C.movementSpeedModifier;
+                var U = Object(s.l)(-Math.sin(e.pitchYaw.y), 0, -Math.cos(e.pitchYaw.y)), P = Object(s.b)(U);
                 Object(s.c)(P, Object(s.l)(0, 1, 0));
                 var v = -5;
                 if (S === i.a.FREE_FALLING) {
@@ -4036,25 +4037,25 @@ function getHead(a, aY = 0) {
                     H = Object(s.l)(_.physicsStep.vel.x, _.physicsStep.vel.y - n.a.WORLD_GRAVITY * n.a.PLAYER_MASS * c, _.physicsStep.vel.z);
                 if (H.y = Math.max(H.y, v), !_.physicsStep.onGround || S !== i.a.WALKING && S !== i.a.CROUCHING && S !== i.a.RUNNING) {
                     H.x *= n.a.PLAYER_AIR_FRICTION, H.z *= n.a.PLAYER_AIR_FRICTION;
-                    var b = Object(s.b)(g);
-                    Object(s.i)(b, l.z * y * U * n.a.PLAYER_AIR_STRAFE_MODIFIER * c), Object(s.a)(H, b);
+                    var b = Object(s.b)(U);
+                    Object(s.i)(b, l.z * y * g * n.a.PLAYER_AIR_STRAFE_MODIFIER * c), Object(s.a)(H, b);
                     var x = Object(s.b)(P);
-                    Object(s.i)(x, -l.x * y * U * n.a.PLAYER_AIR_STRAFE_MODIFIER * c), Object(s.a)(H, x)
+                    Object(s.i)(x, -l.x * y * g * n.a.PLAYER_AIR_STRAFE_MODIFIER * c), Object(s.a)(H, x)
                 } else {
                     H.x *= n.a.PLAYER_GROUND_FRICTION, H.z *= n.a.PLAYER_GROUND_FRICTION;
-                    var D = Object(s.b)(g);
-                    Object(s.i)(D, l.z * y * U * c), Object(s.a)(H, D);
+                    var D = Object(s.b)(U);
+                    Object(s.i)(D, l.z * y * g * c), Object(s.a)(H, D);
                     var k = Object(s.b)(P);
-                    Object(s.i)(k, -l.x * y * U * c), Object(s.a)(H, k)
+                    Object(s.i)(k, -l.x * y * g * c), Object(s.a)(H, k)
                 }
                 var B = t(_.physicsStep.pos.x / n.a.BLOCK_SIZE, _.physicsStep.pos.y / n.a.BLOCK_SIZE, _.physicsStep.pos.z / n.a.BLOCK_SIZE) === u.a.WATER,
                     w = t(_.physicsStep.pos.x / n.a.BLOCK_SIZE, (_.physicsStep.pos.y + .9) / n.a.BLOCK_SIZE, _.physicsStep.pos.z / n.a.BLOCK_SIZE) === u.a.WATER,
                     Y = t(_.physicsStep.pos.x / n.a.BLOCK_SIZE, (_.physicsStep.pos.y + 1.1) / n.a.BLOCK_SIZE, _.physicsStep.pos.z / n.a.BLOCK_SIZE) === u.a.WATER,
                     K = _.physicsStep.canJump;
                 B && w ? e.jump && _.physicsStep.canJump && (H.y = 1.1 * n.a.PLAYER_JUMP_FORCE) : !_.physicsStep.onGround || S !== i.a.WALKING && S !== i.a.CROUCHING && S !== i.a.RUNNING || e.jump && (H.y = n.a.PLAYER_JUMP_FORCE);
-                var V = Math.sqrt(H.x * H.x + H.z * H.z), W = B ? n.a.PLAYER_WATER_SPEED_LIMIT : n.a.PLAYER_SPEED_LIMIT;
-                V > W * U * c && (H.x = H.x / V * W * U * c, H.z = H.z / V * W * U * c), B && Y && Math.abs(H.y) > n.a.PLAYER_WATER_VERTICAL_SPEED_LIMIT * U * c && (H.y = H.y / Math.abs(H.y) * n.a.PLAYER_WATER_VERTICAL_SPEED_LIMIT * U * c);
-                var j = m(_.physicsStep.pos, h, n.a.PLAYER_STANDING_SIZE), Z = !1;
+                var W = Math.sqrt(H.x * H.x + H.z * H.z), V = B ? n.a.PLAYER_WATER_SPEED_LIMIT : n.a.PLAYER_SPEED_LIMIT;
+                W > V * g * c && (H.x = H.x / W * V * g * c, H.z = H.z / W * V * g * c), B && Y && Math.abs(H.y) > n.a.PLAYER_WATER_VERTICAL_SPEED_LIMIT * g * c && (H.y = H.y / Math.abs(H.y) * n.a.PLAYER_WATER_VERTICAL_SPEED_LIMIT * g * c);
+                var j = m(_.physicsStep.pos, M, n.a.PLAYER_STANDING_SIZE), Z = !1;
                 Math.abs(H.x) < 1e-6 && (H.x = 0), Math.abs(H.y) < 1e-6 && (H.y = 0), Math.abs(H.z) < 1e-6 && (H.z = 0);
                 var z = Object(s.b)(H), X = [!1, !1, !1], q = [H.x, H.y, H.z];
                 o()(a, j, q, (function (e, t, a, n) {
@@ -4063,17 +4064,17 @@ function getHead(a, aY = 0) {
                 var J,
                     Q = (J = j, Object(s.l)(J.base[0] * n.a.BLOCK_SIZE + n.a.PLAYER_STANDING_SIZE.x / 2, J.base[1] * n.a.BLOCK_SIZE, J.base[2] * n.a.BLOCK_SIZE + n.a.PLAYER_STANDING_SIZE.z / 2));
                 X[0] && (Q.x += .001 * (z.x > 0 ? -1 : 1)), X[1] && (Q.y += .001 * (z.y > 0 ? -1 : 1)), X[2] && (Q.z += .001 * (z.z > 0 ? -1 : 1));
-                var $ = m(Object(s.l)(Q.x, _.physicsStep.pos.y, _.physicsStep.pos.z), h, n.a.PLAYER_CROUCH_FALL_TEST_SIZE),
+                var $ = m(Object(s.l)(Q.x, _.physicsStep.pos.y, _.physicsStep.pos.z), M, n.a.PLAYER_CROUCH_FALL_TEST_SIZE),
                     ee = z.x > 0 ? -1 : 1,
                     te = a(_.physicsStep.pos.x / n.a.BLOCK_SIZE + ee, _.physicsStep.pos.y / n.a.BLOCK_SIZE, _.physicsStep.pos.z / n.a.BLOCK_SIZE),
                     ae = (Math.floor(_.physicsStep.pos.x / n.a.BLOCK_SIZE) + .5 + ee) * n.a.BLOCK_SIZE;
                 !X[0] && !te && 0 !== z.x && z.y <= 0 && 0 === H.y && S === i.a.CROUCHING && e.crouch && _.physicsStep.onGround && A($, [0, -.5, 0], !1, a) && (z.x > 0 ? Q.x = Math.min(Q.x, ae + n.a.BLOCK_SIZE / 2 + n.a.PLAYER_CROUCH_FALL_TEST_SIZE.x / 2 - .001) : Q.x = Math.max(Q.x, ae - n.a.BLOCK_SIZE / 2 - +n.a.PLAYER_CROUCH_FALL_TEST_SIZE.x / 2 + .001), H.x = 0);
-                var ne = m(Object(s.l)(_.physicsStep.pos.x, _.physicsStep.pos.y, Q.z), h, n.a.PLAYER_CROUCH_FALL_TEST_SIZE),
+                var ne = m(Object(s.l)(_.physicsStep.pos.x, _.physicsStep.pos.y, Q.z), M, n.a.PLAYER_CROUCH_FALL_TEST_SIZE),
                     re = z.z > 0 ? -1 : 1,
                     oe = a(_.physicsStep.pos.x / n.a.BLOCK_SIZE, _.physicsStep.pos.y / n.a.BLOCK_SIZE, _.physicsStep.pos.z / n.a.BLOCK_SIZE + re),
                     ie = (Math.floor(_.physicsStep.pos.z / n.a.BLOCK_SIZE) + .5 + re) * n.a.BLOCK_SIZE;
                 if (!X[2] && !oe && 0 !== z.z && z.y <= 0 && 0 === H.y && S === i.a.CROUCHING && e.crouch && _.physicsStep.onGround && A(ne, [0, -.5, 0], !1, a) && (z.z > 0 ? Q.z = Math.min(Q.z, ie + n.a.BLOCK_SIZE / 2 + n.a.PLAYER_CROUCH_FALL_TEST_SIZE.z / 2 - .001) : Q.z = Math.max(Q.z, ie - n.a.BLOCK_SIZE / 2 - n.a.PLAYER_CROUCH_FALL_TEST_SIZE.z / 2 + .001), H.z = 0), Z && S === i.a.RUNNING) {
-                    var se = m(_.physicsStep.pos, h, n.a.PLAYER_STANDING_SIZE), ue = Math.floor(se.base[1]) + 1,
+                    var se = m(_.physicsStep.pos, M, n.a.PLAYER_STANDING_SIZE), ue = Math.floor(se.base[1]) + 1,
                         ce = ue - se.base[1];
                     A(se, [0, ce + .1, 0], !1, a) && A(se, [z.x, 0, z.z], !1, a) && (Q.y = _.physicsStep.pos.y, X[0] || (Q.x = _.physicsStep.pos.x), X[2] || (Q.z = _.physicsStep.pos.z), Q.y += Math.min(ce, 1 / 3) * n.a.BLOCK_SIZE, Q.y >= ue * n.a.BLOCK_SIZE && (X[0] && (Q.x += z.x * n.a.BLOCK_SIZE), X[2] && (Q.z += z.z * n.a.BLOCK_SIZE)))
                 }
@@ -4084,7 +4085,7 @@ function getHead(a, aY = 0) {
                     onGround: G,
                     canJump: K,
                     controlState: S,
-                    eyeHeight: h,
+                    eyeHeight: M,
                     seqId: _.physicsStep.seqId + 1
                 }
             }, C = function (e, t, a, r, o, u) {
@@ -4278,9 +4279,9 @@ function getHead(a, aY = 0) {
             return A
         }));
         var n = a(15), r = a.n(n), o = a(22), i = a.n(o), s = a(76), u = a.n(s), c = a(21), _ = a(92), l = a(78),
-            S = a(89), O = a(34), I = a(84), p = a(25), E = a(106), R = a(96), T = a(104), M = a(81);
+            S = a(89), O = a(34), I = a(84), p = a(25), E = a(106), R = a(96), T = a(104), h = a(81);
 
-        function h(e, t) {
+        function M(e, t) {
             var a;
             if ("undefined" == typeof Symbol || null == e[Symbol.iterator]) {
                 if (Array.isArray(e) || (a = function (e, t) {
@@ -4311,7 +4312,7 @@ function getHead(a, aY = 0) {
         var A = function (e) {
             function t(t) {
                 var a;
-                return (a = e.call(this, t) || this)._currBurstCount = void 0, a._burstCount = void 0, a._burstRate = void 0, a._currBurstCount = 0, a._burstCount = 3, a._burstRate = Math.floor(Object(l.c)(.08)), a.setCanADS(!0), a.setDefaultSpread(.4), a.setInAirSpread(1), a.setShootingSpread(.7), a.setMovingSpread(.8), a.setShootingMovingSpread(.9), a.setADSSpreadFactor(.1), a.setCrouchingSpreadFactor(.4), a.setADSCrouchingSpreadFactor(.1), a.setSpreadRecovery(2.66), a.setSpreadIncreaseRateMove(2.66), a.setSpreadIncreaseRateJump(2.66), a.setSpreadIncreaseRateShoot(6), a.setFireRate(Math.floor(Object(l.c)(.6))), a.setReloadTime(Math.floor(Object(l.c)(1.5))), a.setRange(100), a.setAmmo(25), a.setAmmoItemType(c.a.AMMO_ASSAULT_RIFLE), a.setBulletsPerShot(1), a.setMuzzleFlashPosition(Object(O.l)(0, .1, .2)), a.setShellModelID(S.a.ASSAULT_RIFLE_SHELL), a.setShellModelOrigin(Object(O.l)(-.1, 0, .4)), a.setGunShotSoundType(I.a.GUN_SHOT_SURGE_ASSAULT_RIFLE), a.setMaxRecoil(.08), a.setRecoilGainVel(.12), a.setRecoilRecoveryVel(.05), a.setRecoilActiveTime(100), a.setMovementSpeedModifier(.8), a.setSkinAOMap(M.a.surgeAssaultRifleAOTexture), a.itemName = "Surge Assault Rifle", a.itemDescription = "Its unique burst fire mode can be tricky to handle, but once mastered, this weapon will pierce right through your enemies", a.setItemTier(p.a.COMMON), a
+                return (a = e.call(this, t) || this)._currBurstCount = void 0, a._burstCount = void 0, a._burstRate = void 0, a._currBurstCount = 0, a._burstCount = 3, a._burstRate = Math.floor(Object(l.c)(.08)), a.setCanADS(!0), a.setDefaultSpread(.4), a.setInAirSpread(1), a.setShootingSpread(.7), a.setMovingSpread(.8), a.setShootingMovingSpread(.9), a.setADSSpreadFactor(.1), a.setCrouchingSpreadFactor(.4), a.setADSCrouchingSpreadFactor(.1), a.setSpreadRecovery(2.66), a.setSpreadIncreaseRateMove(2.66), a.setSpreadIncreaseRateJump(2.66), a.setSpreadIncreaseRateShoot(6), a.setFireRate(Math.floor(Object(l.c)(.6))), a.setReloadTime(Math.floor(Object(l.c)(1.5))), a.setRange(100), a.setAmmo(25), a.setAmmoItemType(c.a.AMMO_ASSAULT_RIFLE), a.setBulletsPerShot(1), a.setMuzzleFlashPosition(Object(O.l)(0, .1, .2)), a.setShellModelID(S.a.ASSAULT_RIFLE_SHELL), a.setShellModelOrigin(Object(O.l)(-.1, 0, .4)), a.setGunShotSoundType(I.a.GUN_SHOT_SURGE_ASSAULT_RIFLE), a.setMaxRecoil(.08), a.setRecoilGainVel(.12), a.setRecoilRecoveryVel(.05), a.setRecoilActiveTime(100), a.setMovementSpeedModifier(.8), a.setSkinAOMap(h.a.surgeAssaultRifleAOTexture), a.itemName = "Surge Assault Rifle", a.itemDescription = "Its unique burst fire mode can be tricky to handle, but once mastered, this weapon will pierce right through your enemies", a.setItemTier(p.a.COMMON), a
             }
 
             u()(t, e);
@@ -4325,7 +4326,7 @@ function getHead(a, aY = 0) {
                 return Object(O.l)(-.121, .02, 0)
             }, a.onUpdateMetadata = function (t) {
                 e.prototype.onUpdateMetadata.call(this, t);
-                for (var a, n = h(t); !(a = n()).done;) {
+                for (var a, n = M(t); !(a = n()).done;) {
                     var r = a.value;
                     switch (r.metadataType) {
                         case T.a.CURR_BURST_COUNT:
@@ -4751,10 +4752,10 @@ function getHead(a, aY = 0) {
     }, 116: function (e, t, a) {
         "use strict";
         a.d(t, "a", (function () {
-            return M
+            return h
         }));
         var n = a(15), r = a.n(n), o = a(22), i = a.n(o), s = a(76), u = a.n(s), c = a(21), _ = a(92), l = a(78),
-            S = a(89), O = a(34), I = a(84), p = a(25), E = a(26), R = a(96), T = a(81), M = function (e) {
+            S = a(89), O = a(34), I = a(84), p = a(25), E = a(26), R = a(96), T = a(81), h = function (e) {
                 function t(t) {
                     var a;
                     return (a = e.call(this, t) || this).setCanADS(!0), a.setUseScope(!0), a.setDefaultSpread(1.5), a.setInAirSpread(2), a.setShootingSpread(2), a.setMovingSpread(2), a.setShootingMovingSpread(2.5), a.setADSSpreadFactor(.01), a.setCrouchingSpreadFactor(1), a.setADSCrouchingSpreadFactor(.01), a.setSpreadRecovery(4.66), a.setSpreadIncreaseRateMove(2.66), a.setSpreadIncreaseRateJump(2.66), a.setSpreadIncreaseRateShoot(6), a.setFireRate(Math.floor(Object(l.c)(1.5))), a.setReloadTime(Math.floor(Object(l.c)(2))), a.setRange(200), a.setAmmo(6), a.setAmmoItemType(c.a.AMMO_SNIPER_RIFLE), a.setBulletsPerShot(1), a.setShellModelID(S.a.SNIPER_RIFLE_SHELL), a.setShellModelOrigin(Object(O.l)(-.1, 0, .4)), a.setGunShotSoundType(I.a.GUN_SHOT_LIGHT_SNIPER_RIFLE), a.setMaxRecoil(.08), a.setRecoilGainVel(.3), a.setRecoilRecoveryVel(.2), a.setRecoilActiveTime(150), a.setMovementSpeedModifier(.9), a.setMuzzleFlashPosition(Object(O.l)(0, .08, .6)), a.setADSFOV(E.a.PLAYER_SCOPED_FOV), a.setShootCooldownType(R.a.SNIPER_SHOOT), a.setSkinAOMap(T.a.lightSniperRifleAOTexture), a.itemName = "Light Sniper Rifle", a.itemDescription = "Light-weight sniper rifle with low recoil and decent damage", a.setItemTier(p.a.COMMON), a
@@ -4836,10 +4837,10 @@ function getHead(a, aY = 0) {
     }, 117: function (e, t, a) {
         "use strict";
         a.d(t, "a", (function () {
-            return M
+            return h
         }));
         var n = a(15), r = a.n(n), o = a(22), i = a.n(o), s = a(76), u = a.n(s), c = a(21), _ = a(92), l = a(78),
-            S = a(89), O = a(34), I = a(84), p = a(25), E = a(26), R = a(96), T = a(81), M = function (e) {
+            S = a(89), O = a(34), I = a(84), p = a(25), E = a(26), R = a(96), T = a(81), h = function (e) {
                 function t(t) {
                     var a;
                     return (a = e.call(this, t) || this).setCanADS(!0), a.setUseScope(!0), a.setDefaultSpread(2), a.setInAirSpread(2.5), a.setShootingSpread(2.5), a.setMovingSpread(2.5), a.setShootingMovingSpread(3), a.setADSSpreadFactor(.01), a.setCrouchingSpreadFactor(1), a.setADSCrouchingSpreadFactor(.01), a.setSpreadRecovery(3.66), a.setSpreadIncreaseRateMove(2.66), a.setSpreadIncreaseRateJump(2.66), a.setSpreadIncreaseRateShoot(6), a.setFireRate(Math.floor(Object(l.c)(2))), a.setReloadTime(Math.floor(Object(l.c)(3))), a.setRange(200), a.setAmmo(3), a.setAmmoItemType(c.a.AMMO_SNIPER_RIFLE), a.setBulletsPerShot(1), a.setShellModelID(S.a.SNIPER_RIFLE_SHELL), a.setShellModelOrigin(Object(O.l)(-.1, 0, .3)), a.setGunShotSoundType(I.a.GUN_SHOT_HEAVY_SNIPER_RIFLE), a.setMaxRecoil(.8), a.setRecoilGainVel(.9), a.setRecoilRecoveryVel(.25), a.setRecoilActiveTime(150), a.setMovementSpeedModifier(.7), a.setMuzzleFlashPosition(Object(O.l)(0, .1, .5)), a.setADSFOV(E.a.PLAYER_SCOPED_FOV), a.setShootCooldownType(R.a.SNIPER_SHOOT), a.setSkinAOMap(T.a.heavySniperRifleAOTexture), a.itemName = "Heavy Sniper Rifle", a.itemDescription = "Heavy sniper rifle with high recoil and powerful damage", a.setItemTier(p.a.COMMON), a
@@ -4951,9 +4952,9 @@ function getHead(a, aY = 0) {
         })), a.d(t, "h", (function () {
             return T
         })), a.d(t, "d", (function () {
-            return M
-        })), a.d(t, "n", (function () {
             return h
+        })), a.d(t, "n", (function () {
+            return M
         })), a.d(t, "y", (function () {
             return m
         })), a.d(t, "w", (function () {
@@ -5001,9 +5002,9 @@ function getHead(a, aY = 0) {
             return {type: n.c.SET_CROSSHAIR_HIT_COLOR, value: e}
         }, T = function (e) {
             return {type: n.c.SET_CROSSHAIR_STYLE, value: e}
-        }, M = function (e) {
+        }, h = function (e) {
             return {type: n.c.SET_CHAT_VISIBLE, flag: e}
-        }, h = function (e, t) {
+        }, M = function (e, t) {
             return {type: n.c.SET_PREFERRED_LOADOUT, loadoutType: e, weaponType: t}
         }, m = function (e) {
             return {type: n.c.SET_TERRAIN_TEXTURE_URL, url: e}
@@ -5099,7 +5100,7 @@ function getHead(a, aY = 0) {
                 count: 1
             }],
             needsWorkStation: !0,
-            inheritSkin: !1
+            inheritSkin: !0
         }, n[r.SHOVEL_RARE] = {
             result: {type: o.a.SHOVEL_RARE, count: 1},
             ingredients: [{type: o.a.SHOVEL_UNCOMMON, count: 1}, {type: o.a.IRON, count: 1}, {
@@ -5107,17 +5108,17 @@ function getHead(a, aY = 0) {
                 count: 1
             }],
             needsWorkStation: !0,
-            inheritSkin: !1
+            inheritSkin: !0
         }, n[r.SHOVEL_EPIC] = {
             result: {type: o.a.SHOVEL_EPIC, count: 1},
             ingredients: [{type: o.a.SHOVEL_RARE, count: 1}, {type: o.a.IRON, count: 1}, {type: o.a.EMERALD, count: 1}],
             needsWorkStation: !0,
-            inheritSkin: !1
+            inheritSkin: !0
         }, n[r.SHOVEL_LEGENDARY] = {
             result: {type: o.a.SHOVEL_LEGENDARY, count: 1},
             ingredients: [{type: o.a.SHOVEL_EPIC, count: 1}, {type: o.a.IRON, count: 1}, {type: o.a.EMERALD, count: 1}],
             needsWorkStation: !0,
-            inheritSkin: !1
+            inheritSkin: !0
         }, n[r.COMBAT_ASSAULT_RIFLE_UNCOMMON] = {
             result: {type: o.a.COMBAT_ASSAULT_RIFLE_UNCOMMON, count: 1},
             ingredients: [{type: o.a.COMBAT_ASSAULT_RIFLE_COMMON, count: 1}, {
@@ -5525,9 +5526,9 @@ function getHead(a, aY = 0) {
         })), a.d(t, "c", (function () {
             return T
         })), a.d(t, "J", (function () {
-            return M
-        })), a.d(t, "L", (function () {
             return h
+        })), a.d(t, "L", (function () {
+            return M
         })), a.d(t, "i", (function () {
             return m
         })), a.d(t, "K", (function () {
@@ -5545,9 +5546,9 @@ function getHead(a, aY = 0) {
         })), a.d(t, "I", (function () {
             return y
         })), a.d(t, "E", (function () {
-            return U
-        })), a.d(t, "d", (function () {
             return g
+        })), a.d(t, "d", (function () {
+            return U
         })), a.d(t, "f", (function () {
             return P
         })), a.d(t, "e", (function () {
@@ -5575,9 +5576,9 @@ function getHead(a, aY = 0) {
         })), a.d(t, "w", (function () {
             return K
         })), a.d(t, "M", (function () {
-            return V
-        })), a.d(t, "q", (function () {
             return W
+        })), a.d(t, "q", (function () {
+            return V
         }));
         var n = a(3), r = function (e, t, a, r) {
             return {type: n.b.SET_HEALTH_AND_SHIELD, maxHealth: e, health: t, maxShield: a, shield: r}
@@ -5636,9 +5637,9 @@ function getHead(a, aY = 0) {
             return {type: n.b.SET_NUM_PLAYERS_ALIVE, count: e}
         }, T = function (e) {
             return {type: n.b.SET_CLIENT_NUM_KILLS, count: e}
-        }, M = function (e) {
-            return {type: n.b.SET_TIME_ALIVE, count: e}
         }, h = function (e) {
+            return {type: n.b.SET_TIME_ALIVE, count: e}
+        }, M = function (e) {
             return {type: n.b.SET_TOTAL_NUM_PLAYERS, count: e}
         }, m = function (e) {
             return {type: n.b.SET_ELIMINATED_BY, eliminatedBy: e}
@@ -5656,9 +5657,9 @@ function getHead(a, aY = 0) {
             return {type: n.b.SET_TEAM1_SCORE, score: e}
         }, y = function (e) {
             return {type: n.b.SET_TEAM2_SCORE, score: e}
-        }, U = function (e) {
-            return {type: n.b.SET_RESPAWN_TIMER, value: e}
         }, g = function (e) {
+            return {type: n.b.SET_RESPAWN_TIMER, value: e}
+        }, U = function (e) {
             return {type: n.b.SET_CLIENT_PLAYER_ID, id: e}
         }, P = function (e) {
             return {type: n.b.SET_CLIENT_PLAYER_TEAM, teamType: e}
@@ -5686,9 +5687,9 @@ function getHead(a, aY = 0) {
             return {type: n.b.SET_FFA_MY_RANK, myRank: e}
         }, K = function (e) {
             return {type: n.b.SET_INVENTORY_STATUS, inventoryStatus: e}
-        }, V = function (e) {
-            return {type: n.b.SET_VGEMS_GAINED, count: e}
         }, W = function (e) {
+            return {type: n.b.SET_VGEMS_GAINED, count: e}
+        }, V = function (e) {
             return {type: n.b.SET_GAME_INITIALIZED, flag: e}
         }
     }, 138: function (e, t, a) {
@@ -5696,9 +5697,9 @@ function getHead(a, aY = 0) {
         a.d(t, "a", (function () {
             return s
         })), a.d(t, "c", (function () {
-            return l
-        })), a.d(t, "b", (function () {
             return S
+        })), a.d(t, "b", (function () {
+            return O
         }));
         var n = a(26), r = a(85), o = a(94), i = function (e, t, a, r) {
             return t === n.a.CHUNK_SIZE && a === n.a.CHUNK_SIZE && r === n.a.CHUNK_SIZE ? e.topFrontLeft : -1 === t && a === n.a.CHUNK_SIZE && r === n.a.CHUNK_SIZE ? e.topFrontRight : t === n.a.CHUNK_SIZE && a === n.a.CHUNK_SIZE && -1 === r ? e.topBackLeft : -1 === t && a === n.a.CHUNK_SIZE && -1 === r ? e.topBackRight : t === n.a.CHUNK_SIZE && -1 === a && r === n.a.CHUNK_SIZE ? e.bottomFrontLeft : -1 === t && -1 === a && r === n.a.CHUNK_SIZE ? e.bottomFrontRight : t === n.a.CHUNK_SIZE && -1 === a && -1 === r ? e.bottomBackLeft : -1 === t && -1 === a && -1 === r ? e.bottomBackRight : t === n.a.CHUNK_SIZE && r === n.a.CHUNK_SIZE ? e.frontLeft[a] : -1 === t && r === n.a.CHUNK_SIZE ? e.frontRight[a] : t === n.a.CHUNK_SIZE && -1 === r ? e.backLeft[a] : -1 === t && -1 === r ? e.backRight[a] : a === n.a.CHUNK_SIZE && r === n.a.CHUNK_SIZE ? e.topFront[t] : a === n.a.CHUNK_SIZE && -1 === r ? e.topBack[t] : a === n.a.CHUNK_SIZE && t === n.a.CHUNK_SIZE ? e.topLeft[r] : a === n.a.CHUNK_SIZE && -1 === t ? e.topRight[r] : -1 === a && r === n.a.CHUNK_SIZE ? e.bottomFront[t] : -1 === a && -1 === r ? e.bottomBack[t] : -1 === a && t === n.a.CHUNK_SIZE ? e.bottomLeft[r] : -1 === a && -1 === t ? e.bottomRight[r] : -1 === t ? e.right[a][r] : t === n.a.CHUNK_SIZE ? e.left[a][r] : -1 === a ? e.bottom[t][r] : a === n.a.CHUNK_SIZE ? e.top[t][r] : -1 === r ? e.back[t][a] : r === n.a.CHUNK_SIZE ? e.front[t][a] : e.blocks[t * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + a * n.a.CHUNK_SIZE + r]
@@ -5710,227 +5711,242 @@ function getHead(a, aY = 0) {
         }, c = function (e, t, a, n) {
             return i(e, t, a, n) === r.a.AIR
         }, _ = function (e, t, a, n) {
+            return i(e, t, a, n) === r.a.WATER
+        }, l = function (e, t, a, n) {
             var r = i(e, t, a, n);
             return o.a[r].opaque
-        }, l = function (e, t) {
+        }, S = function (e, t) {
             e.push(1 / 8 * t.x + 1e-4, 1 / 8 * (t.y + 1) - 1e-4), e.push(1 / 8 * (t.x + 1) - 1e-4, 1 / 8 * (t.y + 1) - 1e-4), e.push(1 / 8 * (t.x + 1) - 1e-4, 1 / 8 * t.y + 1e-4), e.push(1 / 8 * t.x + 1e-4, 1 / 8 * t.y + 1e-4)
-        }, S = function (e) {
-            for (var t = [], a = [], r = [], i = [], l = [], S = [], O = [], I = [], p = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), E = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), R = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), T = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), M = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), h = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), m = 0; m < n.a.CHUNK_SIZE; m++) for (var A = 0; A < n.a.CHUNK_SIZE; A++) for (var d = 0; d < n.a.CHUNK_SIZE; d++) if (!c(e, m, A, d)) {
-                var N = _(e, m, A, d);
-                if (N && !_(e, m, A + 1, d) || !N && c(e, m, A + 1, d)) {
-                    var f = s(u(e, m + 1, A + 1, d), u(e, m, A + 1, d + 1), u(e, m + 1, A + 1, d + 1)),
-                        C = s(u(e, m, A + 1, d + 1), u(e, m - 1, A + 1, d), u(e, m - 1, A + 1, d + 1)),
-                        L = s(u(e, m - 1, A + 1, d), u(e, m, A + 1, d - 1), u(e, m - 1, A + 1, d - 1)),
-                        y = s(u(e, m, A + 1, d - 1), u(e, m + 1, A + 1, d), u(e, m + 1, A + 1, d - 1)),
-                        U = 4 * (m * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + A * n.a.CHUNK_SIZE + d);
-                    p[U] = f, p[U + 1] = C, p[U + 2] = L, p[U + 3] = y
+        }, O = function (e) {
+            for (var t = [], a = [], i = [], S = [], O = [], I = [], p = [], E = [], R = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), T = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), h = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), M = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), m = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), A = new Uint8Array(n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE * 4), d = 0; d < n.a.CHUNK_SIZE; d++) for (var N = 0; N < n.a.CHUNK_SIZE; N++) for (var f = 0; f < n.a.CHUNK_SIZE; f++) if (!c(e, d, N, f)) {
+                var C = l(e, d, N, f), L = _(e, d, N, f), y = l(e, d, N + 1, f);
+                if (C && !y || !C && c(e, d, N + 1, f) || L && !_(e, d, N + 1, f)) {
+                    var g = 4 * (d * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + N * n.a.CHUNK_SIZE + f);
+                    if (L && y) R[g] = 76, R[g + 1] = 76, R[g + 2] = 76, R[g + 3] = 76; else {
+                        var U = s(u(e, d + 1, N + 1, f), u(e, d, N + 1, f + 1), u(e, d + 1, N + 1, f + 1)),
+                            P = s(u(e, d, N + 1, f + 1), u(e, d - 1, N + 1, f), u(e, d - 1, N + 1, f + 1)),
+                            v = s(u(e, d - 1, N + 1, f), u(e, d, N + 1, f - 1), u(e, d - 1, N + 1, f - 1)),
+                            F = s(u(e, d, N + 1, f - 1), u(e, d + 1, N + 1, f), u(e, d + 1, N + 1, f - 1));
+                        R[g] = U, R[g + 1] = P, R[g + 2] = v, R[g + 3] = F
+                    }
                 }
-                if (N && !_(e, m, A - 1, d) || !N && c(e, m, A - 1, d)) {
-                    var g = s(u(e, m + 1, A - 1, d), u(e, m, A - 1, d - 1), u(e, m + 1, A - 1, d - 1)),
-                        P = s(u(e, m, A - 1, d - 1), u(e, m - 1, A - 1, d), u(e, m - 1, A - 1, d - 1)),
-                        v = s(u(e, m - 1, A - 1, d), u(e, m, A - 1, d + 1), u(e, m - 1, A - 1, d + 1)),
-                        F = s(u(e, m, A - 1, d + 1), u(e, m + 1, A - 1, d), u(e, m + 1, A - 1, d + 1)),
-                        G = 4 * (m * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + A * n.a.CHUNK_SIZE + d);
-                    E[G] = g, E[G + 1] = P, E[G + 2] = v, E[G + 3] = F
+                if (C && !l(e, d, N - 1, f) || !C && c(e, d, N - 1, f)) {
+                    var G = s(u(e, d + 1, N - 1, f), u(e, d, N - 1, f - 1), u(e, d + 1, N - 1, f - 1)),
+                        H = s(u(e, d, N - 1, f - 1), u(e, d - 1, N - 1, f), u(e, d - 1, N - 1, f - 1)),
+                        b = s(u(e, d - 1, N - 1, f), u(e, d, N - 1, f + 1), u(e, d - 1, N - 1, f + 1)),
+                        x = s(u(e, d, N - 1, f + 1), u(e, d + 1, N - 1, f), u(e, d + 1, N - 1, f + 1)),
+                        D = 4 * (d * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + N * n.a.CHUNK_SIZE + f);
+                    T[D] = G, T[D + 1] = H, T[D + 2] = b, T[D + 3] = x
                 }
-                if (N && !_(e, m + 1, A, d) || !N && c(e, m + 1, A, d)) {
-                    var H = s(u(e, m + 1, A, d + 1), u(e, m + 1, A + 1, d), u(e, m + 1, A + 1, d + 1)),
-                        b = s(u(e, m + 1, A + 1, d), u(e, m + 1, A, d - 1), u(e, m + 1, A + 1, d - 1)),
-                        x = s(u(e, m + 1, A, d - 1), u(e, m + 1, A - 1, d), u(e, m + 1, A - 1, d - 1)),
-                        D = s(u(e, m + 1, A - 1, d), u(e, m + 1, A, d + 1), u(e, m + 1, A - 1, d + 1)),
-                        k = 4 * (m * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + A * n.a.CHUNK_SIZE + d);
-                    R[k] = H, R[k + 1] = b, R[k + 2] = x, R[k + 3] = D
+                if (C && !l(e, d + 1, N, f) || !C && c(e, d + 1, N, f)) {
+                    var k = s(u(e, d + 1, N, f + 1), u(e, d + 1, N + 1, f), u(e, d + 1, N + 1, f + 1)),
+                        B = s(u(e, d + 1, N + 1, f), u(e, d + 1, N, f - 1), u(e, d + 1, N + 1, f - 1)),
+                        w = s(u(e, d + 1, N, f - 1), u(e, d + 1, N - 1, f), u(e, d + 1, N - 1, f - 1)),
+                        Y = s(u(e, d + 1, N - 1, f), u(e, d + 1, N, f + 1), u(e, d + 1, N - 1, f + 1)),
+                        K = 4 * (d * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + N * n.a.CHUNK_SIZE + f);
+                    h[K] = k, h[K + 1] = B, h[K + 2] = w, h[K + 3] = Y
                 }
-                if (N && !_(e, m - 1, A, d) || !N && c(e, m - 1, A, d)) {
-                    var B = s(u(e, m - 1, A, d - 1), u(e, m - 1, A + 1, d), u(e, m - 1, A + 1, d - 1)),
-                        w = s(u(e, m - 1, A + 1, d), u(e, m - 1, A, d + 1), u(e, m - 1, A + 1, d + 1)),
-                        Y = s(u(e, m - 1, A, d + 1), u(e, m - 1, A - 1, d), u(e, m - 1, A - 1, d + 1)),
-                        K = s(u(e, m - 1, A - 1, d), u(e, m - 1, A, d - 1), u(e, m - 1, A - 1, d - 1)),
-                        V = 4 * (m * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + A * n.a.CHUNK_SIZE + d);
-                    T[V] = B, T[V + 1] = w, T[V + 2] = Y, T[V + 3] = K
+                if (C && !l(e, d - 1, N, f) || !C && c(e, d - 1, N, f)) {
+                    var W = s(u(e, d - 1, N, f - 1), u(e, d - 1, N + 1, f), u(e, d - 1, N + 1, f - 1)),
+                        V = s(u(e, d - 1, N + 1, f), u(e, d - 1, N, f + 1), u(e, d - 1, N + 1, f + 1)),
+                        j = s(u(e, d - 1, N, f + 1), u(e, d - 1, N - 1, f), u(e, d - 1, N - 1, f + 1)),
+                        Z = s(u(e, d - 1, N - 1, f), u(e, d - 1, N, f - 1), u(e, d - 1, N - 1, f - 1)),
+                        z = 4 * (d * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + N * n.a.CHUNK_SIZE + f);
+                    M[z] = W, M[z + 1] = V, M[z + 2] = j, M[z + 3] = Z
                 }
-                if (N && !_(e, m, A, d + 1) || !N && c(e, m, A, d + 1)) {
-                    var W = s(u(e, m - 1, A, d + 1), u(e, m, A + 1, d + 1), u(e, m - 1, A + 1, d + 1)),
-                        j = s(u(e, m, A + 1, d + 1), u(e, m + 1, A, d + 1), u(e, m + 1, A + 1, d + 1)),
-                        Z = s(u(e, m + 1, A, d + 1), u(e, m, A - 1, d + 1), u(e, m + 1, A - 1, d + 1)),
-                        z = s(u(e, m, A - 1, d + 1), u(e, m - 1, A, d + 1), u(e, m - 1, A - 1, d + 1)),
-                        X = 4 * (m * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + A * n.a.CHUNK_SIZE + d);
-                    M[X] = W, M[X + 1] = j, M[X + 2] = Z, M[X + 3] = z
+                if (C && !l(e, d, N, f + 1) || !C && c(e, d, N, f + 1)) {
+                    var X = s(u(e, d - 1, N, f + 1), u(e, d, N + 1, f + 1), u(e, d - 1, N + 1, f + 1)),
+                        q = s(u(e, d, N + 1, f + 1), u(e, d + 1, N, f + 1), u(e, d + 1, N + 1, f + 1)),
+                        J = s(u(e, d + 1, N, f + 1), u(e, d, N - 1, f + 1), u(e, d + 1, N - 1, f + 1)),
+                        Q = s(u(e, d, N - 1, f + 1), u(e, d - 1, N, f + 1), u(e, d - 1, N - 1, f + 1)),
+                        $ = 4 * (d * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + N * n.a.CHUNK_SIZE + f);
+                    m[$] = X, m[$ + 1] = q, m[$ + 2] = J, m[$ + 3] = Q
                 }
-                if (N && !_(e, m, A, d - 1) || !N && c(e, m, A, d - 1)) {
-                    var q = s(u(e, m + 1, A, d - 1), u(e, m, A + 1, d - 1), u(e, m + 1, A + 1, d - 1)),
-                        J = s(u(e, m, A + 1, d - 1), u(e, m - 1, A, d - 1), u(e, m - 1, A + 1, d - 1)),
-                        Q = s(u(e, m - 1, A, d - 1), u(e, m, A - 1, d - 1), u(e, m - 1, A - 1, d - 1)),
-                        $ = s(u(e, m, A - 1, d - 1), u(e, m + 1, A, d - 1), u(e, m + 1, A - 1, d - 1)),
-                        ee = 4 * (m * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + A * n.a.CHUNK_SIZE + d);
-                    h[ee] = q, h[ee + 1] = J, h[ee + 2] = Q, h[ee + 3] = $
+                if (C && !l(e, d, N, f - 1) || !C && c(e, d, N, f - 1)) {
+                    var ee = s(u(e, d + 1, N, f - 1), u(e, d, N + 1, f - 1), u(e, d + 1, N + 1, f - 1)),
+                        te = s(u(e, d, N + 1, f - 1), u(e, d - 1, N, f - 1), u(e, d - 1, N + 1, f - 1)),
+                        ae = s(u(e, d - 1, N, f - 1), u(e, d, N - 1, f - 1), u(e, d - 1, N - 1, f - 1)),
+                        ne = s(u(e, d, N - 1, f - 1), u(e, d + 1, N, f - 1), u(e, d + 1, N - 1, f - 1)),
+                        re = 4 * (d * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + N * n.a.CHUNK_SIZE + f);
+                    A[re] = ee, A[re + 1] = te, A[re + 2] = ae, A[re + 3] = ne
                 }
             }
-            for (var te = 0; te < n.a.CHUNK_SIZE; te++) for (var ae = 0; ae < n.a.CHUNK_SIZE; ae++) for (var ne = 0; ne < n.a.CHUNK_SIZE; ne++) {
-                var re = ae, oe = te, ie = ne, se = t, ue = a, ce = r, _e = i;
-                _(e, ae, te, ne) || (se = l, ue = S, ce = O, _e = I);
-                var le = 4 * (ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + ne),
-                    Se = e.blocks[ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + ne], Oe = p[le];
-                if (0 !== Oe) {
-                    for (var Ie = p[le + 1], pe = p[le + 2], Ee = p[le + 3], Re = 1, Te = 1, Me = ne + 1; Me < n.a.CHUNK_SIZE; Me++) {
-                        var he = 4 * (ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + Me),
-                            me = e.blocks[ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + Me];
-                        if (0 !== p[he] || Se !== me || Oe !== p[he] || Ie !== p[he + 1] || pe !== p[he + 2] || Ee !== p[he + 3]) break;
-                        ++Re
+            for (var oe = 0; oe < n.a.CHUNK_SIZE; oe++) for (var ie = 0; ie < n.a.CHUNK_SIZE; ie++) for (var se = 0; se < n.a.CHUNK_SIZE; se++) {
+                var ue = ie, ce = oe, _e = se, le = t, Se = a, Oe = i, Ie = S;
+                l(e, ie, oe, se) || (le = O, Se = I, Oe = p, Ie = E);
+                var pe = 4 * (ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + se),
+                    Ee = e.blocks[ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + se],
+                    Re = Ee !== r.a.WATER || _(e, ie, oe + 1, se) ? 6 : 5, Te = R[pe];
+                if (0 !== Te) {
+                    for (var he = R[pe + 1], Me = R[pe + 2], me = R[pe + 3], Ae = 1, de = 1, Ne = se + 1; Ne < n.a.CHUNK_SIZE; Ne++) {
+                        var fe = 4 * (ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + Ne),
+                            Ce = e.blocks[ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + Ne],
+                            Le = Ce !== r.a.WATER || _(e, ie, oe + 1, Ne) ? 6 : 5;
+                        if (0 === R[fe] || Ee !== Ce || Re !== Le || Te !== R[fe] || he !== R[fe + 1] || Me !== R[fe + 2] || me !== R[fe + 3]) break;
+                        ++Ae
                     }
-                    for (var Ae = !0, de = ae + 1; de < n.a.CHUNK_SIZE && Ae; de++) {
-                        Ae = !0;
-                        for (var Ne = ne; Ne < ne + Re; Ne++) {
-                            var fe = 4 * (de * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + Ne),
-                                Ce = e.blocks[de * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + Ne];
-                            if (0 !== p[fe] || Se !== Ce || Oe !== p[fe] || Ie !== p[fe + 1] || pe !== p[fe + 2] || Ee !== p[fe + 3]) {
-                                Ae = !1;
+                    for (var ye = !0, ge = ie + 1; ge < n.a.CHUNK_SIZE && ye; ge++) {
+                        ye = !0;
+                        for (var Ue = se; Ue < se + Ae; Ue++) {
+                            var Pe = 4 * (ge * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + Ue),
+                                ve = e.blocks[ge * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + Ue],
+                                Fe = ve !== r.a.WATER || _(e, ge, oe + 1, Ue) ? 6 : 5;
+                            if (0 === R[Pe] || Ee !== ve || Re !== Fe || Te !== R[Pe] || he !== R[Pe + 1] || Me !== R[Pe + 2] || me !== R[Pe + 3]) {
+                                ye = !1;
                                 break
                             }
                         }
-                        Ae && ++Te
+                        ye && ++de
                     }
-                    for (var Le = ae; Le < ae + Te; Le++) for (var ye = ne; ye < ne + Re; ye++) p[4 * (Le * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + ye)] = 0;
-                    se.push(re + 1 + (Te - 1), oe + 1, ie + 1 + (Re - 1)), se.push(re, oe + 1, ie + 1 + (Re - 1)), se.push(re, oe + 1, ie), se.push(re + 1 + (Te - 1), oe + 1, ie), ce.push(Oe, Ie, pe, Ee), Oe + pe < Ie + Ee ? (ue.push(se.length / 3 - 3, se.length / 3 - 4, se.length / 3 - 1), ue.push(se.length / 3 - 1, se.length / 3 - 2, se.length / 3 - 3)) : (ue.push(se.length / 3 - 4, se.length / 3 - 1, se.length / 3 - 2), ue.push(se.length / 3 - 2, se.length / 3 - 3, se.length / 3 - 4));
-                    var Ue = o.a[Se].textures.top;
-                    _e.push(Ue.x, Ue.y, 0, Re), _e.push(Ue.x, Ue.y, Te, Re), _e.push(Ue.x, Ue.y, Te, 0), _e.push(Ue.x, Ue.y, 0, 0)
+                    for (var Ge = ie; Ge < ie + de; Ge++) for (var He = se; He < se + Ae; He++) R[4 * (Ge * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + He)] = 0;
+                    le.push(6 * (ue + 1 + (de - 1)), 6 * ce + Re, 6 * (_e + 1 + (Ae - 1))), le.push(6 * ue, 6 * ce + Re, 6 * (_e + 1 + (Ae - 1))), le.push(6 * ue, 6 * ce + Re, 6 * _e), le.push(6 * (ue + 1 + (de - 1)), 6 * ce + Re, 6 * _e), Oe.push(Te, he, Me, me), Te + Me < he + me ? (Se.push(le.length / 3 - 3, le.length / 3 - 4, le.length / 3 - 1), Se.push(le.length / 3 - 1, le.length / 3 - 2, le.length / 3 - 3)) : (Se.push(le.length / 3 - 4, le.length / 3 - 1, le.length / 3 - 2), Se.push(le.length / 3 - 2, le.length / 3 - 3, le.length / 3 - 4));
+                    var be = o.a[Ee].textures.top;
+                    Ie.push(be.x, be.y, 0, Ae), Ie.push(be.x, be.y, de, Ae), Ie.push(be.x, be.y, de, 0), Ie.push(be.x, be.y, 0, 0)
                 }
-                var ge = E[le];
-                if (0 !== ge) {
-                    for (var Pe = E[le + 1], ve = E[le + 2], Fe = E[le + 3], Ge = 1, He = 1, be = ne + 1; be < n.a.CHUNK_SIZE; be++) {
-                        var xe = 4 * (ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + be),
-                            De = e.blocks[ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + be];
-                        if (0 !== E[xe] || Se !== De || ge !== E[xe] || Pe !== E[xe + 1] || ve !== E[xe + 2] || Fe !== E[xe + 3]) break;
-                        ++Ge
+                var xe = T[pe];
+                if (0 !== xe) {
+                    for (var De = T[pe + 1], ke = T[pe + 2], Be = T[pe + 3], we = 1, Ye = 1, Ke = se + 1; Ke < n.a.CHUNK_SIZE; Ke++) {
+                        var We = 4 * (ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + Ke),
+                            Ve = e.blocks[ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + Ke];
+                        if (0 === T[We] || Ee !== Ve || xe !== T[We] || De !== T[We + 1] || ke !== T[We + 2] || Be !== T[We + 3]) break;
+                        ++we
                     }
-                    for (var ke = !0, Be = ae + 1; Be < n.a.CHUNK_SIZE && ke; Be++) {
-                        ke = !0;
-                        for (var we = ne; we < ne + Ge; we++) {
-                            var Ye = 4 * (Be * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + we),
-                                Ke = e.blocks[Be * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + we];
-                            if (0 !== E[Ye] || Se !== Ke || ge !== E[Ye] || Pe !== E[Ye + 1] || ve !== E[Ye + 2] || Fe !== E[Ye + 3]) {
-                                ke = !1;
+                    for (var je = !0, Ze = ie + 1; Ze < n.a.CHUNK_SIZE && je; Ze++) {
+                        je = !0;
+                        for (var ze = se; ze < se + we; ze++) {
+                            var Xe = 4 * (Ze * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + ze),
+                                qe = e.blocks[Ze * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + ze];
+                            if (0 === T[Xe] || Ee !== qe || xe !== T[Xe] || De !== T[Xe + 1] || ke !== T[Xe + 2] || Be !== T[Xe + 3]) {
+                                je = !1;
                                 break
                             }
                         }
-                        ke && ++He
+                        je && ++Ye
                     }
-                    for (var Ve = ae; Ve < ae + He; Ve++) for (var We = ne; We < ne + Ge; We++) E[4 * (Ve * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + We)] = 0;
-                    se.push(re + 1 + (He - 1), oe, ie), se.push(re, oe, ie), se.push(re, oe, ie + 1 + (Ge - 1)), se.push(re + 1 + (He - 1), oe, ie + 1 + (Ge - 1)), ce.push(ge, Pe, ve, Fe), ge + ve < Pe + Fe ? (ue.push(se.length / 3 - 3, se.length / 3 - 4, se.length / 3 - 1), ue.push(se.length / 3 - 1, se.length / 3 - 2, se.length / 3 - 3)) : (ue.push(se.length / 3 - 4, se.length / 3 - 1, se.length / 3 - 2), ue.push(se.length / 3 - 2, se.length / 3 - 3, se.length / 3 - 4));
-                    var je = o.a[Se].textures.bottom;
-                    _e.push(je.x, je.y, 0, Ge), _e.push(je.x, je.y, He, Ge), _e.push(je.x, je.y, He, 0), _e.push(je.x, je.y, 0, 0)
+                    for (var Je = ie; Je < ie + Ye; Je++) for (var Qe = se; Qe < se + we; Qe++) T[4 * (Je * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + Qe)] = 0;
+                    le.push(6 * (ue + 1 + (Ye - 1)), 6 * ce, 6 * _e), le.push(6 * ue, 6 * ce, 6 * _e), le.push(6 * ue, 6 * ce, 6 * (_e + 1 + (we - 1))), le.push(6 * (ue + 1 + (Ye - 1)), 6 * ce, 6 * (_e + 1 + (we - 1))), Oe.push(xe, De, ke, Be), xe + ke < De + Be ? (Se.push(le.length / 3 - 3, le.length / 3 - 4, le.length / 3 - 1), Se.push(le.length / 3 - 1, le.length / 3 - 2, le.length / 3 - 3)) : (Se.push(le.length / 3 - 4, le.length / 3 - 1, le.length / 3 - 2), Se.push(le.length / 3 - 2, le.length / 3 - 3, le.length / 3 - 4));
+                    var $e = o.a[Ee].textures.bottom;
+                    Ie.push($e.x, $e.y, 0, we), Ie.push($e.x, $e.y, Ye, we), Ie.push($e.x, $e.y, Ye, 0), Ie.push($e.x, $e.y, 0, 0)
                 }
-                var Ze = R[le];
-                if (0 !== Ze) {
-                    for (var ze = R[le + 1], Xe = R[le + 2], qe = R[le + 3], Je = 1, Qe = 1, $e = ne + 1; $e < n.a.CHUNK_SIZE; $e++) {
-                        var et = 4 * (ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + $e),
-                            tt = e.blocks[ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + $e];
-                        if (0 !== R[et] || Se !== tt || Ze !== R[et] || ze !== R[et + 1] || Xe !== R[et + 2] || qe !== R[et + 3]) break;
-                        ++Je
+                var et = h[pe];
+                if (0 !== et) {
+                    for (var tt = h[pe + 1], at = h[pe + 2], nt = h[pe + 3], rt = 1, ot = 1, it = se + 1; it < n.a.CHUNK_SIZE; it++) {
+                        var st = 4 * (ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + it),
+                            ut = e.blocks[ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + it],
+                            ct = ut !== r.a.WATER || _(e, ie, oe + 1, it) ? 6 : 5;
+                        if (0 === h[st] || Ee !== ut || Re !== ct || et !== h[st] || tt !== h[st + 1] || at !== h[st + 2] || nt !== h[st + 3]) break;
+                        ++rt
                     }
-                    for (var at = !0, nt = te + 1; nt < n.a.CHUNK_SIZE && at; nt++) {
-                        at = !0;
-                        for (var rt = ne; rt < ne + Je; rt++) {
-                            var ot = 4 * (ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + nt * n.a.CHUNK_SIZE + rt),
-                                it = e.blocks[ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + nt * n.a.CHUNK_SIZE + rt];
-                            if (0 !== R[ot] || Se !== it || Ze !== R[ot] || ze !== R[ot + 1] || Xe !== R[ot + 2] || qe !== R[ot + 3]) {
-                                at = !1;
+                    for (var _t = !0, lt = oe + 1; lt < n.a.CHUNK_SIZE && _t; lt++) {
+                        _t = !0;
+                        for (var St = se; St < se + rt; St++) {
+                            var Ot = 4 * (ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + lt * n.a.CHUNK_SIZE + St),
+                                It = e.blocks[ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + lt * n.a.CHUNK_SIZE + St],
+                                pt = It !== r.a.WATER || _(e, ie, lt + 1, St) ? 6 : 5;
+                            if (0 === h[Ot] || Ee !== It || Re !== pt || et !== h[Ot] || tt !== h[Ot + 1] || at !== h[Ot + 2] || nt !== h[Ot + 3]) {
+                                _t = !1;
                                 break
                             }
                         }
-                        at && ++Qe
+                        _t && ++ot
                     }
-                    for (var st = te; st < te + Qe; st++) for (var ut = ne; ut < ne + Je; ut++) R[4 * (ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + st * n.a.CHUNK_SIZE + ut)] = 0;
-                    se.push(re + 1, oe + 1 + (Qe - 1), ie + 1 + (Je - 1)), se.push(re + 1, oe + 1 + (Qe - 1), ie), se.push(re + 1, oe, ie), se.push(re + 1, oe, ie + 1 + (Je - 1)), ce.push(Ze, ze, Xe, qe), Ze + Xe < ze + qe ? (ue.push(se.length / 3 - 3, se.length / 3 - 4, se.length / 3 - 1), ue.push(se.length / 3 - 1, se.length / 3 - 2, se.length / 3 - 3)) : (ue.push(se.length / 3 - 4, se.length / 3 - 1, se.length / 3 - 2), ue.push(se.length / 3 - 2, se.length / 3 - 3, se.length / 3 - 4));
-                    var ct = o.a[Se].textures.left;
-                    _e.push(ct.x, ct.y, 0, Qe), _e.push(ct.x, ct.y, Je, Qe), _e.push(ct.x, ct.y, Je, 0), _e.push(ct.x, ct.y, 0, 0)
+                    for (var Et = oe; Et < oe + ot; Et++) for (var Rt = se; Rt < se + rt; Rt++) h[4 * (ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + Et * n.a.CHUNK_SIZE + Rt)] = 0;
+                    le.push(6 * (ue + 1), 6 * (ce + (ot - 1)) + Re, 6 * (_e + 1 + (rt - 1))), le.push(6 * (ue + 1), 6 * (ce + (ot - 1)) + Re, 6 * _e), le.push(6 * (ue + 1), 6 * ce, 6 * _e), le.push(6 * (ue + 1), 6 * ce, 6 * (_e + 1 + (rt - 1))), Oe.push(et, tt, at, nt), et + at < tt + nt ? (Se.push(le.length / 3 - 3, le.length / 3 - 4, le.length / 3 - 1), Se.push(le.length / 3 - 1, le.length / 3 - 2, le.length / 3 - 3)) : (Se.push(le.length / 3 - 4, le.length / 3 - 1, le.length / 3 - 2), Se.push(le.length / 3 - 2, le.length / 3 - 3, le.length / 3 - 4));
+                    var Tt = o.a[Ee].textures.left;
+                    Ie.push(Tt.x, Tt.y, 0, ot), Ie.push(Tt.x, Tt.y, rt, ot), Ie.push(Tt.x, Tt.y, rt, 0), Ie.push(Tt.x, Tt.y, 0, 0)
                 }
-                var _t = T[le];
-                if (0 !== _t) {
-                    for (var lt = T[le + 1], St = T[le + 2], Ot = T[le + 3], It = 1, pt = 1, Et = ne + 1; Et < n.a.CHUNK_SIZE; Et++) {
-                        var Rt = 4 * (ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + Et),
-                            Tt = e.blocks[ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + Et];
-                        if (0 !== T[Rt] || Se !== Tt || _t !== T[Rt] || lt !== T[Rt + 1] || St !== T[Rt + 2] || Ot !== T[Rt + 3]) break;
-                        ++It
+                var ht = M[pe];
+                if (0 !== ht) {
+                    for (var Mt = M[pe + 1], mt = M[pe + 2], At = M[pe + 3], dt = 1, Nt = 1, ft = se + 1; ft < n.a.CHUNK_SIZE; ft++) {
+                        var Ct = 4 * (ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + ft),
+                            Lt = e.blocks[ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + ft],
+                            yt = Lt !== r.a.WATER || _(e, ie, oe + 1, ft) ? 6 : 5;
+                        if (0 === M[Ct] || Ee !== Lt || Re !== yt || ht !== M[Ct] || Mt !== M[Ct + 1] || mt !== M[Ct + 2] || At !== M[Ct + 3]) break;
+                        ++dt
                     }
-                    for (var Mt = !0, ht = te + 1; ht < n.a.CHUNK_SIZE && Mt; ht++) {
-                        Mt = !0;
-                        for (var mt = ne; mt < ne + It; mt++) {
-                            var At = 4 * (ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + ht * n.a.CHUNK_SIZE + mt),
-                                dt = e.blocks[ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + ht * n.a.CHUNK_SIZE + mt];
-                            if (0 !== T[At] || Se !== dt || _t !== T[At] || lt !== T[At + 1] || St !== T[At + 2] || Ot !== T[At + 3]) {
-                                Mt = !1;
+                    for (var gt = !0, Ut = oe + 1; Ut < n.a.CHUNK_SIZE && gt; Ut++) {
+                        gt = !0;
+                        for (var Pt = se; Pt < se + dt; Pt++) {
+                            var vt = 4 * (ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + Ut * n.a.CHUNK_SIZE + Pt),
+                                Ft = e.blocks[ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + Ut * n.a.CHUNK_SIZE + Pt],
+                                Gt = Ft !== r.a.WATER || _(e, ie, Ut + 1, Pt) ? 6 : 5;
+                            if (0 === M[vt] || Ee !== Ft || Re !== Gt || ht !== M[vt] || Mt !== M[vt + 1] || mt !== M[vt + 2] || At !== M[vt + 3]) {
+                                gt = !1;
                                 break
                             }
                         }
-                        Mt && ++pt
+                        gt && ++Nt
                     }
-                    for (var Nt = te; Nt < te + pt; Nt++) for (var ft = ne; ft < ne + It; ft++) T[4 * (ae * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + Nt * n.a.CHUNK_SIZE + ft)] = 0;
-                    se.push(re, oe + 1 + (pt - 1), ie), se.push(re, oe + 1 + (pt - 1), ie + 1 + (It - 1)), se.push(re, oe, ie + 1 + (It - 1)), se.push(re, oe, ie), ce.push(_t, lt, St, Ot), _t + St < lt + Ot ? (ue.push(se.length / 3 - 3, se.length / 3 - 4, se.length / 3 - 1), ue.push(se.length / 3 - 1, se.length / 3 - 2, se.length / 3 - 3)) : (ue.push(se.length / 3 - 4, se.length / 3 - 1, se.length / 3 - 2), ue.push(se.length / 3 - 2, se.length / 3 - 3, se.length / 3 - 4));
-                    var Ct = o.a[Se].textures.right;
-                    _e.push(Ct.x, Ct.y, 0, pt), _e.push(Ct.x, Ct.y, It, pt), _e.push(Ct.x, Ct.y, It, 0), _e.push(Ct.x, Ct.y, 0, 0)
+                    for (var Ht = oe; Ht < oe + Nt; Ht++) for (var bt = se; bt < se + dt; bt++) M[4 * (ie * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + Ht * n.a.CHUNK_SIZE + bt)] = 0;
+                    le.push(6 * ue, 6 * (ce + (Nt - 1)) + Re, 6 * _e), le.push(6 * ue, 6 * (ce + (Nt - 1)) + Re, 6 * (_e + 1 + (dt - 1))), le.push(6 * ue, 6 * ce, 6 * (_e + 1 + (dt - 1))), le.push(6 * ue, 6 * ce, 6 * _e), Oe.push(ht, Mt, mt, At), ht + mt < Mt + At ? (Se.push(le.length / 3 - 3, le.length / 3 - 4, le.length / 3 - 1), Se.push(le.length / 3 - 1, le.length / 3 - 2, le.length / 3 - 3)) : (Se.push(le.length / 3 - 4, le.length / 3 - 1, le.length / 3 - 2), Se.push(le.length / 3 - 2, le.length / 3 - 3, le.length / 3 - 4));
+                    var xt = o.a[Ee].textures.right;
+                    Ie.push(xt.x, xt.y, 0, Nt), Ie.push(xt.x, xt.y, dt, Nt), Ie.push(xt.x, xt.y, dt, 0), Ie.push(xt.x, xt.y, 0, 0)
                 }
-                var Lt = M[le];
-                if (0 !== Lt) {
-                    for (var yt = M[le + 1], Ut = M[le + 2], gt = M[le + 3], Pt = 1, vt = 1, Ft = ae + 1; Ft < n.a.CHUNK_SIZE; Ft++) {
-                        var Gt = 4 * (Ft * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + ne),
-                            Ht = e.blocks[Ft * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + ne];
-                        if (0 !== M[Gt] || Se !== Ht || Lt !== M[Gt] || yt !== M[Gt + 1] || Ut !== M[Gt + 2] || gt !== M[Gt + 3]) break;
-                        ++Pt
+                var Dt = m[pe];
+                if (0 !== Dt) {
+                    for (var kt = m[pe + 1], Bt = m[pe + 2], wt = m[pe + 3], Yt = 1, Kt = 1, Wt = ie + 1; Wt < n.a.CHUNK_SIZE; Wt++) {
+                        var Vt = 4 * (Wt * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + se),
+                            jt = e.blocks[Wt * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + se],
+                            Zt = jt !== r.a.WATER || _(e, Wt, oe + 1, se) ? 6 : 5;
+                        if (0 === m[Vt] || Ee !== jt || Re !== Zt || Dt !== m[Vt] || kt !== m[Vt + 1] || Bt !== m[Vt + 2] || wt !== m[Vt + 3]) break;
+                        ++Yt
                     }
-                    for (var bt = !0, xt = te + 1; xt < n.a.CHUNK_SIZE && bt; xt++) {
-                        bt = !0;
-                        for (var Dt = ae; Dt < ae + Pt; Dt++) {
-                            var kt = 4 * (Dt * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + xt * n.a.CHUNK_SIZE + ne),
-                                Bt = e.blocks[Dt * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + xt * n.a.CHUNK_SIZE + ne];
-                            if (0 !== M[kt] || Se !== Bt || Lt !== M[kt] || yt !== M[kt + 1] || Ut !== M[kt + 2] || gt !== M[kt + 3]) {
-                                bt = !1;
+                    for (var zt = !0, Xt = oe + 1; Xt < n.a.CHUNK_SIZE && zt; Xt++) {
+                        zt = !0;
+                        for (var qt = ie; qt < ie + Yt; qt++) {
+                            var Jt = 4 * (qt * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + Xt * n.a.CHUNK_SIZE + se),
+                                Qt = e.blocks[qt * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + Xt * n.a.CHUNK_SIZE + se],
+                                $t = Qt !== r.a.WATER || _(e, qt, Xt + 1, se) ? 6 : 5;
+                            if (0 === m[Jt] || Ee !== Qt || Re !== $t || Dt !== m[Jt] || kt !== m[Jt + 1] || Bt !== m[Jt + 2] || wt !== m[Jt + 3]) {
+                                zt = !1;
                                 break
                             }
                         }
-                        bt && ++vt
+                        zt && ++Kt
                     }
-                    for (var wt = te; wt < te + vt; wt++) for (var Yt = ae; Yt < ae + Pt; Yt++) M[4 * (Yt * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + wt * n.a.CHUNK_SIZE + ne)] = 0;
-                    se.push(re, oe + 1 + (vt - 1), ie + 1), se.push(re + 1 + (Pt - 1), oe + 1 + (vt - 1), ie + 1), se.push(re + 1 + (Pt - 1), oe, ie + 1), se.push(re, oe, ie + 1), ce.push(Lt, yt, Ut, gt), Lt + Ut < yt + gt ? (ue.push(se.length / 3 - 3, se.length / 3 - 4, se.length / 3 - 1), ue.push(se.length / 3 - 1, se.length / 3 - 2, se.length / 3 - 3)) : (ue.push(se.length / 3 - 4, se.length / 3 - 1, se.length / 3 - 2), ue.push(se.length / 3 - 2, se.length / 3 - 3, se.length / 3 - 4));
-                    var Kt = o.a[Se].textures.front;
-                    _e.push(Kt.x, Kt.y, 0, vt), _e.push(Kt.x, Kt.y, Pt, vt), _e.push(Kt.x, Kt.y, Pt, 0), _e.push(Kt.x, Kt.y, 0, 0)
+                    for (var ea = oe; ea < oe + Kt; ea++) for (var ta = ie; ta < ie + Yt; ta++) m[4 * (ta * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + ea * n.a.CHUNK_SIZE + se)] = 0;
+                    le.push(6 * ue, 6 * (ce + (Kt - 1)) + Re, 6 * (_e + 1)), le.push(6 * (ue + 1 + (Yt - 1)), 6 * (ce + (Kt - 1)) + Re, 6 * (_e + 1)), le.push(6 * (ue + 1 + (Yt - 1)), 6 * ce, 6 * (_e + 1)), le.push(6 * ue, 6 * ce, 6 * (_e + 1)), Oe.push(Dt, kt, Bt, wt), Dt + Bt < kt + wt ? (Se.push(le.length / 3 - 3, le.length / 3 - 4, le.length / 3 - 1), Se.push(le.length / 3 - 1, le.length / 3 - 2, le.length / 3 - 3)) : (Se.push(le.length / 3 - 4, le.length / 3 - 1, le.length / 3 - 2), Se.push(le.length / 3 - 2, le.length / 3 - 3, le.length / 3 - 4));
+                    var aa = o.a[Ee].textures.front;
+                    Ie.push(aa.x, aa.y, 0, Kt), Ie.push(aa.x, aa.y, Yt, Kt), Ie.push(aa.x, aa.y, Yt, 0), Ie.push(aa.x, aa.y, 0, 0)
                 }
-                var Vt = h[le];
-                if (0 !== Vt) {
-                    for (var Wt = h[le + 1], jt = h[le + 2], Zt = h[le + 3], zt = 1, Xt = 1, qt = ae + 1; qt < n.a.CHUNK_SIZE; qt++) {
-                        var Jt = 4 * (qt * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + ne),
-                            Qt = e.blocks[qt * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + te * n.a.CHUNK_SIZE + ne];
-                        if (0 !== h[Jt] || Se !== Qt || Vt !== h[Jt] || Wt !== h[Jt + 1] || jt !== h[Jt + 2] || Zt !== h[Jt + 3]) break;
-                        ++zt
+                var na = A[pe];
+                if (0 !== na) {
+                    for (var ra = A[pe + 1], oa = A[pe + 2], ia = A[pe + 3], sa = 1, ua = 1, ca = ie + 1; ca < n.a.CHUNK_SIZE; ca++) {
+                        var _a = 4 * (ca * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + se),
+                            la = e.blocks[ca * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + oe * n.a.CHUNK_SIZE + se],
+                            Sa = la !== r.a.WATER || _(e, ca, oe + 1, se) ? 6 : 5;
+                        if (0 === A[_a] || Ee !== la || Re !== Sa || na !== A[_a] || ra !== A[_a + 1] || oa !== A[_a + 2] || ia !== A[_a + 3]) break;
+                        ++sa
                     }
-                    for (var $t = !0, ea = te + 1; ea < n.a.CHUNK_SIZE && $t; ea++) {
-                        $t = !0;
-                        for (var ta = ae; ta < ae + zt; ta++) {
-                            var aa = 4 * (ta * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + ea * n.a.CHUNK_SIZE + ne),
-                                na = e.blocks[ta * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + ea * n.a.CHUNK_SIZE + ne];
-                            if (0 !== h[aa] || Se !== na || Vt !== h[aa] || Wt !== h[aa + 1] || jt !== h[aa + 2] || Zt !== h[aa + 3]) {
-                                $t = !1;
+                    for (var Oa = !0, Ia = oe + 1; Ia < n.a.CHUNK_SIZE && Oa; Ia++) {
+                        Oa = !0;
+                        for (var pa = ie; pa < ie + sa; pa++) {
+                            var Ea = 4 * (pa * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + Ia * n.a.CHUNK_SIZE + se),
+                                Ra = e.blocks[pa * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + Ia * n.a.CHUNK_SIZE + se],
+                                Ta = Ra !== r.a.WATER || _(e, pa, Ia + 1, se) ? 6 : 5;
+                            if (0 === A[Ea] || Ee !== Ra || Re !== Ta || na !== A[Ea] || ra !== A[Ea + 1] || oa !== A[Ea + 2] || ia !== A[Ea + 3]) {
+                                Oa = !1;
                                 break
                             }
                         }
-                        $t && ++Xt
+                        Oa && ++ua
                     }
-                    for (var ra = te; ra < te + Xt; ra++) for (var oa = ae; oa < ae + zt; oa++) h[4 * (oa * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + ra * n.a.CHUNK_SIZE + ne)] = 0;
-                    se.push(re + 1 + (zt - 1), oe + 1 + (Xt - 1), ie), se.push(re, oe + 1 + (Xt - 1), ie), se.push(re, oe, ie), se.push(re + 1 + (zt - 1), oe, ie), ce.push(Vt, Wt, jt, Zt), Vt + jt < Wt + Zt ? (ue.push(se.length / 3 - 3, se.length / 3 - 4, se.length / 3 - 1), ue.push(se.length / 3 - 1, se.length / 3 - 2, se.length / 3 - 3)) : (ue.push(se.length / 3 - 4, se.length / 3 - 1, se.length / 3 - 2), ue.push(se.length / 3 - 2, se.length / 3 - 3, se.length / 3 - 4));
-                    var ia = o.a[Se].textures.back;
-                    _e.push(ia.x, ia.y, 0, Xt), _e.push(ia.x, ia.y, zt, Xt), _e.push(ia.x, ia.y, zt, 0), _e.push(ia.x, ia.y, 0, 0)
+                    for (var ha = oe; ha < oe + ua; ha++) for (var Ma = ie; Ma < ie + sa; Ma++) A[4 * (Ma * n.a.CHUNK_SIZE * n.a.CHUNK_SIZE + ha * n.a.CHUNK_SIZE + se)] = 0;
+                    le.push(6 * (ue + 1 + (sa - 1)), 6 * (ce + (ua - 1)) + Re, 6 * _e), le.push(6 * ue, 6 * (ce + (ua - 1)) + Re, 6 * _e), le.push(6 * ue, 6 * ce, 6 * _e), le.push(6 * (ue + 1 + (sa - 1)), 6 * ce, 6 * _e), Oe.push(na, ra, oa, ia), na + oa < ra + ia ? (Se.push(le.length / 3 - 3, le.length / 3 - 4, le.length / 3 - 1), Se.push(le.length / 3 - 1, le.length / 3 - 2, le.length / 3 - 3)) : (Se.push(le.length / 3 - 4, le.length / 3 - 1, le.length / 3 - 2), Se.push(le.length / 3 - 2, le.length / 3 - 3, le.length / 3 - 4));
+                    var ma = o.a[Ee].textures.back;
+                    Ie.push(ma.x, ma.y, 0, ua), Ie.push(ma.x, ma.y, sa, ua), Ie.push(ma.x, ma.y, sa, 0), Ie.push(ma.x, ma.y, 0, 0)
                 }
             }
             return {
                 version: e.version,
                 opaqueVertices: new Uint8Array(t),
                 opaqueIndices: new Uint16Array(a),
-                opaqueAos: new Uint8Array(r),
-                opaqueUvs: new Uint8Array(i),
-                alphaVertices: new Uint8Array(l),
-                alphaIndices: new Uint16Array(S),
-                alphaAos: new Uint8Array(O),
-                alphaUvs: new Uint8Array(I),
+                opaqueAos: new Uint8Array(i),
+                opaqueUvs: new Uint8Array(S),
+                alphaVertices: new Uint8Array(O),
+                alphaIndices: new Uint16Array(I),
+                alphaAos: new Uint8Array(p),
+                alphaUvs: new Uint8Array(E),
                 chunkPos: e.chunkPos
             }
         }
@@ -6065,7 +6081,7 @@ function getHead(a, aY = 0) {
     }, 153: function (e, t, a) {
         "use strict";
         a.d(t, "a", (function () {
-            return h
+            return M
         })), a.d(t, "b", (function () {
             return f
         }));
@@ -6259,11 +6275,11 @@ function getHead(a, aY = 0) {
             if ("undefined" == typeof Symbol || null == e[Symbol.iterator]) {
                 if (Array.isArray(e) || (a = function (e, t) {
                     if (!e) return;
-                    if ("string" == typeof e) return M(e, t);
+                    if ("string" == typeof e) return h(e, t);
                     var a = Object.prototype.toString.call(e).slice(8, -1);
                     "Object" === a && e.constructor && (a = e.constructor.name);
                     if ("Map" === a || "Set" === a) return Array.from(e);
-                    if ("Arguments" === a || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(a)) return M(e, t)
+                    if ("Arguments" === a || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(a)) return h(e, t)
                 }(e)) || t && e && "number" == typeof e.length) {
                     a && (e = a);
                     var n = 0;
@@ -6276,13 +6292,13 @@ function getHead(a, aY = 0) {
             return (a = e[Symbol.iterator]()).next.bind(a)
         }
 
-        function M(e, t) {
+        function h(e, t) {
             (null == t || t > e.length) && (t = e.length);
             for (var a = 0, n = new Array(t); a < t; a++) n[a] = e[a];
             return n
         }
 
-        var h, m = function () {
+        var M, m = function () {
             function e(e) {
                 this._playerState = e, this._cooldowns = void 0, this._cooldowns = new Map
             }
@@ -6317,10 +6333,10 @@ function getHead(a, aY = 0) {
         }(), A = a(26), d = a(34), N = a(95);
         !function (e) {
             e[e.BLOCK = 0] = "BLOCK", e[e.WALL = 1] = "WALL", e[e.STAIRS = 2] = "STAIRS"
-        }(h || (h = {}));
+        }(M || (M = {}));
         var f = function () {
             function e(e, t) {
-                void 0 === t && (t = !1), this._controls = e, window.controls = e, this.inventory = void 0, this.physicsStep = void 0, this.inventoryStatus = void 0, this.cooldownManager = void 0, this.maxHealth = void 0, this.health = void 0, this.maxShield = void 0, this.shield = void 0, this.buildMode = void 0, t || (this.inventory = new O(this, this._controls, A.a.PLAYER_INVENTORY_HOT_SLOTS_COUNT, A.a.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT, A.a.PLAYER_INVENTORY_AMMO_SLOTS_COUNT, 0), this.physicsStep = {
+                void 0 === t && (t = !1), this._controls = e, this.inventory = void 0, this.physicsStep = void 0, this.inventoryStatus = void 0, this.cooldownManager = void 0, this.maxHealth = void 0, this.health = void 0, this.maxShield = void 0, this.shield = void 0, this.buildMode = void 0, t || (this.inventory = new O(this, this._controls, A.a.PLAYER_INVENTORY_HOT_SLOTS_COUNT, A.a.PLAYER_INVENTORY_STORAGE_SLOTS_COUNT, A.a.PLAYER_INVENTORY_AMMO_SLOTS_COUNT, 0), this.physicsStep = {
                     aimSpread: 0,
                     pos: Object(d.l)(0, 0, 0),
                     vel: Object(d.l)(0, 0, 0),
@@ -6329,7 +6345,7 @@ function getHead(a, aY = 0) {
                     controlState: N.a.WALKING,
                     eyeHeight: A.a.PLAYER_STANDING_EYE_POSITION,
                     seqId: 0
-                }, this.inventoryStatus = p.a.CLOSED, this.cooldownManager = new m(this), this.maxHealth = 100, this.health = 100, this.maxShield = 100, this.shield = 0, this.buildMode = h.BLOCK)
+                }, this.inventoryStatus = p.a.CLOSED, this.cooldownManager = new m(this), this.maxHealth = 100, this.health = 100, this.maxShield = 100, this.shield = 0, this.buildMode = M.BLOCK)
             }
 
             return e.prototype.clone = function () {
@@ -6596,20 +6612,20 @@ function getHead(a, aY = 0) {
             O = a.p + "./15794feccd351fad55fa0a4a109d1c9d.glb", I = a.p + "./4152242d7f636e008173e7f79ed94efa.glb",
             p = a.p + "./763d90dc5c132c61a422ca8a7e1afcbd.glb", E = a.p + "./60bbe24fec613b918eef2f9bb80ad636.glb",
             R = a.p + "./bcfae87d727e8f1cb43397e1054a4897.glb", T = a.p + "./66bc63f7960b146016cb8170a0ffb9ff.glb",
-            M = a.p + "./04fe2d49db63ef59152ff230f6660fc8.glb", h = a.p + "./3d612eaa82686e76ccafefa49e85256e.glb",
+            h = a.p + "./04fe2d49db63ef59152ff230f6660fc8.glb", M = a.p + "./3d612eaa82686e76ccafefa49e85256e.glb",
             m = a.p + "./d8df63da9e45108675a41b38eef361af.glb", A = a.p + "./974fa615818f1264ee48299d699bd2d2.glb",
             d = a.p + "./923579922f3e53903600c6cb3342e39b.glb", N = a.p + "./4d5b3face2d43e4618cbe7fb9a52a72c.glb",
             f = a.p + "./e722cb9c4e976275d1e65109271428dd.glb", C = a.p + "./e17b91cd072134478dd3891d5692f0c3.glb",
             L = a.p + "./b01bc7fcc51ba3c76e5b66a3ea098b62.glb", y = a.p + "./891765e13921091a27b3aabee043bdf1.glb",
-            U = a.p + "./18488d50a9f94fcfbdaecca802ea2148.glb", g = a.p + "./dde97a7519c3c3be0cddfb93755d81f5.glb",
+            g = a.p + "./18488d50a9f94fcfbdaecca802ea2148.glb", U = a.p + "./dde97a7519c3c3be0cddfb93755d81f5.glb",
             P = a.p + "./da67981105affb2d850414be59ca4902.glb", v = a.p + "./c748cbbdc9e606823e7b28c0766369d5.png",
             F = a.p + "./9dee299578d18320fc6a4a332675d34c.png", G = a.p + "./40408ca788bcb5ecb47fbf0c9a78e604.png",
             H = a.p + "./9f977a495fe470d0948d001b108c081d.png", b = a.p + "./e35309fbe27404d57e650f3cd3dc56f2.png",
             x = a.p + "./465313a256767092009091f3a42b0042.png", D = a.p + "./b3730d3a4ada0385345c6129352d6d94.png",
             k = a.p + "./81f25a3ba3bb288e9d8cdc33e041f736.png", B = a.p + "./dda71faa451824b0e807149987ffec49.png",
             w = a.p + "./7507e68e4bd6e3ea4fbeaf85ec62e5a6.png", Y = a.p + "./5780fbcd69df8a4b4f346c36a42ed1bb.png",
-            K = a.p + "./662aed91c0da138b3ef815328c6bbf14.png", V = a(154),
-            W = a.p + "./699b50a69e713773e0473b25548b2cdb.png", j = a.p + "./2f5d29d478f5b1185b2745e03bd28c8c.png",
+            K = a.p + "./662aed91c0da138b3ef815328c6bbf14.png", W = a(154),
+            V = a.p + "./699b50a69e713773e0473b25548b2cdb.png", j = a.p + "./2f5d29d478f5b1185b2745e03bd28c8c.png",
             Z = a.p + "./f1e1d5c140a833c03238e48294c52c75.png", z = a.p + "./06a024fd442b2caa2311b2ad9e6e0d52.png",
             X = a.p + "./76802f61b49ee84c1fcf3219fd1ddea7.png", q = a.p + "./4f450fe2ed59d2b94f95a281016d567d.png",
             J = a(155), Q = a.p + "./d4fbd71d97f1b6c994377b94db746034.png",
@@ -6623,21 +6639,21 @@ function getHead(a, aY = 0) {
             Oe = a.p + "./3bfbe658a01f8e7d25413994fa304d57.mp3", Ie = a.p + "./8e9752c6ad1ba4db602b8ef21df59c8d.mp3",
             pe = a.p + "./2811cf3d28a8d982604b605a69eb8961.mp3", Ee = a.p + "./c9ca7f3e767732b448088b3e891e2e7a.mp3",
             Re = a.p + "./d90c3c257dcc201e24b8e68e3f2fdfbe.mp3", Te = a.p + "./e7616066887b250c68b8bac4519a5814.mp3",
-            Me = a.p + "./6703ab7ff699b742855a3d41e84d393c.mp3", he = a.p + "./8b4a4d0415a14ec1c57cc8432ce58f48.mp3",
+            he = a.p + "./6703ab7ff699b742855a3d41e84d393c.mp3", Me = a.p + "./8b4a4d0415a14ec1c57cc8432ce58f48.mp3",
             me = a.p + "./890ea36ef994e8134fcbc2489a84d325.mp3", Ae = a.p + "./1e3340a23f3a726adca8dee36c9769c1.mp3",
             de = a.p + "./aece9921174da3987d2891a282e65957.mp3", Ne = a.p + "./583b98c032ae65bed41f639a03e1f6a6.mp3",
             fe = a.p + "./f9c49ba25787d9e762970ac835df1c8d.mp3", Ce = a.p + "./6a4b8238bbec678b0d0f6c2eb24d5888.mp3",
             Le = a.p + "./d2d22d03aeb0a291572956ed15b1f4f1.mp3", ye = a.p + "./29ec46edb3c12c503c44d90f74ba4436.mp3",
-            Ue = a.p + "./018b5cd865aae938df77b2aa937783e1.mp3", ge = a.p + "./ca6abde304978d864399460f05256f78.mp3",
+            ge = a.p + "./018b5cd865aae938df77b2aa937783e1.mp3", Ue = a.p + "./ca6abde304978d864399460f05256f78.mp3",
             Pe = a.p + "./d6b8a21b792cccbc6334a9afff700e40.mp3", ve = a(156), Fe = a(21);
         !function (e) {
             e[e.ITEM_MODEL = 0] = "ITEM_MODEL", e[e.MISC_MODEL = 1] = "MISC_MODEL"
         }(n || (n = {}));
         var Ge = n, He = a(89), be = a(84), xe = a(82), De = a(83), ke = a(85), Be = a(157), we = a(158), Ye = a(86),
-            Ke = a(102), Ve = a(119), We = new (function () {
+            Ke = a(102), We = a(119), Ve = new (function () {
                 function e() {
                     var e, t;
-                    this._settings = void 0, this._gltfLoader = void 0, this._textureLoader = void 0, this._audioLoader = void 0, this._blockTexture = void 0, this._soldierGreenTexture = void 0, this._soldierRedTexture = void 0, this._soldierBlueTexture = void 0, this._damageIndicatorTexture = void 0, this._muzzleFlashTexture = void 0, this._toxicCircleTexture = void 0, this._itemGlowTexture = void 0, this._playerModel = void 0, this._playerWalkAnimation = void 0, this._playerCursorTexture = void 0, this._crateModel = void 0, this._crateOpenAnimation = void 0, this._playerCrouchAnimation = void 0, this._playerWalkUpAnimation = void 0, this._playerFreeFallingUpAnimation = void 0, this._playerFreeFallingDownAnimation = void 0, this._playerGlideAnimation = void 0, this._playerWalkForwardAnimation = void 0, this._playerWalkDownAnimation = void 0, this._playerCrouchUpAnimation = void 0, this._playerCrouchForwardAnimation = void 0, this._playerCrouchDownAnimation = void 0, this._playerWalkUpBlockAnimation = void 0, this._playerWalkForwardBlockAnimation = void 0, this._playerWalkDownBlockAnimation = void 0, this._playerCrouchUpBlockAnimation = void 0, this._playerCrouchForwardBlockAnimation = void 0, this._playerCrouchDownBlockAnimation = void 0, this._playerWalkUpFistAnimation = void 0, this._playerWalkForwardFistAnimation = void 0, this._playerWalkDownFistAnimation = void 0, this._playerCrouchUpFistAnimation = void 0, this._playerCrouchForwardFistAnimation = void 0, this._playerCrouchDownFistAnimation = void 0, this._playerFirstPersonModel = void 0, this._playerFirstPersonItemHoldAnimation = void 0, this._playerFirstPersonBlockHoldAnimation = void 0, this._playerFirstPersonFistAnimation = void 0, this._loaded = void 0, this._onDemandTextureCache = void 0, this._crateAOTexture = void 0, this._surgeAssaultRifleAOTexture = void 0, this._magnumPistolAOTexture = void 0, this._compactSubmachineGunAOTexture = void 0, this._combatAssaultRifleAOTexture = void 0, this._tacticalAssaultRifleAOTexture = void 0, this._strikePistolAOTexture = void 0, this._burstShotgunAOTexture = void 0, this._lightSubmachineGunAOTexture = void 0, this._lightSniperRifleAOTexture = void 0, this._heavySniperRifleAOTexture = void 0, this._shovelAOTexture = void 0, this._modelsToLoad = void 0, this._itemModels = void 0, this._miscModels = void 0, this._soundsToLoad = void 0, this._sounds = void 0, this._itemIcons = void 0, this._sprayImages = void 0, this._gltfLoader = new l.a, this._audioLoader = new _.g, this._textureLoader = new _.Ib, this._loaded = !1, this._onDemandTextureCache = {}, this._modelsToLoad = ((e = {})[f] = [{
+                    this._settings = void 0, this._gltfLoader = void 0, this._textureLoader = void 0, this._audioLoader = void 0, this._blockTexture = void 0, this._soldierGreenTexture = void 0, this._soldierRedTexture = void 0, this._soldierBlueTexture = void 0, this._damageIndicatorTexture = void 0, this._muzzleFlashTexture = void 0, this._toxicCircleTexture = void 0, this._itemGlowTexture = void 0, this._playerModel = void 0, this._playerWalkAnimation = void 0, this._playerCursorTexture = void 0, this._crateModel = void 0, this._crateOpenAnimation = void 0, this._playerCrouchAnimation = void 0, this._playerWalkUpAnimation = void 0, this._playerFreeFallingUpAnimation = void 0, this._playerFreeFallingDownAnimation = void 0, this._playerGlideAnimation = void 0, this._playerWalkForwardAnimation = void 0, this._playerWalkDownAnimation = void 0, this._playerCrouchUpAnimation = void 0, this._playerCrouchForwardAnimation = void 0, this._playerCrouchDownAnimation = void 0, this._playerWalkUpBlockAnimation = void 0, this._playerWalkForwardBlockAnimation = void 0, this._playerWalkDownBlockAnimation = void 0, this._playerCrouchUpBlockAnimation = void 0, this._playerCrouchForwardBlockAnimation = void 0, this._playerCrouchDownBlockAnimation = void 0, this._playerWalkUpFistAnimation = void 0, this._playerWalkForwardFistAnimation = void 0, this._playerWalkDownFistAnimation = void 0, this._playerCrouchUpFistAnimation = void 0, this._playerCrouchForwardFistAnimation = void 0, this._playerCrouchDownFistAnimation = void 0, this._playerFirstPersonModel = void 0, this._playerFirstPersonItemHoldAnimation = void 0, this._playerFirstPersonBlockHoldAnimation = void 0, this._playerFirstPersonFistAnimation = void 0, this._loaded = void 0, this._onDemandTextureCache = void 0, this._crateAOTexture = void 0, this._surgeAssaultRifleAOTexture = void 0, this._magnumPistolAOTexture = void 0, this._compactSubmachineGunAOTexture = void 0, this._combatAssaultRifleAOTexture = void 0, this._tacticalAssaultRifleAOTexture = void 0, this._strikePistolAOTexture = void 0, this._burstShotgunAOTexture = void 0, this._lightSubmachineGunAOTexture = void 0, this._lightSniperRifleAOTexture = void 0, this._heavySniperRifleAOTexture = void 0, this._shovelAOTexture = void 0, this._modelsToLoad = void 0, this._itemModels = void 0, this._miscModels = void 0, this._soundsToLoad = void 0, this._sounds = void 0, this._itemIcons = void 0, this._sprayImages = void 0, this._numLoadingStepsFinished = 0, this._gltfLoader = new l.a, this._audioLoader = new _.g, this._textureLoader = new _.Ib, this._loaded = !1, this._onDemandTextureCache = {}, this._modelsToLoad = ((e = {})[f] = [{
                         type: Ge.ITEM_MODEL,
                         id: Fe.a.SHOVEL_COMMON
                     }], e[p] = [{type: Ge.ITEM_MODEL, id: Fe.a.COMBAT_ASSAULT_RIFLE_COMMON}], e[E] = [{
@@ -6646,7 +6662,7 @@ function getHead(a, aY = 0) {
                     }], e[R] = [{type: Ge.ITEM_MODEL, id: Fe.a.SURGE_ASSAULT_RIFLE_COMMON}], e[T] = [{
                         type: Ge.ITEM_MODEL,
                         id: Fe.a.STRIKE_PISTOL_COMMON
-                    }], e[M] = [{type: Ge.ITEM_MODEL, id: Fe.a.BURST_SHOTGUN_COMMON}], e[h] = [{
+                    }], e[h] = [{type: Ge.ITEM_MODEL, id: Fe.a.BURST_SHOTGUN_COMMON}], e[M] = [{
                         type: Ge.ITEM_MODEL,
                         id: Fe.a.LIGHT_SUBMACHINE_GUN_COMMON
                     }], e[m] = [{
@@ -6711,11 +6727,11 @@ function getHead(a, aY = 0) {
                         type: Ge.ITEM_MODEL,
                         id: Fe.a.ORANGE_BERRY,
                         objName: "OrangeBerry"
-                    }], e[U] = [{type: Ge.MISC_MODEL, id: He.a.PLANE, objName: "Plane"}], e[g] = [{
+                    }], e[g] = [{type: Ge.MISC_MODEL, id: He.a.PLANE, objName: "Plane"}], e[U] = [{
                         type: Ge.MISC_MODEL,
                         id: He.a.PARACHUTE,
                         objName: "Parachute"
-                    }], e), this._itemModels = {}, this._miscModels = {}, this._itemIcons = {}, this._sprayImages = {}, this._soundsToLoad = ((t = {})[be.a.FOOTSTEP_GRASS] = $, t[be.a.FOOTSTEP_SAND] = ee, t[be.a.FOOTSTEP_ROCKS] = te, t[be.a.FOOTSTEP_BRICKS] = ae, t[be.a.FOOTSTEP_DIRT] = ne, t[be.a.FOOTSTEP_LEAVES] = re, t[be.a.ITEM_PICKUP] = oe, t[be.a.WATER_SPLASH] = ie, t[be.a.FOOTSTEP_WATER] = se, t[be.a.FOOTSTEP_WOOD] = ue, t[be.a.GUN_SHOT_COMBAT_ASSAULT_RIFLE] = ce, t[be.a.GUN_SHOT_TACTICAL_ASSAULT_RIFLE] = _e, t[be.a.GUN_SHOT_SURGE_ASSAULT_RIFLE] = le, t[be.a.GUN_SHOT_STRIKE_PISTOL] = Se, t[be.a.GUN_SHOT_MAGNUM_PISTOL] = Oe, t[be.a.GUN_SHOT_BURST_SHOTGUN] = Ie, t[be.a.GUN_SHOT_LIGHT_SUBMACHINE_GUN] = pe, t[be.a.GUN_SHOT_COMPACT_SUBMACHINE_GUN] = Ee, t[be.a.GUN_SHOT_LIGHT_SNIPER_RIFLE] = Re, t[be.a.GUN_SHOT_HEAVY_SNIPER_RIFLE] = Te, t[be.a.GUN_RELOAD_START] = Me, t[be.a.GUN_RELOAD_FINISH] = he, t[be.a.HIT] = me, t[be.a.HIT_HEADSHOT] = Ae, t[be.a.KILL] = de, t[be.a.DAMAGE] = Ne, t[be.a.ALERT_SHORT] = fe, t[be.a.ALERT_LONG] = Ce, t[be.a.ALERT_NEGATIVE] = Le, t[be.a.ALERT_AMBIENT] = ye, t[be.a.ALERT_TICK] = Ue, t[be.a.SPRAY] = ge, t[be.a.CRATE_OPEN] = Pe, t), this._sounds = {}
+                    }], e), this._itemModels = {}, this._miscModels = {}, this._itemIcons = {}, this._sprayImages = {}, this._soundsToLoad = ((t = {})[be.a.FOOTSTEP_GRASS] = $, t[be.a.FOOTSTEP_SAND] = ee, t[be.a.FOOTSTEP_ROCKS] = te, t[be.a.FOOTSTEP_BRICKS] = ae, t[be.a.FOOTSTEP_DIRT] = ne, t[be.a.FOOTSTEP_LEAVES] = re, t[be.a.ITEM_PICKUP] = oe, t[be.a.WATER_SPLASH] = ie, t[be.a.FOOTSTEP_WATER] = se, t[be.a.FOOTSTEP_WOOD] = ue, t[be.a.GUN_SHOT_COMBAT_ASSAULT_RIFLE] = ce, t[be.a.GUN_SHOT_TACTICAL_ASSAULT_RIFLE] = _e, t[be.a.GUN_SHOT_SURGE_ASSAULT_RIFLE] = le, t[be.a.GUN_SHOT_STRIKE_PISTOL] = Se, t[be.a.GUN_SHOT_MAGNUM_PISTOL] = Oe, t[be.a.GUN_SHOT_BURST_SHOTGUN] = Ie, t[be.a.GUN_SHOT_LIGHT_SUBMACHINE_GUN] = pe, t[be.a.GUN_SHOT_COMPACT_SUBMACHINE_GUN] = Ee, t[be.a.GUN_SHOT_LIGHT_SNIPER_RIFLE] = Re, t[be.a.GUN_SHOT_HEAVY_SNIPER_RIFLE] = Te, t[be.a.GUN_RELOAD_START] = he, t[be.a.GUN_RELOAD_FINISH] = Me, t[be.a.HIT] = me, t[be.a.HIT_HEADSHOT] = Ae, t[be.a.KILL] = de, t[be.a.DAMAGE] = Ne, t[be.a.ALERT_SHORT] = fe, t[be.a.ALERT_LONG] = Ce, t[be.a.ALERT_NEGATIVE] = Le, t[be.a.ALERT_AMBIENT] = ye, t[be.a.ALERT_TICK] = ge, t[be.a.SPRAY] = Ue, t[be.a.CRATE_OPEN] = Pe, t), this._sounds = {}
                 }
 
                 var t = e.prototype;
@@ -6731,8 +6747,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(v);
                                                 case 2:
-                                                    t._surgeAssaultRifleAOTexture = e.sent, t._surgeAssaultRifleAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._surgeAssaultRifleAOTexture = e.sent, t._surgeAssaultRifleAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6743,8 +6759,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(F);
                                                 case 2:
-                                                    t._magnumPistolAOTexture = e.sent, t._magnumPistolAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._magnumPistolAOTexture = e.sent, t._magnumPistolAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6755,8 +6771,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(G);
                                                 case 2:
-                                                    t._compactSubmachineGunAOTexture = e.sent, t._compactSubmachineGunAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._compactSubmachineGunAOTexture = e.sent, t._compactSubmachineGunAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6767,8 +6783,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(H);
                                                 case 2:
-                                                    t._combatAssaultRifleAOTexture = e.sent, t._combatAssaultRifleAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._combatAssaultRifleAOTexture = e.sent, t._combatAssaultRifleAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6779,8 +6795,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(b);
                                                 case 2:
-                                                    t._tacticalAssaultRifleAOTexture = e.sent, t._tacticalAssaultRifleAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._tacticalAssaultRifleAOTexture = e.sent, t._tacticalAssaultRifleAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6791,8 +6807,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(x);
                                                 case 2:
-                                                    t._strikePistolAOTexture = e.sent, t._strikePistolAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._strikePistolAOTexture = e.sent, t._strikePistolAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6803,8 +6819,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(D);
                                                 case 2:
-                                                    t._burstShotgunAOTexture = e.sent, t._burstShotgunAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._burstShotgunAOTexture = e.sent, t._burstShotgunAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6815,8 +6831,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(k);
                                                 case 2:
-                                                    t._lightSubmachineGunAOTexture = e.sent, t._lightSubmachineGunAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._lightSubmachineGunAOTexture = e.sent, t._lightSubmachineGunAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6827,8 +6843,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(B);
                                                 case 2:
-                                                    t._lightSniperRifleAOTexture = e.sent, t._lightSniperRifleAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._lightSniperRifleAOTexture = e.sent, t._lightSniperRifleAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6839,8 +6855,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(w);
                                                 case 2:
-                                                    t._heavySniperRifleAOTexture = e.sent, t._heavySniperRifleAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._heavySniperRifleAOTexture = e.sent, t._heavySniperRifleAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6851,8 +6867,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(Y);
                                                 case 2:
-                                                    t._shovelAOTexture = e.sent, t._shovelAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._shovelAOTexture = e.sent, t._shovelAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6863,8 +6879,8 @@ function getHead(a, aY = 0) {
                                                 case 0:
                                                     return e.next = 2, t.loadTextureAsync(K);
                                                 case 2:
-                                                    t._crateAOTexture = e.sent, t._crateAOTexture.flipY = !1;
-                                                case 4:
+                                                    t._crateAOTexture = e.sent, t._crateAOTexture.flipY = !1, t.incrementResourceLoadingProgress();
+                                                case 5:
                                                 case"end":
                                                     return e.stop()
                                             }
@@ -6930,7 +6946,7 @@ function getHead(a, aY = 0) {
                         return e.apply(this, arguments)
                     }
                 }(), t.loadBlockTexture = function () {
-                    this._blockTexture = this._textureLoader.load(this._settings.terrainTextureURL.length > 0 ? this._settings.terrainTextureURL : V.a), this._blockTexture.minFilter = _.db, this._blockTexture.magFilter = _.db, this._blockTexture.encoding = _.Rb
+                    this._blockTexture = this._textureLoader.load(this._settings.terrainTextureURL.length > 0 ? this._settings.terrainTextureURL : W.a), this._blockTexture.minFilter = _.db, this._blockTexture.magFilter = _.db, this._blockTexture.encoding = _.Rb
                 }, t.loadDamageIndicatorexture = function () {
                     this._damageIndicatorTexture = this._textureLoader.load(X), this._damageIndicatorTexture.encoding = _.Rb
                 }, t.loadMuzzleFlashTexture = function () {
@@ -6942,7 +6958,7 @@ function getHead(a, aY = 0) {
                 }, t.loadPlayerCursorTexture = function () {
                     this._playerCursorTexture = this._textureLoader.load(J.a), this._playerCursorTexture.encoding = _.Rb
                 }, t.loadSoldierTextures = function () {
-                    this._soldierGreenTexture = this._textureLoader.load(W), this._soldierGreenTexture.minFilter = _.db, this._soldierGreenTexture.magFilter = _.db, this._soldierGreenTexture.generateMipmaps = !1, this._soldierGreenTexture.flipY = !1, this._soldierGreenTexture.encoding = _.Rb, this._soldierRedTexture = this._textureLoader.load(j), this._soldierRedTexture.minFilter = _.db, this._soldierRedTexture.magFilter = _.db, this._soldierRedTexture.generateMipmaps = !1, this._soldierRedTexture.flipY = !1, this._soldierRedTexture.encoding = _.Rb, this._soldierBlueTexture = this._textureLoader.load(Z), this._soldierBlueTexture.minFilter = _.db, this._soldierBlueTexture.magFilter = _.db, this._soldierBlueTexture.generateMipmaps = !1, this._soldierBlueTexture.flipY = !1, this._soldierBlueTexture.encoding = _.Rb
+                    this._soldierGreenTexture = this._textureLoader.load(V), this._soldierGreenTexture.minFilter = _.db, this._soldierGreenTexture.magFilter = _.db, this._soldierGreenTexture.generateMipmaps = !1, this._soldierGreenTexture.flipY = !1, this._soldierGreenTexture.encoding = _.Rb, this._soldierRedTexture = this._textureLoader.load(j), this._soldierRedTexture.minFilter = _.db, this._soldierRedTexture.magFilter = _.db, this._soldierRedTexture.generateMipmaps = !1, this._soldierRedTexture.flipY = !1, this._soldierRedTexture.encoding = _.Rb, this._soldierBlueTexture = this._textureLoader.load(Z), this._soldierBlueTexture.minFilter = _.db, this._soldierBlueTexture.magFilter = _.db, this._soldierBlueTexture.generateMipmaps = !1, this._soldierBlueTexture.flipY = !1, this._soldierBlueTexture.encoding = _.Rb
                 }, t.deleteLegsAnimation = function (e) {
                     return e.filter((function (e) {
                         return -1 === e.name.indexOf("Leg") && -1 === e.name.indexOf("Feet") && -1 === e.name.indexOf("Body")
@@ -7027,28 +7043,29 @@ function getHead(a, aY = 0) {
                     })))
                 }, t.loadSprayTextures = function () {
                     this._sprayImages[Be.a.VOXIOM_LOGO] = this._textureLoader.load(we.a)
+                }, t.incrementResourceLoadingProgress = function () {
+                    xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, this._numLoadingStepsFinished < 26, this._numLoadingStepsFinished / 26), ++this._numLoadingStepsFinished
                 }, t.load = function () {
                     var e = s()(o.a.mark((function e(t) {
-                        var a, n;
                         return o.a.wrap((function (e) {
                             for (; ;) switch (e.prev = e.next) {
                                 case 0:
-                                    return this._settings = t, ve.a.log("Loading resources..."), a = 14, n = 0, xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, n / a), e.next = 7, this.loadBlockTexture();
-                                case 7:
-                                    return xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), e.next = 10, this.loadAOTextures();
-                                case 10:
-                                    return xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), this.loadDamageIndicatorexture(), xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), this.loadMuzzleFlashTexture(), xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), this.loadToxicCircleTexture(), xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), this.loadItemGlowTexture(), xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), this.loadPlayerCursorTexture(), xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), e.next = 23, this.loadPlayerModel();
-                                case 23:
-                                    return this.loadSoldierTextures(), xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), e.next = 27, this.loadPlayerFirstPersonModel();
-                                case 27:
-                                    return xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), e.next = 30, this.loadCrateModel();
-                                case 30:
-                                    return xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), e.next = 33, this.loadItemModels();
-                                case 33:
-                                    return xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), e.next = 36, this.generateItemIcons();
-                                case 36:
-                                    return xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), this.loadSprayTextures(), xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !0, ++n / a), e.next = 41, this.loadSounds();
-                                case 41:
+                                    return this._settings = t, ve.a.log("Loading resources..."), this.incrementResourceLoadingProgress(), e.next = 5, this.loadBlockTexture();
+                                case 5:
+                                    return this.incrementResourceLoadingProgress(), e.next = 8, this.loadAOTextures();
+                                case 8:
+                                    return this.incrementResourceLoadingProgress(), this.loadDamageIndicatorexture(), this.incrementResourceLoadingProgress(), this.loadMuzzleFlashTexture(), this.incrementResourceLoadingProgress(), this.loadToxicCircleTexture(), this.incrementResourceLoadingProgress(), this.loadItemGlowTexture(), this.incrementResourceLoadingProgress(), this.loadPlayerCursorTexture(), this.incrementResourceLoadingProgress(), e.next = 21, this.loadPlayerModel();
+                                case 21:
+                                    return this.loadSoldierTextures(), this.incrementResourceLoadingProgress(), e.next = 25, this.loadPlayerFirstPersonModel();
+                                case 25:
+                                    return this.incrementResourceLoadingProgress(), e.next = 28, this.loadCrateModel();
+                                case 28:
+                                    return this.incrementResourceLoadingProgress(), e.next = 31, this.loadItemModels();
+                                case 31:
+                                    return this.incrementResourceLoadingProgress(), e.next = 34, this.generateItemIcons();
+                                case 34:
+                                    return this.incrementResourceLoadingProgress(), this.loadSprayTextures(), this.incrementResourceLoadingProgress(), e.next = 39, this.loadSounds();
+                                case 39:
                                     !function (e) {
                                         if ("suspended" === e.state) {
                                             var t = ["touchstart", "touchend", "mousedown", "keydown"], a = function a() {
@@ -7060,8 +7077,8 @@ function getHead(a, aY = 0) {
                                                 document.body.addEventListener(e, a, !1)
                                             }))
                                         }
-                                    }(_.e.getContext()), xe.a.emit(De.a.RESOURCE_LOADING_STATUS_UPDATE, !1, ++n / a), this._loaded = !0, ve.a.log("Finished loading resources!");
-                                case 45:
+                                    }(_.e.getContext()), this.incrementResourceLoadingProgress(), this._loaded = !0, ve.a.log("Finished loading resources!");
+                                case 43:
                                 case"end":
                                     return e.stop()
                             }
@@ -7089,7 +7106,7 @@ function getHead(a, aY = 0) {
                     })), e
                 }, t.generateItemIcons = function () {
                     var e = s()(o.a.mark((function e() {
-                        var t, a, n, r, i, s, u, c, l, S, O, I, p, E, R, T, M, h, m, A;
+                        var t, a, n, r, i, s, u, c, l, S, O, I, p, E, R, T, h, M, m, A;
                         return o.a.wrap((function (e) {
                             for (; ;) switch (e.prev = e.next) {
                                 case 0:
@@ -7125,19 +7142,19 @@ function getHead(a, aY = 0) {
                                         e.next = 39;
                                         break
                                     }
-                                    if (M = T[R], !isNaN(parseInt(M))) {
+                                    if (h = T[R], !isNaN(parseInt(h))) {
                                         e.next = 32;
                                         break
                                     }
                                     return e.abrupt("continue", 36);
                                 case 32:
-                                    if ((h = parseInt(M)) !== ke.a.AIR) {
+                                    if ((M = parseInt(h)) !== ke.a.AIR) {
                                         e.next = 35;
                                         break
                                     }
                                     return e.abrupt("continue", 36);
                                 case 35:
-                                    l.push(Object(Ye.c)(E + h));
+                                    l.push(Object(Ye.c)(E + M));
                                 case 36:
                                     R++, e.next = 28;
                                     break;
@@ -7179,7 +7196,7 @@ function getHead(a, aY = 0) {
                     }
                 }(), t.generateAccountInventoryIcons = function () {
                     var e = s()(o.a.mark((function e(t, a) {
-                        var n, r, i, s, u, c, l, S, O, I, p, E, R, T, M, h;
+                        var n, r, i, s, u, c, l, S, O, I, p, E, R, T, h, M;
                         return o.a.wrap((function (e) {
                             for (; ;) switch (e.prev = e.next) {
                                 case 0:
@@ -7208,17 +7225,17 @@ function getHead(a, aY = 0) {
                                 case 36:
                                     T = 1;
                                 case 37:
-                                    if (!(T < Ve.a.__LENGTH)) {
+                                    if (!(T < We.a.__LENGTH)) {
                                         e.next = 54;
                                         break
                                     }
-                                    if (M = Object(Ve.b)(T), !(T in a)) {
+                                    if (h = Object(We.b)(T), !(T in a)) {
                                         e.next = 42;
                                         break
                                     }
                                     return e.abrupt("continue", 51);
                                 case 42:
-                                    return S && (u.remove(S), S = void 0), h = Object(Ye.c)(M), e.next = 46, h.generateThumbnailModel(!1, !1);
+                                    return S && (u.remove(S), S = void 0), M = Object(Ye.c)(h), e.next = 46, M.generateThumbnailModel(!1, !1);
                                 case 46:
                                     S = e.sent, u.add(S), s.compile(u, i), s.render(u, i), a[T] = n.toDataURL();
                                 case 51:
@@ -7455,7 +7472,7 @@ function getHead(a, aY = 0) {
                     }
                 }]), e
             }());
-        t.a = We
+        t.a = Ve
     }, 82: function (e, t, a) {
         "use strict";
         var n = a(336), r = new n.EventEmitter;
@@ -7498,7 +7515,7 @@ function getHead(a, aY = 0) {
             return yt
         }));
         var n = a(80), r = a(81), o = a(94), i = a(138), s = a(21), u = a(159), c = a(15), _ = a.n(c), l = a(22),
-            S = a.n(l), O = a(79), I = a.n(O), p = a(76), E = a.n(p), R = a(34), T = a(85), M = a(88), h = a(120),
+            S = a.n(l), O = a(79), I = a.n(O), p = a(76), E = a.n(p), R = a(34), T = a(85), h = a(88), M = a(120),
             m = a(26), A = a(153), d = a(82), N = a(83), f = function (e) {
                 function t(t) {
                     var a;
@@ -7511,7 +7528,7 @@ function getHead(a, aY = 0) {
                     var e = new this.constructor(this._blockType);
                     return e.itemName = this.itemName, e.itemDescription = this.itemDescription, e
                 }, a.placeBlock = function (e, t, a) {
-                    if (e.cooldownManager.requestCooldown(h.a.BLOCK_PLACE)) {
+                    if (e.cooldownManager.requestCooldown(M.a.BLOCK_PLACE)) {
                         var n = t.getPlayerSelectedBlockSidePosition();
                         if (n) {
                             var r = [n];
@@ -7521,7 +7538,7 @@ function getHead(a, aY = 0) {
                 }, a.canInput = function (e) {
                     return !0
                 }, a.placeWall = function (e, t, a) {
-                    if (e.cooldownManager.requestCooldown(h.a.BLOCK_PLACE)) {
+                    if (e.cooldownManager.requestCooldown(M.a.BLOCK_PLACE)) {
                         var n = t.getPlayerSelectedBlockSidePosition();
                         if (n) {
                             var r = [], o = Object(R.g)(t.getCameraDir(), Object(R.l)(0, 0, 1));
@@ -7530,7 +7547,7 @@ function getHead(a, aY = 0) {
                         }
                     }
                 }, a.placeStairs = function (e, t, a) {
-                    if (e.cooldownManager.requestCooldown(h.a.BLOCK_PLACE)) {
+                    if (e.cooldownManager.requestCooldown(M.a.BLOCK_PLACE)) {
                         var n = t.getPlayerSelectedBlockSidePosition();
                         if (n) {
                             var r = [], o = t.getPitchYaw().y;
@@ -7656,357 +7673,357 @@ function getHead(a, aY = 0) {
                         return this.type + this._blockType
                     }
                 }]), t
-            }(M.a), C = a(162), L = a(108), y = a(78), U = a(25), g = function (e) {
+            }(h.a), C = a(162), L = a(108), y = a(78), g = a(25), U = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.COMBAT_ASSAULT_RIFLE_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.7))), t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.COMBAT_ASSAULT_RIFLE_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.7))), t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t
             }(L.a), P = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.COMBAT_ASSAULT_RIFLE_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.6))), t.setItemTier(U.a.RARE), t
+                    return (t = e.call(this, s.a.COMBAT_ASSAULT_RIFLE_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.6))), t.setItemTier(g.a.RARE), t
                 }
 
                 return E()(t, e), t
             }(L.a), v = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.COMBAT_ASSAULT_RIFLE_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.5))), t.setItemTier(U.a.EPIC), t
+                    return (t = e.call(this, s.a.COMBAT_ASSAULT_RIFLE_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.5))), t.setItemTier(g.a.EPIC), t
                 }
 
                 return E()(t, e), t
             }(L.a), F = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.COMBAT_ASSAULT_RIFLE_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(U.a.LEGENDARY), t
+                    return (t = e.call(this, s.a.COMBAT_ASSAULT_RIFLE_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(g.a.LEGENDARY), t
                 }
 
                 return E()(t, e), t
             }(L.a), G = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.COMBAT_ASSAULT_RIFLE_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.3))), t.setItemTier(U.a.MYTHIC), t
+                    return (t = e.call(this, s.a.COMBAT_ASSAULT_RIFLE_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.3))), t.setItemTier(g.a.MYTHIC), t
                 }
 
                 return E()(t, e), t
             }(L.a), H = a(163), b = a(109), x = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.TACTICAL_ASSAULT_RIFLE_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.5))), t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.TACTICAL_ASSAULT_RIFLE_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.5))), t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t
             }(b.a), D = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.TACTICAL_ASSAULT_RIFLE_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(U.a.RARE), t
+                    return (t = e.call(this, s.a.TACTICAL_ASSAULT_RIFLE_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(g.a.RARE), t
                 }
 
                 return E()(t, e), t
             }(b.a), k = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.TACTICAL_ASSAULT_RIFLE_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.3))), t.setItemTier(U.a.EPIC), t
+                    return (t = e.call(this, s.a.TACTICAL_ASSAULT_RIFLE_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.3))), t.setItemTier(g.a.EPIC), t
                 }
 
                 return E()(t, e), t
             }(b.a), B = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.TACTICAL_ASSAULT_RIFLE_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.2))), t.setItemTier(U.a.LEGENDARY), t
+                    return (t = e.call(this, s.a.TACTICAL_ASSAULT_RIFLE_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.2))), t.setItemTier(g.a.LEGENDARY), t
                 }
 
                 return E()(t, e), t
             }(b.a), w = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.TACTICAL_ASSAULT_RIFLE_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.1))), t.setItemTier(U.a.MYTHIC), t
+                    return (t = e.call(this, s.a.TACTICAL_ASSAULT_RIFLE_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.1))), t.setItemTier(g.a.MYTHIC), t
                 }
 
                 return E()(t, e), t
-            }(b.a), Y = a(164), K = a(110), V = function (e) {
+            }(b.a), Y = a(164), K = a(110), W = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.SURGE_ASSAULT_RIFLE_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.7))), t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.SURGE_ASSAULT_RIFLE_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.7))), t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t
-            }(K.a), W = function (e) {
+            }(K.a), V = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.SURGE_ASSAULT_RIFLE_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.6))), t.setItemTier(U.a.RARE), t
+                    return (t = e.call(this, s.a.SURGE_ASSAULT_RIFLE_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.6))), t.setItemTier(g.a.RARE), t
                 }
 
                 return E()(t, e), t
             }(K.a), j = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.SURGE_ASSAULT_RIFLE_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.5))), t.setItemTier(U.a.EPIC), t
+                    return (t = e.call(this, s.a.SURGE_ASSAULT_RIFLE_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.5))), t.setItemTier(g.a.EPIC), t
                 }
 
                 return E()(t, e), t
             }(K.a), Z = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.SURGE_ASSAULT_RIFLE_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(U.a.LEGENDARY), t
+                    return (t = e.call(this, s.a.SURGE_ASSAULT_RIFLE_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(g.a.LEGENDARY), t
                 }
 
                 return E()(t, e), t
             }(K.a), z = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.SURGE_ASSAULT_RIFLE_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(U.a.MYTHIC), t
+                    return (t = e.call(this, s.a.SURGE_ASSAULT_RIFLE_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(g.a.MYTHIC), t
                 }
 
                 return E()(t, e), t
             }(K.a), X = a(165), q = a(111), J = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.STRIKE_PISTOL_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.1))), t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.STRIKE_PISTOL_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.1))), t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t
             }(q.a), Q = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.STRIKE_PISTOL_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1))), t.setItemTier(U.a.RARE), t
+                    return (t = e.call(this, s.a.STRIKE_PISTOL_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1))), t.setItemTier(g.a.RARE), t
                 }
 
                 return E()(t, e), t
             }(q.a), $ = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.STRIKE_PISTOL_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(.9))), t.setItemTier(U.a.EPIC), t
+                    return (t = e.call(this, s.a.STRIKE_PISTOL_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(.9))), t.setItemTier(g.a.EPIC), t
                 }
 
                 return E()(t, e), t
             }(q.a), ee = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.STRIKE_PISTOL_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(.8))), t.setItemTier(U.a.LEGENDARY), t
+                    return (t = e.call(this, s.a.STRIKE_PISTOL_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(.8))), t.setItemTier(g.a.LEGENDARY), t
                 }
 
                 return E()(t, e), t
             }(q.a), te = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.STRIKE_PISTOL_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(.7))), t.setItemTier(U.a.MYTHIC), t
+                    return (t = e.call(this, s.a.STRIKE_PISTOL_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(.7))), t.setItemTier(g.a.MYTHIC), t
                 }
 
                 return E()(t, e), t
             }(q.a), ae = a(166), ne = a(112), re = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.MAGNUM_PISTOL_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.2))), t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.MAGNUM_PISTOL_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.2))), t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t
             }(ne.a), oe = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.MAGNUM_PISTOL_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.1))), t.setItemTier(U.a.RARE), t
+                    return (t = e.call(this, s.a.MAGNUM_PISTOL_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.1))), t.setItemTier(g.a.RARE), t
                 }
 
                 return E()(t, e), t
             }(ne.a), ie = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.MAGNUM_PISTOL_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1))), t.setItemTier(U.a.EPIC), t
+                    return (t = e.call(this, s.a.MAGNUM_PISTOL_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1))), t.setItemTier(g.a.EPIC), t
                 }
 
                 return E()(t, e), t
             }(ne.a), se = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.MAGNUM_PISTOL_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(.9))), t.setItemTier(U.a.LEGENDARY), t
+                    return (t = e.call(this, s.a.MAGNUM_PISTOL_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(.9))), t.setItemTier(g.a.LEGENDARY), t
                 }
 
                 return E()(t, e), t
             }(ne.a), ue = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.MAGNUM_PISTOL_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(.8))), t.setItemTier(U.a.MYTHIC), t
+                    return (t = e.call(this, s.a.MAGNUM_PISTOL_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(.8))), t.setItemTier(g.a.MYTHIC), t
                 }
 
                 return E()(t, e), t
             }(ne.a), ce = a(167), _e = a(113), le = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.BURST_SHOTGUN_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.7))), t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.BURST_SHOTGUN_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.7))), t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t
             }(_e.a), Se = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.BURST_SHOTGUN_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.6))), t.setItemTier(U.a.RARE), t
+                    return (t = e.call(this, s.a.BURST_SHOTGUN_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.6))), t.setItemTier(g.a.RARE), t
                 }
 
                 return E()(t, e), t
             }(_e.a), Oe = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.BURST_SHOTGUN_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.5))), t.setItemTier(U.a.EPIC), t
+                    return (t = e.call(this, s.a.BURST_SHOTGUN_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.5))), t.setItemTier(g.a.EPIC), t
                 }
 
                 return E()(t, e), t
             }(_e.a), Ie = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.BURST_SHOTGUN_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(U.a.LEGENDARY), t
+                    return (t = e.call(this, s.a.BURST_SHOTGUN_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(g.a.LEGENDARY), t
                 }
 
                 return E()(t, e), t
             }(_e.a), pe = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.BURST_SHOTGUN_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.3))), t.setItemTier(U.a.MYTHIC), t
+                    return (t = e.call(this, s.a.BURST_SHOTGUN_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.3))), t.setItemTier(g.a.MYTHIC), t
                 }
 
                 return E()(t, e), t
             }(_e.a), Ee = a(168), Re = a(114), Te = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.LIGHT_SUBMACHINE_GUN_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(U.a.UNCOMMON), t
-                }
-
-                return E()(t, e), t
-            }(Re.a), Me = function (e) {
-                function t() {
-                    var t;
-                    return (t = e.call(this, s.a.LIGHT_SUBMACHINE_GUN_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.3))), t.setItemTier(U.a.RARE), t
+                    return (t = e.call(this, s.a.LIGHT_SUBMACHINE_GUN_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t
             }(Re.a), he = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.LIGHT_SUBMACHINE_GUN_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.2))), t.setItemTier(U.a.EPIC), t
+                    return (t = e.call(this, s.a.LIGHT_SUBMACHINE_GUN_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.3))), t.setItemTier(g.a.RARE), t
+                }
+
+                return E()(t, e), t
+            }(Re.a), Me = function (e) {
+                function t() {
+                    var t;
+                    return (t = e.call(this, s.a.LIGHT_SUBMACHINE_GUN_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.2))), t.setItemTier(g.a.EPIC), t
                 }
 
                 return E()(t, e), t
             }(Re.a), me = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.LIGHT_SUBMACHINE_GUN_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.1))), t.setItemTier(U.a.LEGENDARY), t
+                    return (t = e.call(this, s.a.LIGHT_SUBMACHINE_GUN_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.1))), t.setItemTier(g.a.LEGENDARY), t
                 }
 
                 return E()(t, e), t
             }(Re.a), Ae = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.LIGHT_SUBMACHINE_GUN_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1))), t.setItemTier(U.a.MYTHIC), t
+                    return (t = e.call(this, s.a.LIGHT_SUBMACHINE_GUN_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1))), t.setItemTier(g.a.MYTHIC), t
                 }
 
                 return E()(t, e), t
             }(Re.a), de = a(169), Ne = a(115), fe = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.COMPACT_SUBMACHINE_GUN_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.6))), t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.COMPACT_SUBMACHINE_GUN_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(1.6))), t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t
             }(Ne.a), Ce = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.COMPACT_SUBMACHINE_GUN_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.5))), t.setItemTier(U.a.RARE), t
+                    return (t = e.call(this, s.a.COMPACT_SUBMACHINE_GUN_RARE) || this).setReloadTime(Math.floor(Object(y.c)(1.5))), t.setItemTier(g.a.RARE), t
                 }
 
                 return E()(t, e), t
             }(Ne.a), Le = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.COMPACT_SUBMACHINE_GUN_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(U.a.EPIC), t
+                    return (t = e.call(this, s.a.COMPACT_SUBMACHINE_GUN_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(1.4))), t.setItemTier(g.a.EPIC), t
                 }
 
                 return E()(t, e), t
             }(Ne.a), ye = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.COMPACT_SUBMACHINE_GUN_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.3))), t.setItemTier(U.a.LEGENDARY), t
+                    return (t = e.call(this, s.a.COMPACT_SUBMACHINE_GUN_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(1.3))), t.setItemTier(g.a.LEGENDARY), t
                 }
 
                 return E()(t, e), t
-            }(Ne.a), Ue = function (e) {
+            }(Ne.a), ge = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.COMPACT_SUBMACHINE_GUN_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.2))), t.setItemTier(U.a.MYTHIC), t
+                    return (t = e.call(this, s.a.COMPACT_SUBMACHINE_GUN_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.2))), t.setItemTier(g.a.MYTHIC), t
                 }
 
                 return E()(t, e), t
-            }(Ne.a), ge = a(170), Pe = a(116), ve = function (e) {
+            }(Ne.a), Ue = a(170), Pe = a(116), ve = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.LIGHT_SNIPER_RIFLE_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(2.3))), t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.LIGHT_SNIPER_RIFLE_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(2.3))), t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t
             }(Pe.a), Fe = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.LIGHT_SNIPER_RIFLE_RARE) || this).setReloadTime(Math.floor(Object(y.c)(2.2))), t.setItemTier(U.a.RARE), t
+                    return (t = e.call(this, s.a.LIGHT_SNIPER_RIFLE_RARE) || this).setReloadTime(Math.floor(Object(y.c)(2.2))), t.setItemTier(g.a.RARE), t
                 }
 
                 return E()(t, e), t
             }(Pe.a), Ge = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.LIGHT_SNIPER_RIFLE_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(2.1))), t.setItemTier(U.a.EPIC), t
+                    return (t = e.call(this, s.a.LIGHT_SNIPER_RIFLE_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(2.1))), t.setItemTier(g.a.EPIC), t
                 }
 
                 return E()(t, e), t
             }(Pe.a), He = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.LIGHT_SNIPER_RIFLE_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(2))), t.setItemTier(U.a.LEGENDARY), t
+                    return (t = e.call(this, s.a.LIGHT_SNIPER_RIFLE_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(2))), t.setItemTier(g.a.LEGENDARY), t
                 }
 
                 return E()(t, e), t
             }(Pe.a), be = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.LIGHT_SNIPER_RIFLE_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.9))), t.setItemTier(U.a.MYTHIC), t
+                    return (t = e.call(this, s.a.LIGHT_SNIPER_RIFLE_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.9))), t.setItemTier(g.a.MYTHIC), t
                 }
 
                 return E()(t, e), t
             }(Pe.a), xe = a(171), De = a(117), ke = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.HEAVY_SNIPER_RIFLE_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(2.3))), t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.HEAVY_SNIPER_RIFLE_UNCOMMON) || this).setReloadTime(Math.floor(Object(y.c)(2.3))), t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t
             }(De.a), Be = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.HEAVY_SNIPER_RIFLE_RARE) || this).setReloadTime(Math.floor(Object(y.c)(2.2))), t.setItemTier(U.a.RARE), t
+                    return (t = e.call(this, s.a.HEAVY_SNIPER_RIFLE_RARE) || this).setReloadTime(Math.floor(Object(y.c)(2.2))), t.setItemTier(g.a.RARE), t
                 }
 
                 return E()(t, e), t
             }(De.a), we = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.HEAVY_SNIPER_RIFLE_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(2.1))), t.setItemTier(U.a.EPIC), t
+                    return (t = e.call(this, s.a.HEAVY_SNIPER_RIFLE_EPIC) || this).setReloadTime(Math.floor(Object(y.c)(2.1))), t.setItemTier(g.a.EPIC), t
                 }
 
                 return E()(t, e), t
             }(De.a), Ye = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.HEAVY_SNIPER_RIFLE_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(2))), t.setItemTier(U.a.LEGENDARY), t
+                    return (t = e.call(this, s.a.HEAVY_SNIPER_RIFLE_LEGENDARY) || this).setReloadTime(Math.floor(Object(y.c)(2))), t.setItemTier(g.a.LEGENDARY), t
                 }
 
                 return E()(t, e), t
             }(De.a), Ke = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.HEAVY_SNIPER_RIFLE_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.9))), t.setItemTier(U.a.MYTHIC), t
+                    return (t = e.call(this, s.a.HEAVY_SNIPER_RIFLE_MYTHIC) || this).setReloadTime(Math.floor(Object(y.c)(1.9))), t.setItemTier(g.a.MYTHIC), t
                 }
 
                 return E()(t, e), t
-            }(De.a), Ve = function (e) {
+            }(De.a), We = function (e) {
                 function t(t) {
                     var a;
                     return (a = e.call(this, t) || this).setMaxStackSize(1), a.setMeleeDamage(10), a.setMeleeRate(Object(y.c)(.75)), a.setBlockBreakPower(.01), a.setSkinAOMap(r.a.shovelAOTexture), a.itemName = "Shovel", a.itemDescription = "Efficient tool for digging blocks", a
@@ -8075,51 +8092,51 @@ function getHead(a, aY = 0) {
                         return e.apply(this, arguments)
                     }
                 }(), t
-            }(a(139).a), We = function (e) {
+            }(a(139).a), Ve = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.SHOVEL_COMMON) || this).setMeleeDamage(10), t.setBlockBreakPower(Object(y.d)(1.3)), t.setDurability(2400), t.setItemTier(U.a.COMMON), t
+                    return (t = e.call(this, s.a.SHOVEL_COMMON) || this).setMeleeDamage(10), t.setBlockBreakPower(Object(y.d)(1.3)), t.setDurability(2400), t.setItemTier(g.a.COMMON), t
                 }
 
                 return E()(t, e), t
-            }(Ve), je = function (e) {
+            }(We), je = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.SHOVEL_UNCOMMON) || this).setMeleeDamage(13), t.setBlockBreakPower(Object(y.d)(1.9)), t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.SHOVEL_UNCOMMON) || this).setMeleeDamage(13), t.setBlockBreakPower(Object(y.d)(1.9)), t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t
-            }(Ve), Ze = function (e) {
+            }(We), Ze = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.SHOVEL_RARE) || this).setMeleeDamage(16), t.setBlockBreakPower(Object(y.d)(3.1)), t.setItemTier(U.a.RARE), t
+                    return (t = e.call(this, s.a.SHOVEL_RARE) || this).setMeleeDamage(16), t.setBlockBreakPower(Object(y.d)(3.1)), t.setItemTier(g.a.RARE), t
                 }
 
                 return E()(t, e), t
-            }(Ve), ze = function (e) {
+            }(We), ze = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.SHOVEL_EPIC) || this).setMeleeDamage(19), t.setBlockBreakPower(Object(y.d)(5.5)), t.setItemTier(U.a.EPIC), t
+                    return (t = e.call(this, s.a.SHOVEL_EPIC) || this).setMeleeDamage(19), t.setBlockBreakPower(Object(y.d)(5.5)), t.setItemTier(g.a.EPIC), t
                 }
 
                 return E()(t, e), t
-            }(Ve), Xe = function (e) {
+            }(We), Xe = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.SHOVEL_LEGENDARY) || this).setMeleeDamage(22), t.setBlockBreakPower(Object(y.d)(10.3)), t.setItemTier(U.a.LEGENDARY), t
+                    return (t = e.call(this, s.a.SHOVEL_LEGENDARY) || this).setMeleeDamage(22), t.setBlockBreakPower(Object(y.d)(10.3)), t.setItemTier(g.a.LEGENDARY), t
                 }
 
                 return E()(t, e), t
-            }(Ve), qe = function (e) {
+            }(We), qe = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.SHOVEL_MYTHIC) || this).setMeleeDamage(22), t.setBlockBreakPower(Object(y.d)(10.3)), t.setItemTier(U.a.MYTHIC), t
+                    return (t = e.call(this, s.a.SHOVEL_MYTHIC) || this).setMeleeDamage(22), t.setBlockBreakPower(Object(y.d)(10.3)), t.setItemTier(g.a.MYTHIC), t
                 }
 
                 return E()(t, e), t.prototype.getBlockBreakPower = function (t) {
                     return o.a[t].hardness >= 999999 ? Object(y.d)(999999) : e.prototype.getBlockBreakPower.call(this, t)
                 }, t
-            }(Ve), Je = function (e) {
+            }(We), Je = function (e) {
                 function t() {
                     var t;
                     return (t = e.call(this, s.a.RUBY) || this).itemName = "Ruby Gem", t.itemDescription = "Precious red gem from the red team", t
@@ -8144,7 +8161,7 @@ function getHead(a, aY = 0) {
                         return e.apply(this, arguments)
                     }
                 }(), t
-            }(M.a), Qe = function (e) {
+            }(h.a), Qe = function (e) {
                 function t() {
                     var t;
                     return (t = e.call(this, s.a.SAPPHIRE) || this).itemName = "Sapphire Gem", t.itemDescription = "Precious blue gem from the blue team", t
@@ -8169,7 +8186,7 @@ function getHead(a, aY = 0) {
                         return e.apply(this, arguments)
                     }
                 }(), t
-            }(M.a), $e = function (e) {
+            }(h.a), $e = function (e) {
                 function t() {
                     var t;
                     return (t = e.call(this, s.a.EMERALD) || this).itemName = "Emerald Gem", t.itemDescription = "Precious green gem found around the map", t
@@ -8194,7 +8211,7 @@ function getHead(a, aY = 0) {
                         return e.apply(this, arguments)
                     }
                 }(), t
-            }(M.a), et = function (e) {
+            }(h.a), et = function (e) {
                 function t() {
                     var t;
                     return (t = e.call(this, s.a.IRON) || this).itemName = "Iron", t.itemDescription = "Raw material that is used in various crafting recipes", t
@@ -8219,10 +8236,10 @@ function getHead(a, aY = 0) {
                         return e.apply(this, arguments)
                     }
                 }(), t
-            }(M.a), tt = function (e) {
+            }(h.a), tt = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.AMMO_PISTOL) || this).itemName = "Pistol Ammo", t.itemDescription = "Ammo for pistols", t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.AMMO_PISTOL) || this).itemName = "Pistol Ammo", t.itemDescription = "Ammo for pistols", t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t.prototype.generateThumbnailModel = function () {
@@ -8244,10 +8261,10 @@ function getHead(a, aY = 0) {
                         return e.apply(this, arguments)
                     }
                 }(), t
-            }(M.a), at = function (e) {
+            }(h.a), at = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.AMMO_SHOTGUN) || this).itemName = "Shotgun Ammo", t.itemDescription = "Ammo for shotguns", t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.AMMO_SHOTGUN) || this).itemName = "Shotgun Ammo", t.itemDescription = "Ammo for shotguns", t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t.prototype.generateThumbnailModel = function () {
@@ -8269,10 +8286,10 @@ function getHead(a, aY = 0) {
                         return e.apply(this, arguments)
                     }
                 }(), t
-            }(M.a), nt = function (e) {
+            }(h.a), nt = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.AMMO_ASSAULT_RIFLE) || this).itemName = "Assault Rifle Ammo", t.itemDescription = "Ammo for assault rifles", t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.AMMO_ASSAULT_RIFLE) || this).itemName = "Assault Rifle Ammo", t.itemDescription = "Ammo for assault rifles", t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t.prototype.generateThumbnailModel = function () {
@@ -8294,10 +8311,10 @@ function getHead(a, aY = 0) {
                         return e.apply(this, arguments)
                     }
                 }(), t
-            }(M.a), rt = function (e) {
+            }(h.a), rt = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.AMMO_SUBMACHINE_GUN) || this).itemName = "Submachine Gun Ammo", t.itemDescription = "Ammo for submachine guns", t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.AMMO_SUBMACHINE_GUN) || this).itemName = "Submachine Gun Ammo", t.itemDescription = "Ammo for submachine guns", t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t.prototype.generateThumbnailModel = function () {
@@ -8319,10 +8336,10 @@ function getHead(a, aY = 0) {
                         return e.apply(this, arguments)
                     }
                 }(), t
-            }(M.a), ot = function (e) {
+            }(h.a), ot = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, s.a.AMMO_SNIPER_RIFLE) || this).itemName = "Sniper Rifle Ammo", t.itemDescription = "Ammo for sniper rifles", t.setItemTier(U.a.UNCOMMON), t
+                    return (t = e.call(this, s.a.AMMO_SNIPER_RIFLE) || this).itemName = "Sniper Rifle Ammo", t.itemDescription = "Ammo for sniper rifles", t.setItemTier(g.a.UNCOMMON), t
                 }
 
                 return E()(t, e), t.prototype.generateThumbnailModel = function () {
@@ -8344,7 +8361,7 @@ function getHead(a, aY = 0) {
                         return e.apply(this, arguments)
                     }
                 }(), t
-            }(M.a), it = a(106), st = a(96), ut = a(104), ct = a(95);
+            }(h.a), it = a(106), st = a(96), ut = a(104), ct = a(95);
 
         function _t(e, t) {
             var a;
@@ -8397,7 +8414,7 @@ function getHead(a, aY = 0) {
             }, a.startRegen = function (e, t, a) {
                 this._healthRegen > 0 && e.health >= this._maxHealthRegen || this._shieldRegen > 0 && e.shield >= this._maxShieldRegen || this._isUsing || (this._isUsing = !0, e.cooldownManager.requestCooldown(new it.a(st.a.ITEM_USE, this._consumptionTime)), this.updateItemUsageProgress(e))
             }, a.updateItemUsageProgress = function (e) {
-                if (!this._isUsing || void 0 !== e && !e.cooldownManager.hasCooldown(st.a.ITEM_USE)) d.a.emit(N.a.UPDATE_ITEM_USAGE, s.a.EMPTY, U.a.COMMON, "", 0); else if (void 0 !== e) {
+                if (!this._isUsing || void 0 !== e && !e.cooldownManager.hasCooldown(st.a.ITEM_USE)) d.a.emit(N.a.UPDATE_ITEM_USAGE, s.a.EMPTY, g.a.COMMON, "", 0); else if (void 0 !== e) {
                     var t = e.cooldownManager.getCooldown(st.a.ITEM_USE) - e.physicsStep.seqId,
                         a = this._consumptionTime, n = (a - t) / a * 100;
                     d.a.emit(N.a.UPDATE_ITEM_USAGE, this.id, this.itemTier, "Using " + this.displayName, n)
@@ -8445,10 +8462,10 @@ function getHead(a, aY = 0) {
                     return this._consumptionTime
                 }
             }]), t
-        }(M.a), Ot = function (e) {
+        }(h.a), Ot = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, s.a.MINI_SHIELD_POTION) || this).setShieldRegen(25), t.setHealthRegen(0), t.setMaxShieldRegen(75), t.setConsumptionTime(Math.floor(Object(y.c)(2))), t.setMaxStackSize(3), t.itemName = "Mini Shield Potion", t.itemDescription = "Mysterious liquid that gives you 25 (up to 75) shield points", t.setItemTier(U.a.UNCOMMON), t
+                return (t = e.call(this, s.a.MINI_SHIELD_POTION) || this).setShieldRegen(25), t.setHealthRegen(0), t.setMaxShieldRegen(75), t.setConsumptionTime(Math.floor(Object(y.c)(2))), t.setMaxStackSize(3), t.itemName = "Mini Shield Potion", t.itemDescription = "Mysterious liquid that gives you 25 (up to 75) shield points", t.setItemTier(g.a.UNCOMMON), t
             }
 
             E()(t, e);
@@ -8511,7 +8528,7 @@ function getHead(a, aY = 0) {
         }(St), It = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, s.a.ADVANCED_SHIELD_POTION) || this).setShieldRegen(50), t.setHealthRegen(0), t.setConsumptionTime(Math.floor(Object(y.c)(3))), t.setMaxStackSize(2), t.itemName = "Advanced Shield Potion", t.itemDescription = "Powerful liquid that gives you 50 (up to 100) shield points", t.setItemTier(U.a.RARE), t
+                return (t = e.call(this, s.a.ADVANCED_SHIELD_POTION) || this).setShieldRegen(50), t.setHealthRegen(0), t.setConsumptionTime(Math.floor(Object(y.c)(3))), t.setMaxStackSize(2), t.itemName = "Advanced Shield Potion", t.itemDescription = "Powerful liquid that gives you 50 (up to 100) shield points", t.setItemTier(g.a.RARE), t
             }
 
             E()(t, e);
@@ -8574,7 +8591,7 @@ function getHead(a, aY = 0) {
         }(St), pt = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, s.a.ULTIMATE_SHIELD_POTION) || this).setShieldRegen(100), t.setHealthRegen(0), t.setConsumptionTime(Math.floor(Object(y.c)(5))), t.setMaxStackSize(1), t.itemName = "Ultimate Shield Potion", t.itemDescription = "Mystical liquid that gives you 100 (up to 100) shield points", t.setItemTier(U.a.EPIC), t
+                return (t = e.call(this, s.a.ULTIMATE_SHIELD_POTION) || this).setShieldRegen(100), t.setHealthRegen(0), t.setConsumptionTime(Math.floor(Object(y.c)(5))), t.setMaxStackSize(1), t.itemName = "Ultimate Shield Potion", t.itemDescription = "Mystical liquid that gives you 100 (up to 100) shield points", t.setItemTier(g.a.EPIC), t
             }
 
             E()(t, e);
@@ -8637,7 +8654,7 @@ function getHead(a, aY = 0) {
         }(St), Et = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, s.a.MEDICINE_PILLS) || this).setShieldRegen(0), t.setHealthRegen(25), t.setMaxHealthRegen(75), t.setConsumptionTime(Math.floor(Object(y.c)(2))), t.setMaxStackSize(3), t.setItemTier(U.a.UNCOMMON), t.itemName = "Medicine Pills", t.itemDescription = "Healthy pills that heals you for 25 (up to 75) health points", t
+                return (t = e.call(this, s.a.MEDICINE_PILLS) || this).setShieldRegen(0), t.setHealthRegen(25), t.setMaxHealthRegen(75), t.setConsumptionTime(Math.floor(Object(y.c)(2))), t.setMaxStackSize(3), t.setItemTier(g.a.UNCOMMON), t.itemName = "Medicine Pills", t.itemDescription = "Healthy pills that heals you for 25 (up to 75) health points", t
             }
 
             E()(t, e);
@@ -8700,7 +8717,7 @@ function getHead(a, aY = 0) {
         }(St), Rt = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, s.a.FIRST_AID_KIT) || this).setShieldRegen(0), t.setHealthRegen(100), t.setConsumptionTime(Math.floor(Object(y.c)(5))), t.setMaxStackSize(1), t.itemName = "First Aid Kit", t.itemDescription = "Emergency health kit that heals you for 100 (up to 100) health points", t.setItemTier(U.a.EPIC), t
+                return (t = e.call(this, s.a.FIRST_AID_KIT) || this).setShieldRegen(0), t.setHealthRegen(100), t.setConsumptionTime(Math.floor(Object(y.c)(5))), t.setMaxStackSize(1), t.itemName = "First Aid Kit", t.itemDescription = "Emergency health kit that heals you for 100 (up to 100) health points", t.setItemTier(g.a.EPIC), t
             }
 
             E()(t, e);
@@ -8763,70 +8780,7 @@ function getHead(a, aY = 0) {
         }(St), Tt = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, s.a.RED_BERRY) || this).setShieldRegen(0), t.setHealthRegen(25), t.setMaxHealthRegen(50), t.setConsumptionTime(Math.floor(Object(y.c)(1))), t.setMaxStackSize(12), t.itemName = "Red Berry", t.itemDescription = "Natural food found on trees and bushes. Restores merely 25 (up to 50) health points. Can be used to craft more advanced healing items.", t.setItemTier(U.a.COMMON), t
-            }
-
-            E()(t, e);
-            var a = t.prototype;
-            return a.generateFirstPersonModel = function () {
-                var e = S()(_.a.mark((function e(t) {
-                    var a;
-                    return _.a.wrap((function (e) {
-                        for (; ;) switch (e.prev = e.next) {
-                            case 0:
-                                return e.next = 2, this.generateModel(t);
-                            case 2:
-                                return (a = e.sent).position.set(-.12, -.06, .02), a.rotation.set(0, 0, 0), a.scale.set(1.1, 1.1, 1.1), e.abrupt("return", a);
-                            case 7:
-                            case"end":
-                                return e.stop()
-                        }
-                    }), e, this)
-                })));
-                return function (t) {
-                    return e.apply(this, arguments)
-                }
-            }(), a.generateThirdPersonModel = function () {
-                var e = S()(_.a.mark((function e(t) {
-                    var a;
-                    return _.a.wrap((function (e) {
-                        for (; ;) switch (e.prev = e.next) {
-                            case 0:
-                                return e.next = 2, this.generateModel(t);
-                            case 2:
-                                return (a = e.sent).position.set(.13, -.06, -.02), a.rotation.set(0, 0, 0), a.scale.set(1.2, 1.2, 1.2), e.abrupt("return", a);
-                            case 7:
-                            case"end":
-                                return e.stop()
-                        }
-                    }), e, this)
-                })));
-                return function (t) {
-                    return e.apply(this, arguments)
-                }
-            }(), a.generateThumbnailModel = function () {
-                var e = S()(_.a.mark((function e(t, a) {
-                    var n;
-                    return _.a.wrap((function (e) {
-                        for (; ;) switch (e.prev = e.next) {
-                            case 0:
-                                return e.next = 2, this.generateModel(a);
-                            case 2:
-                                return (n = e.sent).position.set(.04, -.14, -1), n.rotation.set(0, 0, 0), n.scale.set(1, 1, 1), e.abrupt("return", n);
-                            case 7:
-                            case"end":
-                                return e.stop()
-                        }
-                    }), e, this)
-                })));
-                return function (t, a) {
-                    return e.apply(this, arguments)
-                }
-            }(), t
-        }(St), Mt = function (e) {
-            function t() {
-                var t;
-                return (t = e.call(this, s.a.ORANGE_BERRY) || this).setShieldRegen(25), t.setHealthRegen(0), t.setMaxShieldRegen(25), t.setConsumptionTime(Math.floor(Object(y.c)(1))), t.setMaxStackSize(12), t.itemName = "Orange Berry", t.itemDescription = "Natural food found on trees and bushes. Restores merely 25 (up to 25) shield points. Can be used to craft more advanced healing items.", t.setItemTier(U.a.COMMON), t
+                return (t = e.call(this, s.a.RED_BERRY) || this).setShieldRegen(0), t.setHealthRegen(25), t.setMaxHealthRegen(50), t.setConsumptionTime(Math.floor(Object(y.c)(1))), t.setMaxStackSize(12), t.itemName = "Red Berry", t.itemDescription = "Natural food found on trees and bushes. Restores merely 25 (up to 50) health points. Can be used to craft more advanced healing items.", t.setItemTier(g.a.COMMON), t
             }
 
             E()(t, e);
@@ -8889,6 +8843,69 @@ function getHead(a, aY = 0) {
         }(St), ht = function (e) {
             function t() {
                 var t;
+                return (t = e.call(this, s.a.ORANGE_BERRY) || this).setShieldRegen(25), t.setHealthRegen(0), t.setMaxShieldRegen(25), t.setConsumptionTime(Math.floor(Object(y.c)(1))), t.setMaxStackSize(12), t.itemName = "Orange Berry", t.itemDescription = "Natural food found on trees and bushes. Restores merely 25 (up to 25) shield points. Can be used to craft more advanced healing items.", t.setItemTier(g.a.COMMON), t
+            }
+
+            E()(t, e);
+            var a = t.prototype;
+            return a.generateFirstPersonModel = function () {
+                var e = S()(_.a.mark((function e(t) {
+                    var a;
+                    return _.a.wrap((function (e) {
+                        for (; ;) switch (e.prev = e.next) {
+                            case 0:
+                                return e.next = 2, this.generateModel(t);
+                            case 2:
+                                return (a = e.sent).position.set(-.12, -.06, .02), a.rotation.set(0, 0, 0), a.scale.set(1.1, 1.1, 1.1), e.abrupt("return", a);
+                            case 7:
+                            case"end":
+                                return e.stop()
+                        }
+                    }), e, this)
+                })));
+                return function (t) {
+                    return e.apply(this, arguments)
+                }
+            }(), a.generateThirdPersonModel = function () {
+                var e = S()(_.a.mark((function e(t) {
+                    var a;
+                    return _.a.wrap((function (e) {
+                        for (; ;) switch (e.prev = e.next) {
+                            case 0:
+                                return e.next = 2, this.generateModel(t);
+                            case 2:
+                                return (a = e.sent).position.set(.13, -.06, -.02), a.rotation.set(0, 0, 0), a.scale.set(1.2, 1.2, 1.2), e.abrupt("return", a);
+                            case 7:
+                            case"end":
+                                return e.stop()
+                        }
+                    }), e, this)
+                })));
+                return function (t) {
+                    return e.apply(this, arguments)
+                }
+            }(), a.generateThumbnailModel = function () {
+                var e = S()(_.a.mark((function e(t, a) {
+                    var n;
+                    return _.a.wrap((function (e) {
+                        for (; ;) switch (e.prev = e.next) {
+                            case 0:
+                                return e.next = 2, this.generateModel(a);
+                            case 2:
+                                return (n = e.sent).position.set(.04, -.14, -1), n.rotation.set(0, 0, 0), n.scale.set(1, 1, 1), e.abrupt("return", n);
+                            case 7:
+                            case"end":
+                                return e.stop()
+                        }
+                    }), e, this)
+                })));
+                return function (t, a) {
+                    return e.apply(this, arguments)
+                }
+            }(), t
+        }(St), Mt = function (e) {
+            function t() {
+                var t;
                 return (t = e.call(this, s.a.SULFUR) || this).itemName = "Sulfur", t.itemDescription = "Crucial chemical used as a fuel in explosives", t
             }
 
@@ -8911,7 +8928,7 @@ function getHead(a, aY = 0) {
                     return e.apply(this, arguments)
                 }
             }(), t
-        }(M.a), mt = function (e, t) {
+        }(h.a), mt = function (e, t) {
             var a = [], s = [], u = [];
             a.push(.5 * t, .5 * t, .5 * t), a.push(-.5 * t, .5 * t, .5 * t), a.push(-.5 * t, .5 * t, -.5 * t), a.push(.5 * t, .5 * t, -.5 * t), s.push(a.length / 3 - 3, a.length / 3 - 4, a.length / 3 - 1), s.push(a.length / 3 - 1, a.length / 3 - 2, a.length / 3 - 3), Object(i.c)(u, o.a[e].textures.top), a.push(.5 * t, -.5 * t, -.5 * t), a.push(-.5 * t, -.5 * t, -.5 * t), a.push(-.5 * t, -.5 * t, .5 * t), a.push(.5 * t, -.5 * t, .5 * t), s.push(a.length / 3 - 3, a.length / 3 - 4, a.length / 3 - 1), s.push(a.length / 3 - 1, a.length / 3 - 2, a.length / 3 - 3), Object(i.c)(u, o.a[e].textures.bottom), a.push(.5 * t, .5 * t, .5 * t), a.push(.5 * t, .5 * t, -.5 * t), a.push(.5 * t, -.5 * t, -.5 * t), a.push(.5 * t, -.5 * t, .5 * t), s.push(a.length / 3 - 3, a.length / 3 - 4, a.length / 3 - 1), s.push(a.length / 3 - 1, a.length / 3 - 2, a.length / 3 - 3), Object(i.c)(u, o.a[e].textures.left), a.push(-.5 * t, .5 * t, -.5 * t), a.push(-.5 * t, .5 * t, .5 * t), a.push(-.5 * t, -.5 * t, .5 * t), a.push(-.5 * t, -.5 * t, -.5 * t), s.push(a.length / 3 - 3, a.length / 3 - 4, a.length / 3 - 1), s.push(a.length / 3 - 1, a.length / 3 - 2, a.length / 3 - 3), Object(i.c)(u, o.a[e].textures.right), a.push(-.5 * t, .5 * t, .5 * t), a.push(.5 * t, .5 * t, .5 * t), a.push(.5 * t, -.5 * t, .5 * t), a.push(-.5 * t, -.5 * t, .5 * t), s.push(a.length / 3 - 3, a.length / 3 - 4, a.length / 3 - 1), s.push(a.length / 3 - 1, a.length / 3 - 2, a.length / 3 - 3), Object(i.c)(u, o.a[e].textures.front), a.push(.5 * t, .5 * t, -.5 * t), a.push(-.5 * t, .5 * t, -.5 * t), a.push(-.5 * t, -.5 * t, -.5 * t), a.push(.5 * t, -.5 * t, -.5 * t), s.push(a.length / 3 - 3, a.length / 3 - 4, a.length / 3 - 1), s.push(a.length / 3 - 1, a.length / 3 - 2, a.length / 3 - 3), Object(i.c)(u, o.a[e].textures.back);
             var c = new n.l;
@@ -8922,7 +8939,7 @@ function getHead(a, aY = 0) {
             if (e >= s.a.BLOCK && e <= s.a.BLOCK + 255) return new f(e - s.a.BLOCK);
             switch (e) {
                 case s.a.SHOVEL_COMMON:
-                    return new We;
+                    return new Ve;
                 case s.a.SHOVEL_UNCOMMON:
                     return new je;
                 case s.a.SHOVEL_RARE:
@@ -8936,7 +8953,7 @@ function getHead(a, aY = 0) {
                 case s.a.COMBAT_ASSAULT_RIFLE_COMMON:
                     return new C.a;
                 case s.a.COMBAT_ASSAULT_RIFLE_UNCOMMON:
-                    return new g;
+                    return new U;
                 case s.a.COMBAT_ASSAULT_RIFLE_RARE:
                     return new P;
                 case s.a.COMBAT_ASSAULT_RIFLE_EPIC:
@@ -8960,9 +8977,9 @@ function getHead(a, aY = 0) {
                 case s.a.SURGE_ASSAULT_RIFLE_COMMON:
                     return new Y.a;
                 case s.a.SURGE_ASSAULT_RIFLE_UNCOMMON:
-                    return new V;
-                case s.a.SURGE_ASSAULT_RIFLE_RARE:
                     return new W;
+                case s.a.SURGE_ASSAULT_RIFLE_RARE:
+                    return new V;
                 case s.a.SURGE_ASSAULT_RIFLE_EPIC:
                     return new j;
                 case s.a.SURGE_ASSAULT_RIFLE_LEGENDARY:
@@ -9010,9 +9027,9 @@ function getHead(a, aY = 0) {
                 case s.a.LIGHT_SUBMACHINE_GUN_UNCOMMON:
                     return new Te;
                 case s.a.LIGHT_SUBMACHINE_GUN_RARE:
-                    return new Me;
-                case s.a.LIGHT_SUBMACHINE_GUN_EPIC:
                     return new he;
+                case s.a.LIGHT_SUBMACHINE_GUN_EPIC:
+                    return new Me;
                 case s.a.LIGHT_SUBMACHINE_GUN_LEGENDARY:
                     return new me;
                 case s.a.LIGHT_SUBMACHINE_GUN_MYTHIC:
@@ -9028,9 +9045,9 @@ function getHead(a, aY = 0) {
                 case s.a.COMPACT_SUBMACHINE_GUN_LEGENDARY:
                     return new ye;
                 case s.a.COMPACT_SUBMACHINE_GUN_MYTHIC:
-                    return new Ue;
+                    return new ge;
                 case s.a.LIGHT_SNIPER_RIFLE_COMMON:
-                    return new ge.a;
+                    return new Ue.a;
                 case s.a.LIGHT_SNIPER_RIFLE_UNCOMMON:
                     return new ve;
                 case s.a.LIGHT_SNIPER_RIFLE_RARE:
@@ -9062,7 +9079,7 @@ function getHead(a, aY = 0) {
                 case s.a.IRON:
                     return new et;
                 case s.a.SULFUR:
-                    return new ht;
+                    return new Mt;
                 case s.a.AMMO_PISTOL:
                     return new tt;
                 case s.a.AMMO_SHOTGUN:
@@ -9086,7 +9103,7 @@ function getHead(a, aY = 0) {
                 case s.a.RED_BERRY:
                     return new Tt;
                 case s.a.ORANGE_BERRY:
-                    return new Mt;
+                    return new ht;
                 case s.a.EMPTY:
                 default:
                     return new u.a
@@ -9126,9 +9143,9 @@ function getHead(a, aY = 0) {
         })), a.d(t, "m", (function () {
             return p
         })), a.d(t, "a", (function () {
-            return M
-        })), a.d(t, "p", (function () {
             return h
+        })), a.d(t, "p", (function () {
+            return M
         })), a.d(t, "b", (function () {
             return m
         })), a.d(t, "q", (function () {
@@ -9150,7 +9167,7 @@ function getHead(a, aY = 0) {
         })), a.d(t, "i", (function () {
             return y
         })), a.d(t, "n", (function () {
-            return U
+            return g
         }));
         var n = a(47), r = a(27), o = a(1), i = a(137), s = a(46), u = -1, c = !1, _ = function () {
             return c
@@ -9170,9 +9187,9 @@ function getHead(a, aY = 0) {
             return n.d.getState().gameData.mapLoadingProgress
         }, T = function () {
             return n.d.getState().ui.gameChatIsEditing
-        }, M = function () {
+        }, h = function () {
             return u
-        }, h = function (e) {
+        }, M = function (e) {
             u = e
         }, m = function () {
             return n.d.getState().gameData.clientPlayerName
@@ -9191,7 +9208,7 @@ function getHead(a, aY = 0) {
             return n.d.getState().ui.tabShowsScoreboard
         }, y = function () {
             return n.d.getState().ui.enableChat
-        }, U = function () {
+        }, g = function () {
             return n.d.getState().gameData.showScope
         }
     }, 88: function (e, t, a) {
@@ -9200,7 +9217,7 @@ function getHead(a, aY = 0) {
             return z
         }));
         var n, r = a(15), o = a.n(r), i = a(22), s = a.n(i), u = a(79), c = a.n(u), _ = a(81), l = a(25), S = a(96),
-            O = a(95), I = a(104), p = a(87), E = a(48), R = a(102), T = a(76), M = a.n(T), h = a(126), m = a.n(h),
+            O = a(95), I = a(104), p = a(87), E = a(48), R = a(102), T = a(76), h = a.n(T), M = a(126), m = a.n(M),
             A = a(80), d = a(90), N = function () {
                 function e(e) {
                     this.type = e
@@ -9213,9 +9230,9 @@ function getHead(a, aY = 0) {
                         remove: function () {
                             e.removeFolder(r), a.studioRenderer.studioSettings.materials.splice(t, 1), a.refreshSettings(), n.cleanUp(), a.studioRenderer.applyMaterials()
                         }
-                    }, "remove").name("Remove"), r.add(this, "type").options(W).name("Type").onChange((function (e) {
+                    }, "remove").name("Remove"), r.add(this, "type").options(V).name("Type").onChange((function (e) {
                         n.cleanUp();
-                        var r = V(e);
+                        var r = W(e);
                         a.studioRenderer.studioSettings.materials[t] = r, a.refreshSettings(), a.studioRenderer.applyMaterials()
                     })), r.open(), r
                 }, t.cleanUp = function () {
@@ -9226,7 +9243,7 @@ function getHead(a, aY = 0) {
             }(), f = function (e) {
                 function t() {
                     var t;
-                    return (t = e.call(this, W.FADE) || this).seed = void 0, t.minScale = void 0, t.maxScale = void 0, t.minOffset = void 0, t.maxOffset = void 0, t.minSaturation = void 0, t.maxSaturation = void 0, t.minLightness = void 0, t.maxLightness = void 0, t.direction = void 0, t.material = void 0, t.updateMaterial = function () {
+                    return (t = e.call(this, V.FADE) || this).seed = void 0, t.minScale = void 0, t.maxScale = void 0, t.minOffset = void 0, t.maxOffset = void 0, t.minSaturation = void 0, t.maxSaturation = void 0, t.minLightness = void 0, t.maxLightness = void 0, t.direction = void 0, t.material = void 0, t.updateMaterial = function () {
                         if (t.material) {
                             var e = m()(t.seed.toString()), a = Object(d.h)(e, t.minScale, t.maxScale),
                                 n = Object(d.h)(e, t.minOffset, t.maxOffset),
@@ -9237,7 +9254,7 @@ function getHead(a, aY = 0) {
                     }, t.seed = 0, t.minScale = 2, t.maxScale = 8, t.minOffset = 0, t.maxOffset = 10, t.minSaturation = .8, t.maxSaturation = .9, t.minLightness = .6, t.maxLightness = .7, t.direction = new A.Ob(0, 0, 1), t
                 }
 
-                M()(t, e);
+                h()(t, e);
                 var a = t.prototype;
                 return a.generateOptions = function (t, a, n) {
                     var r = e.prototype.generateOptions.call(this, t, a, n);
@@ -9282,8 +9299,8 @@ function getHead(a, aY = 0) {
                     e.prototype.load.call(this, t), t.seed && (this.seed = t.seed), t.minScale && (this.minScale = t.minScale), t.maxScale && (this.maxScale = t.maxScale), t.minOffset && (this.minOffset = t.minOffset), t.maxOffset && (this.maxOffset = t.maxOffset), t.minSaturation && (this.minSaturation = t.minSaturation), t.maxSaturation && (this.maxSaturation = t.maxSaturation), t.minLightness && (this.minLightness = t.minLightness), t.maxLightness && (this.maxLightness = t.maxLightness), t.direction && this.direction.set(t.direction.x, t.direction.y, t.direction.z)
                 }, t
             }(N), C = a.p + "./9fa05e63b55694f29f27074ee20fad10.png", L = a.p + "./168ca21165a40ff6d0a95dd21287b06d.png",
-            y = a.p + "./6d616497b28e570fce338b1f7c93b418.png", U = a.p + "./08e0b1fec31198698303a28f79a214fd.png",
-            g = a.p + "./2487264d60e14d00980199c65f59ce72.png", P = a.p + "./c66847e6e0620f7771c57d205f1bc0d1.png",
+            y = a.p + "./6d616497b28e570fce338b1f7c93b418.png", g = a.p + "./08e0b1fec31198698303a28f79a214fd.png",
+            U = a.p + "./2487264d60e14d00980199c65f59ce72.png", P = a.p + "./c66847e6e0620f7771c57d205f1bc0d1.png",
             v = a.p + "./b6786321cb3a78160bafa56b7aa6a952.png", F = a.p + "./c7eea180324a8fcde7262d6c80e606bc.png",
             G = a.p + "./5dadca80fa2657cd12cc40dbb7b81ca7.png", H = a.p + "./313d7d8f1bab60e11ef5e2a95393a02e.png",
             b = a.p + "./e81e58be086f62fa5dba1cddf4e08082.png";
@@ -9293,13 +9310,13 @@ function getHead(a, aY = 0) {
         var x, D = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, W.RANDOM_PATTERN) || this).seed = void 0, t.scale = void 0, t.roughness = void 0, t.metalness = void 0, t.color1 = void 0, t.color2 = void 0, t.color3 = void 0, t.color4 = void 0, t.patternType = void 0, t.material = void 0, t.shader = void 0, t.fileInput = void 0, t.customFileURL = void 0, t.chooseCustomTexture = function () {
+                return (t = e.call(this, V.RANDOM_PATTERN) || this).seed = void 0, t.scale = void 0, t.roughness = void 0, t.metalness = void 0, t.color1 = void 0, t.color2 = void 0, t.color3 = void 0, t.color4 = void 0, t.patternType = void 0, t.material = void 0, t.shader = void 0, t.fileInput = void 0, t.customFileURL = void 0, t.chooseCustomTexture = function () {
                     var e;
                     null == (e = t.fileInput) || e.click()
                 }, t.seed = 0, t.scale = 1, t.roughness = .9, t.metalness = 0, t.patternType = n.CAMO, t.color1 = "#ffffff", t.color2 = "#888888", t.color3 = "#444444", t.color4 = "#000000", t.fileInput = void 0, t.customFileURL = "", t
             }
 
-            M()(t, e);
+            h()(t, e);
             var a = t.prototype;
             return a.generateOptions = function (t, a, r) {
                 var i = this, u = e.prototype.generateOptions.call(this, t, a, r);
@@ -9399,9 +9416,9 @@ function getHead(a, aY = 0) {
                     case n.PIXEL_STORM:
                         return y;
                     case n.CRACKS:
-                        return U;
-                    case n.HEXAGON:
                         return g;
+                    case n.HEXAGON:
+                        return U;
                     case n.TIGER:
                         return P;
                     case n.TRIANGLE_DOTS:
@@ -9471,13 +9488,13 @@ function getHead(a, aY = 0) {
         var k, B = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, W.RANDOM_TEXTURE) || this).seed = void 0, t.scale = void 0, t.roughness = void 0, t.metalness = void 0, t.patternType = void 0, t.material = void 0, t.shader = void 0, t.fileInput = void 0, t.customFileURL = void 0, t.chooseCustomTexture = function () {
+                return (t = e.call(this, V.RANDOM_TEXTURE) || this).seed = void 0, t.scale = void 0, t.roughness = void 0, t.metalness = void 0, t.patternType = void 0, t.material = void 0, t.shader = void 0, t.fileInput = void 0, t.customFileURL = void 0, t.chooseCustomTexture = function () {
                     var e;
                     null == (e = t.fileInput) || e.click()
                 }, t.seed = 0, t.scale = 1, t.roughness = .9, t.metalness = 0, t.patternType = x.CUSTOM, t.fileInput = void 0, t.customFileURL = "", t
             }
 
-            M()(t, e);
+            h()(t, e);
             var a = t.prototype;
             return a.generateOptions = function (t, a, n) {
                 var r = this, i = e.prototype.generateOptions.call(this, t, a, n);
@@ -9607,13 +9624,13 @@ function getHead(a, aY = 0) {
         var w, Y = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, W.STATIC_TEXTURE) || this).seed = void 0, t.scale = void 0, t.roughness = void 0, t.metalness = void 0, t.patternType = void 0, t.material = void 0, t.shader = void 0, t.fileInput = void 0, t.customFileURL = void 0, t.chooseCustomTexture = function () {
+                return (t = e.call(this, V.STATIC_TEXTURE) || this).seed = void 0, t.scale = void 0, t.roughness = void 0, t.metalness = void 0, t.patternType = void 0, t.material = void 0, t.shader = void 0, t.fileInput = void 0, t.customFileURL = void 0, t.chooseCustomTexture = function () {
                     var e;
                     null == (e = t.fileInput) || e.click()
                 }, t.seed = 0, t.scale = 1, t.roughness = .9, t.metalness = 0, t.patternType = k.CUSTOM, t.fileInput = void 0, t.customFileURL = "", t
             }
 
-            M()(t, e);
+            h()(t, e);
             var a = t.prototype;
             return a.generateOptions = function (t, a, n) {
                 var r = this, i = e.prototype.generateOptions.call(this, t, a, n);
@@ -9734,10 +9751,10 @@ function getHead(a, aY = 0) {
         }(N), K = function (e) {
             function t() {
                 var t;
-                return (t = e.call(this, W.UNIFORM_COLOR) || this).roughness = void 0, t.metalness = void 0, t.color = void 0, t.material = void 0, t.shader = void 0, t.roughness = .9, t.metalness = 0, t.color = "#ffffff", t
+                return (t = e.call(this, V.UNIFORM_COLOR) || this).roughness = void 0, t.metalness = void 0, t.color = void 0, t.material = void 0, t.shader = void 0, t.roughness = .9, t.metalness = 0, t.color = "#ffffff", t
             }
 
-            M()(t, e);
+            h()(t, e);
             var a = t.prototype;
             return a.generateOptions = function (t, a, n) {
                 var r = this, o = e.prototype.generateOptions.call(this, t, a, n);
@@ -9785,7 +9802,7 @@ function getHead(a, aY = 0) {
         !function (e) {
             e.UNIFORM_COLOR = "UNIFORM_COLOR", e.RANDOM_TEXTURE = "RANDOM_TEXTURE", e.STATIC_TEXTURE = "STATIC_TEXTURE", e.RANDOM_PATTERN = "RANDOM_PATTERN", e.FADE = "FADE"
         }(w || (w = {}));
-        var V = function (e) {
+        var W = function (e) {
             var t = null;
             switch (e) {
                 case w.UNIFORM_COLOR:
@@ -9804,7 +9821,7 @@ function getHead(a, aY = 0) {
                     t = new B
             }
             return t
-        }, W = w;
+        }, V = w;
 
         function j(e, t) {
             var a;
@@ -9931,7 +9948,7 @@ function getHead(a, aY = 0) {
                                     e.next = 16;
                                     break
                                 }
-                                return c = i.groupMaterialIndices[u], (_ = s[c]) || ((_ = V(i.materials[c].type)).load(i.materials[c]), _.seed = this._skinSeed), e.next = 12, _.getMaterial(this._skinAOMap, n);
+                                return c = i.groupMaterialIndices[u], (_ = s[c]) || ((_ = W(i.materials[c].type)).load(i.materials[c]), _.seed = this._skinSeed), e.next = 12, _.getMaterial(this._skinAOMap, n);
                             case 12:
                                 t.children[u].material = e.sent;
                             case 13:
@@ -10155,9 +10172,9 @@ function getHead(a, aY = 0) {
             return A
         }));
         var n = a(79), r = a.n(n), o = a(76), i = a.n(o), s = a(21), u = a(88), c = a(106), _ = a(96), l = a(95),
-            S = a(82), O = a(83), I = a(78), p = a(34), E = a(104), R = a(89), T = a(84), M = a(26);
+            S = a(82), O = a(83), I = a(78), p = a(34), E = a(104), R = a(89), T = a(84), h = a(26);
 
-        function h(e, t) {
+        function M(e, t) {
             var a;
             if ("undefined" == typeof Symbol || null == e[Symbol.iterator]) {
                 if (Array.isArray(e) || (a = function (e, t) {
@@ -10188,7 +10205,7 @@ function getHead(a, aY = 0) {
         var A = function (e) {
             function t(t) {
                 var a;
-                return (a = e.call(this, t) || this)._canADS = void 0, a._useScope = void 0, a._adsFOV = void 0, a._defaultSpread = void 0, a._inAirSpread = void 0, a._shootingSpread = void 0, a._movingSpread = void 0, a._shootingMovingSpread = void 0, a._ADSSpreadFactor = void 0, a._crouchingSpreadFactor = void 0, a._ADSCrouchingSpreadFactor = void 0, a._spreadRecovery = void 0, a._spreadIncreaseRateMove = void 0, a._spreadIncreaseRateJump = void 0, a._spreadIncreaseRateShoot = void 0, a._fireRate = void 0, a._reloadTime = void 0, a._range = void 0, a._currClipAmmo = void 0, a._maxClipAmmo = void 0, a._isReloading = void 0, a._maxRecoil = void 0, a._recoilGainVel = void 0, a._recoilRecoverVel = void 0, a._recoilActiveTime = void 0, a._muzzleFlashPosition = void 0, a._muzzleFlashScale = void 0, a._ammoItemType = void 0, a._bulletsPerShot = void 0, a._shellModelID = void 0, a._shellModelOrigin = void 0, a._gunShotSoundType = void 0, a._shootCooldownType = void 0, a.setMaxStackSize(1), a._canADS = !0, a._useScope = !1, a._adsFOV = M.a.PLAYER_ADS_FOV, a._defaultSpread = .2, a._inAirSpread = 1, a._shootingSpread = .5, a._movingSpread = .6, a._shootingMovingSpread = .7, a._ADSSpreadFactor = .2, a._crouchingSpreadFactor = .5, a._ADSCrouchingSpreadFactor = .1, a._spreadRecovery = 10, a._spreadIncreaseRateMove = 2.66, a._spreadIncreaseRateJump = 2.66, a._spreadIncreaseRateShoot = 6, a._fireRate = Math.floor(Object(I.c)(.15)), a._reloadTime = Math.floor(Object(I.c)(1.5)), a._range = 200, a._currClipAmmo = 30, a._maxClipAmmo = 30, a._muzzleFlashPosition = Object(p.l)(0, .08, .48), a._muzzleFlashScale = Object(p.l)(.2, .2, .2), a._isReloading = !1, a._maxRecoil = .08, a._recoilGainVel = .3, a._recoilRecoverVel = .2, a._recoilActiveTime = 100, a._ammoItemType = s.a.AMMO_ASSAULT_RIFLE, a._bulletsPerShot = 1, a._shellModelID = R.a.ASSAULT_RIFLE_SHELL, a._shellModelOrigin = Object(p.l)(0, 0, 0), a._gunShotSoundType = T.a.GUN_SHOT_COMBAT_ASSAULT_RIFLE, a._shootCooldownType = _.a.SHOOT, a
+                return (a = e.call(this, t) || this)._canADS = void 0, a._useScope = void 0, a._adsFOV = void 0, a._defaultSpread = void 0, a._inAirSpread = void 0, a._shootingSpread = void 0, a._movingSpread = void 0, a._shootingMovingSpread = void 0, a._ADSSpreadFactor = void 0, a._crouchingSpreadFactor = void 0, a._ADSCrouchingSpreadFactor = void 0, a._spreadRecovery = void 0, a._spreadIncreaseRateMove = void 0, a._spreadIncreaseRateJump = void 0, a._spreadIncreaseRateShoot = void 0, a._fireRate = void 0, a._reloadTime = void 0, a._range = void 0, a._currClipAmmo = void 0, a._maxClipAmmo = void 0, a._isReloading = void 0, a._maxRecoil = void 0, a._recoilGainVel = void 0, a._recoilRecoverVel = void 0, a._recoilActiveTime = void 0, a._muzzleFlashPosition = void 0, a._muzzleFlashScale = void 0, a._ammoItemType = void 0, a._bulletsPerShot = void 0, a._shellModelID = void 0, a._shellModelOrigin = void 0, a._gunShotSoundType = void 0, a._shootCooldownType = void 0, a.setMaxStackSize(1), a._canADS = !0, a._useScope = !1, a._adsFOV = h.a.PLAYER_ADS_FOV, a._defaultSpread = .2, a._inAirSpread = 1, a._shootingSpread = .5, a._movingSpread = .6, a._shootingMovingSpread = .7, a._ADSSpreadFactor = .2, a._crouchingSpreadFactor = .5, a._ADSCrouchingSpreadFactor = .1, a._spreadRecovery = 10, a._spreadIncreaseRateMove = 2.66, a._spreadIncreaseRateJump = 2.66, a._spreadIncreaseRateShoot = 6, a._fireRate = Math.floor(Object(I.c)(.15)), a._reloadTime = Math.floor(Object(I.c)(1.5)), a._range = 200, a._currClipAmmo = 30, a._maxClipAmmo = 30, a._muzzleFlashPosition = Object(p.l)(0, .08, .48), a._muzzleFlashScale = Object(p.l)(.2, .2, .2), a._isReloading = !1, a._maxRecoil = .08, a._recoilGainVel = .3, a._recoilRecoverVel = .2, a._recoilActiveTime = 100, a._ammoItemType = s.a.AMMO_ASSAULT_RIFLE, a._bulletsPerShot = 1, a._shellModelID = R.a.ASSAULT_RIFLE_SHELL, a._shellModelOrigin = Object(p.l)(0, 0, 0), a._gunShotSoundType = T.a.GUN_SHOT_COMBAT_ASSAULT_RIFLE, a._shootCooldownType = _.a.SHOOT, a
             }
 
             i()(t, e);
@@ -10200,7 +10217,7 @@ function getHead(a, aY = 0) {
                 return Object(p.l)(-.12, .04, 0)
             }, a.onUpdateMetadata = function (t) {
                 e.prototype.onUpdateMetadata.call(this, t);
-                for (var a, n = h(t); !(a = n()).done;) {
+                for (var a, n = M(t); !(a = n()).done;) {
                     var r = a.value;
                     switch (r.metadataType) {
                         case E.a.GUN_CURR_NUM_CLIP_AMMO:
@@ -11050,7 +11067,7 @@ function getHead(a, aY = 0) {
         "use strict";
         var n;
         !function (e) {
-            e[e.BLOCK_PLACE = 0] = "BLOCK_PLACE", e[e.ITEM_SWITCH = 1] = "ITEM_SWITCH", e[e.SHOOT = 2] = "SHOOT", e[e.RELOAD = 3] = "RELOAD", e[e.SPRINT_STOP_ITEM_USE_GRACE = 4] = "SPRINT_STOP_ITEM_USE_GRACE", e[e.DROP_ITEM = 5] = "DROP_ITEM", e[e.ITEM_USE = 6] = "ITEM_USE", e[e.TOGGLE_GLIDE = 7] = "TOGGLE_GLIDE", e[e.MELEE_ATTACK = 8] = "MELEE_ATTACK", e[e.CHAT = 9] = "CHAT", e[e.CHAT_SPAM = 10] = "CHAT_SPAM", e[e.CACTUS_DAMAGE = 11] = "CACTUS_DAMAGE", e[e.GEM_PICKUP_ALERT = 12] = "GEM_PICKUP_ALERT", e[e.BURST_SHOOT = 13] = "BURST_SHOOT", e[e.SPRAY = 14] = "SPRAY", e[e.SNIPER_SHOOT = 15] = "SNIPER_SHOOT"
+            e[e.BLOCK_PLACE = 0] = "BLOCK_PLACE", e[e.ITEM_SWITCH = 1] = "ITEM_SWITCH", e[e.SHOOT = 2] = "SHOOT", e[e.RELOAD = 3] = "RELOAD", e[e.SPRINT_STOP_ITEM_USE_GRACE = 4] = "SPRINT_STOP_ITEM_USE_GRACE", e[e.DROP_ITEM = 5] = "DROP_ITEM", e[e.ITEM_USE = 6] = "ITEM_USE", e[e.TOGGLE_GLIDE = 7] = "TOGGLE_GLIDE", e[e.MELEE_ATTACK = 8] = "MELEE_ATTACK", e[e.CHAT = 9] = "CHAT", e[e.CHAT_SPAM = 10] = "CHAT_SPAM", e[e.CACTUS_DAMAGE = 11] = "CACTUS_DAMAGE", e[e.GEM_PICKUP_ALERT = 12] = "GEM_PICKUP_ALERT", e[e.BURST_SHOOT = 13] = "BURST_SHOOT", e[e.SPRAY = 14] = "SPRAY", e[e.SNIPER_SHOOT = 15] = "SNIPER_SHOOT", e[e.MULTI_KILL = 16] = "MULTI_KILL"
         }(n || (n = {})), t.a = n
     }
 }]);

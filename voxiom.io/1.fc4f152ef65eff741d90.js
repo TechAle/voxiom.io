@@ -58,7 +58,7 @@
             e.exports = function () {
                 return "function" == typeof r && ("function" == typeof Symbol && ("symbol" == typeof r("foo") && ("symbol" == typeof Symbol("bar") && i())))
             }
-        }).call(this, n(27))
+        }).call(this, n(28))
     }, 174: function (e, t, n) {
         "use strict";
         var r = Object.prototype.toString;
@@ -3399,13 +3399,15 @@
                     if (void 0 !== i) return i
                 }
             }, getWorldPosition: function (e) {
-                return void 0 === e && (e = new V), this.updateMatrixWorld(!0), e.setFromMatrixPosition(this.matrixWorld)
+                // #Comment this or else your chrome will crash Q-:3
+                return void 0 === e && (/*console.warn("THREE.Object3D: .getWorldPosition() target is now required"),*/ e = new V), this.updateMatrixWorld(!0), e.setFromMatrixPosition(this.matrixWorld)
             }, getWorldQuaternion: function (e) {
                 return void 0 === e && (console.warn("THREE.Object3D: .getWorldQuaternion() target is now required"), e = new G), this.updateMatrixWorld(!0), this.matrixWorld.decompose(ce, e, le), e
             }, getWorldScale: function (e) {
                 return void 0 === e && (console.warn("THREE.Object3D: .getWorldScale() target is now required"), e = new V), this.updateMatrixWorld(!0), this.matrixWorld.decompose(ce, ue, e), e
             }, getWorldDirection: function (e) {
-                void 0 === e && (console.warn("THREE.Object3D: .getWorldDirection() target is now required"), e = new V), this.updateMatrixWorld(!0);
+                // #Comment this or else your chrome will crash :P
+                void 0 === e && (/*console.warn("THREE.Object3D: .getWorldDirection() target is now required"),*/ e = new V), this.updateMatrixWorld(!0);
                 var t = this.matrixWorld.elements;
                 return e.set(t[8], t[9], t[10]).normalize()
             }, raycast: function () {
@@ -5143,7 +5145,8 @@
                 return ve.prototype.copy.call(this, e, t), this.matrixWorldInverse.copy(e.matrixWorldInverse), this.projectionMatrix.copy(e.projectionMatrix), this.projectionMatrixInverse.copy(e.projectionMatrixInverse), this
             },
             getWorldDirection: function (e) {
-                void 0 === e && (e = new V), this.updateMatrixWorld(!0);
+                // #Why chrome crash if there are too many warns? lol, firefox king
+                void 0 === e && (/*console.warn("THREE.Camera: .getWorldDirection() target is now required"),*/ e = new V), this.updateMatrixWorld(!0);
                 var t = this.matrixWorld.elements;
                 return e.set(-t[8], -t[9], -t[10]).normalize()
             },
@@ -13511,8 +13514,11 @@
             return (new this.constructor).copy(this)
         }, Ql.prototype = Object.create(ba.prototype), Ql.prototype.constructor = Ql;
         var $l = Math.pow(2, 8), eu = [.125, .215, .35, .446, .526, .582], tu = 5 + eu.length,
-            nu = {3e3: 0, [E]: 1, 3002: 2, 3004: 3, 3005: 4, 3006: 5, 3007: 6},
-            ru = new uc, {_lodPlanes: iu, _sizeLods: au, _sigmas: ou} = function () {
+            nu = {3e3: 0, [E]: 1, 3002: 2, 3004: 3, 3005: 4, 3006: 5, 3007: 6}, ru = new uc, {
+                _lodPlanes: iu,
+                _sizeLods: au,
+                _sigmas: ou
+            } = function () {
                 for (var e = [], t = [], n = [], r = 8, i = 0; i < tu; i++) {
                     var a = Math.pow(2, r);
                     t.push(a);
@@ -14559,4 +14565,3 @@
         }
     }
 }]);
-
