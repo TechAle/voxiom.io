@@ -1,3 +1,3 @@
 # voxiom.io
-This is my first try of making an hack for a .io game.<br>
-If you know how to make these files works on your game, do it if you want, else, dont ask to me how to do it
+I created this hack just for fun. I waited for making this public because i first wanted it to be patched<br>
+This worked on may
